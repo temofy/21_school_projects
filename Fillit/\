@@ -1,0 +1,184 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/30 16:01:49 by cheller           #+#    #+#             */
+/*   Updated: 2019/01/31 19:14:06 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fillit.h"
+#define BUFF_SIZE 10
+
+char	*read_tetriminos(int fd)
+{
+	char	*buff;
+	int		bytes;
+	char	*file_str;
+	char	*tmp;
+
+	if(!(buff = ft_strnew(BUFF_SIZE)))
+		return(NULL);
+	while ((bytes = read(fd, buff, BUFF_SIZE)))
+	{
+		if(!file_str)
+			file_str = ft_strdup(buff);
+		else
+		{
+			tmp = ft_strnew(ft_strlen(file_str));
+			tmp = ft_strcpy(tmp, file_str);
+			file_str = ft_strjoin(tmp, buff);
+			free(tmp);
+		}
+		ft_bzero(buff, BUFF_SIZE);
+	}
+	free(buff);
+	return (file_str);
+}
+
+void	print_matrix(char **matrix)
+{
+	int		i;
+
+	i = -1;
+	while (++i < 4)
+	{
+		ft_putstr(matrix[i]);
+		ft_putchar('\n');
+	}
+}
+
+char	**write_into_matrix(char **tetrimino_matrix, char *str_tetriminos)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	/*ft_putchar(*str_tetriminos);
+	ft_putchar('\n');*/
+	while (*str_tetriminos)
+	{
+		if (*str_tetriminos != '\n')
+		{
+			tetrimino_matrix[i][j] = *str_tetriminos;
+			i++;
+			if (j == 4)
+			{
+				i++;
+				j = 0;
+			}
+		}
+		str_tetriminos++;
+	}
+	return (tetrimino_matrix);
+}
+
+char	**save_tetrimino(char *str_tetriminos)
+{
+	char		**tetrimino_matrix;
+	int		i;
+	int		top_vertex;
+	int		outside_vertex;
+
+	i = -1;
+	top_vertex = 4;
+	outside_vertex = 4;
+	tetrimino_matrix = (char**)malloc(sizeof(char*) * 5);
+	while (++i < 4)
+	{
+		if(!(tetrimino_matrix[i] = ft_strnew(4)))
+			return(NULL);//free
+	}
+
+	tetrimino_matrix = write_into_matrix(tetrimino_matrix, str_tetriminos);
+	/*i = - 1;
+	while (++i < 4)
+	{
+		j = -1;
+		while (++j < 4)
+		{
+			if (tetrimino_matrix[i][j] == '#')
+			{
+				if (i < top_vertex)
+					top_vertex = i;
+				if (j < outside_vertex)
+					outside_vertex = j;
+			}
+		}
+	}
+
+	i = - 1;
+	while (++i < 4)
+	{
+		j = -1;
+		while (++j < 4)
+		{
+			if (tetrimino_matrix[i][j] == '#')
+			{
+				if (i < top_vertex)
+					top_vertex = i;
+				if (j < outside_vertex)
+					outside_vertex = j;
+			}
+		}
+	}*/
+
+	return (tetrimino_matrix);
+}
+
+tet_lst	*make_lst_tetriminos(char *str_tetriminos)
+{
+	tet_lst	*begin_lst;
+	if (!(begin_lst = (tet_lst*)malloc(sizeof(tet_lst))))
+	{
+		//free
+		return (NULL);
+	}
+	begin_lst->prev = NULL;
+	/*ft_putstr(str_tetriminos);
+	ft_putchar('\n');*/
+	begin_lst->tetrimino_matrix = save_tetrimino(str_tetriminos);
+	begin_lst->next = NULL;
+	return (begin_lst);
+}
+
+int		process_tetriminos(int fd)
+{
+	char	*file_str;
+	tet_lst	*tetrimino;
+
+	if(!(file_str = read_tetriminos(fd)))
+		return (-1);
+	ft_putstr(file_str);
+	ft_putchar('\n');
+	//validate
+	if(!(tetrimino = make_lst_tetriminos(file_str)))
+		return (-1);
+	print_matrix(tetrimino->tetrimino_matrix);
+	return (0);
+}
+
+int		main(int argc, char *argv[])
+{
+	int		fd;
+	char	*usage;
+
+	usage = "usage: ./fillit tetriminos_file\n";
+	if (argc != 2)
+	{
+		ft_putstr("usage: ./fillit tetriminos_file\n");
+		exit(0);
+	}
+	if((fd = open(argv[1], O_RDONLY)) == -1)
+	{
+		ft_putstr("Cannot open file\n");
+		return (0);
+	}
+	process_tetriminos(fd);
+	close(fd);
+	return (0);
+}
