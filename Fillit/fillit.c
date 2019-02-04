@@ -66,6 +66,23 @@ void	print_lists(tet_lst *begin)
 	}
 }
 
+void	print_tetris(char **tetris, int size)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < size)
+	{
+		j = -1;
+		while (++j < size)
+		{
+			ft_putstr(tetris[i]);
+			ft_putchar('\n');
+		}
+	}
+}
+
 int		find_top_vertex(char **tetrimino_matrix)
 {
 	int		top_vertex;
@@ -224,20 +241,50 @@ int		calculate_size(int amount)
 	int		size;
 
 	size = 2;
-	while (size * size <= amount * 4)
+	while (size * size < amount * 4)
 		size++;
 	return (size);
 }
 
 char	**arrange_tetriminos(tet_lst *tetrimino, int amount)
 {
-	tet_lst	cur_tet;
+	tet_lst		*cur_tet;
 	static char	**tetris;
 	int		size;
 
 	size = calculate_size(amount);
 	cur_tet = tetrimino;
+	printf("size: %d\n", size);
 
+	int	sharp;
+	int	i;
+	int	j;
+
+	i = -1;
+	sharp = 1;
+	tetris = (char**)malloc(sizeof(char*) * size);
+	while (++i < size)
+	{
+		tetris[i] = ft_strnew(size);
+		tetris[i] = ft_memset(tetris, '.', size);
+	}
+	//tetris[i] = '\0';
+	while (sharp <= 4)
+	{
+		i = -1;
+		while (++i < 4)
+		{
+			j = -1;
+			while (++j < 4)
+			{
+				if ((cur_tet->tetrimino_matrix)[i][j] == 'A')
+				{
+				}
+			}
+		}
+		sharp++;
+	}
+	return (tetris);
 }
 
 int		process_tetriminos(int fd)
@@ -254,7 +301,8 @@ int		process_tetriminos(int fd)
 	//validate
 	if(!(tetrimino = make_lst_tetriminos(file_str, 4)))
 		return (-1);
-	tetris = arrange_tetriminos(tetrimino);
+	tetris = arrange_tetriminos(tetrimino, 4);
+	print_tetris(tetris, 4);
 	printf("Выводим все листы: \n");
 	print_lists(tetrimino);
 	return (0);
@@ -263,9 +311,9 @@ int		process_tetriminos(int fd)
 int		main(int argc, char *argv[])
 {
 	int		fd;
-	char	*usage;
+	//char	*usage;
 
-	usage = "usage: ./fillit tetriminos_file\n";
+	//usage = "usage: ./fillit tetriminos_file\n";
 	if (argc != 2)
 	{
 		ft_putstr("usage: ./fillit tetriminos_file\n");

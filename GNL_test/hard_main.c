@@ -1,7 +1,7 @@
 #define MOLIBYTES 235436
 #include <stdio.h>
 #include <time.h>
-#include "cheller/get_next_line.h"
+#include "../New_GNL/get_next_line.h"
 #include <fcntl.h>
 
 int main()

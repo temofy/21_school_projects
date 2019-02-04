@@ -19,8 +19,8 @@ OBJ = fillit.o
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC) fillit.h
-	gcc  libft/libft.a $(SRC) -o $(NAME)
+	gcc -c -Wall -Wextra -Werror $(SRC)  
+	gcc  libft/libft.a fillit.h $(OBJ) -o $(NAME)
 clean:
 	rm -f *.o
 

@@ -1,5 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -29,8 +27,14 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	int rtn = 1;
+	/*rtn =  get_next_line(fd, &line);
+	printf("\nReady line: %s\n", line);
+	rtn =  get_next_line(fd, &line);
+	printf("\nReady line: %s\n", line);
+*/
 	while ((rtn = get_next_line(fd, &line)))
 	{
+	
 		/*printf("\nReady line: %s\n", line);
 		printf("return: %d\n", rtn);*/
 		printf("%s\n", line);
