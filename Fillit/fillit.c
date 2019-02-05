@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:01:49 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/03 16:48:56 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/05 21:37:01 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,48 +39,6 @@ char	*read_tetriminos(int fd)
 	}
 	free(buff);
 	return (file_str);
-}
-
-void	print_matrix(char **matrix)
-{
-	int		i;
-
-	i = -1;
-	while (++i < 4)
-	{
-		ft_putstr(matrix[i]);
-		ft_putchar('\n');
-	}
-}
-
-void	print_lists(tet_lst *begin)
-{
-	tet_lst	*cur_lst;
-
-	cur_lst = begin;
-	while (cur_lst)
-	{
-		print_matrix(cur_lst->tetrimino_matrix);
-		ft_putchar('\n');
-		cur_lst = cur_lst->next;
-	}
-}
-
-void	print_tetris(char **tetris, int size)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while (++i < size)
-	{
-		j = -1;
-		while (++j < size)
-		{
-			ft_putstr(tetris[i]);
-			ft_putchar('\n');
-		}
-	}
 }
 
 int		find_top_vertex(char **tetrimino_matrix)
@@ -123,6 +81,36 @@ int		find_outside_vertex(char **tetrimino_matrix)
 		}
 	}
 	return (outside_vertex);
+}
+
+int		find_right_vertex(tet_coords *coord)
+{
+	int		right_vertex;
+	int		i;
+
+	i = -1;
+	right_vertex = 0;
+	while (++i < 4)
+	{
+		if (coord->pos[i][0] > right_vertex)
+			right_vertex = coord->pos[i][0];
+	}
+	return (right_vertex);
+}
+
+int		find_left_vertex(tet_coords *coord)
+{
+	int		left_vertex;
+	int		i;
+
+	i = -1;
+	left_vertex = 4; //!!!!!Исправить
+	while (++i < 4)
+	{
+		if (coord->pos[i][0] < left_vertex)
+			left_vertex = coord->pos[i][0];
+	}
+	return (left_vertex);
 }
 
 char	**change_matrix(char **tetrimino_matrix, char letter)
@@ -236,6 +224,51 @@ tet_lst	*make_lst_tetriminos(char *str_tetriminos, int amount_tetriminos)
 	return (begin_lst);
 }
 
+tet_coords	*tet_init_pos(tet_lst *tetrimino, int amount)
+{
+	int			tet;
+	char		chr;
+	int			y;
+	int			x;
+	int			k;
+	tet_coords	*begin;
+	tet_coords	*cur_lst;
+
+	tet = -1;
+	chr = 'A';
+	begin = (tet_coords*)malloc(sizeof(tet_coords));
+	begin->prev = NULL;
+	cur_lst = begin;
+	while (++tet < amount)
+	{
+		cur_lst->symbol = chr;
+		chr++;
+		y = -1;
+		k = 0;
+		while (++y < amount)
+		{
+			x = -1;
+			while (++x < amount)
+			{
+				if (90 > (tetrimino->tetrimino_matrix)[y][x] && 60 < (tetrimino->tetrimino_matrix)[y][x])
+				{
+					cur_lst->pos[k][0] = x;
+					cur_lst->pos[k][1] = y;
+					k++;
+				}
+			}
+		}
+		if (tet + 1 != amount)
+		{
+			tetrimino = tetrimino->next;
+			cur_lst->next = (tet_coords*)malloc(sizeof(tet_coords));
+			(cur_lst->next)->prev = cur_lst;
+			cur_lst = cur_lst->next;
+		}
+	}
+	return (begin);
+}
+
 int		calculate_size(int amount)
 {
 	int		size;
@@ -246,45 +279,90 @@ int		calculate_size(int amount)
 	return (size);
 }
 
-char	**arrange_tetriminos(tet_lst *tetrimino, int amount)
+char	**create_tetris(int amount)
 {
-	tet_lst		*cur_tet;
-	static char	**tetris;
+	char	**tetris;
 	int		size;
-
-	size = calculate_size(amount);
-	cur_tet = tetrimino;
-	printf("size: %d\n", size);
-
-	int	sharp;
 	int	i;
-	int	j;
 
 	i = -1;
-	sharp = 1;
-	tetris = (char**)malloc(sizeof(char*) * size);
+	size = calculate_size(amount);
+	printf("size: %d\n", size);
+	tetris = (char**)malloc(sizeof(char*) * size + 1);
 	while (++i < size)
 	{
 		tetris[i] = ft_strnew(size);
-		tetris[i] = ft_memset(tetris, '.', size);
-	}
-	//tetris[i] = '\0';
-	while (sharp <= 4)
+		tetris[i] = ft_memset(tetris[i], '.', size);
+	}	
+	return (tetris);
+}
+
+void	zero_tetris(char **tetris, tet_coords *coord)
+{
+	int		i;
+
+	i = -1;
+	while (++i < 4)
 	{
+		if (POINT == coord->symbol)
+			POINT = '.';
+	}
+}
+
+void	move_tet(tet_coords *coord, int size)
+{
+	int	wall;
+	int		i;
+
+	i = -1;
+	wall = find_right_vertex(coord);
+	printf("right: %d\n", wall);
+	if (wall + 1 != size)
+	{
+		while (++i < 4)
+			coord->pos[i][0] += 1;
+	}
+	else if(wall == size)
+	{
+		i = -1;
+		wall = find_left_vertex(coord);
+		while (wall > 0)
+			while (++i < 4)
+				coord->pos[i][0]--;
+		i = -1;
+		//wall = find_right_vertex(coord);
+		while (++i < 4)
+			coord->pos[i][1] += 1;
+	}
+}
+
+void	arrange_tet(tet_coords *coord, char **tetris, int size)
+{
+	int	i;
+	static int k;
+
+	if (!k)
+		k = 0;
+//	while (coord)
+	while(++k <= 2)
+	{
+		printf("k = %d\n", k);
 		i = -1;
 		while (++i < 4)
 		{
-			j = -1;
-			while (++j < 4)
+			if (tetris[coord->pos[i][1]][coord->pos[i][0]] == '.')
+				tetris[coord->pos[i][1]][coord->pos[i][0]] = (char)coord->symbol;
+			else
 			{
-				if ((cur_tet->tetrimino_matrix)[i][j] == 'A')
-				{
-				}
+				zero_tetris(tetris, coord);
+				move_tet(coord, size);
+				k--;
+				arrange_tet(coord, tetris, size);
+				 break;
 			}
 		}
-		sharp++;
+		coord = coord->next;
 	}
-	return (tetris);
 }
 
 int		process_tetriminos(int fd)
@@ -292,19 +370,26 @@ int		process_tetriminos(int fd)
 	char	*file_str;
 	char	**tetris;
 	tet_lst	*tetrimino;
+	tet_coords	*positions;
+	int			amount;
 
 	if(!(file_str = read_tetriminos(fd)))
 		return (-1);
 	printf ("Выводим весь файл: \n");
 	ft_putstr(file_str);
-	printf("Обрабатываем: \n");
-	//validate
-	if(!(tetrimino = make_lst_tetriminos(file_str, 4)))
+	amount = validate(file_str);
+	printf("amount: %d\n", amount);
+	if(!(tetrimino = make_lst_tetriminos(file_str, amount)))
 		return (-1);
-	tetris = arrange_tetriminos(tetrimino, 4);
-	print_tetris(tetris, 4);
-	printf("Выводим все листы: \n");
 	print_lists(tetrimino);
+	positions = tet_init_pos(tetrimino, amount);
+	print_pos(positions, amount);
+	tetris = create_tetris(amount);
+	print_tetris(tetris, amount);
+	arrange_tet(positions, tetris, amount);
+	printf("Arranged tetris:\n");
+	print_tetris(tetris, amount);
+	print_pos(positions, amount);
 	return (0);
 }
 

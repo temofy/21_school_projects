@@ -1,5 +1,5 @@
 #include "get_next_line.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 t_list_fd *find_lst(int fd, t_list_fd *fd_list)
 {
