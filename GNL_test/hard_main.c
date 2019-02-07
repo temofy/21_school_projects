@@ -17,9 +17,9 @@ int main()
     char check[MOLIBYTES];
     for (int i = 0; i < MOLIBYTES; ++i)
 		{
-			if (i%2==0)
+			if (i % 2 == 0)
         test_str[i] = 'i';
-			else 
+			else
 				test_str[i]='\n';
 		}
     test_str[MOLIBYTES] = 0;
@@ -30,6 +30,7 @@ int main()
     fd = open("data", O_RDONLY);
 
     while(get_next_line(fd, &line))
+			printf(".");
     end = clock();
     printf("%ld\n", strlen(line));
     printf("Result of strcmp : %d\n", strcmp(line, test_str));

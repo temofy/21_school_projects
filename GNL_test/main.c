@@ -34,7 +34,6 @@ int		main(int argc, char **argv)
 */
 	while ((rtn = get_next_line(fd, &line)))
 	{
-	
 		/*printf("\nReady line: %s\n", line);
 		printf("return: %d\n", rtn);*/
 		printf("%s\n", line);

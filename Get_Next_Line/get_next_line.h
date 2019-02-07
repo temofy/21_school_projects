@@ -6,14 +6,14 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 12:12:53 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/03 19:31:13 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/06 12:54:02 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 0
+# define BUFF_SIZE 50000
 # define PENULT_CHR buff[BUFF_SIZE - 1] == '\n' && i == BUFF_SIZE - 1
 # include "libft/libft.h"
 
