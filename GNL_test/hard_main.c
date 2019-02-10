@@ -17,10 +17,10 @@ int main()
     char check[MOLIBYTES];
     for (int i = 0; i < MOLIBYTES; ++i)
 		{
-			if (i % 2 == 0)
+			//if (i % 2 == 0)
         test_str[i] = 'i';
-			else
-				test_str[i]='\n';
+			/*else
+				test_str[i]='\n';*/
 		}
     test_str[MOLIBYTES] = 0;
     fd = open("data", O_RDWR);

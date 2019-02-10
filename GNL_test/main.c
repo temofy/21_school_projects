@@ -36,7 +36,7 @@ int		main(int argc, char **argv)
 	{
 		/*printf("\nReady line: %s\n", line);
 		printf("return: %d\n", rtn);*/
-		printf("%s\n", line);
+	printf("%s\n", line);
 		free(line);
 	}
 	if (ret < 0)

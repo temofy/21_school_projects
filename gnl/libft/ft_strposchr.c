@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strposchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/29 12:12:53 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/10 17:14:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/02/10 20:03:19 by cheller           #+#    #+#             */
+/*   Updated: 2019/02/10 20:08:49 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# define BUFF_SIZE 23000
-# define PENULT_CHR buff[BUFF_SIZE - 1] == '\n' && i == BUFF_SIZE - 1
-# include "libft/libft.h"
+int		ft_strposchr(char *s, int c)
+{
+	size_t	i;
 
-int		get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	while (i < (ft_strlen(s)))
+	{
+		if (s[i] == (char)c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}

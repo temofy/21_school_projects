@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 12:12:53 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/07 21:20:29 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/10 18:19:48 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GET_NEXT_LINE_H
 
 # define BUFF_SIZE 50000
-# define PENULT_CHR buff[BUFF_SIZE - 1] == '\n' && i == BUFF_SIZE - 1
 # include "libft/libft.h"
 
 int		get_next_line(const int fd, char **line);
