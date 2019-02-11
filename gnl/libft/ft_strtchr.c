@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 16:48:50 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/06 12:07:09 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/11 21:10:18 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,22 @@ char	*ft_strtchr(char *s, int c)
 	int		i;
 
 	i = -1;
-	while (++i < (int)ft_strlen(s))
+	while (s[i] != (char)c && s[i] != '\0')
+		i++;
+	if (s[i] == (char)c)
+	{
+		str = ft_strnew(i);
+		str = ft_strncpy(str, s, i);
+		return (str);
+	}
+	/*while (++i < (int)ft_strlen(s))
 	{
 		if (s[i] == (char)c)
 		{
-			str = ft_strnew(i);
+		str = ft_strnew(i);
 			str = ft_strncpy(str, s, i);
 			return (str);
 		}
-	}
+	}*/
 	return (NULL);
 }
