@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strftchr.c                                      :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 16:46:39 by cheller           #+#    #+#             */
-/*   Updated: 2019/01/24 16:46:54 by cheller          ###   ########.fr       */
+/*   Created: 2019/02/12 12:17:19 by cheller           #+#    #+#             */
+/*   Updated: 2019/02/12 13:31:14 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
+#include <stdio.h>
 
-char	*ft_strftchr(char *s, int pos, int c)
+int		main(void)
 {
 	char	*str;
-	int		i;
+	char	*tmp;
 
-	i = 0;
-	s += pos;
-	while (i < (int)ft_strlen(s))
-	{
-		if (s[i] == (char)c)
-		{
-			str = ft_strnew(i);
-			str = ft_strncpy(str, s, i);
-			return (str);
-		}
-		i++;
-	}
-	str = ft_strnew(ft_strlen(s));
-	str = ft_strcpy(str, s);
-	return (str);
+	str = ft_strnew(10);
+	str = " New Line\n";
+
+	tmp = ft_strtchr(str, '\n');
+	printf("Строка до: %s\n", tmp);
+	tmp = ft_strpchr(str, '\n');
+	printf("Строка после: %s\n", tmp);
+	return (1);
 }

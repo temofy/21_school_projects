@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 16:07:18 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/11 19:40:09 by cheller          ###   ########.fr       */
+/*   Created: 2019/02/06 11:53:46 by cheller           #+#    #+#             */
+/*   Updated: 2019/02/12 20:25:32 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-//#include <stdio.h>
+#include <stdio.h>
 
-void		free_line(int fd, t_list_fd *first_lst)
+int		free_lst(int fd, t_list_fd *first_lst)
 {
 	t_list_fd	*prev_lst;
 	t_list_fd	*next_lst;
@@ -21,9 +21,11 @@ void		free_line(int fd, t_list_fd *first_lst)
 	prev_lst = first_lst;
 	next_lst = first_lst;
 	while (next_lst)
-{
+	{
 		if (fd == next_lst->fd)
 		{
+			if (next_lst->next_lst && prev_lst == next_lst)
+				first_lst = next_lst->next_lst;
 			if (prev_lst != next_lst)
 			{
 				if (next_lst->next_lst)
@@ -31,13 +33,13 @@ void		free_line(int fd, t_list_fd *first_lst)
 				else
 					prev_lst->next_lst = NULL;
 			}
-			free(next_lst->tmp_line);
 			free(next_lst);
-			return ;
+			return (0);
 		}
 		prev_lst = next_lst;
 		next_lst = next_lst->next_lst;
 	}
+	return (0);
 }
 
 t_list_fd *find_lst(int fd, t_list_fd *fd_list)
@@ -56,34 +58,35 @@ t_list_fd *find_lst(int fd, t_list_fd *fd_list)
 	return (begin->next_lst);
 }
 
-int		write_lines(int fd, t_list_fd *cur_lst, char **line, int bytes)
+int		check_remainder(t_list_fd *cur_lst, char **line)
 {
 	char	*tmp;
-	int	length;
+	int		len;
+	int		i;
 
-	length = ft_strposchr(cur_lst->tmp_line, '\n');
-	if ((cur_lst->tmp_line)[length] == '\n')
+	i = 0;
+	if (cur_lst->tmp_line)
 	{
-		*line = ft_strsub(cur_lst->tmp_line, 0, length);
-		tmp = ft_strdup(cur_lst->tmp_line + length + 1);
-		free(cur_lst->tmp_line);
-		cur_lst->tmp_line = tmp;
-		if ((cur_lst->tmp_line)[0] == '\0')
+		len = ft_strlen(cur_lst->tmp_line);
+		while (cur_lst->tmp_line[i] != '\n' && i < len)
+			i++;
+		if (i < len)
 		{
+			tmp = cur_lst->tmp_line;
+			*line = ft_strsub(tmp, 0, i);
+			cur_lst->tmp_line = ft_strsub(tmp, i + 1, len - i);
+			free(tmp);
+			return (1);
+		}
+		else if (i == len)
+		{
+			if (i != 0)
+				*line = ft_strdup(cur_lst->tmp_line);
 			free(cur_lst->tmp_line);
 			cur_lst->tmp_line = NULL;
 		}
 	}
-	else
-	{
-		if (bytes == BUFF_SIZE)
-			return (get_next_line(fd, line));
-		*line = ft_strdup(cur_lst->tmp_line);
-		free(cur_lst->tmp_line);
-		cur_lst->tmp_line = NULL;
-	}
-
-	return (1);
+	return (0);
 }
 
 int	get_next_line(const int fd, char **line)
@@ -91,70 +94,27 @@ int	get_next_line(const int fd, char **line)
 	static t_list_fd	*fd_lists;
 	char			buff[BUFF_SIZE + 1];
 	char			*tmp;
-	//int				size;
 	int			bytes;
-	//t_list_fd	*cur_lst;
+	t_list_fd	*cur_lst;
 
 	if (fd < 0 || BUFF_SIZE < 0 || !line)
 		return (-1);
+	*line = NULL;
 	if (!fd_lists)
 		fd_lists = ft_lstnew_fd(fd, NULL);
-	while ((bytes = read(fd, buff, BUFF_SIZE)) > 0)
-	{
-		buff[bytes] = '\0';
-		if (fd_lists->tmp_line == NULL)
-			fd_lists->tmp_line = ft_strnew(1);
-		tmp = ft_strjoin(fd_lists->tmp_line, buff);
-		free(fd_lists->tmp_line);
-		fd_lists->tmp_line = tmp;
-		if (ft_strchr(buff, '\n'))
-			break ;
-	}
-	if (bytes == -1)
-		return (-1);
-	else if (bytes == 0 && !(fd_lists->tmp_line))
-		return (0);
-	return (write_lines(fd, fd_lists, line, bytes));
-}
-	/**line = NULL;
-	size = -1;
 	cur_lst = find_lst(fd, fd_lists);
 	if (check_remainder(cur_lst, line))
 		return (1);
-	while (size == -1)
+	while (!(cur_lst->tmp_line))
 	{
 		if ((bytes = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
 		if (bytes == 0 && !(*line) &&!(cur_lst->tmp_line))
-			return (0);
+			return (free_lst(fd, fd_lists));
 		else if (bytes == 0)
 			return (1);
 		buff[bytes] = '\0';
-		size = ft_strposchr(buff, '\n');
-		if (size != -1)
-		{
-			*line = ft_strsub(buff, 0, size - 1);
-			if (!(cur_lst->tmp_line))
-				cur_lst->tmp_line = ft_strsub(buff, size + 1, BUFF_SIZE - size);
-			else
-			{
-				tmp = cur_lst->tmp_line;
-				cur_lst->tmp_line = ft_strjoin(cur_lst->tmp_line, buff + size);
-				free(tmp);
-			}
-		}
-		else
-		{
-			if ((cur_lst->tmp_line))
-			{
-				tmp = cur_lst->tmp_line;
-				cur_lst->tmp_line = ft_strjoin(cur_lst->tmp_line, buff);
-				free(tmp);
-			}
-			else
-				cur_lst->tmp_line = ft_strdup(buff);
-		}
-
+		tmp = ft_strtchr(buff, '\n');
 		if (!tmp)
 		{
 			if (*line)
@@ -162,7 +122,6 @@ int	get_next_line(const int fd, char **line)
 				tmp = *line;
 				*line = ft_strjoin(*line, buff);
 				free(tmp);
-				tmp = NULL;
 			}
 			else
 				*line = ft_strdup(buff);
@@ -172,9 +131,11 @@ int	get_next_line(const int fd, char **line)
 			if (*line)
 				*line = ft_strjoin(*line, tmp);
 			else
-				*line = tmp;
+				*line = ft_strdup(tmp);
 			cur_lst->tmp_line = ft_strdup(ft_strpchr(buff, '\n'));
+			free(tmp);
+			break ;
 		}
 	}
 	return (1);
-}*/
+}

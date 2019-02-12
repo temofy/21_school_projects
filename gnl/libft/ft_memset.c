@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 15:55:48 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/20 12:33:02 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/12 20:22:25 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char		*ptr;
 
+	ptr = NULL;
 	if (len == 0)
 		return (b);
 	ptr = (unsigned char*)b;

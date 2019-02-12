@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/06 11:53:46 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/10 18:32:02 by cheller          ###   ########.fr       */
+/*   Created: 2019/02/11 16:07:18 by cheller           #+#    #+#             */
+/*   Updated: 2019/02/11 19:40:09 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 void		free_line(int fd, t_list_fd *first_lst)
 {
@@ -56,28 +56,34 @@ t_list_fd *find_lst(int fd, t_list_fd *fd_list)
 	return (begin->next_lst);
 }
 
-int		check_remainder(t_list_fd *cur_lst, char **line)
+int		write_lines(int fd, t_list_fd *cur_lst, char **line, int bytes)
 {
 	char	*tmp;
+	int	length;
 
-	if (cur_lst->tmp_line)
+	length = ft_strposchr(cur_lst->tmp_line, '\n');
+	if ((cur_lst->tmp_line)[length] == '\n')
 	{
-			*line = ft_strtchr(cur_lst->tmp_line, '\n');
-			if (*line)
-			{
-				tmp = cur_lst->tmp_line;
-				cur_lst->tmp_line = ft_strdup(ft_strpchr(tmp, '\n'));
-				free(tmp);
-				return (1);
-			}
-			else
-			{
-				*line = ft_strdup(cur_lst->tmp_line);
-				free(cur_lst->tmp_line);
-				cur_lst->tmp_line = NULL;
-			}
+		*line = ft_strsub(cur_lst->tmp_line, 0, length);
+		tmp = ft_strdup(cur_lst->tmp_line + length + 1);
+		free(cur_lst->tmp_line);
+		cur_lst->tmp_line = tmp;
+		if ((cur_lst->tmp_line)[0] == '\0')
+		{
+			free(cur_lst->tmp_line);
+			cur_lst->tmp_line = NULL;
+		}
 	}
-	return (0);
+	else
+	{
+		if (bytes == BUFF_SIZE)
+			return (get_next_line(fd, line));
+		*line = ft_strdup(cur_lst->tmp_line);
+		free(cur_lst->tmp_line);
+		cur_lst->tmp_line = NULL;
+	}
+
+	return (1);
 }
 
 int	get_next_line(const int fd, char **line)
@@ -85,18 +91,37 @@ int	get_next_line(const int fd, char **line)
 	static t_list_fd	*fd_lists;
 	char			buff[BUFF_SIZE + 1];
 	char			*tmp;
+	//int				size;
 	int			bytes;
-	t_list_fd	*cur_lst;
+	//t_list_fd	*cur_lst;
 
 	if (fd < 0 || BUFF_SIZE < 0 || !line)
 		return (-1);
-	*line = NULL;
 	if (!fd_lists)
 		fd_lists = ft_lstnew_fd(fd, NULL);
+	while ((bytes = read(fd, buff, BUFF_SIZE)) > 0)
+	{
+		buff[bytes] = '\0';
+		if (fd_lists->tmp_line == NULL)
+			fd_lists->tmp_line = ft_strnew(1);
+		tmp = ft_strjoin(fd_lists->tmp_line, buff);
+		free(fd_lists->tmp_line);
+		fd_lists->tmp_line = tmp;
+		if (ft_strchr(buff, '\n'))
+			break ;
+	}
+	if (bytes == -1)
+		return (-1);
+	else if (bytes == 0 && !(fd_lists->tmp_line))
+		return (0);
+	return (write_lines(fd, fd_lists, line, bytes));
+}
+	/**line = NULL;
+	size = -1;
 	cur_lst = find_lst(fd, fd_lists);
 	if (check_remainder(cur_lst, line))
 		return (1);
-	while (!(cur_lst->tmp_line))
+	while (size == -1)
 	{
 		if ((bytes = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
@@ -105,7 +130,31 @@ int	get_next_line(const int fd, char **line)
 		else if (bytes == 0)
 			return (1);
 		buff[bytes] = '\0';
-		tmp = ft_strtchr(buff, '\n');
+		size = ft_strposchr(buff, '\n');
+		if (size != -1)
+		{
+			*line = ft_strsub(buff, 0, size - 1);
+			if (!(cur_lst->tmp_line))
+				cur_lst->tmp_line = ft_strsub(buff, size + 1, BUFF_SIZE - size);
+			else
+			{
+				tmp = cur_lst->tmp_line;
+				cur_lst->tmp_line = ft_strjoin(cur_lst->tmp_line, buff + size);
+				free(tmp);
+			}
+		}
+		else
+		{
+			if ((cur_lst->tmp_line))
+			{
+				tmp = cur_lst->tmp_line;
+				cur_lst->tmp_line = ft_strjoin(cur_lst->tmp_line, buff);
+				free(tmp);
+			}
+			else
+				cur_lst->tmp_line = ft_strdup(buff);
+		}
+
 		if (!tmp)
 		{
 			if (*line)
@@ -123,10 +172,9 @@ int	get_next_line(const int fd, char **line)
 			if (*line)
 				*line = ft_strjoin(*line, tmp);
 			else
-				*line = ft_strdup(tmp);
+				*line = tmp;
 			cur_lst->tmp_line = ft_strdup(ft_strpchr(buff, '\n'));
-			free(tmp);
 		}
 	}
 	return (1);
-}
+}*/

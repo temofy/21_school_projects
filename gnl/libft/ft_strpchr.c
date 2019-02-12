@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 14:57:43 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/10 13:46:58 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/12 17:28:32 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ char	*ft_strpchr(char *s, int c)
 {
 	char	*chr;
 	size_t	i;
+	size_t len;
 
+	len = ft_strlen(s);
 	i = 0;
-	while (i < (ft_strlen(s)))
-	{
-		if (s[i] == (char)c)
-		{
-			if ((i + 1) < (ft_strlen(s)))
-			{
-				chr = &((char*)s)[i + 1];
-				return (chr);
-			}
-		}
+	while (s[i] != (char)c && i < len)
 		i++;
+	if (s[i] == (char)c)
+	{
+		if ((i + 1) < len)
+		{
+			chr = &((char*)s)[i + 1];
+			return (chr);
+		}
 	}
 	return (NULL);
 }

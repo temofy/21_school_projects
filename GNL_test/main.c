@@ -16,7 +16,7 @@ int		main(int argc, char **argv)
  {
 	int		fd;
 	ssize_t	ret;
-	char			ch[BUFF_SIZE];
+	//char			ch[BUFF_SIZE];
 	char			*line;
 
 	line = NULL;
@@ -34,8 +34,8 @@ int		main(int argc, char **argv)
 */
 	while ((rtn = get_next_line(fd, &line)))
 	{
-		//printf("\nReady line: %s\n", line);
-		//printf("return: %d\n", rtn);*/
+		//printf("Ready line: %s\n", line);
+		//printf("return: %d\n", rtn);
 		printf("%s\n", line);
 		free(line);
 	}

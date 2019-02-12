@@ -6,14 +6,14 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 12:12:53 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/11 19:48:24 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/12 20:26:17 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 50000
+# define BUFF_SIZE 500
 
 # include "libft/libft.h"
 
