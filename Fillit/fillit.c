@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:01:49 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/05 21:37:01 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/14 21:40:17 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,21 @@ int		find_left_vertex(tet_coords *coord)
 	return (left_vertex);
 }
 
+int		find_bottom_vertex(tet_coords *coord)
+{
+	int		bottom_vertex;
+	int		i;
+
+	i = -1;
+	bottom_vertex = 0;
+	while (++i < 4)
+	{
+		if (coord->pos[i][1] > bottom_vertex)
+			bottom_vertex = coord->pos[i][1];
+	}
+	return (bottom_vertex);
+}
+
 char	**change_matrix(char **tetrimino_matrix, char letter)
 {
 	int		top_vertex;
@@ -121,7 +136,9 @@ char	**change_matrix(char **tetrimino_matrix, char letter)
 	int		j;
 
 	top_vertex = find_top_vertex(tetrimino_matrix);
+	printf("top_vertex: %d\n", top_vertex);
 	outside_vertex = find_outside_vertex(tetrimino_matrix);
+	printf("left_vertex: %d\n", outside_vertex);
 	i = -1;
 	while (++i < 4)
 	{
@@ -131,7 +148,8 @@ char	**change_matrix(char **tetrimino_matrix, char letter)
 			if (tetrimino_matrix[i][j] == '#')
 			{
 				tetrimino_matrix[i - top_vertex][j - outside_vertex] = letter;
-				tetrimino_matrix[i][j] = '.';
+				if (i != (i - top_vertex) || (j != (j - outside_vertex)))
+					tetrimino_matrix[i][j] = '.';
 			}
 		}
 	}
@@ -178,6 +196,8 @@ char	**save_tetrimino(char *str_tetriminos)
 			return(NULL);//free
 	}
 	tetrimino_matrix = write_into_matrix(tetrimino_matrix, str_tetriminos);
+	//printf("АЛЁ\n");
+	print_matrix(tetrimino_matrix);
 	tetrimino_matrix = change_matrix(tetrimino_matrix, letter);
 	letter++;
 	return (tetrimino_matrix);
@@ -293,7 +313,7 @@ char	**create_tetris(int amount)
 	{
 		tetris[i] = ft_strnew(size);
 		tetris[i] = ft_memset(tetris[i], '.', size);
-	}	
+	}
 	return (tetris);
 }
 
@@ -322,17 +342,25 @@ void	move_tet(tet_coords *coord, int size)
 		while (++i < 4)
 			coord->pos[i][0] += 1;
 	}
-	else if(wall == size)
+	else if(wall + 1 == size)
 	{
-		i = -1;
 		wall = find_left_vertex(coord);
+		printf("left: %d\n", wall);
 		while (wall > 0)
+		{
+			i = -1;
 			while (++i < 4)
 				coord->pos[i][0]--;
+			wall--;
+		}
+		//print_pos(coord, size);
+		wall = find_left_vertex(coord);
+		printf("left 2: %d\n", wall);
 		i = -1;
-		//wall = find_right_vertex(coord);
-		while (++i < 4)
-			coord->pos[i][1] += 1;
+		wall = find_bottom_vertex(coord);
+		if (wall + 1 != size)
+			while (++i < 4)
+				coord->pos[i][1] += 1;
 	}
 }
 
@@ -344,7 +372,7 @@ void	arrange_tet(tet_coords *coord, char **tetris, int size)
 	if (!k)
 		k = 0;
 //	while (coord)
-	while(++k <= 2)
+	while(++k <= 4)
 	{
 		printf("k = %d\n", k);
 		i = -1;
@@ -358,7 +386,8 @@ void	arrange_tet(tet_coords *coord, char **tetris, int size)
 				move_tet(coord, size);
 				k--;
 				arrange_tet(coord, tetris, size);
-				 break;
+				printf("Выполнилось размещение\n");
+				return ;
 			}
 		}
 		coord = coord->next;

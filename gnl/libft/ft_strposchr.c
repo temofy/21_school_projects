@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/10 20:03:19 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/11 19:36:21 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/13 15:31:46 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ int		ft_strposchr(char *s, int c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != (char)c  && s[i] != '\0')
-	{
-		/*if (s[i] == (char)c)
-			return (i);*/
+	while (s[i] != (char)c && s[i] != '\0')
 		i++;
-	}
 	return (i);
 }

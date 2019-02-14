@@ -37,7 +37,7 @@ int		main(int argc, char **argv)
 		//printf("Ready line: %s\n", line);
 		//printf("return: %d\n", rtn);
 		printf("%s\n", line);
-		free(line);
+		//free(line);
 	}
 	if (ret < 0)
 		printf("Cannot read file\n");
