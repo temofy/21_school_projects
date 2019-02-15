@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:01:49 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/14 21:40:17 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:19:52 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*read_tetriminos(int fd)
 	return (file_str);
 }
 
-int		find_top_vertex(char **tetrimino_matrix)
+int		find_top_outside_vertex(char **tetrimino_matrix)
 {
 	int		top_vertex;
 	int		i;
@@ -98,19 +98,35 @@ int		find_right_vertex(tet_coords *coord)
 	return (right_vertex);
 }
 
+
 int		find_left_vertex(tet_coords *coord)
 {
 	int		left_vertex;
 	int		i;
 
 	i = -1;
-	left_vertex = 4; //!!!!!Исправить
+	left_vertex = 4; //!!!!!Исправить на размер тетриса
 	while (++i < 4)
 	{
 		if (coord->pos[i][0] < left_vertex)
 			left_vertex = coord->pos[i][0];
 	}
 	return (left_vertex);
+}
+
+int		find_top_vertex(tet_coords *coord)
+{
+	int		top_vertex;
+	int		i;
+
+	i = 0;
+	top_vertex = coord->pos[0][1];
+	while (++i < 4)
+	{
+		if (coord->pos[i][1] < top_vertex)
+			top_vertex = coord->pos[i][1];
+	}
+	return (top_vertex);
 }
 
 int		find_bottom_vertex(tet_coords *coord)
@@ -135,10 +151,10 @@ char	**change_matrix(char **tetrimino_matrix, char letter)
 	int		i;
 	int		j;
 
-	top_vertex = find_top_vertex(tetrimino_matrix);
-	printf("top_vertex: %d\n", top_vertex);
+	top_vertex = find_top_outside_vertex(tetrimino_matrix);
+	//printf("top_vertex: %d\n", top_vertex);
 	outside_vertex = find_outside_vertex(tetrimino_matrix);
-	printf("left_vertex: %d\n", outside_vertex);
+	//printf("left_vertex: %d\n", outside_vertex);
 	i = -1;
 	while (++i < 4)
 	{
@@ -197,7 +213,7 @@ char	**save_tetrimino(char *str_tetriminos)
 	}
 	tetrimino_matrix = write_into_matrix(tetrimino_matrix, str_tetriminos);
 	//printf("АЛЁ\n");
-	print_matrix(tetrimino_matrix);
+	//print_matrix(tetrimino_matrix);
 	tetrimino_matrix = change_matrix(tetrimino_matrix, letter);
 	letter++;
 	return (tetrimino_matrix);
@@ -242,6 +258,15 @@ tet_lst	*make_lst_tetriminos(char *str_tetriminos, int amount_tetriminos)
 		str_tetriminos += 21;
 	}
 	return (begin_lst);
+}
+
+void	return_start_pos(tet_lst *tetrimino, tet_coords *coord)
+{
+	int		left_vertex;
+	int		top_vertex;
+
+	left_vertex = find_left_vertex(coord);
+	top_vertex = find_top_vertex(coord);
 }
 
 tet_coords	*tet_init_pos(tet_lst *tetrimino, int amount)
@@ -329,14 +354,14 @@ void	zero_tetris(char **tetris, tet_coords *coord)
 	}
 }
 
-void	move_tet(tet_coords *coord, int size)
+int	move_tet(tet_coords *coord, int size)
 {
 	int	wall;
 	int		i;
 
 	i = -1;
 	wall = find_right_vertex(coord);
-	printf("right: %d\n", wall);
+	printf("right: %d\tsymbol: %c\n", wall + 1, coord->symbol);
 	if (wall + 1 != size)
 	{
 		while (++i < 4)
@@ -345,7 +370,7 @@ void	move_tet(tet_coords *coord, int size)
 	else if(wall + 1 == size)
 	{
 		wall = find_left_vertex(coord);
-		printf("left: %d\n", wall);
+		//printf("left: %d\n", wall);
 		while (wall > 0)
 		{
 			i = -1;
@@ -354,25 +379,31 @@ void	move_tet(tet_coords *coord, int size)
 			wall--;
 		}
 		//print_pos(coord, size);
-		wall = find_left_vertex(coord);
-		printf("left 2: %d\n", wall);
+		/*wall = find_left_vertex(coord);
+		printf("left 2: %d\n", wall);*/
 		i = -1;
 		wall = find_bottom_vertex(coord);
-		if (wall + 1 != size)
-			while (++i < 4)
-				coord->pos[i][1] += 1;
+		printf("bottom: %d\n", wall + 1);
+		if (wall + 1 == size)
+			return (-1);
+		while (++i < 4)
+			coord->pos[i][1] += 1;
 	}
+	return (1);
 }
 
-void	arrange_tet(tet_coords *coord, char **tetris, int size)
+int	arrange_tet(tet_coords *coord, char **tetris, int size)
 {
 	int	i;
 	static int k;
+	static tet_coords	*prev_tet;
 
+	if (!prev_tet)
+		prev_tet = coord;
 	if (!k)
 		k = 0;
 //	while (coord)
-	while(++k <= 4)
+	while(++k <= 3)
 	{
 		printf("k = %d\n", k);
 		i = -1;
@@ -383,15 +414,28 @@ void	arrange_tet(tet_coords *coord, char **tetris, int size)
 			else
 			{
 				zero_tetris(tetris, coord);
-				move_tet(coord, size);
 				k--;
-				arrange_tet(coord, tetris, size);
+				if (move_tet(coord, size) == -1)
+					return (-1);
+				if(arrange_tet(coord, tetris, size) == -1)
+				{
+					printf("Fail!\n");
+					zero_tetris(tetris, coord);
+					print_pos(coord);
+					//if (move_tet(coord, size) == -1)
+						//return (-1);
+					//k--;
+					/*if (arrange_tet(coord, tetris, size) == -1)
+						return (-1);*/
+				}
 				printf("Выполнилось размещение\n");
-				return ;
+				return (1);
 			}
+			prev_tet = coord;
 		}
 		coord = coord->next;
 	}
+	return (1);
 }
 
 int		process_tetriminos(int fd)
@@ -404,21 +448,25 @@ int		process_tetriminos(int fd)
 
 	if(!(file_str = read_tetriminos(fd)))
 		return (-1);
-	printf ("Выводим весь файл: \n");
-	ft_putstr(file_str);
-	amount = validate(file_str);
+	//printf ("Выводим весь файл: \n");
+	//ft_putstr(file_str);
+	if ((amount = validate(file_str)) == -1)
+	{
+		ft_putstr("error\n");
+		return (-1);
+	}
 	printf("amount: %d\n", amount);
 	if(!(tetrimino = make_lst_tetriminos(file_str, amount)))
 		return (-1);
 	print_lists(tetrimino);
 	positions = tet_init_pos(tetrimino, amount);
-	print_pos(positions, amount);
+	//print_pos(positions);
 	tetris = create_tetris(amount);
 	print_tetris(tetris, amount);
 	arrange_tet(positions, tetris, amount);
 	printf("Arranged tetris:\n");
 	print_tetris(tetris, amount);
-	print_pos(positions, amount);
+	print_pos(positions);
 	return (0);
 }
 

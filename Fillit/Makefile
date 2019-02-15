@@ -6,7 +6,7 @@
 #    By: cheller <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/31 15:07:13 by cheller           #+#    #+#              #
-#    Updated: 2019/02/05 16:58:43 by qweissna         ###   ########.fr        #
+#    Updated: 2019/02/15 14:32:42 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fillit
 
 SRC = fillit.c validation.c prints.c
 
-OBJ = fillit.o validation.o
+OBJ = fillit.o validation.o prints.o
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: qweissna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 16:37:08 by qweissna          #+#    #+#             */
-/*   Updated: 2019/02/05 17:24:51 by qweissna         ###   ########.fr       */
+/*   Updated: 2019/02/15 14:41:32 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,15 @@ void	print_tetris(char **tetris, int size)
 	}
 }
 
-void	print_pos(tet_coords *coords, int amount)
+void	print_pos(tet_coords *coords)
 {
-	int		i;
 	int		k;
 
-	i = -1;
-	while (++i < amount)
+	while (coords)
 	{
 		k = -1;
 		printf("********Coordinates************\n");
-		printf("symbol: %d\n", coords->symbol);
+		printf("symbol: %c\n", coords->symbol);
 		while (++k < 4)
 			printf("point:\n\tx: %d\n\ty: %d\n", coords->pos[k][0], coords->pos[k][1]);
 		printf("*******************************\n");

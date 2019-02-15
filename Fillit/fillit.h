@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 17:57:30 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/05 18:28:00 by qweissna         ###   ########.fr       */
+/*   Updated: 2019/02/15 14:42:16 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int						validate(char *line);
 void					print_matrix(char **matrix);
 void					print_lists(tet_lst *begin);
 void					print_tetris(char **tetris, int size);
-void					print_pos(tet_coords *coords, int amount);
+void					print_pos(tet_coords *coords);
 #endif
