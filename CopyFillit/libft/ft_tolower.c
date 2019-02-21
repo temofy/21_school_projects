@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2018/12/18 16:24:26 by cheller           #+#    #+#             */
+/*   Updated: 2018/12/18 16:30:31 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int		ft_tolower(int c)
 {
-	char	*str;
-
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

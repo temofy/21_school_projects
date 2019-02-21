@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2019/01/24 16:52:06 by cheller           #+#    #+#             */
+/*   Updated: 2019/01/24 17:10:01 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+t_list_fd		*ft_lstnew_fd(int fd, char *tmp)
 {
-	char	*str;
+	t_list_fd	*lstnew;
 
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
+	if (!(lstnew = (t_list_fd*)malloc(sizeof(t_list_fd))))
 		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	lstnew->fd = fd;
+	lstnew->tmp_line = tmp;
+	lstnew->next_lst = NULL;
+	return (lstnew);
 }

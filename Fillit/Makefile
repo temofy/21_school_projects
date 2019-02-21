@@ -3,28 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cheller <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: cheller <cheller@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/31 15:07:13 by cheller           #+#    #+#              #
-#    Updated: 2019/02/15 14:32:42 by cheller          ###   ########.fr        #
+#    Updated: 2019/02/21 19:47:27 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
-
-SRC = fillit.c validation.c prints.c
-
-OBJ = fillit.o validation.o prints.o
+LIB = libft
+INC = fillit.h
+SRC = fillit.c validation.c prints.c find_vertices.c free.c ft_lists.c changing_lists.c
+OBJ = $(SRC:.c=.o)
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC) fillit.h
-	gcc  libft/libft.a $(SRC) -o $(NAME)
+$(NAME): $(OBJ) fillit.h
+	@make -C $(LIB)
+	@gcc -c $(FLAGS) $(SRC) -I$(INC)
+	@gcc libft/libft.a $(SRC) -o $(NAME)
+	@make fclean -C $(LIB)
+
+%.o: %.c fillit.h
+	@gcc -c $(FLAGS) $<
+
 clean:
-	rm -f *.o
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all

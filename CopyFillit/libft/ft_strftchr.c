@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strftchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2019/01/24 16:46:39 by cheller           #+#    #+#             */
+/*   Updated: 2019/01/24 16:46:54 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strftchr(char *s, int pos, int c)
 {
 	char	*str;
+	int		i;
 
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
+	i = 0;
+	s += pos;
+	while (i < (int)ft_strlen(s))
+	{
+		if (s[i] == (char)c)
+		{
+			str = ft_strnew(i);
+			str = ft_strncpy(str, s, i);
+			return (str);
+		}
+		i++;
+	}
+	str = ft_strnew(ft_strlen(s));
+	str = ft_strcpy(str, s);
 	return (str);
 }

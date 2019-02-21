@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2018/12/14 11:46:31 by cheller           #+#    #+#             */
+/*   Updated: 2018/12/28 14:59:45 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*str;
+	unsigned int	i;
+	unsigned int	dst_len;
+	unsigned int	src_len;
 
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = dst_len;
+	if (size <= dst_len)
+		return (size + src_len);
+	while ((i < size - 1) && src[i - dst_len])
+	{
+		dst[i] = src[i - dst_len];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2018/12/14 19:26:36 by cheller           #+#    #+#             */
+/*   Updated: 2018/12/28 15:52:25 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strstr(const char *hys, const char *need)
 {
-	char	*str;
+	int		i;
+	int		j;
 
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	i = 0;
+	if (ft_strlen(need) == 0)
+		return ((char*)hys);
+	while (hys[i])
+	{
+		j = 0;
+		while (need[j] == hys[i + j])
+		{
+			if (need[j + 1] == '\0')
+				return ((char*)hys + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }
