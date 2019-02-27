@@ -1,0 +1,3 @@
+http://microsin.net/programming/arm/secrets-of-printf.html --- about flags of printf
+https://learnc.info/c/vararg_functions.html --- unknown number of parametrs
+http://qaru.site/questions/106780/code-for-printf-function-in-c  ----- исходники, интересно ознакомиться, но очень запутанно
