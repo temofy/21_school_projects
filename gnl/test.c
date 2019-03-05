@@ -18,12 +18,17 @@ int		main(void)
 	char	*str;
 	char	*tmp;
 
-	str = ft_strnew(10);
-	str = " New Line\n";
-
-	tmp = ft_strtchr(str, '\n');
-	printf("Строка до: %s\n", tmp);
-	tmp = ft_strpchr(str, '\n');
-	printf("Строка после: %s\n", tmp);
+	tmp = NULL;
+	//str = ft_strnew(10);
+	str = "It's New Line\n";
+	tmp = ft_strdup("\0");
+	printf("%s\n", tmp);
+	printf("Строка до: %sEnd\n", tmp);
+//	tmp = ft_strpchr(str, '\n');
+	///printf("Строка после: %s\n", tmp);
+	//free(str);
+	free(tmp);
+	//tmp = ft_strnew(10); 
+	//free(tmp);
 	return (1);
 }

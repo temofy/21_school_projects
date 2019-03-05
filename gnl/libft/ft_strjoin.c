@@ -14,17 +14,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
+	char		*str;
 	int		len_s1;
 	int		len_s2;
 	int		i;
 
+	str = NULL;
 	if (!s1 || !s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	i = 0;
-	if (!(str = ft_strnew(len_s1 + len_s2)))
+	if (!(str = (char*)malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
 		return (NULL);
 	while (i < len_s1)
 	{
@@ -36,5 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i] = s2[i - len_s1];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }

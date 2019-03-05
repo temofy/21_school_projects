@@ -26,7 +26,8 @@ char	*ft_strpchr(char *s, int c)
 	{
 		if ((i + 1) < len)
 		{
-			chr = &((char*)s)[i + 1];
+			chr = s + i + 1;
+			//chr = &((char*)s)[i + 1];
 			return (chr);
 		}
 	}

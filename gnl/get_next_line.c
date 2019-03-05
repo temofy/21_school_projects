@@ -12,6 +12,7 @@
 
 #include "get_next_line.h"
 #include <stdio.h>
+//#define ft_strdup strdup
 
 int		free_lst(int fd, t_list_fd *first_lst)
 {
@@ -103,28 +104,34 @@ int	get_next_line(const int fd, char **line)
 	if (!fd_lists)
 		fd_lists = ft_lstnew_fd(fd, NULL);
 	cur_lst = find_lst(fd, fd_lists);
+	//printf("start\n");
 	if (check_remainder(cur_lst, line))
 		return (1);
 	while (!(cur_lst->tmp_line))
 	{
 		if ((bytes = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
+		buff[bytes] = '\0';
 		if (bytes == 0 && !(*line) &&!(cur_lst->tmp_line))
 			return (free_lst(fd, fd_lists));
 		else if (bytes == 0)
 			return (1);
-		buff[bytes] = '\0';
 		tmp = ft_strtchr(buff, '\n');
 		if (!tmp)
 		{
 			if (*line)
 			{
+				//printf("A potom\n");
 				tmp = *line;
 				*line = ft_strjoin(*line, buff);
 				free(tmp);
 			}
 			else
+			{
+				//printf("kek1\n");
 				*line = ft_strdup(buff);
+				//printf("kek2\n");
+			}
 		}
 		else
 		{
