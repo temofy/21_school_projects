@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 11:53:46 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/12 20:25:32 by cheller          ###   ########.fr       */
+/*   Updated: 2019/02/13 14:52:01 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,32 @@ int		check_remainder(t_list_fd *cur_lst, char **line)
 	if (cur_lst->tmp_line)
 	{
 		len = ft_strlen(cur_lst->tmp_line);
-		while (cur_lst->tmp_line[i] != '\n' && i < len)
+		//printf("len: %d\n", len);
+		while (cur_lst->tmp_line[i] != '\n' && cur_lst->tmp_line[i] != '\0')
 			i++;
 		if (i < len)
 		{
+			//printf("i: %d\n", i);
 			tmp = cur_lst->tmp_line;
 			*line = ft_strsub(tmp, 0, i);
-			cur_lst->tmp_line = ft_strsub(tmp, i + 1, len - i);
+			//printf("line: %s\n", *line);
+			cur_lst->tmp_line = ft_strsub(tmp + i + 1, 0, len - i);
+			//printf("cur_lst: %s\n", cur_lst->tmp_line);
 			free(tmp);
 			return (1);
 		}
 		else if (i == len)
 		{
+			//printf("tmp_line: %s\n", cur_lst->tmp_line);
 			if (i != 0)
-				*line = ft_strdup(cur_lst->tmp_line);
-			free(cur_lst->tmp_line);
-			cur_lst->tmp_line = NULL;
+			{
+				//printf("сука\n");
+				*line = ft_strsub(cur_lst->tmp_line, 0, len);
+				//*line = ft_strjoin("", cur_lst->tmp_line);
+				//printf("line: %s\n", *line);
+			}
+			//printf("free\n");
+			ft_strdel(&cur_lst->tmp_line);
 		}
 	}
 	return (0);
@@ -100,22 +110,39 @@ int	get_next_line(const int fd, char **line)
 
 	if (fd < 0 || BUFF_SIZE < 0 || !line)
 		return (-1);
-	*line = NULL;
+	//free(*line);
+	*line = ft_strnew(0);
+	tmp = NULL;
 	if (!fd_lists)
+<<<<<<< HEAD
 		fd_lists = ft_lstnew_fd(fd, NULL);
 	cur_lst = find_lst(fd, fd_lists);
 	//printf("start\n");
+=======
+		if(!(fd_lists = ft_lstnew_fd(fd, NULL)))
+			return (-1);
+	if (!(cur_lst = find_lst(fd, fd_lists)))
+		return (-1);
+>>>>>>> bd900c13445c6590bfb15756eb36a6f417607dcc
 	if (check_remainder(cur_lst, line))
 		return (1);
 	while (!(cur_lst->tmp_line))
 	{
 		if ((bytes = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
+<<<<<<< HEAD
 		buff[bytes] = '\0';
 		if (bytes == 0 && !(*line) &&!(cur_lst->tmp_line))
+=======
+		if (bytes == 0 && !(cur_lst->tmp_line))
+		{
+			free(*line);
+>>>>>>> bd900c13445c6590bfb15756eb36a6f417607dcc
 			return (free_lst(fd, fd_lists));
+		}
 		else if (bytes == 0)
 			return (1);
+<<<<<<< HEAD
 		tmp = ft_strtchr(buff, '\n');
 		if (!tmp)
 		{
@@ -139,10 +166,29 @@ int	get_next_line(const int fd, char **line)
 				*line = ft_strjoin(*line, tmp);
 			else
 				*line = ft_strdup(tmp);
+=======
+		buff[bytes] = '\0';
+		if (ft_strchr(buff, '\n'))
+		{
+			if(!(tmp = ft_strtchr(buff, '\n')))
+				return (-1);
+			*line = ft_strjoin(*line, tmp);
+>>>>>>> bd900c13445c6590bfb15756eb36a6f417607dcc
 			cur_lst->tmp_line = ft_strdup(ft_strpchr(buff, '\n'));
 			free(tmp);
 			break ;
 		}
+		/*printf("*line: %s\n", *line);
+		if (ft_strlen(*line))
+		{*/
+			tmp = *line;
+			if(!(*line = ft_strjoin(*line, buff)))
+				return (-1);
+			free(tmp);
+		//}
+		/*else
+			if(!(*line = ft_strdup(buff)))
+				return (-1);*/
 	}
 	return (1);
 }

@@ -16,7 +16,6 @@ int		main(int argc, char **argv)
  {
 	int		fd;
 	ssize_t	ret;
-	//char			ch[BUFF_SIZE];
 	char			*line;
 
 	line = NULL;
