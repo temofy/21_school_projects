@@ -6,14 +6,14 @@
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/02/28 15:22:18 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/05 17:04:29 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-char	*format_d(const char *format, va_list arg)
+char	*format_d(const char *format, char flag, va_list arg)
 {
 	int		d;
 	char	*str;
@@ -22,17 +22,33 @@ char	*format_d(const char *format, va_list arg)
 	str = ft_itoa(d);
 	return (str);
 }
+char	check_flag(const char *format)
+{
+	if (*format == '-')
+		return (*format);
+	else if (*format == '+')
+		return (*format);
+	else if (*format == '0')
+		return (*format);
+	else if (*format == ' ')
+		return (*format);
+	else if (*format == '#')
+		return (*format);
+	return ('\0');
+}
 
 char	*find_specifier(const char *format, va_list arg)
 {
 	char	*s;
 	int		i;
+	char	flag;
 
 	i = 0;
+	flag = check_flag(format);
 	while (format[i++])
 	{
 		if (format[i] == 'd'	|| format[i] == 'i')
-			return (format_d(format, arg));
+			return (format_d(format, flag, arg));
 		else if (format[i]== 'f');
 		else if (format[i] == 'c');
 		else if (format[i] == 's')
@@ -110,29 +126,10 @@ int		main()
 	char	*greeting = "Добрый вечер!";
 	char	*name = "Artem";
 	int		age = 20;
+	float	Pi = 3.14;
 
 	ft_printf("- Hello, dude! My name is %s. I'm %d. How are you?\n%s\n", "Artem", 20, "- Nice, thanks!");
-	printf("%s Меня зовут %10s. Мне %+2d лет.\n", greeting, name, age);
+	printf("%s Меня зовут %-10s. Мне %10d лет.\n Число Пи = %.2f, Pointer: %15p\n", greeting, name, age, Pi, &greeting);
 	//ft_putstr(s);
 	return (1);
 }
-/* FLOAT!!!!!!!!FLOAT!!!!!!!!FLOAT#
-int int_c(float x)
-{
-  while(x != (float)(int)x)
-    x *= 10;
-  return ((int)x);
-}
-
-int main() {
-float a = -1.99999;
-int b = (float)(int)a;
-ft_putnbr(b);
-write(1, ".", 1);
-float c = a > 0? a - b : b - a;
-int n = int_c(c);
-ft_putnbr(n);
-  return 0;
-}
-END OF FLOAT
-*/
