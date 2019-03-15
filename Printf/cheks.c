@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/10 20:08:27 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/15 20:03:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,28 @@ int		find_end_spec(char chr)
 }
 
 
-char	*check_flag(const char *format)
+t_flags	*check_flags(const char *format)
 {
-	char 	*flag;
+	t_flags *flags;
 
-	flag = ft_strnew(0);
+	flags = (t_flags*)malloc(sizeof(t_flags));
 	while (format)
 	{
 		if (*format == '-')
-			flag = ft_strfjoin(flag, "-");
+			flags->flag_minus = 1;
 		else if (*format == '+')
-			flag = ft_strfjoin(flag, "+");
+			flags->flag_plus = 1;
 		else if (*format == '0')
-			flag = ft_strfjoin(flag, "0");
+			flags->flag_zero = 1;
 		else if (*format == ' ')
-			flag = ft_strfjoin(flag, " ");
+			flags->flag_space = 1;
 		else if (*format == '#')
-			flag = ft_strfjoin(flag, "#");
+			flags->flag_hash = 1;
 		else
 			break;
 		format++;
 	} 
-	return (flag);
+	return (flags);
 }
 
 /*char	check_flag(const char *format)

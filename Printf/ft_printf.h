@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/10 20:08:30 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/15 20:05:02 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,35 @@
 
 typedef struct	s_formatting
 {
-	char	*flag;
+	t_flags	*flags;
 	int		sign;
 	int		width;
 	int		precision;
 	int		length_modifier;
 }						t_formatting;
 
+typedef struct	s_flags
+{
+	int		flag_space;
+	int		flag_plus;
+	int		flag_minus;
+	int		flag_hash;
+	int		flag_zero;
+}						t_flags;
+
 int		ft_printf(const char *format, ...);
 int		find_end_spec(char chr);
-char	*check_flag(const char *format);
+t_flags	*check_flags(const char *format);
 int		check_sign(const char *format);
 int		check_width(const char *format);
 int		check_precision(const char *format);
 int		check_length_modifier(const char *format);
+void	print_sequence(t_formatting *e_sequence);
 
+/* hex.c */
+char 	*hex_long_int(long int n);
+int 	num_hex_len(long int n);
+
+/* handler_p */
+char	*handler_p(const char *format, va_list arg, t_formatting *e_sequence);
 #endif
