@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/15 20:03:03 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/15 21:01:00 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,39 +37,29 @@ t_flags	*check_flags(const char *format)
 	t_flags *flags;
 
 	flags = (t_flags*)malloc(sizeof(t_flags));
+	flags->minus = 0;
+	flags->plus = 0;
+	flags->zero = 0;
+	flags->space = 0;;
+	flags->hash = 0;
 	while (format)
 	{
 		if (*format == '-')
-			flags->flag_minus = 1;
+			flags->minus = 1;
 		else if (*format == '+')
-			flags->flag_plus = 1;
+			flags->plus = 1;
 		else if (*format == '0')
-			flags->flag_zero = 1;
+			flags->zero = 1;
 		else if (*format == ' ')
-			flags->flag_space = 1;
+			flags->space = 1;
 		else if (*format == '#')
-			flags->flag_hash = 1;
+			flags->hash = 1;
 		else
 			break;
 		format++;
 	} 
 	return (flags);
 }
-
-/*char	check_flag(const char *format)
-{
-	if (*format == '-')
-		return (*format);
-	else if (*format == '+')
-		return (*format);
-	else if (*format == '0')
-		return (*format);
-	else if (*format == ' ')
-		return (*format);
-	else if (*format == '#')
-		return (*format);
-	return ('\0');
-}*/
 
 int		check_sign(const char *format)
 {

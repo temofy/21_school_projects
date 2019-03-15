@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/03/15 20:07:26 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/15 21:06:21 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void	print_sequence(t_formatting *e_sequence)
 {
 	printf("*************-escape-sequence-*************\n");
-	printf("flags: \n\tflag_space: %d\n", e_sequence->flags->flag_space);
-	printf("\tflag_plus: %d\n", e_sequence->flags->flag_plus);
-	printf("\tflag_minus: %d\n", e_sequence->flags->flag_minus);
-	printf("\tflag_hash: %d\n", e_sequence->flags->flag_hash);
-	printf("\tflag_zero: %d\n", e_sequence->flags->flag_zero);
+	printf("flags: \n\tspace: %d\n", e_sequence->flags->space);
+	printf("\tplus: %d\n", e_sequence->flags->plus);
+	printf("\tminus: %d\n", e_sequence->flags->minus);
+	printf("\thash: %d\n", e_sequence->flags->hash);
+	printf("\tzero: %d\n", e_sequence->flags->zero);
 	printf("width: %d\n", e_sequence->width);
 	printf("precision: %d\n", e_sequence->precision);
 	printf("sign: %d\n", e_sequence->sign);
@@ -36,7 +36,7 @@ int		handler_length(int length, int width, int precision)
 		return (width - length);
 	else if (length >= width && length < precision)
 		return (precision - length);
-	else if (length < width && length < precision) 
+	else if (length < width && length < precision)
 	{
 		if (width > precision)
 			return (width - length);
@@ -48,50 +48,32 @@ int		handler_length(int length, int width, int precision)
 
 char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq)
 {
-	int		flags_amount;
-	int		flag_minus;
-	int		flag_plus;
-
-	flag_minus = 0;
-	flag_plus = 0;
-	flags_amount = ft_strlen(e_seq->flag);
-	while (flags_amount > 0)
+	if (e_seq->flags->zero) 		// flag "0"
+		ft_memset(*str, '0', len_str);
+	else if (e_seq->flags->minus) 	// flag "-"
+		ft_memset(*str, ' ', len_str);
+	else if (e_seq->flags->plus) 	// flag "+"
 	{
-		if (*(e_seq->flag) == '0') // flag "0"
-			ft_memset(*str, '0', len_str);
-		else if (*(e_seq->flag) == '-') // flag "-"
+		if (len_str > 0)
 		{
-			ft_memset(*str, ' ', len_str);
-			flag_minus = 1;
-			//*str = ft_strjoin(*str_arg, *str);			
-		}
-		else if (*(e_seq->flag) == '+') // flag "+"
-		{
-			flag_plus = 1;
-			if (len_str > 0)
-			{
-				if (**str_arg == '-')
-					ft_memset(*str, ' ', len_str);
-				else
-				{
-					ft_memset(*str, ' ', len_str - 1);
-					*str_arg = ft_strjoin("+", *str_arg);
-					//ft_memset(*str + len_str - 1, '+', 1);
-				}
-			}
+			if (**str_arg == '-')
+				ft_memset(*str, ' ', len_str);
 			else
-				if (**str_arg != '-')
-					*str = ft_strfjoin(*str, "+");
-		}
-		else if (*(e_seq->flag) == ' ' && !flag_minus && !flag_minus) // flag " "
-		{
-				**str = ' ';
+			{
+				ft_memset(*str, ' ', len_str - 1);
+				*str_arg = ft_strjoin("+", *str_arg);
+				//ft_memset(*str + len_str - 1, '+', 1);
+			}
 		}
 		else
-			ft_memset(*str, ' ', len_str);
-		flags_amount--;
+			if (**str_arg != '-')
+				*str = ft_strfjoin(*str, "+");
 	}
-	if (flag_minus)
+	else if (e_seq->flags->space && !e_seq->flags->minus && !e_seq->flags->plus) 	// flag " "
+		**str = ' ';
+	else
+		ft_memset(*str, ' ', len_str);
+	if (e_seq->flags->minus)
 		*str = ft_strjoin(*str_arg, *str);
 	else		
 		*str = ft_strjoin(*str, *str_arg); //утечка
@@ -144,6 +126,18 @@ char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_s
 
 	return (*str);
 }*/
+int		count_amount_flags(t_formatting *e_seq)
+{
+	int		amount;
+
+	amount = 0;
+	amount += e_seq->flags->space;
+	amount += e_seq->flags->plus;
+	amount += e_seq->flags->minus;
+	amount += e_seq->flags->hash;
+	amount += e_seq->flags->zero;
+	return (amount);
+}
 
 char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 {
@@ -161,7 +155,7 @@ char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 	//print_sequence(e_sequence);
 	*str = ft_strnew(length_str);
 	ft_memset(*str, ' ', length_str);
-	if (*(e_sequence->flag) != '\0')
+	if (count_amount_flags(e_sequence) > 0)
 		return(*str = handler_d_flags(&*str, &*str_arg, length_str, e_sequence));
 	else if (length_str > 0 && precision >= width)
 		ft_memset(*str, '0', length_str);
@@ -204,7 +198,6 @@ t_formatting	*scanning_sequence(const char *format)
 	if (!(e_sequence = (t_formatting*)malloc(sizeof(t_formatting))))
 		return (NULL);
 	e_sequence->flags = check_flags(format);
-	//printf("flag: %s\n", e_sequence->flags);
 	e_sequence->width = check_width(format);
 	e_sequence->precision = check_precision(format);
 	e_sequence->sign = check_sign(format);

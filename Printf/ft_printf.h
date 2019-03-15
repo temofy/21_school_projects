@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/15 20:05:02 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/15 21:00:39 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 #include <stdarg.h>
 #include "libft/libft.h"
 
+typedef struct	s_flags
+{
+	int		space;
+	int		plus;
+	int		minus;
+	int		hash;
+	int		zero;
+}						t_flags;
+
 typedef struct	s_formatting
 {
 	t_flags	*flags;
@@ -24,15 +33,6 @@ typedef struct	s_formatting
 	int		precision;
 	int		length_modifier;
 }						t_formatting;
-
-typedef struct	s_flags
-{
-	int		flag_space;
-	int		flag_plus;
-	int		flag_minus;
-	int		flag_hash;
-	int		flag_zero;
-}						t_flags;
 
 int		ft_printf(const char *format, ...);
 int		find_end_spec(char chr);
