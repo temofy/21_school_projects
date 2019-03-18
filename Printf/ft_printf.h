@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/15 21:00:39 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/18 20:55:59 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_flags
 typedef struct	s_formatting
 {
 	t_flags	*flags;
-	int		sign;
+	int		is_negative;
 	int		width;
 	int		precision;
 	int		length_modifier;
@@ -42,11 +42,19 @@ int		check_width(const char *format);
 int		check_precision(const char *format);
 int		check_length_modifier(const char *format);
 void	print_sequence(t_formatting *e_sequence);
-
+int		count_amount_flags(t_formatting *e_seq);
+int		handler_length(int length, int width, int precision);
+/* handler_d */
+char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq);
+char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str);
+char	*handler_d(va_list arg, t_formatting *e_sequence);
 /* hex.c */
 char 	*hex_long_int(long int n);
 int 	num_hex_len(long int n);
 
+/* handler_text */
+char	*handler_s(va_list arg, t_formatting *e_sequence);
+char	*handler_c(va_list arg, t_formatting *e_sequence);
 /* handler_p */
-char	*handler_p(const char *format, va_list arg, t_formatting *e_sequence);
+char	*handler_p(va_list arg, t_formatting *e_sequence);
 #endif

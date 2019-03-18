@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/15 21:01:00 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/18 21:18:44 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,6 @@ t_flags	*check_flags(const char *format)
 		format++;
 	} 
 	return (flags);
-}
-
-int		check_sign(const char *format)
-{
-	if (*format == '-')
-		return (1);
-	return (0);
 }
 
 int		check_precision(const char *format)
@@ -127,8 +120,8 @@ int	check_length_modifier(const char *format)
 		}
 		if (format[i] == 'l')
 		{
-			if (!(find_end_spec(i + 1)) && format[i + 1] == 'l')
-				return (216);
+			/*if (!(find_end_spec(i + 1)) && format[i + 1] == 'l')
+				return (216);*/
 			return (108);
 		}
 		if (format[i] == 'L')

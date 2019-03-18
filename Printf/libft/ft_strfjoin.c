@@ -6,13 +6,26 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 17:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/10 20:08:29 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/18 14:02:49 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strfjoin(char *s1, char *s2)
+static void	ft_free(char *s1, char *s2, int arg_to_free)
+{
+	if (arg_to_free == 1)
+		free(s1);
+	else if (arg_to_free == 2)
+		free(s2);
+	else if (arg_to_free == 0)
+	{
+		free(s1);
+		free(s2);
+	}
+}
+
+char		*ft_strfjoin(char *s1, char *s2, int arg_to_free)
 {
 	char	*str;
 	int		len_s1;
@@ -36,6 +49,6 @@ char	*ft_strfjoin(char *s1, char *s2)
 		str[i] = s2[i - len_s1];
 		i++;
 	}
-	free(s1);
+	ft_free(s1, s2, arg_to_free);
 	return (str);
 }

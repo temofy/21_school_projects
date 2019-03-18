@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_litoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 19:37:14 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/18 16:32:07 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/18 16:36:22 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nbr_len(int n)
+static int	nbr_len(long n)
 {
 	int		len;
 
@@ -30,15 +30,7 @@ static int	nbr_len(int n)
 	return (len);
 }
 
-static char	*ft_negative_max(char *str, int n)
-{
-	n = n + 1;
-	str = ft_itoa(n);
-	str[10] = '8';
-	return (str);
-}
-
-char		*ft_itoa(int n)
+char		*ft_litoa(long n)
 {
 	char	*str;
 	int		i;
@@ -47,8 +39,6 @@ char		*ft_itoa(int n)
 	str = ft_strnew(nbr_len(n));
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_negative_max(str, n));
 	if (n == 0)
 	{
 		str[0] = 48;
