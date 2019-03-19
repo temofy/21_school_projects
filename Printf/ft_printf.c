@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/03/18 21:16:28 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/19 16:13:13 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,8 @@ int		main()
 	double	Pi = 3.14;
 	//double	i = 1.1;
 
-	ft_printf("Hello %7.5s!\nMy %5came is %10.2s\n%25p\n", "world", 'n', name, &name);
-	printf("Hello %7s!\nMy %5came is %10.2s\n%.3+1p\n", "world", 'n', name, NULL);
+	ft_printf("Hello %5s!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
+	printf("Hello %7s!\nMy %5came is %10.2s\n%025p\n", "world", 'n', name, &name);
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	
