@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 16:45:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/18 19:26:56 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/22 21:19:43 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_s
 {
 	if (e_seq->flags->minus) 	// flag "-"
 		ft_memset(*str, ' ', len_str);
-	else if (e_seq->flags->zero) 		// flag "0"
+	else if (e_seq->flags->zero && e_seq->precision == 0
+	) 		// flag "0"
 	{
 		ft_memset(*str, '0', len_str);
 		if (e_seq->is_negative && len_str > 0)
@@ -71,7 +72,7 @@ char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 	precision = e_sequence->precision;
 	length_arg = ft_strlen(*str_arg);	//arguments's length with sign
 	length_str = handler_length(length_arg, width, precision); //counting remaining length
-	printf("length: %d\n", length_str);
+	//printf("length: %d\n", length_str);
 	//print_sequence(e_sequence);
 	*str = ft_strnew(length_str);
 	ft_memset(*str, ' ', length_str); 

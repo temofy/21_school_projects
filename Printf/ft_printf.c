@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/03/19 16:13:13 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/22 21:41:10 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*handler_f(va_list arg, t_formatting *e_sequence)
 
 char	*find_specifier(const char *format, va_list arg)
 {
-	char	*s;
+	//char	*s;
 	int		i;
 	t_formatting *e_sequence;
 
@@ -89,16 +89,32 @@ char	*find_specifier(const char *format, va_list arg)
 	//print_sequence(e_sequence);
 	while (format[i++])
 	{
-		if (format[i] == 'd' || format[i] == 'i')
+		if (format[i] == 'd' || format[i] == 'D' || format[i] == 'i' )
 			return (handler_d(arg, e_sequence));
-		else if (format[i]== 'f')
+		else if (format[i]== 'f' || format[i]== 'F')
 			return (handler_f(arg, e_sequence));
-		else if (format[i] == 'c')
+		else if (format[i] == 'c' || format[i] == 'C')
 			return (handler_c(arg, e_sequence));
 		else if (format[i] == 's')
 			return (handler_s(arg, e_sequence));
 		else if (format[i] == 'p')
 			return (handler_p(arg, e_sequence));
+		else if (format[i] == 'u' || format[i] == 'U')
+		{
+			
+		}
+		else if (format[i] == 'o' || format[i] == 'O')
+		{
+			
+		}
+		else if (format[i] == 'x')
+		{
+			
+		}
+		else if (format[i] == 'X')
+		{
+			
+		}
 		else if (format[i] == '%')
 		{
 			
@@ -149,12 +165,22 @@ int		main()
 {
 	char	*greeting = "Добрый вечер!";
 	char	*name = "Artem";
-	short age = 21474;
+	short age = 20;
 	double	Pi = 3.14;
 	//double	i = 1.1;
 
-	ft_printf("Hello %5s!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
-	printf("Hello %7s!\nMy %5came is %10.2s\n%025p\n", "world", 'n', name, &name);
+	//ft_printf("Hel%");
+	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
+	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
+	printf("I'm % .05 d лет\n", 20);*/
+	//printf("%\n", 5);
+	/*ft_printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000); // space include in width, but not int precision
+	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 2000); */
+	ft_printf("number: %015.10d\n", 10);
+	printf("number: %O\n", age);
+	//printf("%0.2.2.2.2.3.4.5.5.4.5.4.5.4.5454.54. 456 567 56 7 8 89 1 0D\n tgrwe%  \n",5 );
+	//printf("lol%10.5l+d\n", 505);
+	//printf("Hello %7s!\nMy %5came is %10.2s\n%025p\n", "world", 'n', name, &name);
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	
