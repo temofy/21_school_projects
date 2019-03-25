@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/03/22 21:41:10 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/25 19:52:00 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,21 @@ char	*handler_f(va_list arg, t_formatting *e_sequence)
 	return ("\0");
 }
 
+char	*handler_percent(t_formatting *e_seq)
+{
+	char	*str;
+	int		str_len;
+
+	str_len = handler_length(1, e_seq->width, 0);
+	str = ft_strnew(str_len);
+	ft_memset(str, ' ', str_len);
+	if (e_seq->flags->minus)
+		str = ft_strfjoin("%", str, 2);
+	else
+		str = ft_strfjoin(str, "%", 1);
+	return (str);
+}
+
 char	*find_specifier(const char *format, va_list arg)
 {
 	//char	*s;
@@ -89,11 +104,11 @@ char	*find_specifier(const char *format, va_list arg)
 	//print_sequence(e_sequence);
 	while (format[i++])
 	{
-		if (format[i] == 'd' || format[i] == 'D' || format[i] == 'i' )
+		if (format[i] == 'd' || format[i] == 'i' ) // ready
 			return (handler_d(arg, e_sequence));
 		else if (format[i]== 'f' || format[i]== 'F')
 			return (handler_f(arg, e_sequence));
-		else if (format[i] == 'c' || format[i] == 'C')
+		else if (format[i] == 'c' || format[i] == 'C') 
 			return (handler_c(arg, e_sequence));
 		else if (format[i] == 's')
 			return (handler_s(arg, e_sequence));
@@ -115,10 +130,8 @@ char	*find_specifier(const char *format, va_list arg)
 		{
 			
 		}
-		else if (format[i] == '%')
-		{
-			
-		}
+		else if (format[i] == '%') //  ready
+			return (handler_percent(e_sequence));
 	}
 	return (NULL);
 }
@@ -176,11 +189,17 @@ int		main()
 	//printf("%\n", 5);
 	/*ft_printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000); // space include in width, but not int precision
 	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 2000); */
-	ft_printf("number: %015.10d\n", 10);
-	printf("number: %O\n", age);
-	//printf("%0.2.2.2.2.3.4.5.5.4.5.4.5.4.5454.54. 456 567 56 7 8 89 1 0D\n tgrwe%  \n",5 );
+	/*ft_printf("number: %015.10d\n", 10);
+	printf("number: %O\n%%\n", age);*/
+	/*ft_printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
+	printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
+	ft_printf("%04.3d\n", -999); // 0 and precision
+	printf("%04.3d\n", -999);*/
 	//printf("lol%10.5l+d\n", 505);
-	//printf("Hello %7s!\nMy %5came is %10.2s\n%025p\n", "world", 'n', name, &name);
+	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
+	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
+	ft_printf("Hello %0.3s\n", "world");
+	printf("Hello %0.3s\n", "world");
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	

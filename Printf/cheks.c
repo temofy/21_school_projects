@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/22 21:01:05 by cheller          ###   ########.fr       */
+/*   Updated: 2019/03/25 18:24:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@
 int		find_end_spec(const char chr)
 {
 	if ((chr >= 'A' && chr <= 'Z') || (chr >= 'a' && chr <= 'z'))
-		return (1);
+	{
+		if (chr != 'l' && chr != 'h' && chr != 'L') // continue
+			return (1);
+	}
 	else if (chr == '%')
 		return (1);
 	return (0);
@@ -49,7 +52,10 @@ int		find_index_end_spec(const char *string)
 	while(string[i])
 	{
 		if ((string[i] >= 'A' && string[i] <= 'Z') || (string[i] >= 'a' && string[i] <= 'z'))
-			return (i);
+		{
+			if (string[i] != 'l' && string[i] != 'h' && string[i] != 'L') // continue
+				return (i);
+		}
 		else if (string[i] == '%')
 			return (i);
 		i++;
@@ -111,7 +117,7 @@ int		check_precision(const char *format)
 			return (prec);
 		}
 	}
-	return (prec);
+	return (-1);
 }
 
 /*int		check_precision(const char *format)
@@ -185,32 +191,36 @@ int		check_width(const char *format)
 				width += (format[i] - '0');
 				i++;
 			}
+			if (!width)
+				width = -1;
 			return (width);
 		}
 	}
-	return (width);
+	return (-1);
 }
 
 int	check_length_modifier(const char *format)
 {
 	int 	i;
 
-	i = -1;
-	while (!(find_end_spec(format[++i])))
+	i = find_index_end_spec(format);
+	if (i != 0)
 	{
-		if (format[i] == 'h')
+	/*while (!(find_end_spec(format[++i])))
+	{*/
+		if (format[i - 1] == 'h')
 		{
-			if (!(find_end_spec(i + 1)) && format[i + 1] == 'h')
-				return (208);
+			/*if (!(find_end_spec(i + 1)) && format[i + 1] == 'h')
+				return (208);*/
 			return (104);
 		}
-		if (format[i] == 'l')
+		if (format[i - 1] == 'l')
 		{
 			/*if (!(find_end_spec(i + 1)) && format[i + 1] == 'l')
 				return (216);*/
 			return (108);
 		}
-		if (format[i] == 'L')
+		if (format[i - 1] == 'L')
 			return (76);
 	}
 	return (-1);
