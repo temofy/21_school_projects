@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/03/25 19:52:00 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/04 17:15:07 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,8 +198,12 @@ int		main()
 	//printf("lol%10.5l+d\n", 505);
 	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
-	ft_printf("Hello %0.3s\n", "world");
-	printf("Hello %0.3s\n", "world");
+	
+	
+	ft_printf("Hello %10s.\n Letter is %010c\n", "world", 'A');
+	printf("Hello %10s.\nLetter is %10.cB\n", "world", 'A');
+
+
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	

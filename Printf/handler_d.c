@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 16:45:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/25 19:04:56 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:46:09 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@
 	}
 	if (e_seq->flags->space && !e_seq->flags->plus && !e_seq->flags->minus && !e_seq->is_negative) 	// flag " "
 		**str = ' ';
-	/*else if (e_seq->flags->space && e_seq->flags->minus && !e_seq->flags->plus)
+	else if (e_seq->flags->space && e_seq->flags->minus && !e_seq->flags->plus)
 	{
 		*str_arg = ft_strfjoin(" ", *str_arg, 2);
 		*(*str + len_str - 1) = '\0';
-	}*/
+	}
 	/*if (e_seq->flags->minus)
 		*str = ft_strjoin(*str_arg, *str);
 	else		
