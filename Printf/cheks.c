@@ -6,32 +6,36 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/25 18:24:03 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/09 12:40:40 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*int		find_end_spec(char chr)
+char		check_spec(const char *string)
 {
-	if (chr == 'a')
-		return (1);
-	else if (chr == 'c')
-		return (1);
-	else if (chr == 'd')
-		return (1);
-	else if (chr == 'f')
-		return (1);
-	else if (chr == 'g')
-		return (1);
-	else if (chr == 'i')
-		return (1);
-	else if (chr == 's')
-		return (1);
-	else if (chr == '%')
-		return (1);
-	return (0);
-}*/
+	while (*string)
+	{
+		if (*string == 'a')
+			return (*string);
+		else if (*string == 'c')
+			return (*string);
+		else if (*string == 'd')
+			return (*string);
+		else if (*string == 'f')
+			return (*string);
+		else if (*string == 'g')
+			return (*string);
+		else if (*string == 'i')
+			return (*string);
+		else if (*string == 's')
+			return (*string);
+		else if (*string == '%')
+			return (*string);
+		string++;
+	}
+	return ('\0');
+}
 
 int		find_end_spec(const char chr)
 {

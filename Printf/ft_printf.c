@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/04 17:15:07 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/09 13:21:38 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ t_formatting	*scanning_sequence(const char *format)
 	e_sequence->width = check_width(format);
 	e_sequence->precision = check_precision(format);
 	e_sequence->length_modifier = check_length_modifier(format);
+	e_sequence->specifier = check_spec(format);
+	e_sequence->common_length = 0; // везде записывать
 	return (e_sequence);
 }
 
@@ -93,14 +95,11 @@ char	*handler_percent(t_formatting *e_seq)
 	return (str);
 }
 
-char	*find_specifier(const char *format, va_list arg)
+char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 {
-	//char	*s;
 	int		i;
-	t_formatting *e_sequence;
-
+	
 	i = 0;
-	e_sequence = scanning_sequence(format + 1); // need to free
 	//print_sequence(e_sequence);
 	while (format[i++])
 	{
@@ -136,13 +135,14 @@ char	*find_specifier(const char *format, va_list arg)
 	return (NULL);
 }
 
-int		ft_printf(const char *format, ...)
+/*int		ft_printf(const char *format, ...)
 {
 	va_list	arg;
 	char	*string; // prepared string for print
 	int		i;		// counter
 	int		start;	// var to find pos after foramtting
 	int		found_spec; // flag
+	t_formatting *e_sequence;
 
 	i = 0;
 	string = ft_strnew(0);
@@ -154,9 +154,56 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && !found_spec)
 		{
+			e_sequence = scanning_sequence(format + i + 1); // need to free
 			found_spec = 1;
-			string = ft_strjoin(string, ft_strsub(format, start, i - start));
-			string = ft_strjoin(string, find_specifier(format + i, arg));
+			string = ft_strfjoin(string, ft_strsub(format, start, i - start), 0);
+			string = ft_strjoin(string, find_specifier(format + i, arg, e_sequence));
+			//printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
+		}
+		else if (found_spec)
+		{
+			if (find_end_spec(format[i]))
+			{
+				start = i + 1;
+				found_spec = 0;			
+			}
+		}
+		i++;
+	}
+	string = ft_strjoin(string, ft_strsub(format, start, i - start)); // проверить
+	ft_putstr(string);
+	va_end(arg);
+	return (1);
+}*/
+
+int		ft_printf(const char *format, ...)
+{
+	va_list	arg;
+	char	*string; // prepared string for print
+	char	*substr;
+	int		i;		// counter
+	int		start;	// var to find pos after foramtting
+	int		found_spec; // flag
+	t_formatting *e_sequence;
+
+	i = 0;
+	string = ft_strnew(0);
+	start = 0;
+	found_spec = 0;
+	va_start(arg, format);
+	// нужна проверку на количество спецификаций с количеством аргументом
+	while (format[i])
+	{
+		if (format[i] == '%' && !found_spec)
+		{
+			e_sequence = scanning_sequence(format + i + 1); // need to free
+			found_spec = 1;
+			string = ft_strfjoin(string, ft_strsub(format, start, i - start), 0);
+			substr = find_specifier(format + i, arg, e_sequence);
+			if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
+				
+			string = ft_strjoin(string, substr);
+			//printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
 		}
 		else if (found_spec)
 		{
@@ -200,10 +247,13 @@ int		main()
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
 	
 	
-	ft_printf("Hello %10s.\n Letter is %010c\n", "world", 'A');
-	printf("Hello %10s.\nLetter is %10.cB\n", "world", 'A');
+	ft_printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
+	printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
 
-
+	
+	//write(1, "write: \n", 8);
+	//write(1, name, 10);
+	
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	

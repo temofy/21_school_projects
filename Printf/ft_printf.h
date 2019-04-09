@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/18 20:55:59 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/09 12:41:29 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct	s_formatting
 	int		width;
 	int		precision;
 	int		length_modifier;
+	char	specifier;
+	int		common_length;
 }						t_formatting;
 
 int		ft_printf(const char *format, ...);
@@ -41,6 +43,7 @@ int		check_sign(const char *format);
 int		check_width(const char *format);
 int		check_precision(const char *format);
 int		check_length_modifier(const char *format);
+char	check_spec(const char *string);
 void	print_sequence(t_formatting *e_sequence);
 int		count_amount_flags(t_formatting *e_seq);
 int		handler_length(int length, int width, int precision);
