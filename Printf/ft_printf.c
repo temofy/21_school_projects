@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/09 13:21:38 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/09 16:04:30 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,9 @@ int		ft_printf(const char *format, ...)
 	int		start;	// var to find pos after foramtting
 	int		found_spec; // flag
 	t_formatting *e_sequence;
+	size_t	common_length;
 
+	common_length = 0;
 	i = 0;
 	string = ft_strnew(0);
 	start = 0;
@@ -196,14 +198,25 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && !found_spec)
 		{
-			e_sequence = scanning_sequence(format + i + 1); // need to free
+			/*e_sequence = scanning_sequence(format + i + 1); // need to free
 			found_spec = 1;
 			string = ft_strfjoin(string, ft_strsub(format, start, i - start), 0);
 			substr = find_specifier(format + i, arg, e_sequence);
-			if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
+			common_length += e_sequence->common_length;
+			//if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
 				
 			string = ft_strjoin(string, substr);
-			//printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
+			printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);*/
+			
+			e_sequence = scanning_sequence(format + i + 1); // need to free
+			found_spec = 1;
+			string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length, i - start);
+			substr = find_specifier(format + i, arg, e_sequence);
+			common_length += e_sequence->common_length;
+			//if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
+				
+			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
+			printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
 		}
 		else if (found_spec)
 		{
@@ -213,10 +226,13 @@ int		ft_printf(const char *format, ...)
 				found_spec = 0;			
 			}
 		}
+		else
+			common_length++;
 		i++;
 	}
 	string = ft_strjoin(string, ft_strsub(format, start, i - start)); // проверить
-	ft_putstr(string);
+	printf("common length: %zu with i:%d start:%d\n", common_length, i , start);
+	write(1, string, common_length);
 	va_end(arg);
 	return (1);
 }
@@ -247,10 +263,11 @@ int		main()
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
 	
 	
-	ft_printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
+	ft_printf("Hello %10s\nLetter is %-010c.\n", "world", 'A');
 	printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
 
-	
+	printf("russian's length: %zu\n", ft_strlen(greeting));
+	printf("New func: %s\n" , ft_strljoin(greeting, name, 13, 5));
 	//write(1, "write: \n", 8);
 	//write(1, name, 10);
 	

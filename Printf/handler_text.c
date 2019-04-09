@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 20:51:30 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/09 13:00:06 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/09 14:29:00 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char *handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 		str_arg = ft_strsub(str_arg, 0, length_arg);
 	}
 	length_str = handler_length(length_arg, e_seq->width, 0);
+	//printf("len in text: %d\n", length_str);
+	e_seq->common_length = length_str + length_arg;
 	*str = ft_strnew(length_str);
 	if (e_seq->flags->zero && /*e_seq->precision == -1*/ !e_seq->flags->minus)
 		ft_memset(*str, '0', length_str);
