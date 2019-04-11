@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/09 16:04:30 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/11 16:24:58 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,13 +210,21 @@ int		ft_printf(const char *format, ...)
 			
 			e_sequence = scanning_sequence(format + i + 1); // need to free
 			found_spec = 1;
-			string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length, i - start);
-			substr = find_specifier(format + i, arg, e_sequence);
-			common_length += e_sequence->common_length;
+			//printf("i: %d and start: %d\n", i, start);
+			//printf("substr: %s\n", ft_strsub(format, start, i - start));
+			if (start == 0)
+				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
+			else
+			{
+				//printf("common: %d i: %d and start: %d\n",common_length, i, start);
+				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
+			}
+			//printf("string: %s\n", string);
+			substr = find_specifier(format + i, arg, e_sequence); 
 			//if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
-				
+				//printf("substr: %s\n", substr);
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
-			printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
+			common_length += e_sequence->common_length;
 		}
 		else if (found_spec)
 		{
@@ -231,7 +239,6 @@ int		ft_printf(const char *format, ...)
 		i++;
 	}
 	string = ft_strjoin(string, ft_strsub(format, start, i - start)); // проверить
-	printf("common length: %zu with i:%d start:%d\n", common_length, i , start);
 	write(1, string, common_length);
 	va_end(arg);
 	return (1);
@@ -262,12 +269,11 @@ int		main()
 	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
 	
-	
-	ft_printf("Hello %10s\nLetter is %-010c.\n", "world", 'A');
+	//write(1, "\0\0a\0\0", 5);
+	ft_printf("Hello %10s.\nLetter is %-010c.\n", "world", '\0');
 	printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
 
-	printf("russian's length: %zu\n", ft_strlen(greeting));
-	printf("New func: %s\n" , ft_strljoin(greeting, name, 13, 5));
+	//printf("New func: %s\n" , ft_strljoin(greeting, name, 13, 5));
 	//write(1, "write: \n", 8);
 	//write(1, name, 10);
 	
