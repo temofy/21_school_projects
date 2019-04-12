@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:26:56 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 14:50:01 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 21:15:12 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ static int	nbr_len(unsigned long n)
 	return (len);
 }
 
-char		*ft_ulitoa(unsigned long n)
+char		*ft_ulitoa(unsigned long long int n)
 {
 	char	*str;
 	int		i;
 
 	i = nbr_len(n) - 1;
 	if (!(str = ft_strnew(nbr_len(n))))
-        return (NULL);
+		return (NULL);
 	if (n == 0)
 	{
 		str[0] = 48;

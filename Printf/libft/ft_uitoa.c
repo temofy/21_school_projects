@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:47:30 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 14:56:30 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 16:23:36 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_uitoa(unsigned n)
 
 	i = nbr_len(n) - 1;
 	if (!(str = ft_strnew(nbr_len(n))))
-        return (NULL);
+		return (NULL);
 	if (n == 0)
 	{
 		str[0] = 48;

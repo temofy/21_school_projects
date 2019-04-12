@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:19:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 15:03:29 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 21:15:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 char	*handler_u(va_list arg, t_formatting *e_sequence)
 {
 	char	*nbr_str;
-	char	*str;	
+	char	*str;
 	int		length;
 
-	if (e_sequence->length_modifier == 108)
+  if (e_sequence->length_modifier == 108)
 		nbr_str = ft_ulitoa(va_arg(arg, unsigned long int));
+	else if (e_sequence->length_modifier == 216)
+		nbr_str = ft_ulitoa(va_arg(arg, unsigned long long int));
+	else if (e_sequence->length_modifier == 104)
+		nbr_str = ft_uitoa(va_arg(arg, unsigned short int));
+	else if (e_sequence->length_modifier == 208)
+		nbr_str = ft_uitoa(va_arg(arg, unsigned char));
 	else
 		nbr_str = ft_uitoa(va_arg(arg, unsigned int)); // для разных флагов
-    printf("nbr_str: %s\n", nbr_str);
-	str = handler_sequence_d(&nbr_str, e_sequence, &str);
+    //printf("nbr_str: %s\n", nbr_str);
+	str = handler_sequence_d(nbr_str, e_sequence, &str);
 	return (str);
 }

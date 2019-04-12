@@ -6,13 +6,13 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 19:37:14 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/18 16:36:22 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 21:09:50 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nbr_len(long n)
+static int	nbr_len(long long int n)
 {
 	int		len;
 
@@ -30,7 +30,7 @@ static int	nbr_len(long n)
 	return (len);
 }
 
-char		*ft_litoa(long n)
+char		*ft_litoa(long long int n)
 {
 	char	*str;
 	int		i;

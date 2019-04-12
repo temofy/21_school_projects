@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/12 15:06:20 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 21:17:21 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,7 +211,8 @@ int		ft_printf(const char *format, ...)
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
 			else
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
-			substr = find_specifier(format + i, arg, e_sequence); 
+			substr = find_specifier(format + i, arg, e_sequence);
+			printf("common_length: %d\n", e_sequence->common_length);
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
 			common_length += e_sequence->common_length;
 		}
@@ -260,8 +261,9 @@ int		main()
 	
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
-	ft_printf("number: %llu\n", (unsigned long int)18446744073709551615);
-	printf("number: %llu\n", (unsigned long int)18446744073709551615);
+	ft_printf("number: %hd\n", 32768);
+	printf("number: %hd\n", 32768);
+	printf("number: %lu\n", (unsigned long int)18446744073709551615);
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	
