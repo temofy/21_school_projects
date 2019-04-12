@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cheller <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: cheller <cheller@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/14 12:20:19 by cheller           #+#    #+#              #
-#    Updated: 2019/02/21 19:48:16 by cheller          ###   ########.fr        #
+#    Updated: 2019/04/12 14:32:26 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ OBJ  = *.o
 all: $(NAME)
 
 $(NAME):
-	@gcc -Wall -Wextra -Werror -c $(SRC) -Ilibft.h
-	@ar rc $(NAME) $(OBJ)
+	gcc -Wall -Wextra -Werror -c $(SRC) -I.
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	@rm -f *.o

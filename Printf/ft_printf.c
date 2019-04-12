@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/11 16:24:58 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 15:06:20 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 	int		i;
 	
 	i = 0;
-	//print_sequence(e_sequence);
 	while (format[i++])
 	{
 		if (format[i] == 'd' || format[i] == 'i' ) // ready
@@ -114,9 +113,7 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 		else if (format[i] == 'p')
 			return (handler_p(arg, e_sequence));
 		else if (format[i] == 'u' || format[i] == 'U')
-		{
-			
-		}
+			return (handler_u(arg, e_sequence));
 		else if (format[i] == 'o' || format[i] == 'O')
 		{
 			
@@ -188,13 +185,13 @@ int		ft_printf(const char *format, ...)
 	size_t	common_length;
 
 	common_length = 0;
-	i = 0;
+	i = -1;
 	string = ft_strnew(0);
 	start = 0;
 	found_spec = 0;
 	va_start(arg, format);
 	// нужна проверку на количество спецификаций с количеством аргументом
-	while (format[i])
+	while (format[++i])
 	{
 		if (format[i] == '%' && !found_spec)
 		{
@@ -210,19 +207,11 @@ int		ft_printf(const char *format, ...)
 			
 			e_sequence = scanning_sequence(format + i + 1); // need to free
 			found_spec = 1;
-			//printf("i: %d and start: %d\n", i, start);
-			//printf("substr: %s\n", ft_strsub(format, start, i - start));
 			if (start == 0)
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
 			else
-			{
-				//printf("common: %d i: %d and start: %d\n",common_length, i, start);
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
-			}
-			//printf("string: %s\n", string);
 			substr = find_specifier(format + i, arg, e_sequence); 
-			//if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
-				//printf("substr: %s\n", substr);
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
 			common_length += e_sequence->common_length;
 		}
@@ -236,9 +225,9 @@ int		ft_printf(const char *format, ...)
 		}
 		else
 			common_length++;
-		i++;
 	}
-	string = ft_strjoin(string, ft_strsub(format, start, i - start)); // проверить
+	//printf("common: %d i: %d and start: %d\n",common_length, i, start);
+	string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), (i - start)); // проверить
 	write(1, string, common_length);
 	va_end(arg);
 	return (1);
@@ -269,14 +258,10 @@ int		main()
 	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
 	
-	//write(1, "\0\0a\0\0", 5);
-	ft_printf("Hello %10s.\nLetter is %-010c.\n", "world", '\0');
-	printf("Hello %10s.\nLetter is %-010c.\n", "world", 'A');
-
-	//printf("New func: %s\n" , ft_strljoin(greeting, name, 13, 5));
-	//write(1, "write: \n", 8);
-	//write(1, name, 10);
-	
+	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
+	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
+	ft_printf("number: %llu\n", (unsigned long int)18446744073709551615);
+	printf("number: %llu\n", (unsigned long int)18446744073709551615);
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	

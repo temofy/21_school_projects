@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/09 12:41:29 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 14:21:27 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		handler_length(int length, int width, int precision);
 char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq);
 char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str);
 char	*handler_d(va_list arg, t_formatting *e_sequence);
+/* handler_d */
+char	*handler_u(va_list arg, t_formatting *e_sequence);
 /* hex.c */
 char 	*hex_long_int(long int n);
 int 	num_hex_len(long int n);

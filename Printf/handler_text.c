@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 20:51:30 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/11 16:26:30 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 14:14:46 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,8 @@ char *handler_c(va_list arg, t_formatting *e_seq) // учесть '\0'
 	if (!e_seq->flags->minus)
 	{
 		*(str + length_str) = chr;
-		/*f (e_seq->precision != -1 && e_seq->flags->zero)
-		{
-			length_arg = e_seq->precision;
-			str_arg = ft_strsub(str_arg, 0, length_arg);
-		}*/
 	}
 	else
 		*str = chr;
-	//write(1, str, 10);
-	//printf("\nstr: %s\n", str);
 	return (str);
 }

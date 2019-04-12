@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 16:45:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/09 11:25:05 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/12 15:09:20 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 			**str = '-';
 			**str_arg = '0';
 		}
-		/*else if(!e_seq->is_negative)
+		else if(!e_seq->is_negative)
 			if (e_seq->flags->plus)
 				**str = '+';*/
 	/*}
@@ -73,7 +73,7 @@
 		*str_arg = ft_strfjoin(" ", *str_arg, 2);
 		*(*str + len_str - 1) = '\0';
 	}
-	/*if (e_seq->flags->minus)
+	if (e_seq->flags->minus)
 		*str = ft_strjoin(*str_arg, *str);
 	else		
 		*str = ft_strjoin(*str, *str_arg); //утечка
@@ -216,6 +216,7 @@ char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 	if (count_amount_flags(e_sequence) > 0)
 		return(*str = handler_d_flags(&*str, &*str_arg, length_str, e_sequence));
 	*str = ft_strfjoin(*str, *str_arg, 0);
+	printf("%s\n", *str);
 	return (*str);
 }
 
