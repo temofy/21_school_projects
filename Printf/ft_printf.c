@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/12 21:17:21 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/15 21:32:52 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ char	*handler_percent(t_formatting *e_seq)
 	str_len = handler_length(1, e_seq->width, 0);
 	str = ft_strnew(str_len);
 	ft_memset(str, ' ', str_len);
+	e_seq->common_length += str_len + 1;
 	if (e_seq->flags->minus)
 		str = ft_strfjoin("%", str, 2);
 	else
@@ -212,7 +213,6 @@ int		ft_printf(const char *format, ...)
 			else
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
 			substr = find_specifier(format + i, arg, e_sequence);
-			printf("common_length: %d\n", e_sequence->common_length);
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
 			common_length += e_sequence->common_length;
 		}
@@ -227,11 +227,10 @@ int		ft_printf(const char *format, ...)
 		else
 			common_length++;
 	}
-	//printf("common: %d i: %d and start: %d\n",common_length, i, start);
 	string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), (i - start)); // проверить
 	write(1, string, common_length);
 	va_end(arg);
-	return (1);
+	return (common_length);
 }
 
 int		main()
@@ -261,9 +260,13 @@ int		main()
 	
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
+	
 	ft_printf("number: %hd\n", 32768);
-	printf("number: %hd\n", 32768);
-	printf("number: %lu\n", (unsigned long int)18446744073709551615);
+	//printf("number: %hd\n", 32768);
+	//printf("number: %lu\n", (unsigned long int)18446744073709551615);
+
+	printf("%lld\n", -9223372036854775809);
+	printf("max: %s\n", ft_itoa(-2147483648));
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	

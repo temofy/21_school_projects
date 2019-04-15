@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:19:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 21:15:03 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/15 16:10:06 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 	else if (e_sequence->length_modifier == 216)
 		nbr_str = ft_ulitoa(va_arg(arg, unsigned long long int));
 	else if (e_sequence->length_modifier == 104)
-		nbr_str = ft_uitoa(va_arg(arg, unsigned short int));
+		nbr_str = ft_uitoa((unsigned short int)va_arg(arg, int));
 	else if (e_sequence->length_modifier == 208)
-		nbr_str = ft_uitoa(va_arg(arg, unsigned char));
+		nbr_str = ft_uitoa((unsigned char)va_arg(arg, int));
 	else
 		nbr_str = ft_uitoa(va_arg(arg, unsigned int)); // для разных флагов
     //printf("nbr_str: %s\n", nbr_str);
