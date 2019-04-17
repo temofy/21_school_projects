@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 19:37:14 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/15 21:45:18 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/16 15:07:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ static int	nbr_len(int n)
 	return (len);
 }
 
-static char	*ft_negative_max(char *str, int n)
+static char	*ft_negative_max(char **str, int n)
 {
 	n = n + 1;
-	str = ft_itoa(n);
-	str[10] = '8';
-	return (str);
+	*str = ft_itoa(n);
+	(*str)[10] = '8';
+	return (*str);
 }
 
 char		*ft_itoa(int n)
@@ -43,11 +43,10 @@ char		*ft_itoa(int n)
 	char	*str;
 	int		i;
 
-    if (n == -2147483648)
-		return (ft_negative_max(str, n));
-	i = nbr_len(n);
-	str = ft_strnew(i);
-    i -= 1;
+	if (n == -2147483648)
+		return (ft_negative_max(&str, n));
+	i = nbr_len(n) - 1;
+	str = ft_strnew(i + 1);
 	if (!str)
 		return (NULL);
 	if (n == 0)

@@ -6,13 +6,14 @@
 #    By: cheller <cheller@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/25 20:03:51 by cheller           #+#    #+#              #
-#    Updated: 2019/04/15 17:59:09 by cheller          ###   ########.fr        #
+#    Updated: 2019/04/17 15:53:21 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = cheks.c ft_printf.c handler_d.c handler_p.c handler_text.c hex.c handler_u.c
+SRC = cheks.c ft_printf.c handler_d.c handler_p.c handler_text.c hex.c handler_u.c \
+		handler_o_x.c handler_f.c
 
 LIBFT = libft
 

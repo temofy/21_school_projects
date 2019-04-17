@@ -6,12 +6,13 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/15 21:32:52 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/17 17:00:34 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <wchar.h>
 #include <stdlib.h>
 
 void	print_sequence(t_formatting *e_sequence)
@@ -75,11 +76,6 @@ t_formatting	*scanning_sequence(const char *format)
 	return (e_sequence);
 }
 
-char	*handler_f(va_list arg, t_formatting *e_sequence)
-{
-	return ("\0");
-}
-
 char	*handler_percent(t_formatting *e_seq)
 {
 	char	*str;
@@ -116,17 +112,11 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 		else if (format[i] == 'u' || format[i] == 'U')
 			return (handler_u(arg, e_sequence));
 		else if (format[i] == 'o' || format[i] == 'O')
-		{
-			
-		}
+			return(handler_o(arg, e_sequence));
 		else if (format[i] == 'x')
-		{
-			
-		}
+			return(handler_x(arg, e_sequence));
 		else if (format[i] == 'X')
-		{
-			
-		}
+			return(handler_x_big(arg, e_sequence));
 		else if (format[i] == '%') //  ready
 			return (handler_percent(e_sequence));
 	}
@@ -238,7 +228,7 @@ int		main()
 	char	*greeting = "Добрый вечер!";
 	char	*name = "Artem";
 	short age = 20;
-	double	Pi = 3.14;
+	double	Pi = 3.14234567891234567;
 	//double	i = 1.1;
 
 	//ft_printf("Hel%");
@@ -261,15 +251,16 @@ int		main()
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
 	
-	ft_printf("number: %hd\n", 32768);
+	//ft_printf("number: %hd\n", 32768);
 	//printf("number: %hd\n", 32768);
 	//printf("number: %lu\n", (unsigned long int)18446744073709551615);
-
-	printf("%lld\n", -9223372036854775809);
-	printf("max: %s\n", ft_itoa(-2147483648));
+	printf("size this string: %d |\n", printf("float: %.30f\n", Pi));
+	printf("size this string: %d |\n", printf("symbol: %\n", 0x100));
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	
+	//ft_printf("%-#10.5o\n", -16);
+	//printf("%-10.0o", 0);
 	//ft_printf("Age's address: %0.10p\n", &age);
 	//printf("Age's adress: %p\n", &age);
 	//printf("di: %.15f\n", (double)(i - 1.2));

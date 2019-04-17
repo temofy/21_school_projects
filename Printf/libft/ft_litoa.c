@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 19:37:14 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/15 19:01:43 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/16 15:39:30 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,11 @@ static int	nbr_len(long long int n)
 	return (len);
 }
 
-static char	*ft_negative_max(char *str, long long int n)
+static char	*ft_negative_max(char **str)
 {
-	n = n + 1;
-	str = ft_litoa(n);
-	str[10] = '8';
-	return (str);
+	*str = ft_strnew(20);
+	ft_memcpy(*str, "-9223372036854775808", 20);
+	return (*str);
 }
 
 char		*ft_litoa(long long int n)
@@ -43,12 +42,12 @@ char		*ft_litoa(long long int n)
 	char	*str;
 	int		i;
 
+	if (n == -9223372036854775807 - 1)
+		return (ft_negative_max(&str));
 	i = nbr_len(n) - 1;
-	str = ft_strnew(nbr_len(n));
+	str = ft_strnew(i + 1);
 	if (!str)
 		return (NULL);
-	if (n == -9223372036854775806)
-		return (ft_negative_max(str, n));
 	if (n == 0)
 	{
 		str[0] = 48;
