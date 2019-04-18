@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/17 17:00:34 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/18 21:22:16 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,19 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
+void PrintDblAsBin1(const double number)
+{
+    int  i;
+    int  len;
+    unsigned long  num;
+    len = 8*sizeof(double) - 1;
+    num = *(unsigned long*)&number;
+	printf("%lu\nlen: %d\n", num, len);
+    for (i = len; i >= 0; i--)
+        printf("%zu", (num >> i) & 1);
+    printf("\n");
+}
+
 int		main()
 {
 	char	*greeting = "Добрый вечер!";
@@ -230,6 +243,7 @@ int		main()
 	short age = 20;
 	double	Pi = 3.14234567891234567;
 	//double	i = 1.1;
+	float	a = 1.99860;
 
 	//ft_printf("Hel%");
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
@@ -251,11 +265,19 @@ int		main()
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
 	
+	printf("floats: %.5f %.f %.10f\n", Pi, Pi, a);
+	PrintDblAsBin1(100);
+	int bits1 = 2;
+	int bits2 = 3;
+	printf("%i\n", bits1);
+	bits1 = bits1 >> bits2;
+	printf("%i\n", bits1);
+
 	//ft_printf("number: %hd\n", 32768);
 	//printf("number: %hd\n", 32768);
 	//printf("number: %lu\n", (unsigned long int)18446744073709551615);
-	printf("size this string: %d |\n", printf("float: %.30f\n", Pi));
-	printf("size this string: %d |\n", printf("symbol: %\n", 0x100));
+	//printf("size this string: %d |\n", printf("float: %.30f\n", Pi));
+	//printf("size this string: %d |\n", printf("symbol: %\n", 0x100));
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
 	
@@ -265,5 +287,6 @@ int		main()
 	//printf("Age's adress: %p\n", &age);
 	//printf("di: %.15f\n", (double)(i - 1.2));
 	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
+	printf("%.100f\n", 0.3);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/17 12:03:00 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/18 16:49:10 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*handler_d(va_list arg, t_formatting *e_sequence);
 /* handler_d */
 char	*handler_u(va_list arg, t_formatting *e_sequence);
 char	*handler_f(va_list arg, t_formatting *e_sequence);
+char	*handler_sequence_f(char *nbr_str, t_formatting *e_seq, char **str);
 
 char	*handler_x(va_list arg, t_formatting *e_sequence);
 char	*handler_o(va_list arg, t_formatting *e_sequence);
