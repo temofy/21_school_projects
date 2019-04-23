@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/23 18:34:25 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/23 22:03:44 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,9 +252,10 @@ t_dl *LDblAsForm(const long double number)
 	for (i = len; i >= 0; i--)
         printf("%zu", (num >> i) & 1);
     printf("\n");
+	return(NULL);
 }
 
-char	*PresentIntAsBin(const unsigned char number)
+char	*PresentIntAsBin(unsigned char number)
 {
 	char	*bin;
 	int		i;
@@ -268,6 +269,38 @@ char	*PresentIntAsBin(const unsigned char number)
 	}
 	return (bin - 8);
 }
+char	*Represent_binary(unsigned char *bytes)
+{
+	char *binary;
+	int i;
+	int	j;
+
+	i = 0;
+	j = 9;
+	if (!(binary = ft_strnew(80)))
+		return (NULL);
+	while (i < 80)
+	{
+		binary += i;
+		binary = ft_strcpy(binary, PresentIntAsBin(bytes[j--]));
+		i += 8;
+	}
+	return (binary - 80);
+}
+
+t_fp	*Fill_FP(long double Ldbl)
+{
+	t_fp	*float_point;
+
+	if (!(float_point = (t_fp*)malloc(sizeof(t_fp))))
+		return (NULL);
+	float_point->binary = (t_dl*)malloc(sizeof(t_dl));
+	float_point->binary->ld = Ldbl;
+	float_point->binary_represent = Represent_binary(float_point->binary->b);
+	//float_point->sign = *PresentIntAsBin(float_point->binary->b[9]); // leak
+	//float_point->exp = ft_strcpy(float_point->exp, (PresentIntAsBin(float_point->binary->b[9]) + 1));
+	return (float_point);
+}
 
 int		main()
 {
@@ -278,12 +311,13 @@ int		main()
 	//double	i = 1.1;
 	float	a = 1.998607848473;
 
-	t_dl fp;
-	fp.ld = (long double)0.5;
-	printf("number in ld: %Lf. Bytes: ", fp.ld);
+	t_fp *fp;
+	fp = Fill_FP((long double)0.5);
+	printf("number in ld: %Lf. Bytes: ", fp->binary->ld);
 	for (int i = 9; i > -1; i--)
-		printf("%s ", PIB(fp.b[i]));
+		printf("%s ", PIB(fp->binary->b[i]));
 	printf("\n");
+	printf("struct: %s\n", fp->binary_represent);
 
 
 	//ft_printf("Hel%")

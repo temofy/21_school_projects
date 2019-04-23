@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/23 18:58:42 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/23 21:42:27 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,29 @@ typedef struct	s_formatting
 	int		common_length;
 }						t_formatting;
 
-struct		bigint 
+/*struct		bigint 
 {
 	char sign;
 	char *exp[16];
 	char int_part;
 	char *frac[64];
-};
+};*/
 
 typedef union d_l
 {	
 	long double ld;
 	unsigned char b[16];
 } t_dl;
+
+typedef struct	floating_point
+{
+	char sign;
+	char exp[16];
+	char int_part;
+	char frac[64];
+	char *binary_represent;
+	t_dl *binary;
+}		t_fp;
 
 struct byte 
 {
