@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/18 21:22:16 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/23 18:34:25 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <wchar.h>
 #include <stdlib.h>
+
+#define PIB(x) PresentIntAsBin(x)
 
 void	print_sequence(t_formatting *e_sequence)
 {
@@ -231,9 +233,40 @@ void PrintDblAsBin1(const double number)
     len = 8*sizeof(double) - 1;
     num = *(unsigned long*)&number;
 	printf("%lu\nlen: %d\n", num, len);
+	//printf("bit: %zu\n", (num >> 62) & 1);
     for (i = len; i >= 0; i--)
         printf("%zu", (num >> i) & 1);
     printf("\n");
+}
+
+t_dl *LDblAsForm(const long double number)
+{
+	t_dl *forms;
+    int  i;
+    int  len;
+    unsigned long  num;
+    len = 8*sizeof(long double) - 1;
+    num = *(unsigned long*)&number;
+	printf("%lu\nlen: %d\n", num, len);
+
+	for (i = len; i >= 0; i--)
+        printf("%zu", (num >> i) & 1);
+    printf("\n");
+}
+
+char	*PresentIntAsBin(const unsigned char number)
+{
+	char	*bin;
+	int		i;
+
+	i = 8;
+	bin = ft_strnew(8);
+	while (i--)
+	{
+		*bin = ((number >> i) & 1) + '0';
+		bin++;
+	}
+	return (bin - 8);
 }
 
 int		main()
@@ -243,9 +276,17 @@ int		main()
 	short age = 20;
 	double	Pi = 3.14234567891234567;
 	//double	i = 1.1;
-	float	a = 1.99860;
+	float	a = 1.998607848473;
 
-	//ft_printf("Hel%");
+	t_dl fp;
+	fp.ld = (long double)0.5;
+	printf("number in ld: %Lf. Bytes: ", fp.ld);
+	for (int i = 9; i > -1; i--)
+		printf("%s ", PIB(fp.b[i]));
+	printf("\n");
+
+
+	//ft_printf("Hel%")
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
 	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
 	printf("I'm % .05 d лет\n", 20);*/
@@ -264,9 +305,8 @@ int		main()
 	
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
-	
-	printf("floats: %.5f %.f %.10f\n", Pi, Pi, a);
-	PrintDblAsBin1(100);
+	printf("sizeof: %zu\nfloats: %.5f %.f %.10f\n",sizeof(long double), Pi, Pi, a);
+	PrintDblAsBin1(5.0);
 	int bits1 = 2;
 	int bits2 = 3;
 	printf("%i\n", bits1);
@@ -287,6 +327,14 @@ int		main()
 	//printf("Age's adress: %p\n", &age);
 	//printf("di: %.15f\n", (double)(i - 1.2));
 	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
-	printf("%.100f\n", 0.3);
+	printf("%.100f\n", 0.33589235903248509238958230532523523523598);
+	printf("%e\n", 6553.12412);
+
+	union types value;
+  	printf("N = ");
+  	scanf("%lf", &value.d);
+  	printf("%lf = %s %s %s %s %s %s %s %s\n", value.d, PIB(value.b[7]), PIB(value.b[6]), PIB(value.b[5]), PIB(value.b[4]), PIB(value.b[3]), PIB(value.b[2]), PIB(value.b[1]), PIB(value.b[0]));
+	//printf("%lf = %i %i %i %i %i %i %i %i\n", value.d, PIB(value.b[0]), value.b[1], value.b[2], value.b[3], value.b[4], value.b[5], value.b[6], value.b[7]);
+	//printf("bin_str: %s\n", PresentIntAsBin(255));
 	return (1);
 }
