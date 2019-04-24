@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/23 21:42:27 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/24 17:54:39 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,18 @@ typedef union d_l
 typedef struct	floating_point
 {
 	char sign;
-	char exp[16];
+	char *exp;
 	char int_part;
-	char frac[64];
+	char *frac;
 	char *binary_represent;
 	t_dl *binary;
 }		t_fp;
 
-struct byte 
+typedef struct	str_fp
 {
-	unsigned char a : 5;
-	unsigned char b : 4;
-};
+	char	*integer;
+	char	*frac;
+}	t_str_fp;
 
 union types
 {

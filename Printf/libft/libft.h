@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 16:01:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 21:10:57 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/24 15:41:54 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char				*ft_strftchr(char *s, int pos, int c);
 int					ft_isthere_chr(char *s, int c);
 char				*ft_strfjoin(char *s1, char *s2, int arg_to_free);
 char				*ft_strljoin(char *s1, char *s2, int len1, int len2);
+float				ft_pow(int number, int expt);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
 #endif
