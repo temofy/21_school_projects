@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/24 17:54:39 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:19:37 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,19 @@ typedef struct	floating_point
 	t_dl *binary;
 }		t_fp;
 
+struct	bignum
+{
+	char	**integer;
+	char	**frac;
+};
+
 typedef struct	str_fp
 {
 	char	*integer;
 	char	*frac;
+	struct 	bignum *dec_represent;
 }	t_str_fp;
 
-union types
-{
-  double d;
-  unsigned char b[8];
-};
 
 int		ft_printf(const char *format, ...);
 int		find_end_spec(char chr);
@@ -84,8 +86,8 @@ void	print_sequence(t_formatting *e_sequence);
 int		count_amount_flags(t_formatting *e_seq);
 int		handler_length(int length, int width, int precision);
 /* handler_d */
-char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_seq);
-char	*handler_sequence_d(char *str_arg, t_formatting *e_sequence, char **str);
+char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq);
+char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str);
 char	*handler_d(va_list arg, t_formatting *e_sequence);
 /* handler_d */
 char	*handler_u(va_list arg, t_formatting *e_sequence);

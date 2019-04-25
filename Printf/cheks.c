@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/12 21:09:32 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:30:39 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		find_index_end_spec(const char *string)
 	{
 		if ((string[i] >= 'A' && string[i] <= 'Z') || (string[i] >= 'a' && string[i] <= 'z'))
 		{
-			if (string[i] != 'l' && string[i] != 'h' && string[i] != 'L') // continue
+			if (string[i] != 'l' && string[i] != 'h' && string[i] != 'L' && string[i] != 'z' && string[i] != 'j') // continue
 				return (i);
 		}
 		else if (string[i] == '%')
@@ -226,6 +226,10 @@ int	check_length_modifier(const char *format)
 		}
 		if (format[i - 1] == 'L')
 			return (76);
+		if (format[i - 1] == 'j')
+			return (106);
+		if (format[i - 1] == 'z')
+			return (122);
 	}
 	return (-1);
 }

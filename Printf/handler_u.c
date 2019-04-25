@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:19:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/17 17:40:23 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:20:43 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 	else
 		nbr_str = ft_uitoa(va_arg(arg, unsigned int)); // для разных флагов
     //printf("nbr_str: %s\n", nbr_str);
-	str = handler_sequence_d(nbr_str, e_sequence, &str);
+	str = handler_sequence_d(&nbr_str, e_sequence, &str);
 	return (str);
 }

@@ -6,14 +6,14 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 16:45:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/17 11:55:01 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:35:14 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-/*char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq)
+char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq)
 {
 	int		len_arg;
 
@@ -30,8 +30,8 @@
 		}
 		else if(!e_seq->is_negative)
 			if (e_seq->flags->plus)
-				**str = '+';*/
-	/*}
+				**str = '+';
+	}
 	if (e_seq->flags->plus) 	// flag "+"
 	{
 		if (len_str > 0)
@@ -113,9 +113,9 @@ char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 		return(*str = handler_d_flags(&*str, &*str_arg, length_str, e_sequence));
 	*str = ft_strfjoin(*str, *str_arg, 0);
 	return (*str);
-}*/
+}
 
-char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_seq)
+/*char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_seq)
 {
 	int		len_arg;
 	int		prec;
@@ -129,7 +129,7 @@ char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_se
 		ft_memset(*str, '0', len_str);
 		if (e_seq->is_negative && len_str > 0)
 			**str = '-';
-	}
+	}*/
 	/*else if (e_seq->flags->zero && e_seq->precision >= len_arg && e_seq->flags->plus == 0) // оптимизировать и унифицировать прибавление -
 	{
 		if (e_seq->is_negative && e_seq->precision < e_seq->width)
@@ -142,7 +142,7 @@ char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_se
 		e_seq->common_length++;	
 		
 	}*/
-	else if (e_seq->flags->zero && !e_seq->flags->plus && e_seq->is_negative ) // ужасно, исправить!!!
+	/*else if (e_seq->flags->zero && !e_seq->flags->plus && e_seq->is_negative ) // ужасно, исправить!!!
 	{
 		if (e_seq->precision >= e_seq->width)
 		{
@@ -168,7 +168,7 @@ char	*handler_d_flags(char **str, char *str_arg, int len_str, t_formatting *e_se
 			{
 				if (e_seq->is_negative)
 				{
-					//*str_arg = '0';
+					//str_arg = '0';
 					*(*str + ((len_str + len_arg) - e_seq->precision - 1)) = '-';
 				}
 				else
@@ -236,7 +236,7 @@ char	*handler_sequence_d(char *str_arg, t_formatting *e_seq, char **str)
 	if (e_seq->is_negative)
 	{
 		if (precision >= width)
-			e_seq->common_length++;
+			e_seq->common_length++;*/
 		/*if (precision <= length_arg)
 		{
 			str_arg--;
@@ -244,14 +244,14 @@ char	*handler_sequence_d(char *str_arg, t_formatting *e_seq, char **str)
 		}
 		else
 		{*/
-			*str = ft_strfjoin(*str, str_arg, 2);
+			//*str = ft_strfjoin(*str, str_arg, 2);
 			//free(--str_arg);
 		//}		
-	}
-	else
+	//}
+	/*else
 		*str = ft_strfjoin(*str, str_arg, 0);
 	return (*str);
-}
+}*/
 
 char	*handler_d(va_list arg, t_formatting *e_seq)
 {
@@ -267,6 +267,10 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 		nbr_str = ft_itoa((short int)va_arg(arg, int));
 	else if (e_seq->length_modifier == 208)
 		nbr_str = ft_itoa((signed char)va_arg(arg, int));
+	else if (e_seq->length_modifier == 106)
+		nbr_str = ft_itoa((signed char)va_arg(arg, int));
+	else if (e_seq->length_modifier == 122)
+		nbr_str = ft_ulitoa((signed char)va_arg(arg, size_t));
 	else
 		nbr_str = ft_itoa(va_arg(arg, int)); // для разных флагов
 	if (*nbr_str == '-')
@@ -274,6 +278,7 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 		//nbr_str++;
 		e_seq->is_negative = 1;
 	}
-	str = handler_sequence_d(nbr_str, e_seq, &str);
+	str = handler_sequence_d(&nbr_str, e_seq, &str);
+	e_seq->common_length = ft_strlen(str);
 	return (str);
 }

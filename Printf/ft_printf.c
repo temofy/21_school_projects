@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/24 21:00:55 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:34:23 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,28 +338,87 @@ unsigned long	FractionBinAsDec(char *bin)
 	return (frac_decimal);
 }
 
+
+void	PrintFracDecimal(unsigned long *massive)
+{
+	int		i;
+
+	i = 0;
+	while (i < 63)
+	{
+		printf("%lu\n", massive[i]);
+		i++;
+	}
+}
+
+
+char	*GetDecimalIntStr(char *bin)
+{
+	return (NULL);
+}
+
+char	*ft_pow_str(char *number, int exponent)
+{
+	size_t	length;
+	int		i;
+	char	*str;
+
+	if (!number || exponent < 0)
+		return (NULL);
+	length = ft_strlen(number);
+	str = ft_strnew(length);
+	i = 0;
+
+	return (str);	
+}
+
+char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
+{
+	int		i;
+
+	i = 0;
+	str->dec_represent->frac = (char**)malloc(sizeof(char*) * 64);
+	while (i < 64)
+	{
+			(str->dec_represent->frac)[i] = ft_strnew(100);
+			i++;
+	}
+
+	size_t	len;
+	i = 0;
+	len = ft_strlen(frac_bin);
+	while (i < len)
+	{
+		if (frac_bin[i] == '1')
+		{
+			//str->dec_represent->frac = ft_strcpy
+		}
+	}
+	return (NULL);
+}
+
 char	*Get_Number(t_fp *fp)
 {
 	long double		dec_number;
 	unsigned long	dec_mantissa;
 	int				exp;
 	t_str_fp		*str;
+	
+	str = (t_str_fp*)malloc(sizeof(t_str_fp));
+	str->dec_represent = (struct bignum*)malloc(sizeof(struct bignum));
+
+
 
 	exp = BinAsDec(fp->exp) - 16383;
-	printf("exp: %i\n", exp);
-	dec_mantissa = BinAsDec(fp->frac);
+	//printf("exp: %i\n", exp);
 	
 	str->integer = ft_strdup(&fp->int_part);
 	str->integer = ft_strjoin(str->integer, ft_strsub(fp->frac, 0, exp));
 	str->frac = ft_strsub(fp->frac, exp, 63 - exp);
-	//str->frac = ft_strjoin(str->frac, "00");
 	printf("int: %s\nfrac: %s\n", str->integer, str->frac);
-	printf("float: %lu.%lu\n", BinAsDec(str->integer), (BinAsDec(str->frac)));
-	printf("dec_mantissa: %lu\n", dec_mantissa);
+	printf("decimal integer part: %lu\n", BinAsDec(str->integer));
 	dec_number = pow(2, exp);
 	dec_number *= (1 + (dec_mantissa/ pow(2, 63)));
-	printf("dec_number: %L.25f\n", dec_number);
-	//printf("printf: %.25f\n", 5.5);
 	return (NULL);
 }
 
@@ -373,15 +432,15 @@ int		main()
 	float	a = 1.998607848473;
 
 	t_fp *fp;
-	fp = Fill_FP((long double)5.4);
-	printf("number in ld: %Lf. Bytes: ", fp->binary->ld);
-	for (int i = 9; i > -1; i--)
-		printf("%s ", PIB(fp->binary->b[i]));
-	printf("\n");
+	fp = Fill_FP((long double)123456.78);
 	printf("binary: %s\n", fp->binary_represent);
-	printf("sign: %c\nexp: %s\nint_part: %c\nfrac: %s\n", fp->sign, fp->exp, fp->int_part, fp->frac);
-	//printf("Exponent decimal: %lu\n", BinAsDec(fp->exp));
 	Get_Number(fp);
+
+	ft_printf("int %15.10d\n", -400);
+	printf("int %15.10d\n", -400);
+	printf("format j: %jd\n", (long)3000000000);
+	printf("size: %zd\n", 1844674407370955161);
+	ft_printf("size: %zd\n", 1844674407370955161);
 	//ft_printf("Hel%")
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
 	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
@@ -401,14 +460,8 @@ int		main()
 	
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
-	PrintDblAsBin1(5.0);
-	int bits1 = 2;
-	int bits2 = 3;
-	printf("%i\n", bits1);
-	bits1 = bits1 >> bits2;
-	printf("%i\n", bits1);
-	printf("convert: %lu\n", FractionBinAsDec("0110011001100110"));
-	printf("%.25f", 5.4);
+	//PrintDblAsBin1(5.0);
+	//printf("convert: %lu\n", FractionBinAsDec("0110011001100110"));
 	//ft_printf("number: %hd\n", 32768);
 	//printf("number: %hd\n", 32768);
 	//printf("number: %lu\n", (unsigned long int)18446744073709551615);
@@ -427,10 +480,6 @@ int		main()
 	//printf("%.100f\n", 0.33589235903248509238958230532523523523598);
 	//printf("%e\n", 6553.12412);
 
-	/*union types value;
-  	printf("N = ");
-  	scanf("%lf", &value.d);
-  	printf("%lf = %s %s %s %s %s %s %s %s\n", value.d, PIB(value.b[7]), PIB(value.b[6]), PIB(value.b[5]), PIB(value.b[4]), PIB(value.b[3]), PIB(value.b[2]), PIB(value.b[1]), PIB(value.b[0]));*/
 	//printf("%lf = %i %i %i %i %i %i %i %i\n", value.d, PIB(value.b[0]), value.b[1], value.b[2], value.b[3], value.b[4], value.b[5], value.b[6], value.b[7]);
 	//printf("bin_str: %s\n", PresentIntAsBin(255));
 	return (1);
