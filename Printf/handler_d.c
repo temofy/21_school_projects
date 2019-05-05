@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 16:45:58 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/25 20:35:14 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/25 21:01:57 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,7 +270,7 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 	else if (e_seq->length_modifier == 106)
 		nbr_str = ft_itoa((signed char)va_arg(arg, int));
 	else if (e_seq->length_modifier == 122)
-		nbr_str = ft_ulitoa((signed char)va_arg(arg, size_t));
+		nbr_str = ft_ulitoa(va_arg(arg, size_t));
 	else
 		nbr_str = ft_itoa(va_arg(arg, int)); // для разных флагов
 	if (*nbr_str == '-')

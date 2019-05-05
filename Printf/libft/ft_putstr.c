@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 16:17:04 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/28 14:05:17 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/05 19:18:25 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
 	if (!str)
 		return ;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write(1, str, ft_strlen(str));
 }

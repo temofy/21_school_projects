@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 16:01:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/24 15:41:54 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/29 16:25:22 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list*(*f)(t_list *elem));
 
 char				*ft_strtchr(char *s, int c);
+char				*ft_strrev(char *str);
 char				*ft_litoa(long long int n);
 char				*ft_uitoa(unsigned n);
 char				*ft_ulitoa(unsigned long long int n);

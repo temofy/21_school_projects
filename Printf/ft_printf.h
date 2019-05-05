@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/25 19:19:37 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/05 17:21:29 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,12 @@ typedef struct	floating_point
 	char *binary_represent;
 	t_dl *binary;
 }		t_fp;
+
+typedef struct		long_value
+{
+	int		*values;
+	int		length;
+}	t_long_value;
 
 struct	bignum
 {

@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/25 20:34:23 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/05 17:55:59 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,20 +226,6 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-void PrintDblAsBin1(const double number)
-{
-    int  i;
-    int  len;
-    unsigned long  num;
-    len = 8*sizeof(double) - 1;
-    num = *(unsigned long*)&number;
-	printf("%lu\nlen: %d\n", num, len);
-	//printf("bit: %zu\n", (num >> 62) & 1);
-    for (i = len; i >= 0; i--)
-        printf("%zu", (num >> i) & 1);
-    printf("\n");
-}
-
 t_dl *LDblAsForm(const long double number)
 {
 	t_dl *forms;
@@ -357,7 +343,20 @@ char	*GetDecimalIntStr(char *bin)
 	return (NULL);
 }
 
-char	*ft_pow_str(char *number, int exponent)
+char	*ft_multiplication_str(char *a, char *b)
+{
+	size_t	a_len;
+	size_t	b_len;
+	char	*result;
+
+	a_len = ft_strlen(a);
+	b_len = ft_strlen(b);
+	result = ft_strnew(a_len + b_len);
+	
+	return (NULL);
+}
+
+char	*ft_pow_str(char *number, int exponent) // not done
 {
 	size_t	length;
 	int		i;
@@ -366,34 +365,47 @@ char	*ft_pow_str(char *number, int exponent)
 	if (!number || exponent < 0)
 		return (NULL);
 	length = ft_strlen(number);
-	str = ft_strnew(length);
+	str = ft_strnew(length * exponent);
 	i = 0;
-
+	while (i)
+	{
+		
+	}
 	return (str);	
 }
 
 char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 {
 	int		i;
+	int		k;
+	size_t	len;
+	char	*tmp;
 
 	i = 0;
-	str->dec_represent->frac = (char**)malloc(sizeof(char*) * 64);
+	str->dec_represent->frac = (char**)malloc(sizeof(char*) * 65);
 	while (i < 64)
 	{
 			(str->dec_represent->frac)[i] = ft_strnew(100);
 			i++;
 	}
-
-	size_t	len;
 	i = 0;
+	k = 1;
 	len = ft_strlen(frac_bin);
 	while (i < len)
 	{
 		if (frac_bin[i] == '1')
 		{
-			//str->dec_represent->frac = ft_strcpy
+			tmp = ft_ulitoa((pow(5, i + 1)) * pow(10, len - i - 1)); // pow
+			str->dec_represent->frac[k++] = tmp;
 		}
+		i++;
 	}
+
+	// for future deleting
+	i = 1;
+	printf("Numbers from fractional:\n");
+	while (i <= 65)
+		printf("%s\n", str->dec_represent->frac[i++]);
 	return (NULL);
 }
 
@@ -410,8 +422,6 @@ char	*Get_Number(t_fp *fp)
 
 
 	exp = BinAsDec(fp->exp) - 16383;
-	//printf("exp: %i\n", exp);
-	
 	str->integer = ft_strdup(&fp->int_part);
 	str->integer = ft_strjoin(str->integer, ft_strsub(fp->frac, 0, exp));
 	str->frac = ft_strsub(fp->frac, exp, 63 - exp);
@@ -419,6 +429,7 @@ char	*Get_Number(t_fp *fp)
 	printf("decimal integer part: %lu\n", BinAsDec(str->integer));
 	dec_number = pow(2, exp);
 	dec_number *= (1 + (dec_mantissa/ pow(2, 63)));
+	GetDecimalFracStr(str->frac, str);
 	return (NULL);
 }
 
@@ -434,13 +445,10 @@ int		main()
 	t_fp *fp;
 	fp = Fill_FP((long double)123456.78);
 	printf("binary: %s\n", fp->binary_represent);
+	printf("original: %.64f\n", 123456.78);
 	Get_Number(fp);
 
-	ft_printf("int %15.10d\n", -400);
-	printf("int %15.10d\n", -400);
-	printf("format j: %jd\n", (long)3000000000);
-	printf("size: %zd\n", 1844674407370955161);
-	ft_printf("size: %zd\n", 1844674407370955161);
+	//printf("rev: %s\n", ft_strrev(name));
 	//ft_printf("Hel%")
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
 	/* ft_printf("I'm % .05 d лет\n", 20); // will right process

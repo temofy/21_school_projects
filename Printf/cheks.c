@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:52:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/04/25 20:30:39 by cheller          ###   ########.fr       */
+/*   Updated: 2019/04/29 12:39:20 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		find_end_spec(const char chr)
 {
 	if ((chr >= 'A' && chr <= 'Z') || (chr >= 'a' && chr <= 'z'))
 	{
-		if (chr != 'l' && chr != 'h' && chr != 'L') // continue
+		if (chr != 'l' && chr != 'h' && chr != 'L' && chr != 'z' && chr != 'j') // continue
 			return (1);
 	}
 	else if (chr == '%')
