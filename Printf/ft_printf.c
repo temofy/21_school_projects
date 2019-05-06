@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/05/05 17:55:59 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/06 17:46:04 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -379,8 +379,12 @@ char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 	int		i;
 	int		k;
 	size_t	len;
-	char	*tmp;
+	t_long_value	tmp;
+	t_long_value	result;
 
+	result.values = (int*)malloc(sizeof(int) * 1);
+	result.values[0] = 0;
+	result.length = 0;
 	i = 0;
 	str->dec_represent->frac = (char**)malloc(sizeof(char*) * 65);
 	while (i < 64)
@@ -395,17 +399,17 @@ char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 	{
 		if (frac_bin[i] == '1')
 		{
-			tmp = ft_ulitoa((pow(5, i + 1)) * pow(10, len - i - 1)); // pow
-			str->dec_represent->frac[k++] = tmp;
+			tmp = karatsuba_mul((ft_la_pow(conv_to_la(5) , i + 1)), ft_la_pow(conv_to_la(10), len - i - 1)); // pow
+			printf("Interim: \t");
+			PrintBigNum(tmp);
+			result = sum(result, tmp);
+			printf("After sum: \t");
+			PrintBigNum(result);
+			free(tmp.values);
 		}
 		i++;
 	}
-
-	// for future deleting
-	i = 1;
-	printf("Numbers from fractional:\n");
-	while (i <= 65)
-		printf("%s\n", str->dec_represent->frac[i++]);
+	PrintBigNum(result);
 	return (NULL);
 }
 

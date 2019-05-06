@@ -33,6 +33,7 @@ add_executable(Printf
         libft/ft_memdel.c
         libft/ft_memmove.c
         libft/ft_memset.c
+        libft/ft_pow.c
         libft/ft_putchar.c
         libft/ft_putchar_fd.c
         libft/ft_putendl.c
@@ -66,6 +67,7 @@ add_executable(Printf
         libft/ft_strnew.c
         libft/ft_strnstr.c
         libft/ft_strrchr.c
+        libft/ft_strrev.c
         libft/ft_strsplit.c
         libft/ft_strstr.c
         libft/ft_strsub.c
@@ -76,12 +78,5 @@ add_executable(Printf
         libft/ft_uitoa.c
         libft/ft_ulitoa.c
         libft/libft.h
-        cheks.c
-        ft_printf.c
         ft_printf.h
-        handler_d.c
-        handler_p.c
-        handler_text.c
-        handler_u.c
-        hex.c
-        test.c)
+        long_arithmetic.c)

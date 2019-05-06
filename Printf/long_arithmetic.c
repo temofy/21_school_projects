@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 16:06:52 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/05 21:01:40 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/06 15:54:52 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,11 @@
 void	PrintBigNum(t_long_value nbr)
 {
 	int   		i;
-	signed char	leading_zeros;
 
-	leading_zeros = 1;
 	i = nbr.length - 1;
     while (i > -1)
 	{
-		/*if (nbr.values[i])
-			leading_zeros = 0;
-		if (!leading_zeros)*/
-    		printf("%i", nbr.values[i]);
+    	printf("%i", nbr.values[i]);
 		i--;
 	}
     printf("\n");
@@ -91,16 +86,10 @@ t_long_value sum(t_long_value a, t_long_value b)
 		a = b;
 		b = s;
 	}
-	/*printf("a: ");
-	PrintBigNum(a);
-	printf("b: ");
-	PrintBigNum(b);*/
     s.length = a.length;
     s.values = (int*)malloc(sizeof(int) * s.length);
 	ft_memcpy(s.values, a.values, a.length * 4);
     s.values[a.length] = 0;
-	/*printf("s: ");
-	PrintBigNum(s);*/
     for (i = 0; i < b.length; ++i) {
         s.values[i] = a.values[i] + b.values[i];
     }
@@ -121,28 +110,31 @@ t_long_value	ExpandValue(t_long_value nbr)
 {
 	int		*new_value;
 	new_value = (int*)malloc(sizeof(int) * nbr.length + 1);
-	ft_memcpy(new_value, nbr.values, nbr.length);
+	ft_memcpy(new_value, nbr.values, nbr.length * sizeof(int));
 	new_value[nbr.length] = 0;
 	free(nbr.values);
 	nbr.values = new_value;
+	nbr.length++;
 	return (nbr);
 }
 
-void			normalize(t_long_value l) 
+t_long_value		normalize(t_long_value l)
 {
     int		i;
 	int		carryover;
 
 	i = -1;
-    while (++i < l.length - 1) 
+    while (++i < l.length) 
 	{
         if (l.values[i] >= 10)
 		{
             carryover = l.values[i] / 10;
-			if (i + 1 < l.length - 1)
+			if (i + 1 < l.length)
             	l.values[i + 1] += carryover;
-			else
-				l = ExpandValue(l);
+            else {
+                l = ExpandValue(l);
+                l.values[i + 1] += carryover;
+            }
             l.values[i] -= carryover * 10;
         } 
 		else if (l.values[i] < 0)
@@ -152,37 +144,36 @@ void			normalize(t_long_value l)
             l.values[i] -= carryover * 10;
         }
     }
+    return (l);
 }
 
 t_long_value	naive_mul(t_long_value result, t_long_value a, t_long_value b)
 {
-	/*printf("naive a: ");
-	PrintBigNum(a);
-	printf("naive b: ");
-	PrintBigNum(b);*/
 	ft_memset(result.values, 0, sizeof(int) * result.length);
     for (int i = 0; i < a.length; ++i)
         for (int j = 0; j < b.length; ++j)
+		{
+			if ((i + j) > result.length - 1)
+				result = ExpandValue(result);
             result.values[i + j] += a.values[i] * b.values[j];
+		}
 	return (result);
 }
 t_long_value karatsuba_mul(t_long_value a, t_long_value b) 
 {
-	//printf("done\n");
     t_long_value product;
     int i;
 
-    product.length = a.length + b.length;
+	if (a.length > b.length)
+    	product.length = a.length;
+	else
+		product.length = b.length;
     product.values = malloc(sizeof(int) * product.length);
  
-    if (a.length < 4)
+    if (a.length < 65)
 		product = naive_mul(product, a, b);
     else 
-	{ //умножение методом Карацубы
-		/*printf("a: ");
-		PrintBigNum(a);
-		printf("b: ");
-		PrintBigNum(b);*/
+	{
         t_long_value a_part1; //младшая часть числа a
         a_part1.values = a.values;
         a_part1.length = (a.length + 1) / 2;
@@ -223,7 +214,7 @@ t_long_value karatsuba_mul(t_long_value a, t_long_value b)
         free(product_of_first_parts.values);
         free(product_of_second_parts.values);
     }
-    //normalize(product);
+    product = normalize(product);
     return product;
 }
 
@@ -271,6 +262,15 @@ t_long_value	ft_la_pow(t_long_value nbr, int exp)
 	int				i;
 
 	i = 0;
+	if (exp == 0)
+    {
+        result.values = (int*)malloc(sizeof(int) * 1);
+	    result.values[0] = 1;
+	    result.length = 1;
+	    return (result);
+    }
+	if (exp == 1)
+	    return (nbr);
 	result = karatsuba_mul(nbr, nbr);
 	exp--;
 	while (exp-- > 1)
@@ -280,16 +280,18 @@ t_long_value	ft_la_pow(t_long_value nbr, int exp)
 	return (result);
 }
 
-
-int		main()
+/*int		main()
 {
-    t_long_value  result;
-
-	//result = karatsuba_mul(conv_to_la(999), conv_to_la(5));
-	//result = ft_la_pow(conv_to_la(10), 60);
-	result = sum(conv_to_la(99),conv_to_la(500001));
-    //normalize(result);
-
-    PrintBigNum(result);
+    t_long_value    result;
+    t_long_value    result1;
+	//result = ft_la_pow(conv_to_la(3), );
+	//result = sum(conv_to_la(2),conv_to_la(99999));
+	//result = normalize(result);
+    /*result = sum(conv_to_la(999), result);
+    normalize(result);
+    result = sub(result, conv_to_la(99));
+	result = karatsuba_mul(result, conv_to_la(5));
+	normalize(result);*/
+    /*PrintBigNum(result);
     return (0);
-}
+}*/

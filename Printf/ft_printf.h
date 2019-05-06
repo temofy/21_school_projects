@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/05 17:21:29 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/06 15:50:07 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,12 @@ char	*handler_s(va_list arg, t_formatting *e_sequence);
 char	*handler_c(va_list arg, t_formatting *e_sequence);
 /* handler_p */
 char	*handler_p(va_list arg, t_formatting *e_sequence);
+
+/* long arithmetic */
+t_long_value	ft_la_pow(t_long_value nbr, int exp);
+t_long_value	conv_to_la(signed long nbr);
+t_long_value 	karatsuba_mul(t_long_value a, t_long_value b);
+t_long_value	normalize(t_long_value l);
+t_long_value	sum(t_long_value a, t_long_value b);
+void	PrintBigNum(t_long_value nbr); // удалить
 #endif
