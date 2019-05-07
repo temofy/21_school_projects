@@ -4,6 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cheller/Desktop/home_space/Printf/cheks.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/conversions.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/ft_printf.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_d.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_d.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_f.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_f.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_o_x.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_o_x.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_p.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_p.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_text.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_text.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_u.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_u.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/hex.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/hex.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_atoi.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_atoi.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_bzero.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_bzero.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_find_last_lst.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.o"

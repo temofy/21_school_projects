@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/05/06 17:46:04 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/07 13:24:49 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,12 +226,13 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-t_dl *LDblAsForm(const long double number)
+t_ld_nbr *LDblAsForm(const long double number)
 {
-	t_dl *forms;
-    int  i;
-    int  len;
-    unsigned long  num;
+	t_ld_nbr		*forms;
+    int				i;
+    int 			len;
+    unsigned long	num;
+	
     len = 8*sizeof(long double) - 1;
     num = *(unsigned long*)&number;
 	printf("%lu\nlen: %d\n", num, len);
@@ -258,26 +259,26 @@ char	*PresentIntAsBin(unsigned char number)
 }
 char	*Represent_binary(unsigned char *bytes)
 {
-	char *binary;
-	int i;
-	int	j;
+	char    *binary;
+	int     i;
+	int     j;
 
 	i = 0;
 	j = 9;
 	if (!(binary = ft_strnew(80)))
-		return (NULL);
+	    return (NULL);
 	while (i++ < 10)
-		binary = ft_strjoin(binary, PresentIntAsBin(bytes[j--]));
+		binary = ft_strfjoin(binary, PresentIntAsBin(bytes[j--]), 0);
 	return (binary);
 }
 
-t_fp	*Fill_FP(long double Ldbl)
+t_float	*Fill_FP(long double Ldbl)
 {
-	t_fp	*float_point;
+	t_float     *float_point;
 
-	if (!(float_point = (t_fp*)malloc(sizeof(t_fp))))
+	if (!(float_point = (t_float*)malloc(sizeof(t_float))))
 		return (NULL);
-	float_point->binary = (t_dl*)malloc(sizeof(t_dl));
+	float_point->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
 	float_point->binary->ld = Ldbl;
 	float_point->binary_represent = Represent_binary(float_point->binary->b);
 	float_point->sign = *float_point->binary_represent;
@@ -307,23 +308,6 @@ unsigned long	BinAsDec(char *bin)
 	return (decimal);
 }
 
-unsigned long	FractionBinAsDec(char *bin)
-{
-	unsigned long frac_decimal;
-	size_t	len;
-	int		i;
-
-	i = 1;
-	len = ft_strlen(bin);
-	frac_decimal = 0;
-	while (i <= len)
-	{
-		frac_decimal += (((bin[i - 1] - '0') * pow(5, i)) * pow(10, len - i));
-		i++;
-	}
-	return (frac_decimal);
-}
-
 
 void	PrintFracDecimal(unsigned long *massive)
 {
@@ -343,37 +327,6 @@ char	*GetDecimalIntStr(char *bin)
 	return (NULL);
 }
 
-char	*ft_multiplication_str(char *a, char *b)
-{
-	size_t	a_len;
-	size_t	b_len;
-	char	*result;
-
-	a_len = ft_strlen(a);
-	b_len = ft_strlen(b);
-	result = ft_strnew(a_len + b_len);
-	
-	return (NULL);
-}
-
-char	*ft_pow_str(char *number, int exponent) // not done
-{
-	size_t	length;
-	int		i;
-	char	*str;
-
-	if (!number || exponent < 0)
-		return (NULL);
-	length = ft_strlen(number);
-	str = ft_strnew(length * exponent);
-	i = 0;
-	while (i)
-	{
-		
-	}
-	return (str);	
-}
-
 char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 {
 	int		i;
@@ -381,17 +334,18 @@ char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 	size_t	len;
 	t_long_value	tmp;
 	t_long_value	result;
+	//char            fractional
 
 	result.values = (int*)malloc(sizeof(int) * 1);
 	result.values[0] = 0;
 	result.length = 0;
 	i = 0;
-	str->dec_represent->frac = (char**)malloc(sizeof(char*) * 65);
+	/*str->dec_represent->frac = (char**)malloc(sizeof(char*) * 65);
 	while (i < 64)
 	{
 			(str->dec_represent->frac)[i] = ft_strnew(100);
 			i++;
-	}
+	}*/
 	i = 0;
 	k = 1;
 	len = ft_strlen(frac_bin);
@@ -400,20 +354,31 @@ char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
 		if (frac_bin[i] == '1')
 		{
 			tmp = karatsuba_mul((ft_la_pow(conv_to_la(5) , i + 1)), ft_la_pow(conv_to_la(10), len - i - 1)); // pow
-			printf("Interim: \t");
-			PrintBigNum(tmp);
 			result = sum(result, tmp);
-			printf("After sum: \t");
-			PrintBigNum(result);
 			free(tmp.values);
 		}
 		i++;
 	}
+	str->frac = ConvBigNumToStr(result);
 	PrintBigNum(result);
+	printf("string: %s\n", str->frac);
 	return (NULL);
 }
 
-char	*Get_Number(t_fp *fp)
+char    *GetLeadingZeros(int amount)
+{
+    char    *leading_zeros;
+
+    leading_zeros = strdup("");
+    if (amount == 0)
+        return (leading_zeros);
+    while (amount--)
+        leading_zeros = ft_strfjoin("0", leading_zeros, 2);
+    return (leading_zeros);
+}
+
+
+char	*Get_Number(t_float *fp)
 {
 	long double		dec_number;
 	unsigned long	dec_mantissa;
@@ -421,18 +386,24 @@ char	*Get_Number(t_fp *fp)
 	t_str_fp		*str;
 	
 	str = (t_str_fp*)malloc(sizeof(t_str_fp));
-	str->dec_represent = (struct bignum*)malloc(sizeof(struct bignum));
-
-
-
-	exp = BinAsDec(fp->exp) - 16383;
-	str->integer = ft_strdup(&fp->int_part);
-	str->integer = ft_strjoin(str->integer, ft_strsub(fp->frac, 0, exp));
-	str->frac = ft_strsub(fp->frac, exp, 63 - exp);
-	printf("int: %s\nfrac: %s\n", str->integer, str->frac);
-	printf("decimal integer part: %lu\n", BinAsDec(str->integer));
-	dec_number = pow(2, exp);
-	dec_number *= (1 + (dec_mantissa/ pow(2, 63)));
+	//str->dec_represent = (struct bignum*)malloc(sizeof(struct bignum));
+	exp = (BinAsDec(fp->exp) - 16383); // заменить
+    printf("exp_binary: %s\nexp: %i\n", fp->exp, exp);
+	if (exp >= 0) {
+        str->integer = ft_strdup(&fp->int_part);
+        str->integer = ft_strjoin(str->integer, ft_strsub(fp->frac, 0, exp));
+        str->frac = ft_strsub(fp->frac, exp, 63 - exp);
+        printf("int: %s\nfrac: %s\n", str->integer, str->frac);
+        printf("decimal integer part: %lu\n", BinAsDec(str->integer));
+        dec_number = pow(2, exp);
+        dec_number *= (1 + (dec_mantissa / pow(2, 63)));
+    }
+	else{
+	    str->integer = ft_strdup("0");
+	    str->frac = ft_strjoin(&fp->int_part, fp->frac);
+	    str->frac = ft_strjoin(GetLeadingZeros(abs(exp + 1)), str->frac);
+	    printf("int: %s\nfrac: %s\n", str->integer, str->frac);
+	}
 	GetDecimalFracStr(str->frac, str);
 	return (NULL);
 }
@@ -446,18 +417,21 @@ int		main()
 	//double	i = 1.1;-
 	float	a = 1.998607848473;
 
-	t_fp *fp;
-	fp = Fill_FP((long double)123456.78);
+
+	t_float *fp;
+	fp = Fill_FP((long double)0.0000005089);
 	printf("binary: %s\n", fp->binary_represent);
-	printf("original: %.64f\n", 123456.78);
+	LDblAsForm((long double)1.3);
 	Get_Number(fp);
+	printf("original: %.8f\n", 0.0000005089);
+    //printf("original: %.60f\n", 1234.78);
 
 	//printf("rev: %s\n", ft_strrev(name));
 	//ft_printf("Hel%")
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
 	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
 	printf("I'm % .05 d лет\n", 20);*/
-	//printf("%\n", 5);
+	//printf("%\n", 5);Ba
 	/*ft_printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000); // space include in width, but not int precision
 	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 2000); */
 	/*ft_printf("number: %015.10d\n", 10);

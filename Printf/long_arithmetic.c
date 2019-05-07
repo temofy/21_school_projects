@@ -62,6 +62,23 @@
 	return (s);
 }*/
 
+char    *ConvBigNumToStr(t_long_value nbr)
+{
+    char    *frac;
+    int     i;
+    int     k;
+
+    k = 0;
+    i = nbr.length - 1;
+    frac = ft_strnew(nbr.length);
+    while (i > -1)
+    {
+        frac[k++] = nbr.values[i] + '0';
+        i--;
+    }
+    return (frac);
+}
+
 void	PrintBigNum(t_long_value nbr)
 {
 	int   		i;
@@ -93,6 +110,7 @@ t_long_value sum(t_long_value a, t_long_value b)
     for (i = 0; i < b.length; ++i) {
         s.values[i] = a.values[i] + b.values[i];
     }
+    normalize(s);
     return s;
 }
  

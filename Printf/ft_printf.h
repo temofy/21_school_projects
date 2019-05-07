@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/06 15:50:07 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/07 13:23:30 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,21 @@ typedef struct	s_formatting
 	char *frac[64];
 };*/
 
-typedef union d_l
+typedef union       ld_nbr
 {	
-	long double ld;
-	unsigned char b[16];
-} t_dl;
+	long double     ld;
+	unsigned char   b[16];
+}                   t_ld_nbr;
 
 typedef struct	floating_point
 {
-	char sign;
-	char *exp;
-	char int_part;
-	char *frac;
-	char *binary_represent;
-	t_dl *binary;
-}		t_fp;
+	char        sign;
+	char        *exp;
+	char        int_part;
+	char        *frac;
+	char        *binary_represent;
+	t_ld_nbr    *binary;
+}		        t_float;
 
 typedef struct		long_value
 {
@@ -66,17 +66,17 @@ typedef struct		long_value
 	int		length;
 }	t_long_value;
 
-struct	bignum
+/*struct	bignum
 {
 	char	**integer;
 	char	**frac;
-};
+};*/
 
 typedef struct	str_fp
 {
 	char	*integer;
 	char	*frac;
-	struct 	bignum *dec_represent;
+	//struct 	bignum *dec_represent;
 }	t_str_fp;
 
 
@@ -119,5 +119,6 @@ t_long_value	conv_to_la(signed long nbr);
 t_long_value 	karatsuba_mul(t_long_value a, t_long_value b);
 t_long_value	normalize(t_long_value l);
 t_long_value	sum(t_long_value a, t_long_value b);
+char    *ConvBigNumToStr(t_long_value nbr);
 void	PrintBigNum(t_long_value nbr); // удалить
 #endif

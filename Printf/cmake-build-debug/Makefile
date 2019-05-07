@@ -123,6 +123,276 @@ Printf/fast:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/build
 .PHONY : Printf/fast
 
+cheks.o: cheks.c.o
+
+.PHONY : cheks.o
+
+# target to build an object file
+cheks.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.o
+.PHONY : cheks.c.o
+
+cheks.i: cheks.c.i
+
+.PHONY : cheks.i
+
+# target to preprocess a source file
+cheks.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.i
+.PHONY : cheks.c.i
+
+cheks.s: cheks.c.s
+
+.PHONY : cheks.s
+
+# target to generate assembly for a file
+cheks.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.s
+.PHONY : cheks.c.s
+
+conversions.o: conversions.c.o
+
+.PHONY : conversions.o
+
+# target to build an object file
+conversions.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.o
+.PHONY : conversions.c.o
+
+conversions.i: conversions.c.i
+
+.PHONY : conversions.i
+
+# target to preprocess a source file
+conversions.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.i
+.PHONY : conversions.c.i
+
+conversions.s: conversions.c.s
+
+.PHONY : conversions.s
+
+# target to generate assembly for a file
+conversions.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.s
+.PHONY : conversions.c.s
+
+ft_printf.o: ft_printf.c.o
+
+.PHONY : ft_printf.o
+
+# target to build an object file
+ft_printf.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.o
+.PHONY : ft_printf.c.o
+
+ft_printf.i: ft_printf.c.i
+
+.PHONY : ft_printf.i
+
+# target to preprocess a source file
+ft_printf.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.i
+.PHONY : ft_printf.c.i
+
+ft_printf.s: ft_printf.c.s
+
+.PHONY : ft_printf.s
+
+# target to generate assembly for a file
+ft_printf.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.s
+.PHONY : ft_printf.c.s
+
+handler_d.o: handler_d.c.o
+
+.PHONY : handler_d.o
+
+# target to build an object file
+handler_d.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_d.c.o
+.PHONY : handler_d.c.o
+
+handler_d.i: handler_d.c.i
+
+.PHONY : handler_d.i
+
+# target to preprocess a source file
+handler_d.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_d.c.i
+.PHONY : handler_d.c.i
+
+handler_d.s: handler_d.c.s
+
+.PHONY : handler_d.s
+
+# target to generate assembly for a file
+handler_d.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_d.c.s
+.PHONY : handler_d.c.s
+
+handler_f.o: handler_f.c.o
+
+.PHONY : handler_f.o
+
+# target to build an object file
+handler_f.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_f.c.o
+.PHONY : handler_f.c.o
+
+handler_f.i: handler_f.c.i
+
+.PHONY : handler_f.i
+
+# target to preprocess a source file
+handler_f.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_f.c.i
+.PHONY : handler_f.c.i
+
+handler_f.s: handler_f.c.s
+
+.PHONY : handler_f.s
+
+# target to generate assembly for a file
+handler_f.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_f.c.s
+.PHONY : handler_f.c.s
+
+handler_o_x.o: handler_o_x.c.o
+
+.PHONY : handler_o_x.o
+
+# target to build an object file
+handler_o_x.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.o
+.PHONY : handler_o_x.c.o
+
+handler_o_x.i: handler_o_x.c.i
+
+.PHONY : handler_o_x.i
+
+# target to preprocess a source file
+handler_o_x.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.i
+.PHONY : handler_o_x.c.i
+
+handler_o_x.s: handler_o_x.c.s
+
+.PHONY : handler_o_x.s
+
+# target to generate assembly for a file
+handler_o_x.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.s
+.PHONY : handler_o_x.c.s
+
+handler_p.o: handler_p.c.o
+
+.PHONY : handler_p.o
+
+# target to build an object file
+handler_p.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_p.c.o
+.PHONY : handler_p.c.o
+
+handler_p.i: handler_p.c.i
+
+.PHONY : handler_p.i
+
+# target to preprocess a source file
+handler_p.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_p.c.i
+.PHONY : handler_p.c.i
+
+handler_p.s: handler_p.c.s
+
+.PHONY : handler_p.s
+
+# target to generate assembly for a file
+handler_p.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_p.c.s
+.PHONY : handler_p.c.s
+
+handler_text.o: handler_text.c.o
+
+.PHONY : handler_text.o
+
+# target to build an object file
+handler_text.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_text.c.o
+.PHONY : handler_text.c.o
+
+handler_text.i: handler_text.c.i
+
+.PHONY : handler_text.i
+
+# target to preprocess a source file
+handler_text.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_text.c.i
+.PHONY : handler_text.c.i
+
+handler_text.s: handler_text.c.s
+
+.PHONY : handler_text.s
+
+# target to generate assembly for a file
+handler_text.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_text.c.s
+.PHONY : handler_text.c.s
+
+handler_u.o: handler_u.c.o
+
+.PHONY : handler_u.o
+
+# target to build an object file
+handler_u.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_u.c.o
+.PHONY : handler_u.c.o
+
+handler_u.i: handler_u.c.i
+
+.PHONY : handler_u.i
+
+# target to preprocess a source file
+handler_u.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_u.c.i
+.PHONY : handler_u.c.i
+
+handler_u.s: handler_u.c.s
+
+.PHONY : handler_u.s
+
+# target to generate assembly for a file
+handler_u.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_u.c.s
+.PHONY : handler_u.c.s
+
+hex.o: hex.c.o
+
+.PHONY : hex.o
+
+# target to build an object file
+hex.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex.c.o
+.PHONY : hex.c.o
+
+hex.i: hex.c.i
+
+.PHONY : hex.i
+
+# target to preprocess a source file
+hex.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex.c.i
+.PHONY : hex.c.i
+
+hex.s: hex.c.s
+
+.PHONY : hex.s
+
+# target to generate assembly for a file
+hex.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex.c.s
+.PHONY : hex.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2049,6 +2319,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Printf"
+	@echo "... cheks.o"
+	@echo "... cheks.i"
+	@echo "... cheks.s"
+	@echo "... conversions.o"
+	@echo "... conversions.i"
+	@echo "... conversions.s"
+	@echo "... ft_printf.o"
+	@echo "... ft_printf.i"
+	@echo "... ft_printf.s"
+	@echo "... handler_d.o"
+	@echo "... handler_d.i"
+	@echo "... handler_d.s"
+	@echo "... handler_f.o"
+	@echo "... handler_f.i"
+	@echo "... handler_f.s"
+	@echo "... handler_o_x.o"
+	@echo "... handler_o_x.i"
+	@echo "... handler_o_x.s"
+	@echo "... handler_p.o"
+	@echo "... handler_p.i"
+	@echo "... handler_p.s"
+	@echo "... handler_text.o"
+	@echo "... handler_text.i"
+	@echo "... handler_text.s"
+	@echo "... handler_u.o"
+	@echo "... handler_u.i"
+	@echo "... handler_u.s"
+	@echo "... hex.o"
+	@echo "... hex.i"
+	@echo "... hex.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

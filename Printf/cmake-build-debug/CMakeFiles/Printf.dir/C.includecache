@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/cheller/Desktop/home_space/Printf/ft_printf.c
+ft_printf.h
+/Users/cheller/Desktop/home_space/Printf/ft_printf.h
+stdio.h
+-
+wchar.h
+-
+stdlib.h
+-
+math.h
+-
+
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 stdarg.h
 -
@@ -18,11 +30,5 @@ stdlib.h
 unistd.h
 -
 string.h
--
-
-/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-stdio.h
 -
 

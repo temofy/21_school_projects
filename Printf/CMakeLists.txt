@@ -78,5 +78,15 @@ add_executable(Printf
         libft/ft_uitoa.c
         libft/ft_ulitoa.c
         libft/libft.h
+        cheks.c
+        conversions.c
+        ft_printf.c
         ft_printf.h
+        handler_d.c
+        handler_f.c
+        handler_o_x.c
+        handler_p.c
+        handler_text.c
+        handler_u.c
+        hex.c
         long_arithmetic.c)
