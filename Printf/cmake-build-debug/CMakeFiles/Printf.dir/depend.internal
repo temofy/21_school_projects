@@ -13,6 +13,10 @@ CMakeFiles/Printf.dir/ft_printf.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.c
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/handler_b.c.o
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/home_space/Printf/handler_b.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_d.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_d.c
@@ -41,6 +45,8 @@ CMakeFiles/Printf.dir/hex.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/hex.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/libft/ft_abs.c.o
+ /Users/cheller/Desktop/home_space/Printf/libft/ft_abs.c
 CMakeFiles/Printf.dir/libft/ft_atoi.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_atoi.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h

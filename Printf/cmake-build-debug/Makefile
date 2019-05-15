@@ -204,6 +204,33 @@ ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
 
+handler_b.o: handler_b.c.o
+
+.PHONY : handler_b.o
+
+# target to build an object file
+handler_b.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_b.c.o
+.PHONY : handler_b.c.o
+
+handler_b.i: handler_b.c.i
+
+.PHONY : handler_b.i
+
+# target to preprocess a source file
+handler_b.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_b.c.i
+.PHONY : handler_b.c.i
+
+handler_b.s: handler_b.c.s
+
+.PHONY : handler_b.s
+
+# target to generate assembly for a file
+handler_b.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_b.c.s
+.PHONY : handler_b.c.s
+
 handler_d.o: handler_d.c.o
 
 .PHONY : handler_d.o
@@ -392,6 +419,33 @@ hex.s: hex.c.s
 hex.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex.c.s
 .PHONY : hex.c.s
+
+libft/ft_abs.o: libft/ft_abs.c.o
+
+.PHONY : libft/ft_abs.o
+
+# target to build an object file
+libft/ft_abs.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_abs.c.o
+.PHONY : libft/ft_abs.c.o
+
+libft/ft_abs.i: libft/ft_abs.c.i
+
+.PHONY : libft/ft_abs.i
+
+# target to preprocess a source file
+libft/ft_abs.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_abs.c.i
+.PHONY : libft/ft_abs.c.i
+
+libft/ft_abs.s: libft/ft_abs.c.s
+
+.PHONY : libft/ft_abs.s
+
+# target to generate assembly for a file
+libft/ft_abs.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_abs.c.s
+.PHONY : libft/ft_abs.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2328,6 +2382,9 @@ help:
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"
+	@echo "... handler_b.o"
+	@echo "... handler_b.i"
+	@echo "... handler_b.s"
 	@echo "... handler_d.o"
 	@echo "... handler_d.i"
 	@echo "... handler_d.s"
@@ -2349,6 +2406,9 @@ help:
 	@echo "... hex.o"
 	@echo "... hex.i"
 	@echo "... hex.s"
+	@echo "... libft/ft_abs.o"
+	@echo "... libft/ft_abs.i"
+	@echo "... libft/ft_abs.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

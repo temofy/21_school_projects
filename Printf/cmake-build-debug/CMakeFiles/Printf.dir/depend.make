@@ -13,6 +13,10 @@ CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/ft_printf.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/handler_b.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_b.c.o: ../handler_b.c
+CMakeFiles/Printf.dir/handler_b.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/handler_d.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_d.c.o: ../handler_d.c
 CMakeFiles/Printf.dir/handler_d.c.o: ../libft/libft.h
@@ -40,6 +44,8 @@ CMakeFiles/Printf.dir/handler_u.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/hex.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/hex.c.o: ../hex.c
 CMakeFiles/Printf.dir/hex.c.o: ../libft/libft.h
+
+CMakeFiles/Printf.dir/libft/ft_abs.c.o: ../libft/ft_abs.c
 
 CMakeFiles/Printf.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/Printf.dir/libft/ft_atoi.c.o: ../libft/libft.h

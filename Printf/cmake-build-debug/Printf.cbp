@@ -98,6 +98,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/ft_printf.h">
 			<Option target="Printf"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/handler_b.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/handler_d.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -117,6 +120,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/hex.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_abs.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_atoi.c">

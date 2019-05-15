@@ -106,6 +106,8 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 			return (handler_d(arg, e_sequence));
 		else if (format[i]== 'f' || format[i]== 'F')
 			return (handler_f(arg, e_sequence));
+        else if (format[i]== 'b' || format[i]== 'B')
+            return (handler_b(arg, e_sequence));
 		else if (format[i] == 'c' || format[i] == 'C') 
 			return (handler_c(arg, e_sequence));
 		else if (format[i] == 's')
@@ -235,7 +237,7 @@ t_ld_nbr *LDblAsForm(const long double number)
 	
     len = 8*sizeof(long double) - 1;
     num = *(unsigned long*)&number;
-	printf("%lu\nlen: %d\n", num, len);
+	//printf("%lu\nlen: %d\n", num, len);
 
 	for (i = len; i >= 0; i--)
         printf("%zu", (num >> i) & 1);
@@ -243,170 +245,6 @@ t_ld_nbr *LDblAsForm(const long double number)
 	return(NULL);
 }
 
-char	*PresentIntAsBin(unsigned char number)
-{
-	char	*bin;
-	int		i;
-
-	i = 8;
-	bin = ft_strnew(8);
-	while (i--)
-	{
-		*bin = ((number >> i) & 1) + '0';
-		bin++;
-	}
-	return (bin - 8);
-}
-char	*Represent_binary(unsigned char *bytes)
-{
-	char    *binary;
-	int     i;
-	int     j;
-
-	i = 0;
-	j = 9;
-	if (!(binary = ft_strnew(80)))
-	    return (NULL);
-	while (i++ < 10)
-		binary = ft_strfjoin(binary, PresentIntAsBin(bytes[j--]), 0);
-	return (binary);
-}
-
-t_float	*Fill_FP(long double Ldbl)
-{
-	t_float     *float_point;
-
-	if (!(float_point = (t_float*)malloc(sizeof(t_float))))
-		return (NULL);
-	float_point->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
-	float_point->binary->ld = Ldbl;
-	float_point->binary_represent = Represent_binary(float_point->binary->b);
-	float_point->sign = *float_point->binary_represent;
-	float_point->exp = ft_strsub(float_point->binary_represent, 1, 15);
-	float_point->int_part = *(float_point->binary_represent + 16);
-	float_point->frac = ft_strsub(float_point->binary_represent, 17, 63);
-	return (float_point);
-}
-
-unsigned long	BinAsDec(char *bin)
-{
-	unsigned long	decimal;
-	unsigned long	factor;
-	size_t	len;
-
-	factor = 1;
-	len = ft_strlen(bin);
-	decimal = 0;
-	while (len--)
-	{
-		if (bin[len] == '1')
-		{	
-			decimal += 1 * factor;
-		}
-		factor *= 2;
-	}
-	return (decimal);
-}
-
-
-void	PrintFracDecimal(unsigned long *massive)
-{
-	int		i;
-
-	i = 0;
-	while (i < 63)
-	{
-		printf("%lu\n", massive[i]);
-		i++;
-	}
-}
-
-
-char	*GetDecimalIntStr(char *bin)
-{
-	return (NULL);
-}
-
-char	*GetDecimalFracStr(char *frac_bin, t_str_fp *str)
-{
-	int		i;
-	int		k;
-	size_t	len;
-	t_long_value	tmp;
-	t_long_value	result;
-	//char            fractional
-
-	result.values = (int*)malloc(sizeof(int) * 1);
-	result.values[0] = 0;
-	result.length = 0;
-	i = 0;
-	/*str->dec_represent->frac = (char**)malloc(sizeof(char*) * 65);
-	while (i < 64)
-	{
-			(str->dec_represent->frac)[i] = ft_strnew(100);
-			i++;
-	}*/
-	i = 0;
-	k = 1;
-	len = ft_strlen(frac_bin);
-	while (i < len)
-	{
-		if (frac_bin[i] == '1')
-		{
-			tmp = karatsuba_mul((ft_la_pow(conv_to_la(5) , i + 1)), ft_la_pow(conv_to_la(10), len - i - 1)); // pow
-			result = sum(result, tmp);
-			free(tmp.values);
-		}
-		i++;
-	}
-	str->frac = ConvBigNumToStr(result);
-	PrintBigNum(result);
-	printf("string: %s\n", str->frac);
-	return (NULL);
-}
-
-char    *GetLeadingZeros(int amount)
-{
-    char    *leading_zeros;
-
-    leading_zeros = strdup("");
-    if (amount == 0)
-        return (leading_zeros);
-    while (amount--)
-        leading_zeros = ft_strfjoin("0", leading_zeros, 2);
-    return (leading_zeros);
-}
-
-
-char	*Get_Number(t_float *fp)
-{
-	long double		dec_number;
-	unsigned long	dec_mantissa;
-	int				exp;
-	t_str_fp		*str;
-	
-	str = (t_str_fp*)malloc(sizeof(t_str_fp));
-	//str->dec_represent = (struct bignum*)malloc(sizeof(struct bignum));
-	exp = (BinAsDec(fp->exp) - 16383); // заменить
-    printf("exp_binary: %s\nexp: %i\n", fp->exp, exp);
-	if (exp >= 0) {
-        str->integer = ft_strdup(&fp->int_part);
-        str->integer = ft_strjoin(str->integer, ft_strsub(fp->frac, 0, exp));
-        str->frac = ft_strsub(fp->frac, exp, 63 - exp);
-        printf("int: %s\nfrac: %s\n", str->integer, str->frac);
-        printf("decimal integer part: %lu\n", BinAsDec(str->integer));
-        dec_number = pow(2, exp);
-        dec_number *= (1 + (dec_mantissa / pow(2, 63)));
-    }
-	else{
-	    str->integer = ft_strdup("0");
-	    str->frac = ft_strjoin(&fp->int_part, fp->frac);
-	    str->frac = ft_strjoin(GetLeadingZeros(abs(exp + 1)), str->frac);
-	    printf("int: %s\nfrac: %s\n", str->integer, str->frac);
-	}
-	GetDecimalFracStr(str->frac, str);
-	return (NULL);
-}
 
 int		main()
 {
@@ -415,15 +253,17 @@ int		main()
 	short age = 20;
 	double	Pi = 3.14234567891234567;
 	//double	i = 1.1;-
-	float	a = 1.998607848473;
+	long double	a = 65.9921845;
 
 
 	t_float *fp;
-	fp = Fill_FP((long double)0.0000005089);
-	printf("binary: %s\n", fp->binary_represent);
-	LDblAsForm((long double)1.3);
-	Get_Number(fp);
-	printf("original: %.8f\n", 0.0000005089);
+	//fp = Fill_FP((long double)-0.0000005089); //0.0000005089
+	//printf("binary: %s\n", fp->binary_represent);
+	//LDblAsForm((long double)1.3);
+	//printf("my printf:%s\n", Get_Number(fp));
+
+	ft_printf("%Lf", a);
+    printf("original: %015.5Lf\n", -a);
     //printf("original: %.60f\n", 1234.78);
 
 	//printf("rev: %s\n", ft_strrev(name));
@@ -468,5 +308,5 @@ int		main()
 
 	//printf("%lf = %i %i %i %i %i %i %i %i\n", value.d, PIB(value.b[0]), value.b[1], value.b[2], value.b[3], value.b[4], value.b[5], value.b[6], value.b[7]);
 	//printf("bin_str: %s\n", PresentIntAsBin(255));
-	return (1);
+	return (0);
 }

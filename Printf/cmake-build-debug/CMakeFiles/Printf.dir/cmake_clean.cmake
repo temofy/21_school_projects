@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Printf.dir/libft/ft_abs.c.o"
   "CMakeFiles/Printf.dir/libft/ft_atoi.c.o"
   "CMakeFiles/Printf.dir/libft/ft_bzero.c.o"
   "CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.o"
@@ -78,6 +79,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/handler_p.c.o"
   "CMakeFiles/Printf.dir/handler_text.c.o"
   "CMakeFiles/Printf.dir/handler_u.c.o"
+  "CMakeFiles/Printf.dir/handler_b.c.o"
   "CMakeFiles/Printf.dir/hex.c.o"
   "CMakeFiles/Printf.dir/long_arithmetic.c.o"
   "Printf.pdb"

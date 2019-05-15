@@ -41,7 +41,7 @@ typedef struct	s_formatting
 	char sign;
 	char *exp[16];
 	char int_part;
-	char *frac[64];
+	char *frac[6];
 };*/
 
 typedef union       ld_nbr
@@ -66,17 +66,11 @@ typedef struct		long_value
 	int		length;
 }	t_long_value;
 
-/*struct	bignum
-{
-	char	**integer;
-	char	**frac;
-};*/
 
 typedef struct	str_fp
 {
 	char	*integer;
 	char	*frac;
-	//struct 	bignum *dec_represent;
 }	t_str_fp;
 
 
@@ -98,7 +92,7 @@ char	*handler_d(va_list arg, t_formatting *e_sequence);
 /* handler_d */
 char	*handler_u(va_list arg, t_formatting *e_sequence);
 char	*handler_f(va_list arg, t_formatting *e_sequence);
-char	*handler_sequence_f(char *nbr_str, t_formatting *e_seq, char **str);
+char	*handler_sequence_f(char *str, t_formatting *e_seq, t_str_fp *str_fp);
 
 char	*handler_x(va_list arg, t_formatting *e_sequence);
 char	*handler_o(va_list arg, t_formatting *e_sequence);
@@ -110,8 +104,15 @@ int 	num_hex_len(long int n);
 /* handler_text */
 char	*handler_s(va_list arg, t_formatting *e_sequence);
 char	*handler_c(va_list arg, t_formatting *e_sequence);
+char	*handler_b(va_list arg, t_formatting *e_sequence);
+
 /* handler_p */
 char	*handler_p(va_list arg, t_formatting *e_sequence);
+
+t_float	*Fill_FP(long double Ldbl);
+char	*Get_Number(t_float *fp, t_formatting *e_seq);
+char	*Represent_binary(unsigned char *bytes);
+char	*PresentIntAsBin(unsigned char number);
 
 /* long arithmetic */
 t_long_value	ft_la_pow(t_long_value nbr, int exp);

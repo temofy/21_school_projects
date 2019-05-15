@@ -7,6 +7,7 @@ include_directories(.)
 include_directories(libft)
 
 add_executable(Printf
+        libft/ft_abs.c
         libft/ft_atoi.c
         libft/ft_bzero.c
         libft/ft_find_last_lst.c
@@ -88,5 +89,6 @@ add_executable(Printf
         handler_p.c
         handler_text.c
         handler_u.c
+        handler_b.c
         hex.c
         long_arithmetic.c)
