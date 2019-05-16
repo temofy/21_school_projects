@@ -16,8 +16,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define PIB(x) PresentIntAsBin(x)
-
 void	print_sequence(t_formatting *e_sequence)
 {
 	printf("*************-escape-sequence-*************\n");
@@ -228,43 +226,20 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-t_ld_nbr *LDblAsForm(const long double number)
-{
-	t_ld_nbr		*forms;
-    int				i;
-    int 			len;
-    unsigned long	num;
-	
-    len = 8*sizeof(long double) - 1;
-    num = *(unsigned long*)&number;
-	//printf("%lu\nlen: %d\n", num, len);
-
-	for (i = len; i >= 0; i--)
-        printf("%zu", (num >> i) & 1);
-    printf("\n");
-	return(NULL);
-}
-
 
 int		main()
 {
 	char	*greeting = "Добрый вечер!";
 	char	*name = "Artem";
 	short age = 20;
-	double	Pi = 3.14234567891234567;
+	long double	Pi = -3.1500000000000001;
 	//double	i = 1.1;-
 	long double	a = 65.9921845;
 
-
-	t_float *fp;
-	//fp = Fill_FP((long double)-0.0000005089); //0.0000005089
-	//printf("binary: %s\n", fp->binary_represent);
-	//LDblAsForm((long double)1.3);
-	//printf("my printf:%s\n", Get_Number(fp));
-
-	ft_printf("%Lf", a);
-    printf("original: %015.5Lf\n", -a);
-    //printf("original: %.60f\n", 1234.78);
+	//ft_printf("Pi: %.3Lf|\n", Pi);
+    //printf("Pi: %.3Lf|\n", Pi);
+    ft_printf("original: %.50f\n", 5784375.51152370501375013759138590813);
+    printf("original: %.50f\n", 5784375.51152370501375013759138590813);
 
 	//printf("rev: %s\n", ft_strrev(name));
 	//ft_printf("Hel%")

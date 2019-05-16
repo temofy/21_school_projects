@@ -25,3 +25,20 @@ void PrintDblAsBin1(const double number)
         printf("%zu", (num >> i) & 1);
     printf("\n");
 }
+
+t_ld_nbr *LDblAsForm(const long double number)
+{
+	t_ld_nbr		*forms;
+	int				i;
+	int 			len;
+	unsigned long	num;
+
+	len = 8*sizeof(long double) - 1;
+	num = *(unsigned long*)&number;
+	//printf("%lu\nlen: %d\n", num, len);
+
+	for (i = len; i >= 0; i--)
+		printf("%zu", (num >> i) & 1);
+	printf("\n");
+	return(NULL);
+}

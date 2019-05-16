@@ -21,9 +21,7 @@ static void	ft_free(char *s1, char *s2, int arg_to_free)
 	else if (arg_to_free == 0)
 	{
 		free(s1);
-		s1 = NULL;
 		free(s2);
-		s2 = NULL;
 	}
 }
 
