@@ -86,6 +86,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/Cleanup.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/Getting.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/cheks.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -339,6 +345,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/represents.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/CMakeLists.txt">

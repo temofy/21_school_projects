@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/07 13:23:30 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/20 20:17:29 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,16 @@ char	*handler_p(va_list arg, t_formatting *e_sequence);
 
 t_float	*Fill_FP(long double Ldbl);
 char	*Get_Number(t_float *fp, t_formatting *e_seq);
-char	*Represent_binary(unsigned char *bytes);
-char	*PresentIntAsBin(unsigned char number);
+char			*represent_binary(unsigned char *bytes);
+char			*present_int_as_bin(unsigned char number);
+unsigned long	bin_as_dec(char *bin);
+void	free_str_fp(t_str_fp **str_fp);
+void	free_fp(t_float **fp);
+char		*get_number(t_float *fp, t_formatting *e_seq);
+char 	*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq);
 
 /* long arithmetic */
-t_long_value	ft_la_pow(t_long_value nbr, int exp);
+t_long_value	la_pow(t_long_value nbr, int exp);
 t_long_value	conv_to_la(signed long nbr);
 t_long_value 	karatsuba_mul(t_long_value a, t_long_value b);
 t_long_value	normalize(t_long_value l);

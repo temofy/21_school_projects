@@ -82,6 +82,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/handler_b.c.o"
   "CMakeFiles/Printf.dir/hex.c.o"
   "CMakeFiles/Printf.dir/long_arithmetic.c.o"
+  "CMakeFiles/Printf.dir/represents.c.o"
+  "CMakeFiles/Printf.dir/Getting.c.o"
+  "CMakeFiles/Printf.dir/Cleanup.c.o"
   "Printf.pdb"
   "Printf"
 )

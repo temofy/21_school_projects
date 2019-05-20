@@ -123,6 +123,60 @@ Printf/fast:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/build
 .PHONY : Printf/fast
 
+Cleanup.o: Cleanup.c.o
+
+.PHONY : Cleanup.o
+
+# target to build an object file
+Cleanup.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.o
+.PHONY : Cleanup.c.o
+
+Cleanup.i: Cleanup.c.i
+
+.PHONY : Cleanup.i
+
+# target to preprocess a source file
+Cleanup.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.i
+.PHONY : Cleanup.c.i
+
+Cleanup.s: Cleanup.c.s
+
+.PHONY : Cleanup.s
+
+# target to generate assembly for a file
+Cleanup.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.s
+.PHONY : Cleanup.c.s
+
+Getting.o: Getting.c.o
+
+.PHONY : Getting.o
+
+# target to build an object file
+Getting.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.o
+.PHONY : Getting.c.o
+
+Getting.i: Getting.c.i
+
+.PHONY : Getting.i
+
+# target to preprocess a source file
+Getting.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.i
+.PHONY : Getting.c.i
+
+Getting.s: Getting.c.s
+
+.PHONY : Getting.s
+
+# target to generate assembly for a file
+Getting.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.s
+.PHONY : Getting.c.s
+
 cheks.o: cheks.c.o
 
 .PHONY : cheks.o
@@ -2364,6 +2418,33 @@ long_arithmetic.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/long_arithmetic.c.s
 .PHONY : long_arithmetic.c.s
 
+represents.o: represents.c.o
+
+.PHONY : represents.o
+
+# target to build an object file
+represents.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/represents.c.o
+.PHONY : represents.c.o
+
+represents.i: represents.c.i
+
+.PHONY : represents.i
+
+# target to preprocess a source file
+represents.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/represents.c.i
+.PHONY : represents.c.i
+
+represents.s: represents.c.s
+
+.PHONY : represents.s
+
+# target to generate assembly for a file
+represents.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/represents.c.s
+.PHONY : represents.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2373,6 +2454,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Printf"
+	@echo "... Cleanup.o"
+	@echo "... Cleanup.i"
+	@echo "... Cleanup.s"
+	@echo "... Getting.o"
+	@echo "... Getting.i"
+	@echo "... Getting.s"
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
@@ -2622,6 +2709,9 @@ help:
 	@echo "... long_arithmetic.o"
 	@echo "... long_arithmetic.i"
 	@echo "... long_arithmetic.s"
+	@echo "... represents.o"
+	@echo "... represents.i"
+	@echo "... represents.s"
 .PHONY : help
 
 

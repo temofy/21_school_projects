@@ -42,3 +42,16 @@ t_ld_nbr *LDblAsForm(const long double number)
 	printf("\n");
 	return(NULL);
 }
+
+void	PrintBigNum(t_long_value nbr)
+{
+	int   		i;
+
+	i = nbr.length - 1;
+	while (i > -1)
+	{
+		printf("%i|", nbr.values[i]);
+		i--;
+	}
+	printf("\n");
+}

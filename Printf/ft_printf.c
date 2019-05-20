@@ -100,7 +100,7 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 	i = 0;
 	while (format[i++])
 	{
-		if (format[i] == 'd' || format[i] == 'i' ) // ready
+		if (format[i] == 'd' || format[i] == 'i' )
 			return (handler_d(arg, e_sequence));
 		else if (format[i]== 'f' || format[i]== 'F')
 			return (handler_f(arg, e_sequence));
@@ -120,7 +120,7 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 			return(handler_x(arg, e_sequence));
 		else if (format[i] == 'X')
 			return(handler_x_big(arg, e_sequence));
-		else if (format[i] == '%') //  ready
+		else if (format[i] == '%')
 			return (handler_percent(e_sequence));
 	}
 	return (NULL);
@@ -226,23 +226,17 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-
 int		main()
 {
 	char	*greeting = "Добрый вечер!";
 	char	*name = "Artem";
-	short age = 20;
+	double	 age = 0;
 	long double	Pi = -3.1500000000000001;
-	//double	i = 1.1;-
 	long double	a = 65.9921845;
+	double		d = 865.789;
 
-	//ft_printf("Pi: %.3Lf|\n", Pi);
-    //printf("Pi: %.3Lf|\n", Pi);
-    ft_printf("original: %.50f\n", 5784375.51152370501375013759138590813);
-    printf("original: %.50f\n", 5784375.51152370501375013759138590813);
-
-	//printf("rev: %s\n", ft_strrev(name));
-	//ft_printf("Hel%")
+	printf("Hel%");
+	ft_printf("Hel%");
 	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
 	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
 	printf("I'm % .05 d лет\n", 20);*/
@@ -258,10 +252,9 @@ int		main()
 	//printf("lol%10.5l+d\n", 505);
 	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
 	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
-	
+
 	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
 	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
-	//PrintDblAsBin1(5.0);
 	//printf("convert: %lu\n", FractionBinAsDec("0110011001100110"));
 	//ft_printf("number: %hd\n", 32768);
 	//printf("number: %hd\n", 32768);
@@ -270,18 +263,15 @@ int		main()
 	//printf("size this string: %d |\n", printf("symbol: %\n", 0x100));
 	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
 	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
-	
+
 	//ft_printf("%-#10.5o\n", -16);
 	//printf("%-10.0o", 0);
 	//ft_printf("Age's address: %0.10p\n", &age);
 	//printf("Age's adress: %p\n", &age);
 	//printf("di: %.15f\n", (double)(i - 1.2));
 	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
-	
-	//printf("%.100f\n", 0.33589235903248509238958230532523523523598);
+
 	//printf("%e\n", 6553.12412);
 
-	//printf("%lf = %i %i %i %i %i %i %i %i\n", value.d, PIB(value.b[0]), value.b[1], value.b[2], value.b[3], value.b[4], value.b[5], value.b[6], value.b[7]);
-	//printf("bin_str: %s\n", PresentIntAsBin(255));
 	return (0);
 }

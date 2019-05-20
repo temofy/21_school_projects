@@ -11,56 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-
-/*t_long_value *sum(t_long_value *a, t_long_value *b)
- {
-	t_long_value	*s;
-	int				carry;
-	int				i;
-	
-	if (a->length < b->length)
-	{
-		s = a;
-		a = b;
-		b = s;
-	}
-	i = 0;
-	s = (t_long_value*)malloc(sizeof(t_long_value));
-	s->length = a->length;
-	s->values = (int*)malloc(sizeof(int) * s->length + 1);
- 
-	while (i < b->length)
-	{
-		s->values[i] = a->values[i] + b->values[i];
-		s->values[i] += carry;
-		carry = 0;
-		if (s->values[i] >= 10)
-		{
-			carry = s->values[i] / 10;
-			s->values[i] %= 10;
-      	}
-		i++;
-	}
-	while (i < a->length)
-	{
-		s->values[i] = a->values[i];
-		s->values[i] += carry;
-		carry = 0;
-		if (s->values[i] >= 10)
-		{
-			carry = s->values[i] / 10;
-			s->values[i] %= 10;
-      	}
-		i++;
-	}
-	if (carry > 0)
-	{
-		s->values[i] = carry;
-		s->length += 1;
-	}
-	return (s);
-}*/
 
 char    *ConvBigNumToStr(t_long_value nbr)
 {
@@ -79,18 +29,6 @@ char    *ConvBigNumToStr(t_long_value nbr)
     return (frac);
 }
 
-void	PrintBigNum(t_long_value nbr)
-{
-	int   		i;
-
-	i = nbr.length - 1;
-    while (i > -1)
-	{
-    	printf("%i", nbr.values[i]);
-		i--;
-	}
-    printf("\n");
-}
 
 t_long_value sum(t_long_value a, t_long_value b) 
 {
@@ -110,7 +48,7 @@ t_long_value sum(t_long_value a, t_long_value b)
     for (i = 0; i < b.length; ++i) {
         s.values[i] = a.values[i] + b.values[i];
     }
-    normalize(s);
+    s = normalize(s);
     return s;
 }
  
@@ -177,7 +115,7 @@ t_long_value	naive_mul(t_long_value result, t_long_value a, t_long_value b)
 		}
 	return (result);
 }
-t_long_value karatsuba_mul(t_long_value a, t_long_value b) 
+t_long_value karatsuba_mul(t_long_value a, t_long_value b)
 {
     t_long_value product;
     int i;
@@ -259,7 +197,6 @@ t_long_value	conv_to_la(signed long nbr)
 	t_long_value	result;
 	int				*value;
 	int				i;
-	int				j;
 
 	result.length = nbr_len(nbr);
 	value = (int*)malloc(sizeof(int) * result.length);
@@ -274,12 +211,10 @@ t_long_value	conv_to_la(signed long nbr)
 	return (result);
 }
 
-t_long_value	ft_la_pow(t_long_value nbr, int exp)
+t_long_value	la_pow(t_long_value nbr, int exp)
 {
 	t_long_value	result;
-	int				i;
 
-	i = 0;
 	if (exp == 0)
     {
         result.values = (int*)malloc(sizeof(int) * 1);
@@ -297,19 +232,3 @@ t_long_value	ft_la_pow(t_long_value nbr, int exp)
 	}
 	return (result);
 }
-
-/*int		main()
-{
-    t_long_value    result;
-    t_long_value    result1;
-	//result = ft_la_pow(conv_to_la(3), );
-	//result = sum(conv_to_la(2),conv_to_la(99999));
-	//result = normalize(result);
-    /*result = sum(conv_to_la(999), result);
-    normalize(result);
-    result = sub(result, conv_to_la(99));
-	result = karatsuba_mul(result, conv_to_la(5));
-	normalize(result);*/
-    /*PrintBigNum(result);
-    return (0);
-}*/

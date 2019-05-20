@@ -1136,6 +1136,45 @@ CMakeFiles/Printf.dir/long_arithmetic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/long_arithmetic.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/long_arithmetic.c -o CMakeFiles/Printf.dir/long_arithmetic.c.s
 
+CMakeFiles/Printf.dir/represents.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/represents.c.o: ../represents.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/Printf.dir/represents.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/represents.c.o   -c /Users/cheller/Desktop/home_space/Printf/represents.c
+
+CMakeFiles/Printf.dir/represents.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/represents.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/represents.c > CMakeFiles/Printf.dir/represents.c.i
+
+CMakeFiles/Printf.dir/represents.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/represents.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/represents.c -o CMakeFiles/Printf.dir/represents.c.s
+
+CMakeFiles/Printf.dir/Getting.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/Getting.c.o: ../Getting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/Printf.dir/Getting.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/Getting.c.o   -c /Users/cheller/Desktop/home_space/Printf/Getting.c
+
+CMakeFiles/Printf.dir/Getting.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/Getting.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/Getting.c > CMakeFiles/Printf.dir/Getting.c.i
+
+CMakeFiles/Printf.dir/Getting.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/Getting.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/Getting.c -o CMakeFiles/Printf.dir/Getting.c.s
+
+CMakeFiles/Printf.dir/Cleanup.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/Cleanup.c.o: ../Cleanup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/Printf.dir/Cleanup.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/Cleanup.c.o   -c /Users/cheller/Desktop/home_space/Printf/Cleanup.c
+
+CMakeFiles/Printf.dir/Cleanup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/Cleanup.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/Cleanup.c > CMakeFiles/Printf.dir/Cleanup.c.i
+
+CMakeFiles/Printf.dir/Cleanup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/Cleanup.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/Cleanup.c -o CMakeFiles/Printf.dir/Cleanup.c.s
+
 # Object files for target Printf
 Printf_OBJECTS = \
 "CMakeFiles/Printf.dir/libft/ft_abs.c.o" \
@@ -1220,7 +1259,10 @@ Printf_OBJECTS = \
 "CMakeFiles/Printf.dir/handler_u.c.o" \
 "CMakeFiles/Printf.dir/handler_b.c.o" \
 "CMakeFiles/Printf.dir/hex.c.o" \
-"CMakeFiles/Printf.dir/long_arithmetic.c.o"
+"CMakeFiles/Printf.dir/long_arithmetic.c.o" \
+"CMakeFiles/Printf.dir/represents.c.o" \
+"CMakeFiles/Printf.dir/Getting.c.o" \
+"CMakeFiles/Printf.dir/Cleanup.c.o"
 
 # External object files for target Printf
 Printf_EXTERNAL_OBJECTS =
@@ -1308,9 +1350,12 @@ Printf: CMakeFiles/Printf.dir/handler_u.c.o
 Printf: CMakeFiles/Printf.dir/handler_b.c.o
 Printf: CMakeFiles/Printf.dir/hex.c.o
 Printf: CMakeFiles/Printf.dir/long_arithmetic.c.o
+Printf: CMakeFiles/Printf.dir/represents.c.o
+Printf: CMakeFiles/Printf.dir/Getting.c.o
+Printf: CMakeFiles/Printf.dir/Cleanup.c.o
 Printf: CMakeFiles/Printf.dir/build.make
 Printf: CMakeFiles/Printf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Linking C executable Printf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable Printf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Printf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
