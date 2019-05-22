@@ -13,10 +13,6 @@ CMakeFiles/Printf.dir/cheks.c.o: ../cheks.c
 CMakeFiles/Printf.dir/cheks.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/cheks.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/conversions.c.o: ../conversions.c
-CMakeFiles/Printf.dir/conversions.c.o: ../ft_printf.h
-CMakeFiles/Printf.dir/conversions.c.o: ../libft/libft.h
-
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/ft_printf.c.o: ../libft/libft.h

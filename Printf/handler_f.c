@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 void	OverflowDigit(char *nbr, int pos)
 {
@@ -171,14 +170,14 @@ char	*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq)
 	return (str);
 }
 
-t_float	*Fill_FP(long double Ldbl)
+t_float	*fill_fp(long double ldbl)
 {
 	t_float	*float_point;
 
 	if (!(float_point = (t_float*)malloc(sizeof(t_float))))
 		return (NULL);
 	float_point->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
-	float_point->binary->ld = Ldbl;
+	float_point->binary->ld = ldbl;
 	float_point->binary_represent = represent_binary(float_point->binary->b);
 	float_point->sign = *float_point->binary_represent;
 	float_point->exp = ft_strsub(float_point->binary_represent, 1, 15);
@@ -197,7 +196,7 @@ char	*handler_f(va_list arg, t_formatting *e_seq)
 		ld = (long double)va_arg(arg, long double);
 	else
 		ld = (long double)va_arg(arg, double);
-	fp = Fill_FP(ld);
+	fp = fill_fp(ld);
 	e_seq->is_negative = fp->sign - '0';
 	str = get_number(fp, e_seq);
 	free_fp(&fp);

@@ -16,9 +16,8 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 {
 	char	*nbr_str;
 	char	*str;
-	int		length;
 
-  if (e_sequence->length_modifier == 108)
+	if (e_sequence->length_modifier == 108)
 		nbr_str = ft_ulitoa(va_arg(arg, unsigned long int));
 	else if (e_sequence->length_modifier == 216)
 		nbr_str = ft_ulitoa(va_arg(arg, unsigned long long int));
@@ -27,8 +26,8 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 	else if (e_sequence->length_modifier == 208)
 		nbr_str = ft_uitoa((unsigned char)va_arg(arg, int));
 	else
-		nbr_str = ft_uitoa(va_arg(arg, unsigned int)); // для разных флагов
-    //printf("nbr_str: %s\n", nbr_str);
+		nbr_str = ft_uitoa(va_arg(arg, unsigned int));
 	str = handler_sequence_d(&nbr_str, e_sequence, &str);
+	e_sequence->common_length = ft_strlen(str);
 	return (str);
 }

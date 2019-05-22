@@ -993,22 +993,9 @@ CMakeFiles/Printf.dir/cheks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/cheks.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/cheks.c -o CMakeFiles/Printf.dir/cheks.c.s
 
-CMakeFiles/Printf.dir/conversions.c.o: CMakeFiles/Printf.dir/flags.make
-CMakeFiles/Printf.dir/conversions.c.o: ../conversions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/Printf.dir/conversions.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/conversions.c.o   -c /Users/cheller/Desktop/home_space/Printf/conversions.c
-
-CMakeFiles/Printf.dir/conversions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/conversions.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/conversions.c > CMakeFiles/Printf.dir/conversions.c.i
-
-CMakeFiles/Printf.dir/conversions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/conversions.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/conversions.c -o CMakeFiles/Printf.dir/conversions.c.s
-
 CMakeFiles/Printf.dir/ft_printf.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/Printf.dir/ft_printf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/Printf.dir/ft_printf.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/ft_printf.c.o   -c /Users/cheller/Desktop/home_space/Printf/ft_printf.c
 
 CMakeFiles/Printf.dir/ft_printf.c.i: cmake_force
@@ -1021,7 +1008,7 @@ CMakeFiles/Printf.dir/ft_printf.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_d.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_d.c.o: ../handler_d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/Printf.dir/handler_d.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/Printf.dir/handler_d.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_d.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_d.c
 
 CMakeFiles/Printf.dir/handler_d.c.i: cmake_force
@@ -1034,7 +1021,7 @@ CMakeFiles/Printf.dir/handler_d.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_f.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_f.c.o: ../handler_f.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/Printf.dir/handler_f.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/Printf.dir/handler_f.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_f.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_f.c
 
 CMakeFiles/Printf.dir/handler_f.c.i: cmake_force
@@ -1047,7 +1034,7 @@ CMakeFiles/Printf.dir/handler_f.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_o_x.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_o_x.c.o: ../handler_o_x.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/Printf.dir/handler_o_x.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/Printf.dir/handler_o_x.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_o_x.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_o_x.c
 
 CMakeFiles/Printf.dir/handler_o_x.c.i: cmake_force
@@ -1060,7 +1047,7 @@ CMakeFiles/Printf.dir/handler_o_x.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_p.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_p.c.o: ../handler_p.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/Printf.dir/handler_p.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/Printf.dir/handler_p.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_p.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_p.c
 
 CMakeFiles/Printf.dir/handler_p.c.i: cmake_force
@@ -1073,7 +1060,7 @@ CMakeFiles/Printf.dir/handler_p.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_text.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_text.c.o: ../handler_text.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/Printf.dir/handler_text.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/Printf.dir/handler_text.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_text.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_text.c
 
 CMakeFiles/Printf.dir/handler_text.c.i: cmake_force
@@ -1086,7 +1073,7 @@ CMakeFiles/Printf.dir/handler_text.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_u.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_u.c.o: ../handler_u.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Printf.dir/handler_u.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/Printf.dir/handler_u.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_u.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_u.c
 
 CMakeFiles/Printf.dir/handler_u.c.i: cmake_force
@@ -1099,7 +1086,7 @@ CMakeFiles/Printf.dir/handler_u.c.s: cmake_force
 
 CMakeFiles/Printf.dir/handler_b.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/handler_b.c.o: ../handler_b.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Printf.dir/handler_b.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Printf.dir/handler_b.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/handler_b.c.o   -c /Users/cheller/Desktop/home_space/Printf/handler_b.c
 
 CMakeFiles/Printf.dir/handler_b.c.i: cmake_force
@@ -1112,7 +1099,7 @@ CMakeFiles/Printf.dir/handler_b.c.s: cmake_force
 
 CMakeFiles/Printf.dir/hex.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/hex.c.o: ../hex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/Printf.dir/hex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Printf.dir/hex.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/hex.c.o   -c /Users/cheller/Desktop/home_space/Printf/hex.c
 
 CMakeFiles/Printf.dir/hex.c.i: cmake_force
@@ -1125,7 +1112,7 @@ CMakeFiles/Printf.dir/hex.c.s: cmake_force
 
 CMakeFiles/Printf.dir/long_arithmetic.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/long_arithmetic.c.o: ../long_arithmetic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/Printf.dir/long_arithmetic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/Printf.dir/long_arithmetic.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/long_arithmetic.c.o   -c /Users/cheller/Desktop/home_space/Printf/long_arithmetic.c
 
 CMakeFiles/Printf.dir/long_arithmetic.c.i: cmake_force
@@ -1138,7 +1125,7 @@ CMakeFiles/Printf.dir/long_arithmetic.c.s: cmake_force
 
 CMakeFiles/Printf.dir/represents.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/represents.c.o: ../represents.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/Printf.dir/represents.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/Printf.dir/represents.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/represents.c.o   -c /Users/cheller/Desktop/home_space/Printf/represents.c
 
 CMakeFiles/Printf.dir/represents.c.i: cmake_force
@@ -1151,7 +1138,7 @@ CMakeFiles/Printf.dir/represents.c.s: cmake_force
 
 CMakeFiles/Printf.dir/Getting.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/Getting.c.o: ../Getting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/Printf.dir/Getting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/Printf.dir/Getting.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/Getting.c.o   -c /Users/cheller/Desktop/home_space/Printf/Getting.c
 
 CMakeFiles/Printf.dir/Getting.c.i: cmake_force
@@ -1164,7 +1151,7 @@ CMakeFiles/Printf.dir/Getting.c.s: cmake_force
 
 CMakeFiles/Printf.dir/Cleanup.c.o: CMakeFiles/Printf.dir/flags.make
 CMakeFiles/Printf.dir/Cleanup.c.o: ../Cleanup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/Printf.dir/Cleanup.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/Printf.dir/Cleanup.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/Cleanup.c.o   -c /Users/cheller/Desktop/home_space/Printf/Cleanup.c
 
 CMakeFiles/Printf.dir/Cleanup.c.i: cmake_force
@@ -1249,7 +1236,6 @@ Printf_OBJECTS = \
 "CMakeFiles/Printf.dir/libft/ft_uitoa.c.o" \
 "CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o" \
 "CMakeFiles/Printf.dir/cheks.c.o" \
-"CMakeFiles/Printf.dir/conversions.c.o" \
 "CMakeFiles/Printf.dir/ft_printf.c.o" \
 "CMakeFiles/Printf.dir/handler_d.c.o" \
 "CMakeFiles/Printf.dir/handler_f.c.o" \
@@ -1339,7 +1325,6 @@ Printf: CMakeFiles/Printf.dir/libft/ft_toupper.c.o
 Printf: CMakeFiles/Printf.dir/libft/ft_uitoa.c.o
 Printf: CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o
 Printf: CMakeFiles/Printf.dir/cheks.c.o
-Printf: CMakeFiles/Printf.dir/conversions.c.o
 Printf: CMakeFiles/Printf.dir/ft_printf.c.o
 Printf: CMakeFiles/Printf.dir/handler_d.c.o
 Printf: CMakeFiles/Printf.dir/handler_f.c.o
@@ -1355,7 +1340,7 @@ Printf: CMakeFiles/Printf.dir/Getting.c.o
 Printf: CMakeFiles/Printf.dir/Cleanup.c.o
 Printf: CMakeFiles/Printf.dir/build.make
 Printf: CMakeFiles/Printf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable Printf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Linking C executable Printf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Printf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

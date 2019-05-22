@@ -43,6 +43,8 @@ char *handler_s(va_list arg, t_formatting *e_seq) // учесть '\0'
 	char *str_arg;
 
 	str_arg = va_arg(arg, char *);
+	if (str_arg == NULL)
+		str_arg = ft_strdup("(null)");
 	str = handler_sequence_s(str_arg, &str, e_seq);
 	return (str);
 }

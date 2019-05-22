@@ -80,7 +80,6 @@ add_executable(Printf
         libft/ft_ulitoa.c
         libft/libft.h
         cheks.c
-        conversions.c
         ft_printf.c
         ft_printf.h
         handler_d.c

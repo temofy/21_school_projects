@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/Cleanup.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/Cleanup.c.o"
   "/Users/cheller/Desktop/home_space/Printf/Getting.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/Getting.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cheks.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o"
-  "/Users/cheller/Desktop/home_space/Printf/conversions.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o"
   "/Users/cheller/Desktop/home_space/Printf/ft_printf.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_b.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_b.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_d.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_d.c.o"

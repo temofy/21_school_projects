@@ -71,7 +71,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/libft/ft_uitoa.c.o"
   "CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o"
   "CMakeFiles/Printf.dir/cheks.c.o"
-  "CMakeFiles/Printf.dir/conversions.c.o"
   "CMakeFiles/Printf.dir/ft_printf.c.o"
   "CMakeFiles/Printf.dir/handler_d.c.o"
   "CMakeFiles/Printf.dir/handler_f.c.o"

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 char	*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq)
 {
@@ -89,8 +88,8 @@ char	*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str)
 
 	width = e_sequence->width;
 	precision = e_sequence->precision;
-	length_arg = ft_strlen(*str_arg);	//arguments's length with sign
-	length_str = handler_length(length_arg, width, precision); //counting remaining length
+	length_arg = ft_strlen(*str_arg);
+	length_str = handler_length(length_arg, width, precision);
 	*str = ft_strnew(length_str);
 	if (length_str > 0 && precision >= width)
 		ft_memset(*str, '0', length_str);
@@ -256,8 +255,7 @@ char	*handler_sequence_d(char *str_arg, t_formatting *e_seq, char **str)
 char	*handler_d(va_list arg, t_formatting *e_seq)
 {
 	char	*nbr_str;
-	char	*str;	
-	int		length;
+	char	*str;
 
 	if (e_seq->length_modifier == 108)
 		nbr_str = ft_litoa(va_arg(arg, long int));

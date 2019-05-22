@@ -204,33 +204,6 @@ cheks.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.s
 .PHONY : cheks.c.s
 
-conversions.o: conversions.c.o
-
-.PHONY : conversions.o
-
-# target to build an object file
-conversions.c.o:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.o
-.PHONY : conversions.c.o
-
-conversions.i: conversions.c.i
-
-.PHONY : conversions.i
-
-# target to preprocess a source file
-conversions.c.i:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.i
-.PHONY : conversions.c.i
-
-conversions.s: conversions.c.s
-
-.PHONY : conversions.s
-
-# target to generate assembly for a file
-conversions.c.s:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.s
-.PHONY : conversions.c.s
-
 ft_printf.o: ft_printf.c.o
 
 .PHONY : ft_printf.o
@@ -2463,9 +2436,6 @@ help:
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
-	@echo "... conversions.o"
-	@echo "... conversions.i"
-	@echo "... conversions.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"

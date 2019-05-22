@@ -6,23 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Printf/ft_printf.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-stdio.h
--
-wchar.h
--
-stdlib.h
--
-math.h
--
-
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 stdarg.h
 -
 libft/libft.h
 /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+
+/Users/cheller/Desktop/home_space/Printf/handler_f.c
+ft_printf.h
+/Users/cheller/Desktop/home_space/Printf/ft_printf.h
 
 /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 stdlib.h

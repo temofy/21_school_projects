@@ -95,9 +95,6 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/cheks.c">
 			<Option target="Printf"/>
 		</Unit>
-		<Unit filename="/Users/cheller/Desktop/home_space/Printf/conversions.c">
-			<Option target="Printf"/>
-		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/ft_printf.c">
 			<Option target="Printf"/>
 		</Unit>

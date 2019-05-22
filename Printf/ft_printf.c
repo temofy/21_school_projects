@@ -16,21 +16,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-void	print_sequence(t_formatting *e_sequence)
-{
-	printf("*************-escape-sequence-*************\n");
-	printf("flags: \n\tspace: %d\n", e_sequence->flags->space);
-	printf("\tplus: %d\n", e_sequence->flags->plus);
-	printf("\tminus: %d\n", e_sequence->flags->minus);
-	printf("\thash: %d\n", e_sequence->flags->hash);
-	printf("\tzero: %d\n", e_sequence->flags->zero);
-	printf("width: %d\n", e_sequence->width);
-	printf("precision: %d\n", e_sequence->precision);
-	printf("negative: %d\n", e_sequence->is_negative);
-	printf("length_modifier: %d\n", e_sequence->length_modifier);
-	printf("********************************************\n");
-}
-
 int		handler_length(int length, int width, int precision)
 {
 	if (length > width && length > precision)
@@ -170,11 +155,11 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 int		ft_printf(const char *format, ...)
 {
 	va_list	arg;
-	char	*string; // prepared string for print
+	char	*string;
 	char	*substr;
-	int		i;		// counter
-	int		start;	// var to find pos after foramtting
-	int		found_spec; // flag
+	int		i;
+	int		start;
+	int		found_spec;
 	t_formatting *e_sequence;
 	size_t	common_length;
 
@@ -189,16 +174,6 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && !found_spec)
 		{
-			/*e_sequence = scanning_sequence(format + i + 1); // need to free
-			found_spec = 1;
-			string = ft_strfjoin(string, ft_strsub(format, start, i - start), 0);
-			substr = find_specifier(format + i, arg, e_sequence);
-			common_length += e_sequence->common_length;
-			//if (e_sequence->specifier == 'c' && e_sequence->common_length != ft_strlen(substr))
-				
-			string = ft_strjoin(string, substr);
-			printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);*/
-			
 			e_sequence = scanning_sequence(format + i + 1); // need to free
 			found_spec = 1;
 			if (start == 0)
@@ -228,46 +203,25 @@ int		ft_printf(const char *format, ...)
 
 int		main()
 {
-	char	*greeting = "Добрый вечер!";
-	char	*name = "Artem";
-	double	 age = 0;
-	long double	Pi = -3.1500000000000001;
-	long double	a = 65.9921845;
-	double		d = 865.789;
 
-	printf("Hel%");
-	ft_printf("Hel%");
-	//ft_printf("Hello %5s`#!\nMy %came is %10.2s\n%p\n", "world", 'n', name, &name);
-	/* ft_printf("I'm % .05 d лет\n", 20); // will right process
+	/*ft_printf("I'm % .05 d лет\n", 20); // will right process
 	printf("I'm % .05 d лет\n", 20);*/
-	//printf("%\n", 5);Ba
 	/*ft_printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000); // space include in width, but not int precision
-	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 2000); */
-	/*ft_printf("number: %015.10d\n", 10);
-	printf("number: %O\n%%\n", age);*/
+	printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000);
+	ft_printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 7000);
+	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 7000);*/
 	/*ft_printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
 	printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
-	ft_printf("%04.3d\n", -999); // 0 and precision
-	printf("%04.3d\n", -999);*/
-	//printf("lol%10.5l+d\n", 505);
-	/*ft_printf("Hello %7s!\nMy %5came is %10.2s\n", "world", '\0', name);
-	printf("Hello %0.0s!\nMy %5came is %10.2s\n", "world", '\0', name);*/
+	ft_printf("%04.4d\n", -999); // 0 and precision
+	printf("%04.4d\n", -999);*/
 
-	//ft_printf("Hello %s.\nLetter is %10.5c.\n", "world", 'A');
-	//printf("Hello %s.\nLetter is %.5c.\n", "world", 'A');
-	//printf("convert: %lu\n", FractionBinAsDec("0110011001100110"));
-	//ft_printf("number: %hd\n", 32768);
-	//printf("number: %hd\n", 32768);
-	//printf("number: %lu\n", (unsigned long int)18446744073709551615);
-	//printf("size this string: %d |\n", printf("float: %.30f\n", Pi));
-	//printf("size this string: %d |\n", printf("symbol: %\n", 0x100));
-	//ft_printf("- Hello, dude! My name is %s. I'm %+05ld. How are you?\n%s\n", "Artem", age, "- Nice, thanks!");
-	//printf("%s Меня зовут %-10s. Мне %+05hd лет.\n Число (int)Пи = %.0f, Pointer: %15p\n", greeting, name, age, Pi, greeting);
+	/*ft_printf("number: %jd\n", 32769);
+	printf("number: %jd\n", 32769);*/
 
+	ft_printf("float: %.50f\n", 123.45);
+	printf("float: %.50f\n", 123.45);
 	//ft_printf("%-#10.5o\n", -16);
 	//printf("%-10.0o", 0);
-	//ft_printf("Age's address: %0.10p\n", &age);
-	//printf("Age's adress: %p\n", &age);
 	//printf("di: %.15f\n", (double)(i - 1.2));
 	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
 

@@ -46,7 +46,7 @@ t_str_fp	*get_decimal_frac_str(char *frac_bin, t_str_fp *str)
 		i++;
 	}
 	free(str->frac);
-	str->frac = ConvBigNumToStr(result);
+	str->frac = conv_bignum_to_str(result);
 	return (str);
 }
 
