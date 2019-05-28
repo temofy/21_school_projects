@@ -27,7 +27,8 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 		nbr_str = ft_uitoa((unsigned char)va_arg(arg, int));
 	else
 		nbr_str = ft_uitoa(va_arg(arg, unsigned int));
-	str = handler_sequence_d(&nbr_str, e_sequence, &str);
-	e_sequence->common_length = ft_strlen(str);
-	return (str);
+	e_sequence->flags->space = 0;
+	e_sequence->flags->plus = 0;
+	nbr_str = handler_sequence_d(&nbr_str, e_sequence, str);
+	return (nbr_str);
 }

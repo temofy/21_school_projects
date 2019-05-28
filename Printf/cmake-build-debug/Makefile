@@ -204,6 +204,33 @@ cheks.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.s
 .PHONY : cheks.c.s
 
+conversions.o: conversions.c.o
+
+.PHONY : conversions.o
+
+# target to build an object file
+conversions.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.o
+.PHONY : conversions.c.o
+
+conversions.i: conversions.c.i
+
+.PHONY : conversions.i
+
+# target to preprocess a source file
+conversions.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.i
+.PHONY : conversions.c.i
+
+conversions.s: conversions.c.s
+
+.PHONY : conversions.s
+
+# target to generate assembly for a file
+conversions.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/conversions.c.s
+.PHONY : conversions.c.s
+
 ft_printf.o: ft_printf.c.o
 
 .PHONY : ft_printf.o
@@ -662,6 +689,33 @@ libft/ft_isdigit.s: libft/ft_isdigit.c.s
 libft/ft_isdigit.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_isdigit.c.s
 .PHONY : libft/ft_isdigit.c.s
+
+libft/ft_iseven.o: libft/ft_iseven.c.o
+
+.PHONY : libft/ft_iseven.o
+
+# target to build an object file
+libft/ft_iseven.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_iseven.c.o
+.PHONY : libft/ft_iseven.c.o
+
+libft/ft_iseven.i: libft/ft_iseven.c.i
+
+.PHONY : libft/ft_iseven.i
+
+# target to preprocess a source file
+libft/ft_iseven.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_iseven.c.i
+.PHONY : libft/ft_iseven.c.i
+
+libft/ft_iseven.s: libft/ft_iseven.c.s
+
+.PHONY : libft/ft_iseven.s
+
+# target to generate assembly for a file
+libft/ft_iseven.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_iseven.c.s
+.PHONY : libft/ft_iseven.c.s
 
 libft/ft_isprint.o: libft/ft_isprint.c.o
 
@@ -2436,6 +2490,9 @@ help:
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
+	@echo "... conversions.o"
+	@echo "... conversions.i"
+	@echo "... conversions.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"
@@ -2487,6 +2544,9 @@ help:
 	@echo "... libft/ft_isdigit.o"
 	@echo "... libft/ft_isdigit.i"
 	@echo "... libft/ft_isdigit.s"
+	@echo "... libft/ft_iseven.o"
+	@echo "... libft/ft_iseven.i"
+	@echo "... libft/ft_iseven.s"
 	@echo "... libft/ft_isprint.o"
 	@echo "... libft/ft_isprint.i"
 	@echo "... libft/ft_isprint.s"

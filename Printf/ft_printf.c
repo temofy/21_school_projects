@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/05/07 13:24:49 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/28 16:38:23 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*handler_percent(t_formatting *e_seq)
 char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 {
 	int		i;
-	
+
 	i = 0;
 	while (format[i++])
 	{
@@ -91,7 +91,7 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 			return (handler_f(arg, e_sequence));
         else if (format[i]== 'b' || format[i]== 'B')
             return (handler_b(arg, e_sequence));
-		else if (format[i] == 'c' || format[i] == 'C') 
+		else if (format[i] == 'c' || format[i] == 'C')
 			return (handler_c(arg, e_sequence));
 		else if (format[i] == 's')
 			return (handler_s(arg, e_sequence));
@@ -110,47 +110,6 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 	}
 	return (NULL);
 }
-
-/*int		ft_printf(const char *format, ...)
-{
-	va_list	arg;
-	char	*string; // prepared string for print
-	int		i;		// counter
-	int		start;	// var to find pos after foramtting
-	int		found_spec; // flag
-	t_formatting *e_sequence;
-
-	i = 0;
-	string = ft_strnew(0);
-	start = 0;
-	found_spec = 0;
-	va_start(arg, format);
-	// нужна проверку на количество спецификаций с количеством аргументом
-	while (format[i])
-	{
-		if (format[i] == '%' && !found_spec)
-		{
-			e_sequence = scanning_sequence(format + i + 1); // need to free
-			found_spec = 1;
-			string = ft_strfjoin(string, ft_strsub(format, start, i - start), 0);
-			string = ft_strjoin(string, find_specifier(format + i, arg, e_sequence));
-			//printf("length: %d\nspecifier: %c\n", e_sequence->common_length, e_sequence->specifier);
-		}
-		else if (found_spec)
-		{
-			if (find_end_spec(format[i]))
-			{
-				start = i + 1;
-				found_spec = 0;			
-			}
-		}
-		i++;
-	}
-	string = ft_strjoin(string, ft_strsub(format, start, i - start)); // проверить
-	ft_putstr(string);
-	va_end(arg);
-	return (1);
-}*/
 
 int		ft_printf(const char *format, ...)
 {
@@ -174,7 +133,7 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && !found_spec)
 		{
-			e_sequence = scanning_sequence(format + i + 1); // need to free
+			e_sequence = scanning_sequence(format + i + 1);
 			found_spec = 1;
 			if (start == 0)
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
@@ -183,13 +142,15 @@ int		ft_printf(const char *format, ...)
 			substr = find_specifier(format + i, arg, e_sequence);
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
 			common_length += e_sequence->common_length;
+			free(e_sequence->flags);
+			free(e_sequence);
 		}
 		else if (found_spec)
 		{
 			if (find_end_spec(format[i]))
 			{
 				start = i + 1;
-				found_spec = 0;			
+				found_spec = 0;
 			}
 		}
 		else
@@ -203,29 +164,17 @@ int		ft_printf(const char *format, ...)
 
 int		main()
 {
-
-	/*ft_printf("I'm % .05 d лет\n", 20); // will right process
-	printf("I'm % .05 d лет\n", 20);*/
-	/*ft_printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000); // space include in width, but not int precision
-	printf("%.15.5.3.2.23.3.4 500 100 d\n", 2000);
-	ft_printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 7000);
-	printf("%.15.5.3.2.23.3.4. 500 -15 .10d\n", 7000);*/
-	/*ft_printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
-	printf("%+0 456 567 56 7 8 89 1.10 5ld\n", 5);
-	ft_printf("%04.4d\n", -999); // 0 and precision
-	printf("%04.4d\n", -999);*/
-
+	ft_printf("%d %d %d\n", 1, -2, 33);
+	printf("%d %d %d\n", 1, -2, 33);
+	ft_printf("%d %d %d %d\n", 1, -2, 33, 42);
+	printf("%d %d %d %d", 1, -2, 33, 42);
 	/*ft_printf("number: %jd\n", 32769);
 	printf("number: %jd\n", 32769);*/
 
-	ft_printf("float: %.50f\n", 123.45);
-	printf("float: %.50f\n", 123.45);
 	//ft_printf("%-#10.5o\n", -16);
 	//printf("%-10.0o", 0);
-	//printf("di: %.15f\n", (double)(i - 1.2));
+	//ft_printf("%3$i %i %i %i %5$i \n", 10, 6, 7, 5, 4, 3);
 	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
-
 	//printf("%e\n", 6553.12412);
-
 	return (0);
 }

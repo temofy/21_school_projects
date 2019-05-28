@@ -13,6 +13,10 @@ CMakeFiles/Printf.dir/cheks.c.o
  /Users/cheller/Desktop/home_space/Printf/cheks.c
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/conversions.c.o
+ /Users/cheller/Desktop/home_space/Printf/conversions.c
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/ft_printf.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.c
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
@@ -71,6 +75,9 @@ CMakeFiles/Printf.dir/libft/ft_isascii.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_isdigit.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_isdigit.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/libft/ft_iseven.c.o
+ /Users/cheller/Desktop/home_space/Printf/libft/ft_iseven.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_isprint.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_isprint.c

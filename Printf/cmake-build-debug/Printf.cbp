@@ -95,6 +95,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/cheks.c">
 			<Option target="Printf"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/conversions.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/ft_printf.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -147,6 +150,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_isdigit.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_iseven.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_isprint.c">

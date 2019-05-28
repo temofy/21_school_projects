@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/22 16:23:38 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/28 14:20:33 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ char			check_spec(const char *string);
 int				count_amount_flags(t_formatting *e_seq);
 int				handler_length(int length, int width, int precision);
 
-char			*handler_d_flags(char **str, char **str_arg, int len_str, t_formatting *e_seq);
-char			*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char **str);
+char			*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char *spaces);
 char			*handler_d(va_list arg, t_formatting *e_sequence);
 
 char			*handler_u(va_list arg, t_formatting *e_sequence);
@@ -108,8 +107,9 @@ char			*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq);
 t_long_value	la_pow(t_long_value nbr, int exp);
 t_long_value	conv_to_la(signed long nbr);
 t_long_value 	karatsuba_mul(t_long_value a, t_long_value b);
-t_long_value	normalize(t_long_value l);
+t_long_value	normalize(int carryover, t_long_value l);
 t_long_value	sum(t_long_value a, t_long_value b);
 char			*conv_bignum_to_str(t_long_value nbr);
+t_long_value	expand_value(t_long_value nbr);
 
 #endif

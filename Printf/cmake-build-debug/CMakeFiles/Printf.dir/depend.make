@@ -13,6 +13,10 @@ CMakeFiles/Printf.dir/cheks.c.o: ../cheks.c
 CMakeFiles/Printf.dir/cheks.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/cheks.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/conversions.c.o: ../conversions.c
+CMakeFiles/Printf.dir/conversions.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/conversions.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/ft_printf.c.o: ../libft/libft.h
@@ -71,6 +75,9 @@ CMakeFiles/Printf.dir/libft/ft_isascii.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_isdigit.c.o: ../libft/ft_isdigit.c
 CMakeFiles/Printf.dir/libft/ft_isdigit.c.o: ../libft/libft.h
+
+CMakeFiles/Printf.dir/libft/ft_iseven.c.o: ../libft/ft_iseven.c
+CMakeFiles/Printf.dir/libft/ft_iseven.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_isprint.c.o: ../libft/ft_isprint.c
 CMakeFiles/Printf.dir/libft/ft_isprint.c.o: ../libft/libft.h

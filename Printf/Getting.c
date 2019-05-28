@@ -54,7 +54,7 @@ char		*get_lz(int amount)
 {
 	char	*leading_zeros;
 
-	leading_zeros = strdup("");
+	leading_zeros = ft_strdup("");
 	if (amount == 0)
 		return (leading_zeros);
 	while (amount--)

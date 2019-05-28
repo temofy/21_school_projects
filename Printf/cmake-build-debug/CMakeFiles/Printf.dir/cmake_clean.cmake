@@ -84,6 +84,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/represents.c.o"
   "CMakeFiles/Printf.dir/Getting.c.o"
   "CMakeFiles/Printf.dir/Cleanup.c.o"
+  "CMakeFiles/Printf.dir/conversions.c.o"
+  "CMakeFiles/Printf.dir/libft/ft_iseven.c.o"
   "Printf.pdb"
   "Printf"
 )

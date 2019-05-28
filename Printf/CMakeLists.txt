@@ -90,4 +90,4 @@ add_executable(Printf
         handler_u.c
         handler_b.c
         hex.c
-        long_arithmetic.c represents.c Getting.c Cleanup.c)
+        long_arithmetic.c represents.c Getting.c Cleanup.c conversions.c libft/ft_iseven.c)

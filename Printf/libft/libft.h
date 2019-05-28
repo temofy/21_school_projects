@@ -104,6 +104,7 @@ char				*ft_strfjoin(char *s1, char *s2, int arg_to_free);
 char				*ft_strljoin(char *s1, char *s2, int len1, int len2);
 float				ft_pow(int number, int expt);
 int                 ft_abs(int n);
+int					ft_iseven(long nbr);
 
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);

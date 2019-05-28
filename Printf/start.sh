@@ -1,1 +1,1 @@
-gcc -g ft_printf.c cheks.c handler_p.c hex.c libft/libft.a handler_d.c handler_text.c handler_u.c handler_o_x.c handler_f.c long_arithmetic.c handler_b.c conversions.c represents.c cleanup.c && ./a.out
+gcc -g ft_printf.c cheks.c handler_p.c hex.c libft/libft.a handler_d.c handler_text.c handler_u.c handler_o_x.c handler_f.c long_arithmetic.c handler_b.c conversions.c represents.c cleanup.c getting.c && ./a.out

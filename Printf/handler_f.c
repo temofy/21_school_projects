@@ -12,11 +12,36 @@
 
 #include "ft_printf.h"
 
-void	OverflowDigit(char *nbr, int pos)
+int		for_round_int(t_str_fp **fp, char *nbr)
+{
+	int	len;
+	int i;
+
+	len = ft_strlen(nbr);
+	i = 1;
+	if (*nbr >= '6')
+		return (1);
+	else if (*nbr == '5')
+	{
+		while (i < len)
+		{
+			if (nbr[i] > '0')
+				return (1);
+			i++;
+		}
+		if (ft_iseven(ft_atoi((*fp)->integer)) == 0)
+			return (1);
+	}
+	return (0);
+}
+
+int		overflow_frac(t_str_fp **fp, char *nbr, int pos)
 {
 	int		carry;
 
 	carry = 0;
+	if (pos == -1)
+		return (for_round_int(&*fp, nbr));
 	while (pos >= 0)
 	{
 		if (nbr[pos] == '9')
@@ -31,71 +56,107 @@ void	OverflowDigit(char *nbr, int pos)
 			carry = 0;
 		}
 		else
-			return ;
+			return (0);
 	}
+	return (carry);
 }
 
-char	*AdditionZeros(char *nbr, int length)
+void	overflow_int(t_str_fp **fp, int carry)
+{
+	int pos;
+
+	pos = ft_strlen((*fp)->integer) - 1;
+	if (carry)
+	{
+		while (pos >= 0)
+		{
+			if ((*fp)->integer[pos] == '9')
+			{
+				(*fp)->integer[pos] = '0';
+				carry = 1;
+				pos--;
+			}
+			else if (carry > 0)
+			{
+				(*fp)->integer[pos] += 1;
+				return ;
+			}
+		}
+	}
+	if (carry)
+		(*fp)->integer = ft_strfjoin("1", (*fp)->integer, 2);
+}
+
+void	overflow_digit(t_str_fp **fp, int precision)
+{
+	int	carry;
+
+	carry = overflow_frac(&*fp, (*fp)->frac, precision - 1);
+	overflow_int(&*fp, carry);
+}
+
+char	*addition_zeros(char *nbr, int length)
 {
 	char	*zeros;
 
 	if (!(zeros = ft_strnew(length)))
 		return (NULL);
-	memset(zeros, 48, length);
+	ft_memset(zeros, 48, length);
 	nbr = ft_strfjoin(nbr, zeros, 0);
 	return (nbr);
 }
 
-void	RoundFracPart(t_str_fp **str_fp, int precsion)
+void	round_frac(t_str_fp **str_fp, int precision)
 {
 	char	*rounded_nbr;
 	int		i;
 	size_t	len;
 
 	len = ft_strlen((*str_fp)->frac);
-	if (precsion == -1)
-		precsion = 6;
-	if (precsion > len)
-		(*str_fp)->frac = AdditionZeros((*str_fp)->frac, precsion - len);
-	if (precsion == 0)
+	if (precision == -1)
+		precision = 6;
+	if (precision > len)
+		(*str_fp)->frac = addition_zeros((*str_fp)->frac, precision - len);
+	if (precision == 0)
 	{
+		overflow_digit(&*str_fp, precision);
 		free((*str_fp)->frac);
 		(*str_fp)->frac = ft_strdup("");
 	}
-	else if (((*str_fp)->frac[precsion] - '0') < 5)
+	else if (((*str_fp)->frac[precision] - '0') < 5)
 	{
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precsion);
+		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
 		free((*str_fp)->frac);
 		(*str_fp)->frac = rounded_nbr;
 	}
-	else if (((*str_fp)->frac[precsion] - '0') > 6)
+	else if (((*str_fp)->frac[precision] - '0') > 6)
 	{
-		if ((*str_fp)->frac[precsion - 1] < '9')
-			(*str_fp)->frac[precsion - 1] += 1;
+		if ((*str_fp)->frac[precision - 1] < '9')
+			(*str_fp)->frac[precision - 1] += 1;
 		else
-			OverflowDigit((*str_fp)->frac, precsion - 1);
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precsion);
+			overflow_digit(&*str_fp, precision);
+		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
 		free((*str_fp)->frac);
 		(*str_fp)->frac = rounded_nbr;
 	}
 	else
 	{
-		i = precsion;
+		i = precision;
 		while (++i < len)
 		{
 			if ((*str_fp)->frac[i] > '0')
 			{
-				if ((*str_fp)->frac[precsion - 1] < '9')
-					(*str_fp)->frac[precsion - 1] += 1;
+				if ((*str_fp)->frac[precision - 1] < '9')
+					(*str_fp)->frac[precision - 1] += 1;
 				else
-					OverflowDigit((*str_fp)->frac, precsion - 1);
-				rounded_nbr = ft_strsub((*str_fp)->frac, 0, precsion);
+					overflow_digit(&*str_fp, precision);
+				rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
 				free((*str_fp)->frac);
 				(*str_fp)->frac = rounded_nbr;
 				return ;
 			}
 		}
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precsion);
+		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
 		free((*str_fp)->frac);
 		(*str_fp)->frac = rounded_nbr;
 	}
@@ -107,7 +168,7 @@ char	*handler_sequence_f(char *str, t_formatting *e_seq, t_str_fp *str_fp)
 	char	*spaces;
 
 	spaces = ft_strnew(0);
-	RoundFracPart(&str_fp, e_seq->precision);
+	round_frac(&str_fp, e_seq->precision);
 	if (e_seq->precision != 0)
 	{
 		str = ft_strjoin(str_fp->integer, ".");
