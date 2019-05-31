@@ -3,20 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   handler_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 18:26:54 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/22 12:48:26 by cheller          ###   ########.fr       */
+/*   Updated: 2019/05/29 18:07:31 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char    *handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
+char	*pointer(char **str, char *hex, t_formatting *e_seq)
+{
+	if (!e_seq->flags->zero)
+		hex = ft_strfjoin("0x", hex, 2);
+	if (e_seq->flags->minus)
+		*str = ft_strfjoin(hex, *str, 0);
+	else
+		*str = ft_strfjoin(*str, hex, 0);
+	if (e_seq->flags->zero)
+		*str = ft_strfjoin("0x", *str, 2);
+	return (*str);
+}
+
+char	*handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
 {
 	int		len_str;
 	int		len_arg;
-	int 	len_zeros;
+	int		len_zeros;
 
 	len_zeros = 0;
 	len_str = 0;
@@ -34,14 +47,7 @@ char    *handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
 		*str = ft_memset(*str, 48, len_str);
 	else
 		*str = ft_memset(*str, ' ', len_str);
-	if (!e_seq->flags->zero)
-		hex = ft_strfjoin("0x", hex, 2);
-	if (e_seq->flags->minus)
-		*str = ft_strfjoin(hex, *str, 0);
-	else
-		*str = ft_strfjoin(*str, hex, 0);
-	if (e_seq->flags->zero)
-		*str = ft_strfjoin("0x", *str, 2);
+	*str = pointer(str, hex, e_seq);
 	return (*str);
 }
 
@@ -49,6 +55,7 @@ char	*handler_p(va_list arg, t_formatting *e_sequence)
 {
 	char	*hex;
 	char	*str;
+
 	hex = hex_long_int((long int)va_arg(arg, void *));
 	str = handler_sequence_p(&str, hex, e_sequence);
 	e_sequence->common_length = ft_strlen(str);

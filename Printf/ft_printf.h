@@ -67,6 +67,7 @@ typedef struct	str_fp
 
 int				ft_printf(const char *format, ...);
 int				find_end_spec(char chr);
+int				find_index_end_spec(const char *string);
 t_flags			*check_flags(const char *format);
 int				check_width(const char *format);
 int				check_precision(const char *format);
@@ -111,5 +112,34 @@ t_long_value	normalize(int carryover, t_long_value l);
 t_long_value	sum(t_long_value a, t_long_value b);
 char			*conv_bignum_to_str(t_long_value nbr);
 t_long_value	expand_value(t_long_value nbr);
+
+char			*ft_sizedup(const char *s, size_t n);
+int				num_oct_len(long int n);
+char			*oct_int(long int n);
+char			*hexcimal(long long int *res, char *c_res, long long int tmp);
+char			*hex_int(long int n);
+char			*hexcimal_big(long int *res, char *c_res, long long int tmp);
+char			*hex_int_big(long int n);
+char			*oct_total(int n);
+char			*oct_total_l(long int n);
+char			*hex_total(int n);
+char			*hex_total_l(long long int n);
+char			*hex_big_total_l(long int n);
+char			*hex_big_total(long int n);
+char			*oct_zero(t_formatting *e_sequence, int *len, char *res);
+char			*oct_not_zero(t_formatting *e_sequence, int *len, char *res, char *oct);
+char			*oct_while(t_formatting *e_sequence, int *len, char *res);
+char			*oct_else(t_formatting *e_sequence, int *len, char *res, char *oct);
+char			*handler_o(va_list arg, t_formatting *e_sequence);
+char			*hex_zero(t_formatting *e_sequence, int *len, char *res);
+char			*hex_not_zero(t_formatting *e_sequence, int *len, char *res, char *hex);
+char			*hex_while(t_formatting *e_sequence, int *len, char *res);
+char			*hex_else(t_formatting *e_sequence, int *len, char *res, char *hex);
+char			*handler_x(va_list arg, t_formatting *e_sequence);
+char			*hex_big_zero(t_formatting *e_sequence, int *len, char *res);
+char			*hex_b_n_z(t_formatting *e_sequence, int *len, char *res, char *hex);
+char			*hex_big_while(t_formatting *e_sequence, int *len, char *res);
+char			*hex_big_else(t_formatting *e_sequence, int *len, char *res, char *hex);
+char			*handler_x_big(va_list arg, t_formatting *e_sequence);
 
 #endif

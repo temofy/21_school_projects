@@ -15,6 +15,7 @@ add_executable(Printf
         libft/ft_isalpha.c
         libft/ft_isascii.c
         libft/ft_isdigit.c
+        libft/ft_iseven.c
         libft/ft_isprint.c
         libft/ft_isthere_chr.c
         libft/ft_itoa.c
@@ -34,7 +35,6 @@ add_executable(Printf
         libft/ft_memdel.c
         libft/ft_memmove.c
         libft/ft_memset.c
-        libft/ft_pow.c
         libft/ft_putchar.c
         libft/ft_putchar_fd.c
         libft/ft_putendl.c
@@ -80,14 +80,23 @@ add_executable(Printf
         libft/ft_ulitoa.c
         libft/libft.h
         cheks.c
+        cleanup.c
+        conversions.c
         ft_printf.c
         ft_printf.h
+        getting.c
+        handler_b.c
         handler_d.c
         handler_f.c
-        handler_o_x.c
+        handler_o.c
         handler_p.c
         handler_text.c
         handler_u.c
-        handler_b.c
+        handler_x.c
+        handler_x_big.c
         hex.c
-        long_arithmetic.c represents.c Getting.c Cleanup.c conversions.c libft/ft_iseven.c)
+        hex_big_staff.c
+        hex_staff.c
+        long_arithmetic.c
+        oct_staff.c
+        represents.c)

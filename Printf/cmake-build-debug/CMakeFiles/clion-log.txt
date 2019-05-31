@@ -1,16 +1,4 @@
 /Users/cheller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/cheller/Desktop/home_space/Printf
 -- Configuring done
-CMake Error at CMakeLists.txt:9 (add_executable):
-  Cannot find source file:
-
-    libft/is_even.c
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx
-
-
-CMake Error at CMakeLists.txt:9 (add_executable):
-  No SOURCES given to target: Printf
-
-
+-- Generating done
 -- Build files have been written to: /Users/cheller/Desktop/home_space/Printf/cmake-build-debug

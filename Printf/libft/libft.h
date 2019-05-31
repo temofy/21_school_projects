@@ -102,7 +102,6 @@ char				*ft_strftchr(char *s, int pos, int c);
 int					ft_isthere_chr(char *s, int c);
 char				*ft_strfjoin(char *s1, char *s2, int arg_to_free);
 char				*ft_strljoin(char *s1, char *s2, int len1, int len2);
-float				ft_pow(int number, int expt);
 int                 ft_abs(int n);
 int					ft_iseven(long nbr);
 

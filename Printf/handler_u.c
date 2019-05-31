@@ -25,6 +25,8 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 		nbr_str = ft_uitoa((unsigned short int)va_arg(arg, int));
 	else if (e_sequence->length_modifier == 208)
 		nbr_str = ft_uitoa((unsigned char)va_arg(arg, int));
+	else if (e_sequence->length_modifier == 106)
+		nbr_str = ft_ulitoa((uintmax_t)va_arg(arg, uintmax_t));
 	else
 		nbr_str = ft_uitoa(va_arg(arg, unsigned int));
 	e_sequence->flags->space = 0;

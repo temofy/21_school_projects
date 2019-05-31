@@ -30,6 +30,8 @@ char		check_spec(const char *string)
 			return (*string);
 		else if (*string == 's')
 			return (*string);
+		else if (*string == 'Z')
+			return (*string);
 		else if (*string == '%')
 			return (*string);
 		string++;
@@ -37,37 +39,45 @@ char		check_spec(const char *string)
 	return ('\0');
 }
 
-int		find_end_spec(const char chr)
+int			find_index_end_spec(const char *s)
 {
-	if ((chr >= 'A' && chr <= 'Z') || (chr >= 'a' && chr <= 'z'))
-	{
-		if (chr != 'l' && chr != 'h' && chr != 'L' && chr != 'z' && chr != 'j') // continue
-			return (1);
-	}
-	else if (chr == '%')
-		return (1);
-	return (0);
-}
-int		find_index_end_spec(const char *string)
-{
-	int		i;
+	int	i;
 
 	i = 0;
-	while(string[i])
+	while (s[i])
 	{
-		if ((string[i] >= 'A' && string[i] <= 'Z') || (string[i] >= 'a' && string[i] <= 'z'))
+		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			if (string[i] != 'l' && string[i] != 'h' && string[i] != 'L' && string[i] != 'z' && string[i] != 'j') // continue
+			if (s[i] != 'l' && s[i] != 'h' && s[i] != 'L'
+				&& s[i] != 'z' && s[i] != 'j')
 				return (i);
 		}
-		else if (string[i] == '%')
+		else if (s[i] == '%')
 			return (i);
 		i++;
 	}
-	return (i);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != '#' && s[i] != ' ' && s[i] != '.' && s[i] != '+' && s[i] != '-'
+		&& s[i] != 'l' && s[i] != 'h' && s[i] != 'L' && s[i] != 'z' && s[i] != 'j')
+			return (i - 1);
+		i++;
+	}
+	return (-1);
 }
 
-t_flags	*check_flags(const char *format)
+void		initialize_flags(t_flags **flags)
+{
+	*flags = (t_flags*)malloc(sizeof(t_flags));
+	(*flags)->minus = 0;
+	(*flags)->plus = 0;
+	(*flags)->zero = 0;
+	(*flags)->space = 0;
+	(*flags)->hash = 0;
+}
+
+t_flags		*check_flags(const char *format)
 {
 	t_flags *flags;
 	int		end;
@@ -75,12 +85,7 @@ t_flags	*check_flags(const char *format)
 
 	i = -1;
 	end = find_index_end_spec(format);
-	flags = (t_flags*)malloc(sizeof(t_flags));
-	flags->minus = 0;
-	flags->plus = 0;
-	flags->zero = 0;
-	flags->space = 0;
-	flags->hash = 0;
+	initialize_flags(&flags);
 	while (format[++i] && i < end)
 	{
 		if (format[i] == '-')
@@ -100,11 +105,11 @@ t_flags	*check_flags(const char *format)
 	return (flags);
 }
 
-int		check_precision(const char *format)
+int			check_precision(const char *format)
 {
-	int		i;
-	int		end;
-	int 	prec;
+	int	i;
+	int	end;
+	int	prec;
 
 	end = find_index_end_spec(format);
 	i = end;
@@ -124,53 +129,7 @@ int		check_precision(const char *format)
 	return (-1);
 }
 
-/*int		check_precision(const char *format)
-{
-	int		i;
-	int		length;
-	int		start;
-	char	*prec_str;
-	int		end;
-
-	end = find_index_end_spec(format);
-	i = -1;
-	length = 0;
-	while (format[++i] != '.' && i < end);
-	if ((format[i] == '.') && (i + 1 == end))
-		return(0);
-	if (i == end)
-		return (-1);
-	start = i + 1;
-	while(format[++i] >= '0' && format[i] <= '9')
-		length++;
-	prec_str = ft_strnew(length);
-	prec_str = ft_strncpy(prec_str, format + start, length);
-	return(ft_atoi(prec_str));
-}*/
-
-/*int		check_width(const char *format)
-{
-	int		i;
-	int		length;
-	char	*width_str;
-	int		start;
-
-	length = 0;
-	i = -1;
-	while ((format[++i] < '0' || format[i] > '9') && format[i] != '.' && !find_end_spec(format[i]));
-	if ((format[i] == '.'))
-		return(-1);
-	if (find_end_spec(format[i]))
-		return (-1);
-	start = i;
-	while(format[i] >= '0' && format[i++] <= '9')
-		length++;
-	width_str = ft_strnew(length);
-	width_str = ft_strncpy(width_str, format + start, length);
-	return (ft_atoi(width_str));
-}*/
-
-int		check_width(const char *format)
+int			check_width(const char *format)
 {
 	int		i;
 	int		end;
@@ -187,7 +146,7 @@ int		check_width(const char *format)
 			finded_digit = 1;
 		if (format[i - 1] == '.')
 			finded_digit = 0;
-		if (((format[i - 1] < '0' || format[i - 1] > '9') || (i - 1) == -1) && finded_digit) 
+		if (((format[i - 1] < '0' || format[i - 1] > '9') || (i - 1) == -1) && finded_digit)
 		{
 			while (format[i] >= '0' && format[i] <= '9')
 			{
@@ -203,15 +162,13 @@ int		check_width(const char *format)
 	return (-1);
 }
 
-int	check_length_modifier(const char *format)
+int			check_length_modifier(const char *format)
 {
-	int 	i;
+	int i;
 
 	i = find_index_end_spec(format);
-	if (i != 0)
+	while (i)
 	{
-	/*while (!(find_end_spec(format[++i])))
-	{*/
 		if (format[i - 1] == 'h')
 		{
 			if (format[i - 2] == 'h')
@@ -230,6 +187,7 @@ int	check_length_modifier(const char *format)
 			return (106);
 		if (format[i - 1] == 'z')
 			return (122);
+		i--;
 	}
 	return (-1);
 }

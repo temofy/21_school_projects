@@ -34,19 +34,6 @@ int		handler_length(int length, int width, int precision)
 	return (0);
 }
 
-int		count_amount_flags(t_formatting *e_seq)
-{
-	int		amount;
-
-	amount = 0;
-	amount += e_seq->flags->space;
-	amount += e_seq->flags->plus;
-	amount += e_seq->flags->minus;
-	amount += e_seq->flags->hash;
-	amount += e_seq->flags->zero;
-	return (amount);
-}
-
 t_formatting	*scanning_sequence(const char *format)
 {
 	t_formatting	*e_sequence;
@@ -55,10 +42,11 @@ t_formatting	*scanning_sequence(const char *format)
 		return (NULL);
 	e_sequence->flags = check_flags(format);
 	e_sequence->width = check_width(format);
+	e_sequence->is_negative = 0;
 	e_sequence->precision = check_precision(format);
 	e_sequence->length_modifier = check_length_modifier(format);
 	e_sequence->specifier = check_spec(format);
-	e_sequence->common_length = 0; // везде записывать
+	e_sequence->common_length = 0;
 	return (e_sequence);
 }
 
@@ -74,8 +62,24 @@ char	*handler_percent(t_formatting *e_seq)
 	if (e_seq->flags->minus)
 		str = ft_strfjoin("%", str, 2);
 	else
+		{
+		if (e_seq->flags->zero)
+			str = ft_memset(str, '0', str_len);
 		str = ft_strfjoin(str, "%", 1);
+	}
 	return (str);
+}
+
+char 	*undefined_behavior(va_list arg, t_formatting *e_seq)
+{
+	char	*string;
+	if (e_seq->specifier == 'Z')
+	{
+		string = ft_strnew(1);
+		*string = 'Z';
+	}
+	e_seq->common_length = ft_strlen(string);
+	return (string);
 }
 
 char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
@@ -105,10 +109,12 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 			return(handler_x(arg, e_sequence));
 		else if (format[i] == 'X')
 			return(handler_x_big(arg, e_sequence));
+		else if (format[i] == 'Z')
+			return(undefined_behavior(arg, e_sequence));
 		else if (format[i] == '%')
 			return (handler_percent(e_sequence));
 	}
-	return (NULL);
+	return (ft_strnew(0));
 }
 
 int		ft_printf(const char *format, ...)
@@ -121,15 +127,15 @@ int		ft_printf(const char *format, ...)
 	int		found_spec;
 	t_formatting *e_sequence;
 	size_t	common_length;
+	char 	*tmp;
 
 	common_length = 0;
-	i = -1;
+	i = 0;
 	string = ft_strnew(0);
 	start = 0;
 	found_spec = 0;
 	va_start(arg, format);
-	// нужна проверку на количество спецификаций с количеством аргументом
-	while (format[++i])
+	while (format[i])
 	{
 		if (format[i] == '%' && !found_spec)
 		{
@@ -140,21 +146,26 @@ int		ft_printf(const char *format, ...)
 			else
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
 			substr = find_specifier(format + i, arg, e_sequence);
+			tmp = string;
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
+			free(tmp);
+			free(substr);
 			common_length += e_sequence->common_length;
 			free(e_sequence->flags);
 			free(e_sequence);
+			i++;
 		}
 		else if (found_spec)
 		{
-			if (find_end_spec(format[i]))
-			{
-				start = i + 1;
-				found_spec = 0;
-			}
+			int end_spec_i = find_index_end_spec(format + i);
+			start = end_spec_i + i + 1;
+			found_spec = 0;
+			i += end_spec_i + 1;
 		}
-		else
+		else {
 			common_length++;
+			i++;
+		}
 	}
 	string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), (i - start)); // проверить
 	write(1, string, common_length);
@@ -162,19 +173,9 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-int		main()
+int 	main()
 {
-	ft_printf("%d %d %d\n", 1, -2, 33);
-	printf("%d %d %d\n", 1, -2, 33);
-	ft_printf("%d %d %d %d\n", 1, -2, 33, 42);
-	printf("%d %d %d %d", 1, -2, 33, 42);
-	/*ft_printf("number: %jd\n", 32769);
-	printf("number: %jd\n", 32769);*/
-
-	//ft_printf("%-#10.5o\n", -16);
-	//printf("%-10.0o", 0);
-	//ft_printf("%3$i %i %i %i %5$i \n", 10, 6, 7, 5, 4, 3);
-	//printf("%3$i %i %i %i %5$i ", 10, 6, 7, 5, 4, 3);
-	//printf("%e\n", 6553.12412);
+	ft_printf("%zhd\n", 4294967296);
+	printf("%zhd", 4294967296);
 	return (0);
 }

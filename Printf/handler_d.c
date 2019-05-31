@@ -26,11 +26,6 @@ char	*handler_all_zeros(char **str, t_formatting *e_seq, int len)
 {
 	char *spaces;
 
-	if (**str == '0' && e_seq->precision == 0)
-	{
-		free(*str);
-		return (ft_strdup(""));
-	}
 	if (e_seq->precision > len)
 	{
 		spaces = ft_strnew(e_seq->precision - len);
@@ -45,7 +40,7 @@ char	*handler_all_zeros(char **str, t_formatting *e_seq, int len)
 		*str = ft_strfjoin(spaces, *str, 0);
 		e_seq->width = 0;
 	}
-	if (e_seq->is_negative)
+	if (e_seq->is_negative == 1)
 		*str = ft_strfjoin("-", *str, 2);
 	if (!e_seq->is_negative && e_seq->flags->plus)
 		*str = ft_strfjoin("+", *str, 2);
@@ -56,6 +51,11 @@ char	*handler_sequence_d(char **str, t_formatting *e_seq, char *spaces)
 {
 	int		length_str;
 
+	if (e_seq->precision == 0 && **str == '0')
+	{
+		free(*str);
+		*str = ft_strnew(0);
+	}
 	if (e_seq->width == -1)
 		e_seq->width = 0;
 	e_seq->width -= e_seq->is_negative;
@@ -92,7 +92,7 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 	else if (e_seq->length_modifier == 208)
 		nbr_str = ft_itoa((signed char)va_arg(arg, int));
 	else if (e_seq->length_modifier == 106)
-		nbr_str = ft_itoa((signed char)va_arg(arg, int));
+		nbr_str = ft_litoa((intmax_t)va_arg(arg, intmax_t));
 	else if (e_seq->length_modifier == 122)
 		nbr_str = ft_ulitoa(va_arg(arg, size_t));
 	else

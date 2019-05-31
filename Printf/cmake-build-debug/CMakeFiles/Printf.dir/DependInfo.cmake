@@ -4,19 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/cheller/Desktop/home_space/Printf/Cleanup.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/Cleanup.c.o"
-  "/Users/cheller/Desktop/home_space/Printf/Getting.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/Getting.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cheks.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/cleanup.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cleanup.c.o"
   "/Users/cheller/Desktop/home_space/Printf/conversions.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o"
   "/Users/cheller/Desktop/home_space/Printf/ft_printf.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/getting.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/getting.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_b.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_b.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_d.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_d.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_f.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_f.c.o"
-  "/Users/cheller/Desktop/home_space/Printf/handler_o_x.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_o_x.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_o.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_o.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_p.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_p.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_text.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_text.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_u.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_u.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_x.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_x.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_x_big.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_x_big.c.o"
   "/Users/cheller/Desktop/home_space/Printf/hex.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/hex.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/hex_big_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/hex_big_staff.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/hex_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/hex_staff.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_abs.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_abs.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_atoi.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_atoi.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_bzero.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_bzero.c.o"
@@ -45,7 +49,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_memdel.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_memdel.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_memmove.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_memmove.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_memset.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_memset.c.o"
-  "/Users/cheller/Desktop/home_space/Printf/libft/ft_pow.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_pow.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_putchar.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_putchar.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_putchar_fd.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_putchar_fd.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_putendl.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_putendl.c.o"
@@ -90,6 +93,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_uitoa.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_uitoa.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/long_arithmetic.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/oct_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/oct_staff.c.o"
   "/Users/cheller/Desktop/home_space/Printf/represents.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/represents.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

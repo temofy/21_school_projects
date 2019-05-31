@@ -123,60 +123,6 @@ Printf/fast:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/build
 .PHONY : Printf/fast
 
-Cleanup.o: Cleanup.c.o
-
-.PHONY : Cleanup.o
-
-# target to build an object file
-Cleanup.c.o:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.o
-.PHONY : Cleanup.c.o
-
-Cleanup.i: Cleanup.c.i
-
-.PHONY : Cleanup.i
-
-# target to preprocess a source file
-Cleanup.c.i:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.i
-.PHONY : Cleanup.c.i
-
-Cleanup.s: Cleanup.c.s
-
-.PHONY : Cleanup.s
-
-# target to generate assembly for a file
-Cleanup.c.s:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Cleanup.c.s
-.PHONY : Cleanup.c.s
-
-Getting.o: Getting.c.o
-
-.PHONY : Getting.o
-
-# target to build an object file
-Getting.c.o:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.o
-.PHONY : Getting.c.o
-
-Getting.i: Getting.c.i
-
-.PHONY : Getting.i
-
-# target to preprocess a source file
-Getting.c.i:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.i
-.PHONY : Getting.c.i
-
-Getting.s: Getting.c.s
-
-.PHONY : Getting.s
-
-# target to generate assembly for a file
-Getting.c.s:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/Getting.c.s
-.PHONY : Getting.c.s
-
 cheks.o: cheks.c.o
 
 .PHONY : cheks.o
@@ -203,6 +149,33 @@ cheks.s: cheks.c.s
 cheks.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cheks.c.s
 .PHONY : cheks.c.s
+
+cleanup.o: cleanup.c.o
+
+.PHONY : cleanup.o
+
+# target to build an object file
+cleanup.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cleanup.c.o
+.PHONY : cleanup.c.o
+
+cleanup.i: cleanup.c.i
+
+.PHONY : cleanup.i
+
+# target to preprocess a source file
+cleanup.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cleanup.c.i
+.PHONY : cleanup.c.i
+
+cleanup.s: cleanup.c.s
+
+.PHONY : cleanup.s
+
+# target to generate assembly for a file
+cleanup.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/cleanup.c.s
+.PHONY : cleanup.c.s
 
 conversions.o: conversions.c.o
 
@@ -257,6 +230,33 @@ ft_printf.s: ft_printf.c.s
 ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
+
+getting.o: getting.c.o
+
+.PHONY : getting.o
+
+# target to build an object file
+getting.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/getting.c.o
+.PHONY : getting.c.o
+
+getting.i: getting.c.i
+
+.PHONY : getting.i
+
+# target to preprocess a source file
+getting.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/getting.c.i
+.PHONY : getting.c.i
+
+getting.s: getting.c.s
+
+.PHONY : getting.s
+
+# target to generate assembly for a file
+getting.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/getting.c.s
+.PHONY : getting.c.s
 
 handler_b.o: handler_b.c.o
 
@@ -339,32 +339,32 @@ handler_f.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_f.c.s
 .PHONY : handler_f.c.s
 
-handler_o_x.o: handler_o_x.c.o
+handler_o.o: handler_o.c.o
 
-.PHONY : handler_o_x.o
+.PHONY : handler_o.o
 
 # target to build an object file
-handler_o_x.c.o:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.o
-.PHONY : handler_o_x.c.o
+handler_o.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o.c.o
+.PHONY : handler_o.c.o
 
-handler_o_x.i: handler_o_x.c.i
+handler_o.i: handler_o.c.i
 
-.PHONY : handler_o_x.i
+.PHONY : handler_o.i
 
 # target to preprocess a source file
-handler_o_x.c.i:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.i
-.PHONY : handler_o_x.c.i
+handler_o.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o.c.i
+.PHONY : handler_o.c.i
 
-handler_o_x.s: handler_o_x.c.s
+handler_o.s: handler_o.c.s
 
-.PHONY : handler_o_x.s
+.PHONY : handler_o.s
 
 # target to generate assembly for a file
-handler_o_x.c.s:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o_x.c.s
-.PHONY : handler_o_x.c.s
+handler_o.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_o.c.s
+.PHONY : handler_o.c.s
 
 handler_p.o: handler_p.c.o
 
@@ -447,6 +447,60 @@ handler_u.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_u.c.s
 .PHONY : handler_u.c.s
 
+handler_x.o: handler_x.c.o
+
+.PHONY : handler_x.o
+
+# target to build an object file
+handler_x.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x.c.o
+.PHONY : handler_x.c.o
+
+handler_x.i: handler_x.c.i
+
+.PHONY : handler_x.i
+
+# target to preprocess a source file
+handler_x.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x.c.i
+.PHONY : handler_x.c.i
+
+handler_x.s: handler_x.c.s
+
+.PHONY : handler_x.s
+
+# target to generate assembly for a file
+handler_x.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x.c.s
+.PHONY : handler_x.c.s
+
+handler_x_big.o: handler_x_big.c.o
+
+.PHONY : handler_x_big.o
+
+# target to build an object file
+handler_x_big.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x_big.c.o
+.PHONY : handler_x_big.c.o
+
+handler_x_big.i: handler_x_big.c.i
+
+.PHONY : handler_x_big.i
+
+# target to preprocess a source file
+handler_x_big.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x_big.c.i
+.PHONY : handler_x_big.c.i
+
+handler_x_big.s: handler_x_big.c.s
+
+.PHONY : handler_x_big.s
+
+# target to generate assembly for a file
+handler_x_big.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_x_big.c.s
+.PHONY : handler_x_big.c.s
+
 hex.o: hex.c.o
 
 .PHONY : hex.o
@@ -473,6 +527,60 @@ hex.s: hex.c.s
 hex.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex.c.s
 .PHONY : hex.c.s
+
+hex_big_staff.o: hex_big_staff.c.o
+
+.PHONY : hex_big_staff.o
+
+# target to build an object file
+hex_big_staff.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_big_staff.c.o
+.PHONY : hex_big_staff.c.o
+
+hex_big_staff.i: hex_big_staff.c.i
+
+.PHONY : hex_big_staff.i
+
+# target to preprocess a source file
+hex_big_staff.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_big_staff.c.i
+.PHONY : hex_big_staff.c.i
+
+hex_big_staff.s: hex_big_staff.c.s
+
+.PHONY : hex_big_staff.s
+
+# target to generate assembly for a file
+hex_big_staff.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_big_staff.c.s
+.PHONY : hex_big_staff.c.s
+
+hex_staff.o: hex_staff.c.o
+
+.PHONY : hex_staff.o
+
+# target to build an object file
+hex_staff.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_staff.c.o
+.PHONY : hex_staff.c.o
+
+hex_staff.i: hex_staff.c.i
+
+.PHONY : hex_staff.i
+
+# target to preprocess a source file
+hex_staff.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_staff.c.i
+.PHONY : hex_staff.c.i
+
+hex_staff.s: hex_staff.c.s
+
+.PHONY : hex_staff.s
+
+# target to generate assembly for a file
+hex_staff.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/hex_staff.c.s
+.PHONY : hex_staff.c.s
 
 libft/ft_abs.o: libft/ft_abs.c.o
 
@@ -1229,33 +1337,6 @@ libft/ft_memset.s: libft/ft_memset.c.s
 libft/ft_memset.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
-
-libft/ft_pow.o: libft/ft_pow.c.o
-
-.PHONY : libft/ft_pow.o
-
-# target to build an object file
-libft/ft_pow.c.o:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_pow.c.o
-.PHONY : libft/ft_pow.c.o
-
-libft/ft_pow.i: libft/ft_pow.c.i
-
-.PHONY : libft/ft_pow.i
-
-# target to preprocess a source file
-libft/ft_pow.c.i:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_pow.c.i
-.PHONY : libft/ft_pow.c.i
-
-libft/ft_pow.s: libft/ft_pow.c.s
-
-.PHONY : libft/ft_pow.s
-
-# target to generate assembly for a file
-libft/ft_pow.c.s:
-	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_pow.c.s
-.PHONY : libft/ft_pow.c.s
 
 libft/ft_putchar.o: libft/ft_putchar.c.o
 
@@ -2445,6 +2526,33 @@ long_arithmetic.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/long_arithmetic.c.s
 .PHONY : long_arithmetic.c.s
 
+oct_staff.o: oct_staff.c.o
+
+.PHONY : oct_staff.o
+
+# target to build an object file
+oct_staff.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_staff.c.o
+.PHONY : oct_staff.c.o
+
+oct_staff.i: oct_staff.c.i
+
+.PHONY : oct_staff.i
+
+# target to preprocess a source file
+oct_staff.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_staff.c.i
+.PHONY : oct_staff.c.i
+
+oct_staff.s: oct_staff.c.s
+
+.PHONY : oct_staff.s
+
+# target to generate assembly for a file
+oct_staff.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_staff.c.s
+.PHONY : oct_staff.c.s
+
 represents.o: represents.c.o
 
 .PHONY : represents.o
@@ -2481,21 +2589,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Printf"
-	@echo "... Cleanup.o"
-	@echo "... Cleanup.i"
-	@echo "... Cleanup.s"
-	@echo "... Getting.o"
-	@echo "... Getting.i"
-	@echo "... Getting.s"
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
+	@echo "... cleanup.o"
+	@echo "... cleanup.i"
+	@echo "... cleanup.s"
 	@echo "... conversions.o"
 	@echo "... conversions.i"
 	@echo "... conversions.s"
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"
+	@echo "... getting.o"
+	@echo "... getting.i"
+	@echo "... getting.s"
 	@echo "... handler_b.o"
 	@echo "... handler_b.i"
 	@echo "... handler_b.s"
@@ -2505,9 +2613,9 @@ help:
 	@echo "... handler_f.o"
 	@echo "... handler_f.i"
 	@echo "... handler_f.s"
-	@echo "... handler_o_x.o"
-	@echo "... handler_o_x.i"
-	@echo "... handler_o_x.s"
+	@echo "... handler_o.o"
+	@echo "... handler_o.i"
+	@echo "... handler_o.s"
 	@echo "... handler_p.o"
 	@echo "... handler_p.i"
 	@echo "... handler_p.s"
@@ -2517,9 +2625,21 @@ help:
 	@echo "... handler_u.o"
 	@echo "... handler_u.i"
 	@echo "... handler_u.s"
+	@echo "... handler_x.o"
+	@echo "... handler_x.i"
+	@echo "... handler_x.s"
+	@echo "... handler_x_big.o"
+	@echo "... handler_x_big.i"
+	@echo "... handler_x_big.s"
 	@echo "... hex.o"
 	@echo "... hex.i"
 	@echo "... hex.s"
+	@echo "... hex_big_staff.o"
+	@echo "... hex_big_staff.i"
+	@echo "... hex_big_staff.s"
+	@echo "... hex_staff.o"
+	@echo "... hex_staff.i"
+	@echo "... hex_staff.s"
 	@echo "... libft/ft_abs.o"
 	@echo "... libft/ft_abs.i"
 	@echo "... libft/ft_abs.s"
@@ -2604,9 +2724,6 @@ help:
 	@echo "... libft/ft_memset.o"
 	@echo "... libft/ft_memset.i"
 	@echo "... libft/ft_memset.s"
-	@echo "... libft/ft_pow.o"
-	@echo "... libft/ft_pow.i"
-	@echo "... libft/ft_pow.s"
 	@echo "... libft/ft_putchar.o"
 	@echo "... libft/ft_putchar.i"
 	@echo "... libft/ft_putchar.s"
@@ -2739,6 +2856,9 @@ help:
 	@echo "... long_arithmetic.o"
 	@echo "... long_arithmetic.i"
 	@echo "... long_arithmetic.s"
+	@echo "... oct_staff.o"
+	@echo "... oct_staff.i"
+	@echo "... oct_staff.s"
 	@echo "... represents.o"
 	@echo "... represents.i"
 	@echo "... represents.s"

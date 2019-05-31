@@ -3,17 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cheller <cheller@student.42.fr>            +#+  +:+       +#+         #
+#    By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/25 20:03:51 by cheller           #+#    #+#              #
-#    Updated: 2019/04/17 15:53:21 by cheller          ###   ########.fr        #
+#    Updated: 2019/05/30 12:35:48 by aaeron-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRC = cheks.c ft_printf.c handler_d.c handler_p.c handler_text.c hex.c handler_u.c \
-		handler_o_x.c handler_f.c long_arithmetic.c handler_b.c represents.c \
+		handler_o.c handler_x.c handler_x_big.c hex_big_staff.c\
+		hex_staff.c oct_staff.c handler_f.c long_arithmetic.c handler_b.c represents.c \
 		cleanup.c getting.c conversions.c
 
 LIBFT = libft
@@ -30,7 +31,7 @@ $(NAME):
 	ranlib $(NAME)
 
 clean:
-	@rm -f *.o
+	@rm -f $(OBJ)
 	@make -C $(LIBFT) clean
 
 fclean: clean
