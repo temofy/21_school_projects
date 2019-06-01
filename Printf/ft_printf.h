@@ -73,7 +73,8 @@ int				check_width(const char *format);
 int				check_precision(const char *format);
 int				check_length_modifier(const char *format);
 char			check_spec(const char *string);
-int				count_amount_flags(t_formatting *e_seq);
+void		    initialize_flags(t_flags **flags);
+int             read_width(const char *format, int i, int width);
 int				handler_length(int length, int width, int precision);
 
 char			*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char *spaces);
@@ -81,7 +82,8 @@ char			*handler_d(va_list arg, t_formatting *e_sequence);
 
 char			*handler_u(va_list arg, t_formatting *e_sequence);
 char			*handler_f(va_list arg, t_formatting *e_sequence);
-char			*handler_sequence_f(char *str, t_formatting *e_seq, t_str_fp *str_fp);
+char			*handler_s_f(char **s, t_formatting *e_seq, t_str_fp *s_fp, char **sps);
+void			round_frac(t_str_fp **str_fp, int precision);
 
 char 			*handler_x(va_list arg, t_formatting *e_sequence);
 char			*handler_o(va_list arg, t_formatting *e_sequence);
@@ -102,8 +104,12 @@ char			*present_int_as_bin(unsigned char number);
 unsigned long	bin_as_dec(char *bin);
 void			free_str_fp(t_str_fp **str_fp);
 void			free_fp(t_float **fp);
-char			*get_number(t_float *fp, t_formatting *e_seq);
-char			*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq);
+void			free_long_value(t_long_value *n1, t_long_value *n2);
+char			*get_number(t_float *fp, t_formatting *e_seq, char **str);
+char			*handler_ambiguity(t_float *fp, char **s, t_formatting *e_seq, char **spaces);
+char			*addition_zeros(char *nbr, int length);
+void			overflow_digit(t_str_fp **fp, int precision);
+int				for_round_int(t_str_fp **fp, char *nbr);
 
 t_long_value	la_pow(t_long_value nbr, int exp);
 t_long_value	conv_to_la(signed long nbr);

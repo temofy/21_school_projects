@@ -39,7 +39,7 @@ t_long_value	expand_value(t_long_value nbr)
 	int		*new_value;
 
 	new_value = (int*)malloc(sizeof(int) * nbr.length + 1);
-	ft_memcpy(new_value, nbr.values, nbr.length * sizeof(int));
+	new_value = ft_memcpy(new_value, nbr.values, nbr.length * sizeof(int));
 	new_value[nbr.length] = 0;
 	free(nbr.values);
 	nbr.values = new_value;
@@ -87,6 +87,7 @@ t_long_value	karatsuba_mul(t_long_value a, t_long_value b)
 t_long_value	la_pow(t_long_value nbr, int exp)
 {
 	t_long_value	result;
+	t_long_value	tmp;
 
 	if (exp == 0)
 	{
@@ -100,6 +101,11 @@ t_long_value	la_pow(t_long_value nbr, int exp)
 	result = karatsuba_mul(nbr, nbr);
 	exp--;
 	while (exp-- > 1)
+	{
+		tmp = result;
 		result = karatsuba_mul(result, nbr);
+		free(tmp.values);
+	}
+	free(nbr.values);
 	return (result);
 }

@@ -123,6 +123,33 @@ Printf/fast:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/build
 .PHONY : Printf/fast
 
+additional_func.o: additional_func.c.o
+
+.PHONY : additional_func.o
+
+# target to build an object file
+additional_func.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/additional_func.c.o
+.PHONY : additional_func.c.o
+
+additional_func.i: additional_func.c.i
+
+.PHONY : additional_func.i
+
+# target to preprocess a source file
+additional_func.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/additional_func.c.i
+.PHONY : additional_func.c.i
+
+additional_func.s: additional_func.c.s
+
+.PHONY : additional_func.s
+
+# target to generate assembly for a file
+additional_func.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/additional_func.c.s
+.PHONY : additional_func.c.s
+
 cheks.o: cheks.c.o
 
 .PHONY : cheks.o
@@ -2553,6 +2580,33 @@ oct_staff.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_staff.c.s
 .PHONY : oct_staff.c.s
 
+overflow.o: overflow.c.o
+
+.PHONY : overflow.o
+
+# target to build an object file
+overflow.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/overflow.c.o
+.PHONY : overflow.c.o
+
+overflow.i: overflow.c.i
+
+.PHONY : overflow.i
+
+# target to preprocess a source file
+overflow.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/overflow.c.i
+.PHONY : overflow.c.i
+
+overflow.s: overflow.c.s
+
+.PHONY : overflow.s
+
+# target to generate assembly for a file
+overflow.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/overflow.c.s
+.PHONY : overflow.c.s
+
 represents.o: represents.c.o
 
 .PHONY : represents.o
@@ -2580,6 +2634,33 @@ represents.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/represents.c.s
 .PHONY : represents.c.s
 
+rounding.o: rounding.c.o
+
+.PHONY : rounding.o
+
+# target to build an object file
+rounding.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/rounding.c.o
+.PHONY : rounding.c.o
+
+rounding.i: rounding.c.i
+
+.PHONY : rounding.i
+
+# target to preprocess a source file
+rounding.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/rounding.c.i
+.PHONY : rounding.c.i
+
+rounding.s: rounding.c.s
+
+.PHONY : rounding.s
+
+# target to generate assembly for a file
+rounding.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/rounding.c.s
+.PHONY : rounding.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2589,6 +2670,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Printf"
+	@echo "... additional_func.o"
+	@echo "... additional_func.i"
+	@echo "... additional_func.s"
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
@@ -2859,9 +2943,15 @@ help:
 	@echo "... oct_staff.o"
 	@echo "... oct_staff.i"
 	@echo "... oct_staff.s"
+	@echo "... overflow.o"
+	@echo "... overflow.i"
+	@echo "... overflow.s"
 	@echo "... represents.o"
 	@echo "... represents.i"
 	@echo "... represents.s"
+	@echo "... rounding.o"
+	@echo "... rounding.i"
+	@echo "... rounding.s"
 .PHONY : help
 
 

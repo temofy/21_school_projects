@@ -141,15 +141,17 @@ int		ft_printf(const char *format, ...)
 		{
 			e_sequence = scanning_sequence(format + i + 1);
 			found_spec = 1;
+			//tmp = string;
 			if (start == 0)
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
 			else
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
+			//free(tmp);
 			substr = find_specifier(format + i, arg, e_sequence);
-			tmp = string;
+			//tmp = string;
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
-			free(tmp);
-			free(substr);
+			//free(tmp);
+			//free(substr);
 			common_length += e_sequence->common_length;
 			free(e_sequence->flags);
 			free(e_sequence);
@@ -162,20 +164,16 @@ int		ft_printf(const char *format, ...)
 			found_spec = 0;
 			i += end_spec_i + 1;
 		}
-		else {
+		else
+			{
 			common_length++;
 			i++;
 		}
 	}
-	string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), (i - start)); // проверить
+	string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), (i - start));
 	write(1, string, common_length);
+	free(string);
 	va_end(arg);
 	return (common_length);
 }
 
-int 	main()
-{
-	ft_printf("%zhd\n", 4294967296);
-	printf("%zhd", 4294967296);
-	return (0);
-}

@@ -1240,6 +1240,45 @@ CMakeFiles/Printf.dir/represents.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/represents.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/represents.c -o CMakeFiles/Printf.dir/represents.c.s
 
+CMakeFiles/Printf.dir/additional_func.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/additional_func.c.o: ../additional_func.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/Printf.dir/additional_func.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/additional_func.c.o   -c /Users/cheller/Desktop/home_space/Printf/additional_func.c
+
+CMakeFiles/Printf.dir/additional_func.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/additional_func.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/additional_func.c > CMakeFiles/Printf.dir/additional_func.c.i
+
+CMakeFiles/Printf.dir/additional_func.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/additional_func.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/additional_func.c -o CMakeFiles/Printf.dir/additional_func.c.s
+
+CMakeFiles/Printf.dir/rounding.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/rounding.c.o: ../rounding.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/Printf.dir/rounding.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/rounding.c.o   -c /Users/cheller/Desktop/home_space/Printf/rounding.c
+
+CMakeFiles/Printf.dir/rounding.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/rounding.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/rounding.c > CMakeFiles/Printf.dir/rounding.c.i
+
+CMakeFiles/Printf.dir/rounding.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/rounding.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/rounding.c -o CMakeFiles/Printf.dir/rounding.c.s
+
+CMakeFiles/Printf.dir/overflow.c.o: CMakeFiles/Printf.dir/flags.make
+CMakeFiles/Printf.dir/overflow.c.o: ../overflow.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/Printf.dir/overflow.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Printf.dir/overflow.c.o   -c /Users/cheller/Desktop/home_space/Printf/overflow.c
+
+CMakeFiles/Printf.dir/overflow.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Printf.dir/overflow.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Printf/overflow.c > CMakeFiles/Printf.dir/overflow.c.i
+
+CMakeFiles/Printf.dir/overflow.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Printf.dir/overflow.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Printf/overflow.c -o CMakeFiles/Printf.dir/overflow.c.s
+
 # Object files for target Printf
 Printf_OBJECTS = \
 "CMakeFiles/Printf.dir/libft/ft_abs.c.o" \
@@ -1332,7 +1371,10 @@ Printf_OBJECTS = \
 "CMakeFiles/Printf.dir/hex_staff.c.o" \
 "CMakeFiles/Printf.dir/long_arithmetic.c.o" \
 "CMakeFiles/Printf.dir/oct_staff.c.o" \
-"CMakeFiles/Printf.dir/represents.c.o"
+"CMakeFiles/Printf.dir/represents.c.o" \
+"CMakeFiles/Printf.dir/additional_func.c.o" \
+"CMakeFiles/Printf.dir/rounding.c.o" \
+"CMakeFiles/Printf.dir/overflow.c.o"
 
 # External object files for target Printf
 Printf_EXTERNAL_OBJECTS =
@@ -1428,9 +1470,12 @@ Printf: CMakeFiles/Printf.dir/hex_staff.c.o
 Printf: CMakeFiles/Printf.dir/long_arithmetic.c.o
 Printf: CMakeFiles/Printf.dir/oct_staff.c.o
 Printf: CMakeFiles/Printf.dir/represents.c.o
+Printf: CMakeFiles/Printf.dir/additional_func.c.o
+Printf: CMakeFiles/Printf.dir/rounding.c.o
+Printf: CMakeFiles/Printf.dir/overflow.c.o
 Printf: CMakeFiles/Printf.dir/build.make
 Printf: CMakeFiles/Printf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Linking C executable Printf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Linking C executable Printf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Printf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -39,44 +39,6 @@ char		check_spec(const char *string)
 	return ('\0');
 }
 
-int			find_index_end_spec(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'))
-		{
-			if (s[i] != 'l' && s[i] != 'h' && s[i] != 'L'
-				&& s[i] != 'z' && s[i] != 'j')
-				return (i);
-		}
-		else if (s[i] == '%')
-			return (i);
-		i++;
-	}
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != '#' && s[i] != ' ' && s[i] != '.' && s[i] != '+' && s[i] != '-'
-		&& s[i] != 'l' && s[i] != 'h' && s[i] != 'L' && s[i] != 'z' && s[i] != 'j')
-			return (i - 1);
-		i++;
-	}
-	return (-1);
-}
-
-void		initialize_flags(t_flags **flags)
-{
-	*flags = (t_flags*)malloc(sizeof(t_flags));
-	(*flags)->minus = 0;
-	(*flags)->plus = 0;
-	(*flags)->zero = 0;
-	(*flags)->space = 0;
-	(*flags)->hash = 0;
-}
-
 t_flags		*check_flags(const char *format)
 {
 	t_flags *flags;
@@ -101,7 +63,7 @@ t_flags		*check_flags(const char *format)
 			flags->space = 1;
 		else if (format[i] == '#')
 			flags->hash = 1;
-	} 
+	}
 	return (flags);
 }
 
@@ -129,31 +91,26 @@ int			check_precision(const char *format)
 	return (-1);
 }
 
-int			check_width(const char *format)
+int			check_width(const char *f)
 {
-	int		i;
-	int		end;
-	int 	width;
-	int		finded_digit;
+	int	i;
+	int	end;
+	int width;
+	int	finded_d;
 
-	finded_digit = 0;
-	end = find_index_end_spec(format);
+	finded_d = 0;
+	end = find_index_end_spec(f);
 	i = end;
 	width = 0;
 	while (--i >= 0)
 	{
-		if (format[i] >= '0' && format[i] <= '9')
-			finded_digit = 1;
-		if (format[i - 1] == '.')
-			finded_digit = 0;
-		if (((format[i - 1] < '0' || format[i - 1] > '9') || (i - 1) == -1) && finded_digit)
+		if (f[i] >= '0' && f[i] <= '9')
+			finded_d = 1;
+		if (f[i - 1] == '.')
+			finded_d = 0;
+		if (((f[i - 1] < '0' || f[i - 1] > '9') || (i - 1) == -1) && finded_d)
 		{
-			while (format[i] >= '0' && format[i] <= '9')
-			{
-				width *= 10;
-				width += (format[i] - '0');
-				i++;
-			}
+			width = read_width(f, i, width);
 			if (!width)
 				width = -1;
 			return (width);
@@ -166,8 +123,8 @@ int			check_length_modifier(const char *format)
 {
 	int i;
 
-	i = find_index_end_spec(format);
-	while (i)
+	i = find_index_end_spec(format) + 1;
+	while (--i)
 	{
 		if (format[i - 1] == 'h')
 		{
@@ -187,7 +144,6 @@ int			check_length_modifier(const char *format)
 			return (106);
 		if (format[i - 1] == 'z')
 			return (122);
-		i--;
 	}
 	return (-1);
 }

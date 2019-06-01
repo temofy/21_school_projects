@@ -12,22 +12,21 @@
 
 #include "ft_printf.h"
 
-char *handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
+char	*handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 {
 	int length_arg;
 	int length_str;
 
-	length_arg = ft_strlen(str_arg); //arguments's length with sign
+	length_arg = ft_strlen(str_arg);
 	if (e_seq->precision != -1 && e_seq->precision < length_arg)
 	{
 		length_arg = e_seq->precision;
 		str_arg = ft_strsub(str_arg, 0, length_arg);
 	}
 	length_str = handler_length(length_arg, e_seq->width, 0);
-	//printf("len in text: %d\n", length_str);
 	e_seq->common_length = length_str + length_arg;
 	*str = ft_strnew(length_str);
-	if (e_seq->flags->zero && /*e_seq->precision == -1*/ !e_seq->flags->minus)
+	if (e_seq->flags->zero && !e_seq->flags->minus)
 		ft_memset(*str, '0', length_str);
 	else
 		ft_memset(*str, ' ', length_str);
@@ -37,7 +36,8 @@ char *handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 		*str = ft_strfjoin(str_arg, *str, 2);
 	return (*str);
 }
-char *handler_s(va_list arg, t_formatting *e_seq) // учесть '\0'
+
+char	*handler_s(va_list arg, t_formatting *e_seq)
 {
 	char *str;
 	char *str_arg;
@@ -49,11 +49,11 @@ char *handler_s(va_list arg, t_formatting *e_seq) // учесть '\0'
 	return (str);
 }
 
-char *handler_c(va_list arg, t_formatting *e_seq) // учесть '\0'
+char	*handler_c(va_list arg, t_formatting *e_seq)
 {
-	char *str;
-	char chr;
-	int length_str;
+	char	*str;
+	char	chr;
+	int		length_str;
 
 	chr = va_arg(arg, int);
 	length_str = handler_length(1, e_seq->width, 0);

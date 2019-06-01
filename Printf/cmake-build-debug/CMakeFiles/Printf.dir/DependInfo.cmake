@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cheller/Desktop/home_space/Printf/additional_func.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/additional_func.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cheks.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cleanup.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cleanup.c.o"
   "/Users/cheller/Desktop/home_space/Printf/conversions.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o"
@@ -94,7 +95,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/long_arithmetic.c.o"
   "/Users/cheller/Desktop/home_space/Printf/oct_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/oct_staff.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/overflow.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/overflow.c.o"
   "/Users/cheller/Desktop/home_space/Printf/represents.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/represents.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/rounding.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/rounding.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

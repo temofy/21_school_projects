@@ -12,201 +12,54 @@
 
 #include "ft_printf.h"
 
-int		for_round_int(t_str_fp **fp, char *nbr)
+void	handler_flags_f(char **str, t_formatting *e_seq, char **spaces)
 {
-	int	len;
-	int i;
-
-	len = ft_strlen(nbr);
-	i = 1;
-	if (*nbr >= '6')
-		return (1);
-	else if (*nbr == '5')
-	{
-		while (i < len)
-		{
-			if (nbr[i] > '0')
-				return (1);
-			i++;
-		}
-		if (ft_iseven(ft_atoi((*fp)->integer)) == 0)
-			return (1);
-	}
-	return (0);
+	if (e_seq->flags->minus)
+		*str = ft_strfjoin(*str, *spaces, 0);
+	else if (e_seq->flags->zero)
+		*str = ft_strfjoin(*spaces, *str, 0);
+	if (e_seq->is_negative)
+		*str = ft_strfjoin("-", *str, 2);
+	else if (e_seq->flags->plus)
+		*str = ft_strfjoin("+", *str, 2);
+	if (!e_seq->flags->minus && !e_seq->flags->zero)
+		*str = ft_strfjoin(*spaces, *str, 0);
 }
 
-int		overflow_frac(t_str_fp **fp, char *nbr, int pos)
-{
-	int		carry;
-
-	carry = 0;
-	if (pos == -1)
-		return (for_round_int(&*fp, nbr));
-	while (pos >= 0)
-	{
-		if (nbr[pos] == '9')
-		{
-			nbr[pos] = '0';
-			carry = 1;
-			pos--;
-		}
-		else if (carry > 0)
-		{
-			nbr[pos] += 1;
-			carry = 0;
-		}
-		else
-			return (0);
-	}
-	return (carry);
-}
-
-void	overflow_int(t_str_fp **fp, int carry)
-{
-	int pos;
-
-	pos = ft_strlen((*fp)->integer) - 1;
-	if (carry)
-	{
-		while (pos >= 0)
-		{
-			if ((*fp)->integer[pos] == '9')
-			{
-				(*fp)->integer[pos] = '0';
-				carry = 1;
-				pos--;
-			}
-			else if (carry > 0)
-			{
-				(*fp)->integer[pos] += 1;
-				return ;
-			}
-		}
-	}
-	if (carry)
-		(*fp)->integer = ft_strfjoin("1", (*fp)->integer, 2);
-}
-
-void	overflow_digit(t_str_fp **fp, int precision)
-{
-	int	carry;
-
-	carry = overflow_frac(&*fp, (*fp)->frac, precision - 1);
-	overflow_int(&*fp, carry);
-}
-
-char	*addition_zeros(char *nbr, int length)
-{
-	char	*zeros;
-
-	if (!(zeros = ft_strnew(length)))
-		return (NULL);
-	ft_memset(zeros, 48, length);
-	nbr = ft_strfjoin(nbr, zeros, 0);
-	return (nbr);
-}
-
-void	round_frac(t_str_fp **str_fp, int precision)
-{
-	char	*rounded_nbr;
-	int		i;
-	size_t	len;
-
-	len = ft_strlen((*str_fp)->frac);
-	if (precision == -1)
-		precision = 6;
-	if (precision > len)
-		(*str_fp)->frac = addition_zeros((*str_fp)->frac, precision - len);
-	if (precision == 0)
-	{
-		overflow_digit(&*str_fp, precision);
-		free((*str_fp)->frac);
-		(*str_fp)->frac = ft_strdup("");
-	}
-	else if (((*str_fp)->frac[precision] - '0') < 5)
-	{
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
-		free((*str_fp)->frac);
-		(*str_fp)->frac = rounded_nbr;
-	}
-	else if (((*str_fp)->frac[precision] - '0') > 6)
-	{
-		if ((*str_fp)->frac[precision - 1] < '9')
-			(*str_fp)->frac[precision - 1] += 1;
-		else
-			overflow_digit(&*str_fp, precision);
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
-		free((*str_fp)->frac);
-		(*str_fp)->frac = rounded_nbr;
-	}
-	else
-	{
-		i = precision;
-		while (++i < len)
-		{
-			if ((*str_fp)->frac[i] > '0')
-			{
-				if ((*str_fp)->frac[precision - 1] < '9')
-					(*str_fp)->frac[precision - 1] += 1;
-				else
-					overflow_digit(&*str_fp, precision);
-				rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
-				free((*str_fp)->frac);
-				(*str_fp)->frac = rounded_nbr;
-				return ;
-			}
-		}
-		rounded_nbr = ft_strsub((*str_fp)->frac, 0, precision);
-		free((*str_fp)->frac);
-		(*str_fp)->frac = rounded_nbr;
-	}
-}
-
-char	*handler_sequence_f(char *str, t_formatting *e_seq, t_str_fp *str_fp)
+char	*handler_s_f(char **s, t_formatting *e_seq, t_str_fp *s_fp, char **sps)
 {
 	int		length;
-	char	*spaces;
 
-	spaces = ft_strnew(0);
-	round_frac(&str_fp, e_seq->precision);
+	*sps = ft_strnew(0);
+	round_frac(&s_fp, e_seq->precision);
 	if (e_seq->precision != 0)
 	{
-		str = ft_strjoin(str_fp->integer, ".");
-		str = ft_strfjoin(str, str_fp->frac, 1);
+		*s = ft_strjoin(s_fp->integer, ".");
+		*s = ft_strfjoin(*s, s_fp->frac, 1);
 	}
 	else
-		str = ft_strdup(str_fp->integer);
-	length = ft_strlen(str);
+		*s = ft_strdup(s_fp->integer);
+	length = ft_strlen(*s);
 	e_seq->width -= e_seq->is_negative;
 	if (!e_seq->is_negative)
 		e_seq->width -= e_seq->flags->plus;
 	if (e_seq->width > length)
 	{
-		spaces = ft_strnew(e_seq->width - length);
+		*sps = ft_strnew(e_seq->width - length);
 		if (e_seq->flags->zero && !e_seq->flags->minus)
-			ft_memset(spaces, '0', e_seq->width - length);
+			ft_memset(*sps, '0', e_seq->width - length);
 		else
-			ft_memset(spaces, ' ', e_seq->width - length);
+			ft_memset(*sps, ' ', e_seq->width - length);
 	}
-	if (e_seq->flags->minus)
-		str = ft_strfjoin(str, spaces, 0);
-	else if (e_seq->flags->zero)
-		str = ft_strfjoin(spaces, str, 0);
-	if (e_seq->is_negative)
-		str = ft_strfjoin("-", str, 2);
-	else if (e_seq->flags->plus)
-		str = ft_strfjoin("+", str, 2);
-	if (!e_seq->flags->minus && !e_seq->flags->zero)
-		str = ft_strfjoin(spaces, str, 0);
-	return (str);
+	handler_flags_f(&*s, e_seq, &*sps);
+	return (*s);
 }
 
-char	*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq)
+char	*handler_ambiguity(t_float *fp, char **s, t_formatting *e_s, char **sps)
 {
 	int		is_inf;
 	int		i;
 	int		width;
-	char	*spaces;
 
 	i = -1;
 	is_inf = 1;
@@ -214,21 +67,21 @@ char	*handler_ambiguity(t_float *fp, char *str, t_formatting *e_seq)
 		if (fp->frac[i] == '1')
 			is_inf = 0;
 	if (is_inf)
-		str = ft_strdup("inf");
+		*s = ft_strdup("inf");
 	else
-		str = ft_strdup("nan");
-	if (is_inf && e_seq->is_negative)
-		str = ft_strfjoin("-", str, 2);
-	if (is_inf && e_seq->flags->plus && !e_seq->is_negative)
-		str = ft_strfjoin("+", str, 2);
-	width = e_seq->width - ft_strlen(str);
-	spaces = ft_strnew(width);
-	spaces = ft_memset(spaces, ' ', width);
-	if (e_seq->flags->minus)
-		str = ft_strfjoin(str, spaces, 0);
+		*s = ft_strdup("nan");
+	if (is_inf && e_s->is_negative)
+		*s = ft_strfjoin("-", *s, 2);
+	if (is_inf && e_s->flags->plus && !e_s->is_negative)
+		*s = ft_strfjoin("+", *s, 2);
+	width = e_s->width - ft_strlen(*s);
+	*sps = ft_strnew(width);
+	*sps = ft_memset(*sps, ' ', width);
+	if (e_s->flags->minus)
+		*s = ft_strfjoin(*s, *sps, 0);
 	else
-		str = ft_strfjoin(spaces, str, 0);
-	return (str);
+		*s = ft_strfjoin(*sps, *s, 0);
+	return (*s);
 }
 
 t_float	*fill_fp(long double ldbl)
@@ -259,7 +112,7 @@ char	*handler_f(va_list arg, t_formatting *e_seq)
 		ld = (long double)va_arg(arg, double);
 	fp = fill_fp(ld);
 	e_seq->is_negative = fp->sign - '0';
-	str = get_number(fp, e_seq);
+	get_number(fp, e_seq, &str);
 	free_fp(&fp);
 	e_seq->common_length = ft_strlen(str);
 	return (str);

@@ -12,14 +12,6 @@
 
 #include "libft.h"
 
-/*static int	spec_strlen(char *str, int need_len)
-{
-	size_t	len;
-
-	len = ft_strlen(str)
-	return (len);
-}*/
-
 char		*ft_strljoin(char *s1, char *s2, int len1, int len2)
 {
 	char	*str;
@@ -40,6 +32,7 @@ char		*ft_strljoin(char *s1, char *s2, int len1, int len2)
 		str[i] = s2[i - len1];
 		i++;
 	}
-	//ft_free(s1, s2, arg_to_free);
+	free(s1);
+	free(s2);
 	return (str);
 }

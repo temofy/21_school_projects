@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SRC = cheks.c ft_printf.c handler_d.c handler_p.c handler_text.c hex.c handler_u.c \
 		handler_o.c handler_x.c handler_x_big.c hex_big_staff.c\
 		hex_staff.c oct_staff.c handler_f.c long_arithmetic.c handler_b.c represents.c \
-		cleanup.c getting.c conversions.c
+		cleanup.c getting.c conversions.c overflow.c rounding.c additional_func.c
 
 LIBFT = libft
 
