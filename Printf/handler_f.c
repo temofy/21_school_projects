@@ -45,7 +45,7 @@ char	*handler_s_f(char **s, t_formatting *e_seq, t_str_fp *s_fp, char **sps)
 		e_seq->width -= e_seq->flags->plus;
 	if (e_seq->width > length)
 	{
-		*sps = ft_strnew(e_seq->width - length);
+		*sps = ft_strfjoin(*sps, ft_strnew_set(' ', e_seq->width - length), 0);
 		if (e_seq->flags->zero && !e_seq->flags->minus)
 			ft_memset(*sps, '0', e_seq->width - length);
 		else
@@ -102,9 +102,10 @@ t_float	*fill_fp(long double ldbl)
 
 char	*handler_f(va_list arg, t_formatting *e_seq)
 {
-	char		*str;
-	t_float		*fp;
-	long double	ld;
+	char			*str;
+	t_float			*fp;
+	long double		ld;
+	char			*spaces;
 
 	if (e_seq->length_modifier == 76)
 		ld = (long double)va_arg(arg, long double);
@@ -112,7 +113,7 @@ char	*handler_f(va_list arg, t_formatting *e_seq)
 		ld = (long double)va_arg(arg, double);
 	fp = fill_fp(ld);
 	e_seq->is_negative = fp->sign - '0';
-	get_number(fp, e_seq, &str);
+	get_nbr(fp, e_seq, &str, &spaces);
 	free_fp(&fp);
 	e_seq->common_length = ft_strlen(str);
 	return (str);

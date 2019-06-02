@@ -30,7 +30,7 @@ int		overflow_frac(t_str_fp **fp, char *nbr, int pos)
 		else if (carry > 0)
 		{
 			nbr[pos] += 1;
-			carry = 0;
+			return (0);
 		}
 		else
 			return (0);

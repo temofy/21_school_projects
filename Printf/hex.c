@@ -64,5 +64,6 @@ char	*hex_long_int(long int n)
 		n = n / 16;
 	}
 	c_res = hex(res, c_res, tmp);
+	free(res);
 	return (c_res);
 }

@@ -5,6 +5,10 @@ CMakeFiles/Printf.dir/additional_func.c.o: ../additional_func.c
 CMakeFiles/Printf.dir/additional_func.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/additional_func.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/bin_staff.c.o: ../bin_staff.c
+CMakeFiles/Printf.dir/bin_staff.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/bin_staff.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/cheks.c.o: ../cheks.c
 CMakeFiles/Printf.dir/cheks.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/cheks.c.o: ../libft/libft.h
@@ -245,6 +249,9 @@ CMakeFiles/Printf.dir/libft/ft_strnequ.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
 CMakeFiles/Printf.dir/libft/ft_strnew.c.o: ../libft/libft.h
+
+CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o: ../libft/ft_strnew_set.c
+CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
 CMakeFiles/Printf.dir/libft/ft_strnstr.c.o: ../libft/libft.h

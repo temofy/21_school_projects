@@ -14,14 +14,17 @@
 
 char	*handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 {
-	int length_arg;
-	int length_str;
+	int 	length_arg;
+	int 	length_str;
+	char 	*tmp;
 
 	length_arg = ft_strlen(str_arg);
 	if (e_seq->precision != -1 && e_seq->precision < length_arg)
 	{
 		length_arg = e_seq->precision;
+		tmp = str_arg;
 		str_arg = ft_strsub(str_arg, 0, length_arg);
+		free(tmp);
 	}
 	length_str = handler_length(length_arg, e_seq->width, 0);
 	e_seq->common_length = length_str + length_arg;
@@ -31,23 +34,45 @@ char	*handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 	else
 		ft_memset(*str, ' ', length_str);
 	if (!e_seq->flags->minus)
-		*str = ft_strfjoin(*str, str_arg, 1);
+		*str = ft_strfjoin(*str, str_arg, 0);
 	else
-		*str = ft_strfjoin(str_arg, *str, 2);
+		*str = ft_strfjoin(str_arg, *str, 0);
 	return (*str);
 }
 
 char	*handler_s(va_list arg, t_formatting *e_seq)
 {
-	char *str;
-	char *str_arg;
+	char	*str;
+	char	*str_arg;
+	int		len_arg;
 
 	str_arg = va_arg(arg, char *);
 	if (str_arg == NULL)
 		str_arg = ft_strdup("(null)");
+	else
+ 	{
+		len_arg = ft_strlen(str_arg);
+		str_arg = ft_strcpy(ft_strnew(len_arg), str_arg);
+	}
 	str = handler_sequence_s(str_arg, &str, e_seq);
 	return (str);
 }
+
+/*char	*handler_s(va_list arg, t_formatting *e_seq)
+{
+	char	*str;
+	char	*str_arg;
+	int		f;
+
+	f = 0;
+	str_arg = va_arg(arg, char *);
+	if (str_arg == NULL && ((f++) || 1))
+		str_arg = ft_strdup("(null)");
+	str = handler_sequence_s(str_arg, &str, e_seq);
+	if (f)
+		ft_strdel(&str_arg);
+	return (str);
+}*/
 
 char	*handler_c(va_list arg, t_formatting *e_seq)
 {

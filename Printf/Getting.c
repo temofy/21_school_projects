@@ -25,11 +25,7 @@ t_str_fp	*get_decimal_frac_str(char *frac_bin, t_str_fp *str)
 {
 	int				i;
 	size_t			len;
-	t_long_value	tmp_result;
 	t_long_value	result;
-	t_long_value	decade_in_exp;
-	t_long_value   	tmp;
-	t_long_value	tmp_next;
 
 	result.values = (int*)malloc(sizeof(int) * 1);
 	result.values[0] = 0;
@@ -39,56 +35,14 @@ t_str_fp	*get_decimal_frac_str(char *frac_bin, t_str_fp *str)
 	while (++i < len)
 	{
 		if (frac_bin[i] == '1')
-		{
-			decade_in_exp = la_pow(conv_to_la(10), len - i - 1);
-			tmp = (la_pow(conv_to_la(5), i + 1));
-			tmp_next = karatsuba_mul(tmp, decade_in_exp);
-			tmp_result = result;
-			result = sum(result, tmp_next);
-			free(tmp.values);
-			free(decade_in_exp.values);
-			free(tmp_next.values);
-			free(tmp_result.values);
-		}
+			result = calculate_lv(&result, i, len);
 	}
-	//free(result.values);
 	free(str->frac);
 	str->frac = conv_bignum_to_str(result);
 	free(result.values);
-	//free_long_value(&result, &decade_in_exp);
 	return (str);
 }
 
-/*t_str_fp	*get_decimal_frac_str(char *frac_bin, t_str_fp *str)
-{
-	int				i;
-	size_t			len;
-	t_long_value	tmp;
-	t_long_value	result;
-	t_long_value	decade_in_exp;
-
-	result.values = (int*)malloc(sizeof(int) * 1);
-	result.values[0] = 0;
-	result.length = 0;
-	i = -1;
-	len = ft_strlen(frac_bin);
-	while (++i < len)
-	{
-		if (frac_bin[i] == '1')
-		{
-			decade_in_exp = la_pow(conv_to_la(10), len - i - 1);
-			tmp = karatsuba_mul((la_pow(conv_to_la(5), i + 1)), decade_in_exp);
-			result = sum(result, tmp);
-			//	free(decade_in_exp.values);
-			free(tmp.values);
-		}
-	}
-	//free(result.values);
-	free(str->frac);
-	str->frac = conv_bignum_to_str(result);
-	//free_long_value(&result, &decade_in_exp);
-	return (str);
-}*/
 char		*get_lz(int amount)
 {
 	char	*leading_zeros;
@@ -126,19 +80,19 @@ char		*get_frac_zeros(long double nbr)
 	return (str_zeros);
 }
 
-char		*get_number(t_float *fp, t_formatting *e_seq, char **str)
+char		*get_nbr(t_float *fp, t_formatting *e_seq, char **str, char **sps)
 {
 	int			exp;
 	t_str_fp	*s_fp;
-	char		*spaces;
 
 	s_fp = (t_str_fp*)malloc(sizeof(t_str_fp));
 	if ((exp = (bin_as_dec(fp->exp) - 16383)) == 16384)
-		return (handler_ambiguity(fp, &*str, e_seq, &spaces));
+		return (handler_ambiguity(fp, &*str, e_seq, &*sps));
 	if (exp >= 0)
 	{
 		s_fp->integer = ft_strdup(&fp->int_part);
-		s_fp->integer = ft_strfjoin(s_fp->integer, ft_strsub(fp->frac, 0, exp), 0);
+		s_fp->integer = ft_strfjoin(s_fp->integer,
+				ft_strsub(fp->frac, 0, exp), 0);
 		s_fp->frac = ft_strsub(fp->frac, exp, 63 - exp);
 	}
 	else
@@ -150,7 +104,7 @@ char		*get_number(t_float *fp, t_formatting *e_seq, char **str)
 	s_fp = get_decimal_frac_str(s_fp->frac, s_fp);
 	s_fp->integer = get_decimal_int_str(s_fp->integer);
 	s_fp->frac = ft_strfjoin(get_frac_zeros(fp->binary->ld), s_fp->frac, 0);
-	*str = handler_s_f(&*str, e_seq, s_fp, &spaces);
+	*str = handler_s_f(&*str, e_seq, s_fp, &*sps);
 	free_str_fp(&s_fp);
 	return (*str);
 }

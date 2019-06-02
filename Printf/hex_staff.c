@@ -52,7 +52,9 @@ char	*hex_int(long int n)
 		n = n / 16;
 	}
 	c_res = hexcimal(res, c_res, tmp);
+	free(res);
 	c_f_res = ft_sizedup(c_res, num_hex_len(tmp));
+	free(c_res);
 	return (c_f_res);
 }
 

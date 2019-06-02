@@ -16,10 +16,7 @@ char	*hex_zero(t_formatting *e_sequence, int *len, char *res)
 {
 	*len = e_sequence->width;
 	if (e_sequence->flags->hash == 1)
-	{
 		*len = *len + 1;
-		res = ft_strdup(" ");
-	}
 	res = ft_strdup(" ");
 	if (e_sequence->width == -1)
 	{
@@ -28,7 +25,7 @@ char	*hex_zero(t_formatting *e_sequence, int *len, char *res)
 	}
 	while (e_sequence->width >= 0)
 	{
-		res = ft_strjoin(res, " ");
+		res = ft_strfjoin(res, " ", 1);
 		e_sequence->width--;
 	}
 	e_sequence->common_length += *len;
@@ -41,11 +38,11 @@ char	*hex_not_zero(t_formatting *e_sequence, int *len, char *res, char *hex)
 		*len = *len + 2;
 	while (*len < e_sequence->width)
 	{
-		res = ft_strjoin("0", res);
+		res = ft_strfjoin("0", res, 2);
 		*len = *len + 1;
 	}
 	if (e_sequence->flags->hash == 1 && !ft_strequ(hex, "0"))
-		res = ft_strjoin("0x", res);
+		res = ft_strfjoin("0x", res, 2);
 	return (res);
 }
 
@@ -53,7 +50,7 @@ char	*hex_while(t_formatting *e_sequence, int *len, char *res)
 {
 	while (*len < e_sequence->width)
 	{
-		res = ft_strjoin(" ", res);
+		res = ft_strfjoin(" ", res, 2);
 		*len = ft_strlen(res);
 	}
 	return (res);
@@ -63,19 +60,19 @@ char	*hex_else(t_formatting *e_sequence, int *len, char *res, char *hex)
 {
 	while (*len < e_sequence->precision)
 	{
-		res = ft_strjoin("0", res);
+		res = ft_strfjoin("0", res, 2);
 		*len = ft_strlen(res);
 	}
 	if (e_sequence->flags->hash == 1 && !ft_strequ(hex, "0"))
 	{
-		res = ft_strjoin("0x", res);
+		res = ft_strfjoin("0x", res, 2);
 		*len = *len + 2;
 	}
 	if (e_sequence->flags->minus == 1)
 	{
 		while (*len < e_sequence->width)
 		{
-			res = ft_strjoin(res, " ");
+			res = ft_strfjoin(res, " ", 1);
 			*len = ft_strlen(res);
 		}
 	}

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/additional_func.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/additional_func.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/bin_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/bin_staff.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cheks.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o"
   "/Users/cheller/Desktop/home_space/Printf/cleanup.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/cleanup.c.o"
   "/Users/cheller/Desktop/home_space/Printf/conversions.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o"
@@ -81,6 +82,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strncpy.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strncpy.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strnequ.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strnequ.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strnew.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strnew.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/libft/ft_strnew_set.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strnstr.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strnstr.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strrchr.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strrchr.c.o"
   "/Users/cheller/Desktop/home_space/Printf/libft/ft_strrev.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strrev.c.o"

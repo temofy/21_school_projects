@@ -93,6 +93,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/additional_func.c.o"
   "CMakeFiles/Printf.dir/rounding.c.o"
   "CMakeFiles/Printf.dir/overflow.c.o"
+  "CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o"
+  "CMakeFiles/Printf.dir/bin_staff.c.o"
   "Printf.pdb"
   "Printf"
 )

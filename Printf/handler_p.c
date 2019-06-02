@@ -36,7 +36,7 @@ char	*handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
 	len_arg = ft_strlen(hex);
 	if (e_seq->precision > len_arg)
 		len_zeros = e_seq->precision - len_arg;
-	hex = ft_strfjoin(ft_memset(ft_strnew(len_zeros), 48, len_zeros), hex, 0);
+	hex = ft_strfjoin(ft_strnew_set(48, len_zeros), hex, 0);
 	len_arg += len_zeros;
 	if (e_seq->width - 2 > len_arg)
 		len_str = e_seq->width - len_arg - 2;
@@ -58,6 +58,7 @@ char	*handler_p(va_list arg, t_formatting *e_sequence)
 
 	hex = hex_long_int((long int)va_arg(arg, void *));
 	str = handler_sequence_p(&str, hex, e_sequence);
+	//ft_strdel(&hex);
 	e_sequence->common_length = ft_strlen(str);
 	return (str);
 }

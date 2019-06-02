@@ -6,176 +6,109 @@
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 14:39:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/04/30 14:39:51 by aaeron-g         ###   ########.fr       */
+/*   Updated: 2019/06/02 16:11:48 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int num_bin_len(long int n)
+char	*bin_zero(t_formatting *e_sequence, int *len, char *res)
 {
-	int i;
-
-	i = 0;
-	while (n > 0)
+	*len = -1;
+	if (e_sequence->flags->minus && e_sequence->flags->hash)
 	{
-		n = n/2;
-		i++;
+		res = ft_strdup("0");
+		*len = *len + 1;
 	}
-return (i);
-}
-
-char *bin_int(long int n)
-{
-	int i;
-	long int *res;
-	char *c_res;
-	long int tmp = n;
-
-	i = num_bin_len(n) - 1;
-	if (n == 0 && (c_res = (char*)malloc(sizeof(char) * 1)))
+	else if (e_sequence->flags->hash == 1)
 	{
-	*c_res = '0';
-	return (c_res);
-	}
-	if (!(res = (long int*)malloc(sizeof(long int)*num_bin_len(n))) || !(c_res = (char*)malloc(sizeof(char)*num_bin_len(n))))
-	return (NULL);
-	while (i >= 0)
-	{
-	res[i] = n%2;
-	i--;
-	n = n/2;
-	}
-	while (i < num_bin_len(tmp))
-	{
-	c_res[i] = (char)(res[i] + 48);
-	i++;
-	}
-	return (c_res);
-}
-
-
-char *bin_total(int n)
-{
-	char *bin;
-	 if(n < 0)
-	{
-		bin = bin_int(4294967296 + (int)n);
-		return (bin);
+		*len = *len + 1;
+		res = ft_strdup("0");
 	}
 	else
-	{
-		bin = bin_int((long)ft_abs(n));
-		return (bin);
-	}
-	
+		res = ft_strdup(" ");
+	while (++(*len) < e_sequence->width)
+		res = ft_strfjoin(res, " ", 1);
+	if (e_sequence->flags->hash == 1)
+		res = ft_strfjoin(res, "0", 1);
+	e_sequence->common_length += *len;
+	return (res);
 }
 
-char *bin_total_l(long int n)
+char	*bin_not_zero(t_formatting *e_sequence, int *len, char *res, char *bin)
 {
-	char *bin;
-	 if(n < 0)
+	if (e_sequence->flags->hash == 1 && !ft_strequ(bin, "0"))
 	{
-		bin = bin_int(4294967296 + (long int)n);
-		return (bin);
+		res = ft_strfjoin("0", res, 2);
+		*len = *len + 1;
+	}
+	while (*len < e_sequence->width)
+	{
+		res = ft_strfjoin("0", res, 2);
+		*len = ft_strlen(res);
+	}
+	return (res);
+}
+
+char	*bin_while(t_formatting *e_sequence, int *len, char *res)
+{
+	while (*len < e_sequence->width)
+	{
+		res = ft_strfjoin(" ", res, 2);
+		*len = ft_strlen(res);
+	}
+	return (res);
+}
+
+char	*bin_else(t_formatting *e_sequence, int *len, char *res, char *bin)
+{
+	while (*len < e_sequence->precision)
+	{
+		res = ft_strfjoin("0", res, 2);
+		*len = ft_strlen(res);
+	}
+	if (e_sequence->flags->hash == 1 && !ft_strequ(bin, "0"))
+	{
+		res = ft_strfjoin("0", res, 2);
+		*len = *len + 1;
+	}
+	if (e_sequence->flags->minus == 1)
+	{
+		while (*len < e_sequence->width)
+		{
+			res = ft_strfjoin(res, " ", 1);
+			*len = ft_strlen(res);
+		}
 	}
 	else
-	{
-		bin = bin_int((long)ft_abs(n));
-		return (bin);
-	}
-	
+		res = bin_while(e_sequence, len, res);
+	return (res);
 }
 
 char	*handler_b(va_list arg, t_formatting *e_sequence)
 {
-	char *bin;
-	
-	if (e_sequence->length_modifier == 106 || e_sequence->length_modifier == 108 || e_sequence->length_modifier == 216)
-		bin = bin_total_l((long int)va_arg(arg, void *));
+	char	*bin;
+	char	*res;
+	int		len;
+
+	if (e_sequence->length_modifier == 108 ||\
+	e_sequence->length_modifier == 216)
+		bin = bin_total_l((intmax_t)va_arg(arg, void *));
 	else
 		bin = bin_total((int)va_arg(arg, void *));
-	//hex = handler_sequence_p(hex, e_sequence);
-
-	//	long long int b;
-	//b = (long long int)n;
-	/*char *str;
-	char *hex;
-	hex = hex_long_int(b);*/
-	int t = e_sequence->precision;
-	int w = e_sequence->width;
-	char *res;
-	int len;
-
-	if (ft_strequ(bin, "0") && t == 0)
+	if (ft_strequ(bin, "0") && e_sequence->precision == 0)
 	{
-		len = 0;
-		if (e_sequence->flags->minus && e_sequence->flags->hash)
-		{
-			res = ft_strdup("0");
-			len++;
-		}
-		else if(e_sequence->flags->hash == 1)
-		{
-			len++;
-			res = ft_strdup("0");
-		}
-		else
-			res = ft_strdup(" ");
-		while (len < w)
-		{
-		res = ft_strjoin(res, " ");	
-		len++;
-		}
-		if(e_sequence->flags->hash == 1)
-			res = ft_strjoin(res, "0");
-	e_sequence->common_length += len;
-	return (res);
+		res = bin_zero(e_sequence, &len, res);
+		return (res);
 	}
 	res = bin;
 	len = ft_strlen(bin);
-	if (t <= 0 && e_sequence->flags->minus == 0 && e_sequence->flags->zero == 1)
-	{
-		if (e_sequence->flags->hash == 1 && !ft_strequ(bin, "0"))
-		{
-			res = ft_strjoin("0", res);
-			len++;
-		}
-		while (len < w)
-		{
-			res = ft_strjoin("0", res);
-			len = ft_strlen(res);
-		}
-	}
+	if (e_sequence->precision <= 0 && e_sequence->flags->minus == 0\
+	&& e_sequence->flags->zero == 1)
+		res = bin_not_zero(e_sequence, &len, res, bin);
 	else
-	{
-	while (len < t)
-	{
-	res = ft_strjoin("0", res);
-	len = ft_strlen(res);
-	}
-	if (e_sequence->flags->hash == 1 && !ft_strequ(bin, "0")) 
-	{
-		res = ft_strjoin("0", res);
-		len++;
-	}
-	if (e_sequence->flags->minus == 1)
-	{
-		while (len < w)
-		{
-		res = ft_strjoin(res, " ");
-		len = ft_strlen(res);
-		}
-	}
-	else 
-	{
-		while (len < w)
-		{
-			res = ft_strjoin(" ", res);
-			len = ft_strlen(res);
-		}
-	}
-	}
+		res = bin_else(e_sequence, &len, res, bin);
+	ft_strdel(&bin);
 	e_sequence->common_length += len;
 	return (res);
 }

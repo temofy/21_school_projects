@@ -66,6 +66,7 @@ char	*oct_int(long int n)
 	i--;
 	while (++i < num_oct_len(tmp))
 		c_res[i] = (char)(res[i] + 48);
+	free(res);
 	return (c_res);
 }
 

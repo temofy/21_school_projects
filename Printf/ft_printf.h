@@ -5,77 +5,77 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 13:23:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/28 14:20:33 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/02 18:11:30 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/02 18:11:34 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include "libft/libft.h"
+# include "stdint.h"
 
-typedef struct	s_flags
+typedef struct		s_flags
 {
-	int		space;
-	int		plus;
-	int		minus;
-	int		hash;
-	int		zero;
-}				t_flags;
+	int				space;
+	int				plus;
+	int				minus;
+	int				hash;
+	int				zero;
+}					t_flags;
 
-typedef struct	s_formatting
+typedef struct		s_formatting
 {
-	t_flags	*flags;
-	int		is_negative;
-	int		width;
-	int		precision;
-	int		length_modifier;
-	char	specifier;
-	int		common_length;
-}				t_formatting;
+	t_flags			*flags;
+	int				is_negative;
+	int				width;
+	int				precision;
+	int				length_modifier;
+	char			specifier;
+	int				common_length;
+}					t_formatting;
 
-typedef union       ld_nbr
-{	
-	long double     ld;
-	unsigned char   b[16];
-}                   t_ld_nbr;
-
-typedef struct		floating_point
+typedef	union		u_ld_nbr
 {
-	char        sign;
-	char        *exp;
-	char        int_part;
-	char        *frac;
-	char        *binary_represent;
-	t_ld_nbr    *binary;
-}		        	t_float;
+	long double		ld;
+	unsigned char	b[16];
+}					t_ld_nbr;
 
-typedef struct		long_value
+typedef	struct		s_floating_point
 {
-	int		*values;
-	int		length;
+	char			sign;
+	char			*exp;
+	char			int_part;
+	char			*frac;
+	char			*binary_represent;
+	t_ld_nbr		*binary;
+}					t_float;
+
+typedef struct		s_long_value
+{
+	int				*values;
+	int				length;
 }					t_long_value;
 
-
-typedef struct	str_fp
+typedef struct		s_str_fp
 {
-	char	*integer;
-	char	*frac;
-}				t_str_fp;
+	char			*integer;
+	char			*frac;
+}					t_str_fp;
 
-int				ft_printf(const char *format, ...);
-int				find_end_spec(char chr);
-int				find_index_end_spec(const char *string);
-t_flags			*check_flags(const char *format);
-int				check_width(const char *format);
-int				check_precision(const char *format);
-int				check_length_modifier(const char *format);
-char			check_spec(const char *string);
-void		    initialize_flags(t_flags **flags);
-int             read_width(const char *format, int i, int width);
-int				handler_length(int length, int width, int precision);
+int					ft_printf(const char *format, ...);
+int					find_end_spec(char chr);
+int					find_index_end_spec(const char *string);
+t_flags				*check_flags(const char *format);
+int					check_width(const char *format);
+int					check_precision(const char *format);
+int					check_length_modifier(const char *format);
+char				check_spec(const char *string);
+void		   		initialize_flags(t_flags **flags);
+int             	read_width(const char *format, int i, int width);
+int					handler_length(int length, int width, int precision);
 
 char			*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char *spaces);
 char			*handler_d(va_list arg, t_formatting *e_sequence);
@@ -95,6 +95,9 @@ int				num_hex_len(long int n);
 char			*handler_s(va_list arg, t_formatting *e_sequence);
 char			*handler_c(va_list arg, t_formatting *e_sequence);
 char			*handler_b(va_list arg, t_formatting *e_sequence);
+char			*bin_total(int n);
+char			*bin_total_l(long n);
+char			*big_int(long int n);
 
 char			*handler_p(va_list arg, t_formatting *e_sequence);
 
@@ -104,12 +107,12 @@ char			*present_int_as_bin(unsigned char number);
 unsigned long	bin_as_dec(char *bin);
 void			free_str_fp(t_str_fp **str_fp);
 void			free_fp(t_float **fp);
-void			free_long_value(t_long_value *n1, t_long_value *n2);
-char			*get_number(t_float *fp, t_formatting *e_seq, char **str);
+char			*get_nbr(t_float *fp, t_formatting *e_seq, char **str, char **sps);
 char			*handler_ambiguity(t_float *fp, char **s, t_formatting *e_seq, char **spaces);
 char			*addition_zeros(char *nbr, int length);
 void			overflow_digit(t_str_fp **fp, int precision);
 int				for_round_int(t_str_fp **fp, char *nbr);
+t_long_value	calculate_lv(t_long_value *result, int i, int len);
 
 t_long_value	la_pow(t_long_value nbr, int exp);
 t_long_value	conv_to_la(signed long nbr);

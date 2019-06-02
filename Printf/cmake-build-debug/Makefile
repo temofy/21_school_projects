@@ -150,6 +150,33 @@ additional_func.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/additional_func.c.s
 .PHONY : additional_func.c.s
 
+bin_staff.o: bin_staff.c.o
+
+.PHONY : bin_staff.o
+
+# target to build an object file
+bin_staff.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/bin_staff.c.o
+.PHONY : bin_staff.c.o
+
+bin_staff.i: bin_staff.c.i
+
+.PHONY : bin_staff.i
+
+# target to preprocess a source file
+bin_staff.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/bin_staff.c.i
+.PHONY : bin_staff.c.i
+
+bin_staff.s: bin_staff.c.s
+
+.PHONY : bin_staff.s
+
+# target to generate assembly for a file
+bin_staff.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/bin_staff.c.s
+.PHONY : bin_staff.c.s
+
 cheks.o: cheks.c.o
 
 .PHONY : cheks.o
@@ -2202,6 +2229,33 @@ libft/ft_strnew.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_strnew.c.s
 .PHONY : libft/ft_strnew.c.s
 
+libft/ft_strnew_set.o: libft/ft_strnew_set.c.o
+
+.PHONY : libft/ft_strnew_set.o
+
+# target to build an object file
+libft/ft_strnew_set.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o
+.PHONY : libft/ft_strnew_set.c.o
+
+libft/ft_strnew_set.i: libft/ft_strnew_set.c.i
+
+.PHONY : libft/ft_strnew_set.i
+
+# target to preprocess a source file
+libft/ft_strnew_set.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_strnew_set.c.i
+.PHONY : libft/ft_strnew_set.c.i
+
+libft/ft_strnew_set.s: libft/ft_strnew_set.c.s
+
+.PHONY : libft/ft_strnew_set.s
+
+# target to generate assembly for a file
+libft/ft_strnew_set.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_strnew_set.c.s
+.PHONY : libft/ft_strnew_set.c.s
+
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 .PHONY : libft/ft_strnstr.o
@@ -2673,6 +2727,9 @@ help:
 	@echo "... additional_func.o"
 	@echo "... additional_func.i"
 	@echo "... additional_func.s"
+	@echo "... bin_staff.o"
+	@echo "... bin_staff.i"
+	@echo "... bin_staff.s"
 	@echo "... cheks.o"
 	@echo "... cheks.i"
 	@echo "... cheks.s"
@@ -2901,6 +2958,9 @@ help:
 	@echo "... libft/ft_strnew.o"
 	@echo "... libft/ft_strnew.i"
 	@echo "... libft/ft_strnew.s"
+	@echo "... libft/ft_strnew_set.o"
+	@echo "... libft/ft_strnew_set.i"
+	@echo "... libft/ft_strnew_set.s"
 	@echo "... libft/ft_strnstr.o"
 	@echo "... libft/ft_strnstr.i"
 	@echo "... libft/ft_strnstr.s"

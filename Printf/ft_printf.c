@@ -127,7 +127,6 @@ int		ft_printf(const char *format, ...)
 	int		found_spec;
 	t_formatting *e_sequence;
 	size_t	common_length;
-	char 	*tmp;
 
 	common_length = 0;
 	i = 0;
@@ -141,17 +140,12 @@ int		ft_printf(const char *format, ...)
 		{
 			e_sequence = scanning_sequence(format + i + 1);
 			found_spec = 1;
-			//tmp = string;
 			if (start == 0)
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), 0, i - start);
 			else
 				string = ft_strljoin(string, ft_strsub(format, start, i - start), common_length - (i - start), i - start);
-			//free(tmp);
 			substr = find_specifier(format + i, arg, e_sequence);
-			//tmp = string;
 			string = ft_strljoin(string, substr, common_length, e_sequence->common_length);
-			//free(tmp);
-			//free(substr);
 			common_length += e_sequence->common_length;
 			free(e_sequence->flags);
 			free(e_sequence);
@@ -177,3 +171,17 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
+int		main()
+{
+	int i = 54;
+	/*ft_printf("Hello World!%00050.30s%010\n", "My name is Артём.", NULL);
+	printf("Hello World!%00050.30s%010\n", "My name is Артём.", NULL);*/
+	//ft_printf("|%s|\n", NULL);
+	//ft_printf("%lx", 4294967296);
+
+	ft_printf("s: %s, p: %p, d:%d\n", "a string", &main, 42);
+	ft_printf("%s%p%d%d%p%s%p%p%s", "a", &free, 1, 2, &malloc, "b", &free, &malloc, "c");
+	/*ft_printf("%20.125#p\n", &i);
+	printf("%20.125#p", &i);*/
+	return (0);
+}

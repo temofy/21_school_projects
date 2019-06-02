@@ -28,15 +28,13 @@ char	*handler_all_zeros(char **str, t_formatting *e_seq, int len)
 
 	if (e_seq->precision > len)
 	{
-		spaces = ft_strnew(e_seq->precision - len);
-		spaces = ft_memset(spaces, '0', e_seq->precision - len);
+		spaces = ft_strnew_set('0', e_seq->precision - len);
 		e_seq->width = sub_without_neg(e_seq->width, e_seq->precision - len);
 		*str = ft_strfjoin(spaces, *str, 0);
 	}
 	if (!e_seq->flags->minus && e_seq->flags->zero && e_seq->precision == -1)
 	{
-		spaces = ft_strnew(e_seq->width);
-		spaces = ft_memset(spaces, 48, e_seq->width);
+		spaces = ft_strnew_set('0', e_seq->width);
 		*str = ft_strfjoin(spaces, *str, 0);
 		e_seq->width = 0;
 	}
@@ -66,8 +64,7 @@ char	*handler_sequence_d(char **str, t_formatting *e_seq, char *spaces)
 	length_str = ft_strlen(*str);
 	e_seq->width = sub_without_neg(e_seq->width, length_str);
 	*str = handler_all_zeros(&*str, e_seq, length_str);
-	spaces = ft_strnew(e_seq->width);
-	spaces = ft_memset(spaces, ' ', e_seq->width);
+	spaces = ft_strnew_set(' ', e_seq->width);
 	if (e_seq->flags->minus)
 		*str = ft_strfjoin(*str, spaces, 0);
 	else

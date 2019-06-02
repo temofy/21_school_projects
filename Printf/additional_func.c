@@ -51,6 +51,25 @@ int		find_index_end_spec(const char *s)
 	return (-1);
 }
 
+t_long_value	calculate_lv(t_long_value *result, int i, int len)
+{
+	t_long_value	decade_in_exp;
+	t_long_value   	tmp;
+	t_long_value	tmp_next;
+	t_long_value	tmp_result;
+
+	decade_in_exp = la_pow(conv_to_la(10), len - i - 1);
+	tmp = (la_pow(conv_to_la(5), i + 1));
+	tmp_next = karatsuba_mul(tmp, decade_in_exp);
+	tmp_result = *result;
+	*result = sum(*result, tmp_next);
+	free(tmp.values);
+	free(decade_in_exp.values);
+	free(tmp_next.values);
+	free(tmp_result.values);
+	return (*result);
+}
+
 int		read_width(const char *format, int i, int width)
 {
 	while (format[i] >= '0' && format[i] <= '9')

@@ -89,6 +89,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/additional_func.c">
 			<Option target="Printf"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/bin_staff.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/cheks.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -318,6 +321,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_strnew.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_strnew_set.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_strnstr.c">

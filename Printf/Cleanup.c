@@ -29,9 +29,3 @@ void	free_str_fp(t_str_fp **str_fp)
 	free(*str_fp);
 	*str_fp = NULL;
 }
-
-void	free_long_value(t_long_value *n1, t_long_value *n2)
-{
-	free(n1->values);
-	free(n2->values);
-}
