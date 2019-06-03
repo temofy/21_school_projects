@@ -57,6 +57,10 @@ CMakeFiles/Printf.dir/handler_u.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_u.c.o: ../handler_u.c
 CMakeFiles/Printf.dir/handler_u.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/handler_unicode.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_unicode.c.o: ../handler_unicode.c
+CMakeFiles/Printf.dir/handler_unicode.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/handler_x.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_x.c.o: ../handler_x.c
 CMakeFiles/Printf.dir/handler_x.c.o: ../libft/libft.h

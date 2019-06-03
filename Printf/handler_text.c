@@ -58,21 +58,65 @@ char	*handler_s(va_list arg, t_formatting *e_seq)
 	return (str);
 }
 
-/*char	*handler_s(va_list arg, t_formatting *e_seq)
+char	*get_utf8_str(t_unicode *unicode)
 {
-	char	*str;
-	char	*str_arg;
-	int		f;
+	char	*wchar;
 
-	f = 0;
-	str_arg = va_arg(arg, char *);
-	if (str_arg == NULL && ((f++) || 1))
-		str_arg = ft_strdup("(null)");
-	str = handler_sequence_s(str_arg, &str, e_seq);
-	if (f)
-		ft_strdel(&str_arg);
+	if (unicode->chr <= 127)
+		wchar = encode_one_byte(unicode);
+	else if (unicode->chr <= 2047)
+		wchar = encode_two_bytes(unicode);
+	else if (unicode->chr <= 65535)
+		wchar = encode_three_bytes(unicode);
+	else if (unicode->chr <= 1114111)
+		wchar = encode_four_bytes(unicode);
+	return(wchar);
+}
+
+char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
+{
+	//unsigned	unicode[1];
+	char 		*binary;
+	t_unicode	*unicode;
+	char 		*str;
+
+	unicode = (t_unicode*)malloc(sizeof(t_unicode));
+	unicode->chr = va_arg(arg, unsigned int);
+	binary = represent_binary(unicode->b, 4);
+	binary = present_int_as_bin(unicode->b[0]);
+	//str = get_utf8_str(binary, unicode->ld);
+	printf("binary: %s\n", binary);
+
+	//e_seq->common_length = 4;
+	//str = ft_strdup("\xF0\x90\x8D\x88");
+	return (str);
+}
+
+/*char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
+{
+	unsigned	unicode[1];
+	char 		*str;
+	t_unicode	*ucode;
+
+	//ucode = (t_unicode*)malloc(sizeof(t_unicode));
+	unicode[0] = va_arg(arg, unsigned int);
+	//str = represent_binary(ucode->b, 4);
+	//printf("binary: %s\n", str);
+	str = ft_strnew(1);
+	str = ft_memcpy(str, unicode, 1);
+	e_seq->common_length = 4;
+	str = ft_strdup("\xF0\x90\x8D\x88");
 	return (str);
 }*/
+
+char 	*handler_str_unicode(va_list arg, t_formatting *e_seq)
+{
+	unsigned int	unicode;
+
+	unicode = va_arg(arg, unsigned int);
+
+	return (NULL);
+}
 
 char	*handler_c(va_list arg, t_formatting *e_seq)
 {

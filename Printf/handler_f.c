@@ -92,7 +92,7 @@ t_float	*fill_fp(long double ldbl)
 		return (NULL);
 	float_point->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
 	float_point->binary->ld = ldbl;
-	float_point->binary_represent = represent_binary(float_point->binary->b);
+	float_point->binary_represent = represent_binary(float_point->binary->b, 10);
 	float_point->sign = *float_point->binary_represent;
 	float_point->exp = ft_strsub(float_point->binary_represent, 1, 15);
 	float_point->int_part = *(float_point->binary_represent + 16);

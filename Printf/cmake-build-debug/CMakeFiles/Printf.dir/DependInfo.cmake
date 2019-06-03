@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/handler_p.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_p.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_text.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_text.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_u.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_u.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/handler_unicode.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_unicode.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_x.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_x.c.o"
   "/Users/cheller/Desktop/home_space/Printf/handler_x_big.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/handler_x_big.c.o"
   "/Users/cheller/Desktop/home_space/Printf/hex.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/hex.c.o"

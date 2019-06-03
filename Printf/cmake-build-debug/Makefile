@@ -501,6 +501,33 @@ handler_u.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_u.c.s
 .PHONY : handler_u.c.s
 
+handler_unicode.o: handler_unicode.c.o
+
+.PHONY : handler_unicode.o
+
+# target to build an object file
+handler_unicode.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_unicode.c.o
+.PHONY : handler_unicode.c.o
+
+handler_unicode.i: handler_unicode.c.i
+
+.PHONY : handler_unicode.i
+
+# target to preprocess a source file
+handler_unicode.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_unicode.c.i
+.PHONY : handler_unicode.c.i
+
+handler_unicode.s: handler_unicode.c.s
+
+.PHONY : handler_unicode.s
+
+# target to generate assembly for a file
+handler_unicode.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_unicode.c.s
+.PHONY : handler_unicode.c.s
+
 handler_x.o: handler_x.c.o
 
 .PHONY : handler_x.o
@@ -2766,6 +2793,9 @@ help:
 	@echo "... handler_u.o"
 	@echo "... handler_u.i"
 	@echo "... handler_u.s"
+	@echo "... handler_unicode.o"
+	@echo "... handler_unicode.i"
+	@echo "... handler_unicode.s"
 	@echo "... handler_x.o"
 	@echo "... handler_x.i"
 	@echo "... handler_x.s"

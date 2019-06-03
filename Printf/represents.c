@@ -27,17 +27,17 @@ char			*present_int_as_bin(unsigned char number)
 	return (bin - 8);
 }
 
-char			*represent_binary(unsigned char *bytes)
+char			*represent_binary(unsigned char *bytes, int nbr_bytes)
 {
 	char	*binary;
 	int		i;
 	int		j;
 
 	i = 0;
-	j = 9;
-	if (!(binary = ft_strnew(80)))
+	j = nbr_bytes - 1;
+	if (!(binary = ft_strnew(nbr_bytes * 8)))
 		return (NULL);
-	while (i++ < 10)
+	while (i++ < nbr_bytes)
 		binary = ft_strfjoin(binary, present_int_as_bin(bytes[j--]), 0);
 	return (binary);
 }

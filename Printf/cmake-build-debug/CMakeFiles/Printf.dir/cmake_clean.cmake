@@ -95,6 +95,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/overflow.c.o"
   "CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o"
   "CMakeFiles/Printf.dir/bin_staff.c.o"
+  "CMakeFiles/Printf.dir/handler_unicode.c.o"
   "Printf.pdb"
   "Printf"
 )

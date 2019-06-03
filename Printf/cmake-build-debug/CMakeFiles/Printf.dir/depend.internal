@@ -57,6 +57,10 @@ CMakeFiles/Printf.dir/handler_u.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_u.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/handler_unicode.c.o
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/home_space/Printf/handler_unicode.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_x.c

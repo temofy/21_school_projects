@@ -98,6 +98,8 @@ char	*handler_x(va_list arg, t_formatting *e_sequence)
 		res = hex_zero(e_sequence, &len, res);
 		return (res);
 	}
+	/*hex = ft_strnew(ft_strlen(res));
+	hex = ft_strcpy(hex, res);*/
 	res = hex;
 	len = ft_strlen(hex);
 	if (e_sequence->precision <= 0 && e_sequence->flags->minus == 0\
