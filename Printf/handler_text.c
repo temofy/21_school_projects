@@ -73,49 +73,53 @@ char	*get_utf8_str(t_unicode *unicode)
 	return(wchar);
 }
 
+char 	*combine_str_unicode(unsigned *str_unicode, t_unicode **unicode)
+{
+	int 		i;
+	int 		len;
+	char 		*str;
+
+	i = -1;
+	*unicode = (t_unicode *) malloc(sizeof(t_unicode));
+	len = ft_intlen(str_unicode);
+	str = ft_strnew(0);
+	while (++i < len) {
+		(*unicode)->chr = str_unicode[i];
+		str = ft_strfjoin(str, get_utf8_str(*unicode), 0);
+	}
+	free(*unicode);
+	return (str);
+}
+
 char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
 {
-	//unsigned	unicode[1];
-	char 		*binary;
 	t_unicode	*unicode;
 	char 		*str;
 
 	unicode = (t_unicode*)malloc(sizeof(t_unicode));
 	unicode->chr = va_arg(arg, unsigned int);
-	binary = represent_binary(unicode->b, 4);
-	binary = present_int_as_bin(unicode->b[0]);
-	//str = get_utf8_str(binary, unicode->ld);
-	printf("binary: %s\n", binary);
-
-	//e_seq->common_length = 4;
-	//str = ft_strdup("\xF0\x90\x8D\x88");
+	str = get_utf8_str(unicode);
+	e_seq->common_length = ft_strlen(str);
 	return (str);
 }
 
-/*char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
-{
-	unsigned	unicode[1];
-	char 		*str;
-	t_unicode	*ucode;
-
-	//ucode = (t_unicode*)malloc(sizeof(t_unicode));
-	unicode[0] = va_arg(arg, unsigned int);
-	//str = represent_binary(ucode->b, 4);
-	//printf("binary: %s\n", str);
-	str = ft_strnew(1);
-	str = ft_memcpy(str, unicode, 1);
-	e_seq->common_length = 4;
-	str = ft_strdup("\xF0\x90\x8D\x88");
-	return (str);
-}*/
-
 char 	*handler_str_unicode(va_list arg, t_formatting *e_seq)
 {
-	unsigned int	unicode;
+	unsigned	*str_unicode;
+	t_unicode	*unicode;
 
-	unicode = va_arg(arg, unsigned int);
+	char 		*str;
+	char 		*spaces;
 
-	return (NULL);
+
+	str_unicode = va_arg(arg, unsigned int*);
+	if (str_unicode == NULL)
+		str = ft_strdup("(null)");
+	else
+		str = combine_str_unicode(str_unicode, &unicode);
+	str = handler_sequence_s(str, &spaces, e_seq);
+	e_seq->common_length = ft_strlen(str);
+	return (str);
 }
 
 char	*handler_c(va_list arg, t_formatting *e_seq)

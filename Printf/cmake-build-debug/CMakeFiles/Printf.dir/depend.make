@@ -61,9 +61,9 @@ CMakeFiles/Printf.dir/handler_unicode.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../handler_unicode.c
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_x.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_x.c.o: /Users/cheller/Desktop/01.05version/Printf/ft_printf.h
+CMakeFiles/Printf.dir/handler_x.c.o: /Users/cheller/Desktop/01.05version/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o: ../handler_x.c
-CMakeFiles/Printf.dir/handler_x.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/handler_x_big.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_x_big.c.o: ../handler_x_big.c
@@ -92,6 +92,9 @@ CMakeFiles/Printf.dir/libft/ft_bzero.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.o: ../libft/ft_find_last_lst.c
 CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/libft/ft_intlen.c.o: ../libft/ft_intlen.c
+CMakeFiles/Printf.dir/libft/ft_intlen.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/libft/ft_isalnum.c.o: ../libft/ft_isalnum.c
 CMakeFiles/Printf.dir/libft/ft_isalnum.c.o: ../libft/libft.h
 
@@ -115,6 +118,9 @@ CMakeFiles/Printf.dir/libft/ft_isthere_chr.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
 CMakeFiles/Printf.dir/libft/ft_itoa.c.o: ../libft/libft.h
+
+CMakeFiles/Printf.dir/libft/ft_itoa_base.c.o: ../libft/ft_itoa_base.c
+CMakeFiles/Printf.dir/libft/ft_itoa_base.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_litoa.c.o: ../libft/ft_litoa.c
 CMakeFiles/Printf.dir/libft/ft_litoa.c.o: ../libft/libft.h

@@ -771,6 +771,33 @@ libft/ft_find_last_lst.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.s
 .PHONY : libft/ft_find_last_lst.c.s
 
+libft/ft_intlen.o: libft/ft_intlen.c.o
+
+.PHONY : libft/ft_intlen.o
+
+# target to build an object file
+libft/ft_intlen.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_intlen.c.o
+.PHONY : libft/ft_intlen.c.o
+
+libft/ft_intlen.i: libft/ft_intlen.c.i
+
+.PHONY : libft/ft_intlen.i
+
+# target to preprocess a source file
+libft/ft_intlen.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_intlen.c.i
+.PHONY : libft/ft_intlen.c.i
+
+libft/ft_intlen.s: libft/ft_intlen.c.s
+
+.PHONY : libft/ft_intlen.s
+
+# target to generate assembly for a file
+libft/ft_intlen.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_intlen.c.s
+.PHONY : libft/ft_intlen.c.s
+
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 .PHONY : libft/ft_isalnum.o
@@ -986,6 +1013,33 @@ libft/ft_itoa.s: libft/ft_itoa.c.s
 libft/ft_itoa.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_itoa.c.s
 .PHONY : libft/ft_itoa.c.s
+
+libft/ft_itoa_base.o: libft/ft_itoa_base.c.o
+
+.PHONY : libft/ft_itoa_base.o
+
+# target to build an object file
+libft/ft_itoa_base.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_itoa_base.c.o
+.PHONY : libft/ft_itoa_base.c.o
+
+libft/ft_itoa_base.i: libft/ft_itoa_base.c.i
+
+.PHONY : libft/ft_itoa_base.i
+
+# target to preprocess a source file
+libft/ft_itoa_base.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_itoa_base.c.i
+.PHONY : libft/ft_itoa_base.c.i
+
+libft/ft_itoa_base.s: libft/ft_itoa_base.c.s
+
+.PHONY : libft/ft_itoa_base.s
+
+# target to generate assembly for a file
+libft/ft_itoa_base.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/libft/ft_itoa_base.c.s
+.PHONY : libft/ft_itoa_base.c.s
 
 libft/ft_litoa.o: libft/ft_litoa.c.o
 
@@ -2823,6 +2877,9 @@ help:
 	@echo "... libft/ft_find_last_lst.o"
 	@echo "... libft/ft_find_last_lst.i"
 	@echo "... libft/ft_find_last_lst.s"
+	@echo "... libft/ft_intlen.o"
+	@echo "... libft/ft_intlen.i"
+	@echo "... libft/ft_intlen.s"
 	@echo "... libft/ft_isalnum.o"
 	@echo "... libft/ft_isalnum.i"
 	@echo "... libft/ft_isalnum.s"
@@ -2847,6 +2904,9 @@ help:
 	@echo "... libft/ft_itoa.o"
 	@echo "... libft/ft_itoa.i"
 	@echo "... libft/ft_itoa.s"
+	@echo "... libft/ft_itoa_base.o"
+	@echo "... libft/ft_itoa_base.i"
+	@echo "... libft/ft_itoa_base.s"
 	@echo "... libft/ft_litoa.o"
 	@echo "... libft/ft_litoa.i"
 	@echo "... libft/ft_litoa.s"

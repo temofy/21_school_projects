@@ -6,25 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Printf/additional_func.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
+/Users/cheller/Desktop/01.05version/Printf/ft_printf.h
+stdarg.h
+-
+libft/libft.h
+/Users/cheller/Desktop/01.05version/Printf/libft/libft.h
 
-/Users/cheller/Desktop/home_space/Printf/bin_staff.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/cheks.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/cleanup.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/conversions.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
+/Users/cheller/Desktop/01.05version/Printf/libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
 
 /Users/cheller/Desktop/home_space/Printf/ft_printf.c
 ft_printf.h
@@ -48,55 +42,15 @@ libft/libft.h
 stdint.h
 /Users/cheller/Desktop/home_space/Printf/stdint.h
 
-/Users/cheller/Desktop/home_space/Printf/getting.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_b.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_d.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_f.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
 /Users/cheller/Desktop/home_space/Printf/handler_o.c
 ft_printf.h
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 
-/Users/cheller/Desktop/home_space/Printf/handler_p.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_text.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_u.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/handler_unicode.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
 /Users/cheller/Desktop/home_space/Printf/handler_x.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
+../../01.05version/Printf/ft_printf.h
+/Users/cheller/Desktop/01.05version/Printf/ft_printf.h
 
 /Users/cheller/Desktop/home_space/Printf/handler_x_big.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/hex.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/hex_big_staff.c
 ft_printf.h
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 
@@ -112,23 +66,7 @@ unistd.h
 string.h
 -
 
-/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
 /Users/cheller/Desktop/home_space/Printf/oct_staff.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/overflow.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/represents.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
-/Users/cheller/Desktop/home_space/Printf/rounding.c
 ft_printf.h
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 

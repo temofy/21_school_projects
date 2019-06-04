@@ -158,6 +158,7 @@ char			*hex_b_n_z(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*hex_big_while(t_formatting *e_sequence, int *len, char *res);
 char			*hex_big_else(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*handler_x_big(va_list arg, t_formatting *e_sequence);
+char 			*bin_as_hex(char *bin);
 
 char	*encode_one_byte(t_unicode *unicode);
 char	*encode_two_bytes(t_unicode *unicode);

@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/libft/ft_isprint.c.o"
   "CMakeFiles/Printf.dir/libft/ft_isthere_chr.c.o"
   "CMakeFiles/Printf.dir/libft/ft_itoa.c.o"
+  "CMakeFiles/Printf.dir/libft/ft_itoa_base.c.o"
   "CMakeFiles/Printf.dir/libft/ft_litoa.c.o"
   "CMakeFiles/Printf.dir/libft/ft_lstadd.c.o"
   "CMakeFiles/Printf.dir/libft/ft_lstdel.c.o"
@@ -96,6 +97,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/libft/ft_strnew_set.c.o"
   "CMakeFiles/Printf.dir/bin_staff.c.o"
   "CMakeFiles/Printf.dir/handler_unicode.c.o"
+  "CMakeFiles/Printf.dir/libft/ft_intlen.c.o"
   "Printf.pdb"
   "Printf"
 )

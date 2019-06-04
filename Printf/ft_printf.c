@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/06/03 14:38:09 by cheller          ###   ########.fr       */
+/*   Updated: 2019/06/04 16:03:45 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 	{
 		if (format[i] == 'd' || format[i] == 'i' )
 			return (handler_d(arg, e_sequence));
-		else if (format[i]== 'f' || format[i]== 'F')
+		else if (format[i]== 'f')
 			return (handler_f(arg, e_sequence));
-        else if (format[i]== 'b' || format[i]== 'B')
+        else if (format[i]== 'b')
             return (handler_b(arg, e_sequence));
 		else if (format[i] == 'c')
 			return (handler_c(arg, e_sequence));
@@ -106,9 +106,9 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
 			return (handler_str_unicode(arg, e_sequence));
 		else if (format[i] == 'p')
 			return (handler_p(arg, e_sequence));
-		else if (format[i] == 'u' || format[i] == 'U')
+		else if (format[i] == 'u')
 			return (handler_u(arg, e_sequence));
-		else if (format[i] == 'o' || format[i] == 'o')
+		else if (format[i] == 'o')
 			return(handler_o(arg, e_sequence));
 		else if (format[i] == 'x')
 			return(handler_x(arg, e_sequence));
@@ -176,20 +176,3 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
-int		main()
-{
-	int i = 54;
-	/*ft_printf("Hello World!%00050.30s%010\n", "My name is Артём.", NULL);
-	printf("Hello World!%00050.30s%010\n", "My name is Артём.", NULL);*/
-	//ft_printf("|%s|\n", NULL);
-	//ft_printf("%lx", 4294967296);
-
-	setlocale(LC_ALL, "");
-	//ft_printf("%S", L"我是一只猫。\n");
-	//printf("%S", L"µ我是一只猫。");
-	ft_printf("%C\n", L'µ');
-	printf("%C", L'µ');
-	/*ft_printf("%20.125#p\n", &i);
-	printf("%20.125#p", &i);*/
-	return (0);
-}

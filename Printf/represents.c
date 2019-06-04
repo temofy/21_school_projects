@@ -42,6 +42,8 @@ char			*represent_binary(unsigned char *bytes, int nbr_bytes)
 	return (binary);
 }
 
+
+
 unsigned long	bin_as_dec(char *bin)
 {
 	unsigned long	decimal;
@@ -60,4 +62,11 @@ unsigned long	bin_as_dec(char *bin)
 		factor *= 2;
 	}
 	return (decimal);
+}
+
+char 			*bin_as_hex(char *bin)
+{
+	char	*hex;
+	hex = ft_itoa_base((int)bin_as_dec(bin), 16);
+	return (hex);
 }

@@ -62,9 +62,9 @@ CMakeFiles/Printf.dir/handler_unicode.c.o
  /Users/cheller/Desktop/home_space/Printf/handler_unicode.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/01.05version/Printf/ft_printf.h
+ /Users/cheller/Desktop/01.05version/Printf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_x.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x_big.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_x_big.c
@@ -92,6 +92,9 @@ CMakeFiles/Printf.dir/libft/ft_bzero.c.o
 CMakeFiles/Printf.dir/libft/ft_find_last_lst.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_find_last_lst.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/libft/ft_intlen.c.o
+ /Users/cheller/Desktop/home_space/Printf/libft/ft_intlen.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_isalnum.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_isalnum.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
@@ -115,6 +118,9 @@ CMakeFiles/Printf.dir/libft/ft_isthere_chr.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_itoa.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_itoa.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/libft/ft_itoa_base.c.o
+ /Users/cheller/Desktop/home_space/Printf/libft/ft_itoa_base.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_litoa.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_litoa.c

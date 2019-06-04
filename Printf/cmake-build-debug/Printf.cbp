@@ -161,6 +161,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_find_last_lst.c">
 			<Option target="Printf"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_intlen.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_isalnum.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -183,6 +186,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_itoa.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_itoa_base.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/libft/ft_litoa.c">

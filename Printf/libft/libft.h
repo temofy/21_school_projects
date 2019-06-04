@@ -105,6 +105,8 @@ char				*ft_strljoin(char *s1, char *s2, int len1, int len2);
 char				*ft_strnew_set(char c, size_t size);
 int					ft_abs(int n);
 int					ft_iseven(long nbr);
+char				*ft_itoa_base(int value, int base);
+size_t				ft_intlen(const unsigned int *nbr);
 
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);

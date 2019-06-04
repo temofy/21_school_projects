@@ -19,6 +19,7 @@ add_executable(Printf
         libft/ft_isprint.c
         libft/ft_isthere_chr.c
         libft/ft_itoa.c
+        libft/ft_itoa_base.c
         libft/ft_litoa.c
         libft/ft_lstadd.c
         libft/ft_lstdel.c
@@ -99,4 +100,4 @@ add_executable(Printf
         hex_staff.c
         long_arithmetic.c
         oct_staff.c
-        represents.c additional_func.c rounding.c overflow.c libft/ft_strnew_set.c bin_staff.c handler_unicode.c)
+        represents.c additional_func.c rounding.c overflow.c libft/ft_strnew_set.c bin_staff.c handler_unicode.c libft/ft_intlen.c)
