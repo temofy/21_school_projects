@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Push_Swap" targetName="Push_Swap" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b0a19a2-e4b5-4080-ad33-1cb57f73555e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/author" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libft/ft_atopi.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/push_swap.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/author" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.h.gch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/author" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_atoi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_atoi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_bzero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_bzero.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_find_last_lst.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_find_last_lst.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalnum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalnum.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalpha.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalpha.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isascii.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isascii.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isdigit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isdigit.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isprint.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isprint.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isthere_chr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isthere_chr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_itoa.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_itoa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstadd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstadd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdelone.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdelone.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstiter.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstiter.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstmap.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memalloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memalloc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memccpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memccpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memmove.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memmove.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memset.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memset.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strclr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strclr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdup.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strequ.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strequ.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strftchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strftchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striter.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striter.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striteri.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striteri.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strjoin.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strjoin.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlcat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlen.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlen.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmap.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmapi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmapi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnequ.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnequ.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnew.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strpchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strpchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strposchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strposchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strrchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strrchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsplit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsplit.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsub.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsub.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtrim.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtrim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_tolower.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_tolower.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_toupper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_toupper.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/cmake-build-debug/Printf" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/cmake-build-debug/Printf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Printf/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/ft_printf.c" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/push_swap.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/checker.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/ft_bzero.c">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/ft_atoi.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/ft_atopi.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/libft.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="109" column="47" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/ft_memalloc.c">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/push_swap.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>stack</find>
+      <find>.</find>
+      <find>argc</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>a</replace>
+      <replace>-&gt;</replace>
+      <replace>amount</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/push_swap.c" />
+        <option value="$PROJECT_DIR$/author" />
+        <option value="$PROJECT_DIR$/push_swap.h" />
+        <option value="$PROJECT_DIR$/libft/libft.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/libft/ft_atopi.c" />
+        <option value="$PROJECT_DIR$/checker.c" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/Push_Swap.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="822" />
+    <option name="y" value="90" />
+    <option name="width" value="1757" />
+    <option name="height" value="1263" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Push_Swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Push_Swap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Push_Swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Push_Swap" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Push_Swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Push_Swap" type="462c0819:PsiDirectoryNode" />
+              <item name="libft" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Push_Swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="5 3 2 7 1" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Push_Swap" TARGET_NAME="Push_Swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Push_Swap" RUN_TARGET_NAME="Push_Swap">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b0a19a2-e4b5-4080-ad33-1cb57f73555e" name="Default Changelist" comment="" />
+      <created>1559731104274</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559731104274</updated>
+      <workItem from="1559731105393" duration="327000" />
+      <workItem from="1559731469252" duration="613000" />
+      <workItem from="1559738050776" duration="1784000" />
+      <workItem from="1559744941575" duration="11599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="14323000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="822" y="90" width="1757" height="1263" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22157435" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.3296328" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.3296328" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3996584" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3296328" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/checker.c</url>
+          <line>70</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/author">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_memalloc.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/push_swap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_bzero.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_atoi.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/libft.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="109" column="47" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/push_swap.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_atopi.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
