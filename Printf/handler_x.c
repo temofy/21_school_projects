@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../01.05version/Printf/ft_printf.h"
+#include "ft_printf.h"
 
 char	*hex_zero(t_formatting *e_sequence, int *len, char *res)
 {

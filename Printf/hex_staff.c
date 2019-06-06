@@ -38,7 +38,7 @@ char	*hex_int(long int n)
 
 	i = num_hex_len(n);
 	tmp = n;
-	if (n == 0 && (c_res = (char*)malloc(sizeof(char) * 1)))
+	if (n == 0 && (c_res = ft_strnew(1)))
 	{
 		*c_res = '0';
 		return (c_res);

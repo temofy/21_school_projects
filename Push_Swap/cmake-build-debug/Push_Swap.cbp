@@ -271,6 +271,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnstr.c">
 			<Option target="Push_Swap"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strposchr.c">
+			<Option target="Push_Swap"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strrchr.c">
 			<Option target="Push_Swap"/>
 		</Unit>
@@ -302,6 +305,9 @@
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_ulitoa.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/get_next_line.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h">

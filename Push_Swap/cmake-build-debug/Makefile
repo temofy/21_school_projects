@@ -1824,6 +1824,33 @@ libft/ft_strnstr.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.s
 .PHONY : libft/ft_strnstr.c.s
 
+libft/ft_strposchr.o: libft/ft_strposchr.c.o
+
+.PHONY : libft/ft_strposchr.o
+
+# target to build an object file
+libft/ft_strposchr.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o
+.PHONY : libft/ft_strposchr.c.o
+
+libft/ft_strposchr.i: libft/ft_strposchr.c.i
+
+.PHONY : libft/ft_strposchr.i
+
+# target to preprocess a source file
+libft/ft_strposchr.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.i
+.PHONY : libft/ft_strposchr.c.i
+
+libft/ft_strposchr.s: libft/ft_strposchr.c.s
+
+.PHONY : libft/ft_strposchr.s
+
+# target to generate assembly for a file
+libft/ft_strposchr.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.s
+.PHONY : libft/ft_strposchr.c.s
+
 libft/ft_strrchr.o: libft/ft_strrchr.c.o
 
 .PHONY : libft/ft_strrchr.o
@@ -2121,6 +2148,33 @@ libft/ft_ulitoa.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.s
 .PHONY : libft/ft_ulitoa.c.s
 
+libft/get_next_line.o: libft/get_next_line.c.o
+
+.PHONY : libft/get_next_line.o
+
+# target to build an object file
+libft/get_next_line.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o
+.PHONY : libft/get_next_line.c.o
+
+libft/get_next_line.i: libft/get_next_line.c.i
+
+.PHONY : libft/get_next_line.i
+
+# target to preprocess a source file
+libft/get_next_line.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/get_next_line.c.i
+.PHONY : libft/get_next_line.c.i
+
+libft/get_next_line.s: libft/get_next_line.c.s
+
+.PHONY : libft/get_next_line.s
+
+# target to generate assembly for a file
+libft/get_next_line.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/get_next_line.c.s
+.PHONY : libft/get_next_line.c.s
+
 push_swap.o: push_swap.c.o
 
 .PHONY : push_swap.o
@@ -2346,6 +2400,9 @@ help:
 	@echo "... libft/ft_strnstr.o"
 	@echo "... libft/ft_strnstr.i"
 	@echo "... libft/ft_strnstr.s"
+	@echo "... libft/ft_strposchr.o"
+	@echo "... libft/ft_strposchr.i"
+	@echo "... libft/ft_strposchr.s"
 	@echo "... libft/ft_strrchr.o"
 	@echo "... libft/ft_strrchr.i"
 	@echo "... libft/ft_strrchr.s"
@@ -2379,6 +2436,9 @@ help:
 	@echo "... libft/ft_ulitoa.o"
 	@echo "... libft/ft_ulitoa.i"
 	@echo "... libft/ft_ulitoa.s"
+	@echo "... libft/get_next_line.o"
+	@echo "... libft/get_next_line.i"
+	@echo "... libft/get_next_line.s"
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"

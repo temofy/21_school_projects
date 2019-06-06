@@ -187,6 +187,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
 CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o: ../libft/libft.h
 
+CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o: ../libft/ft_strposchr.c
+CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o: ../libft/libft.h
+
 CMakeFiles/Push_Swap.dir/libft/ft_strrchr.c.o: ../libft/ft_strrchr.c
 CMakeFiles/Push_Swap.dir/libft/ft_strrchr.c.o: ../libft/libft.h
 
@@ -219,6 +222,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_uitoa.c.o: ../libft/libft.h
 
 CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o: ../libft/ft_ulitoa.c
 CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o: ../libft/libft.h
+
+CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
+CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o: ../libft/libft.h
 
 CMakeFiles/Push_Swap.dir/push_swap.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/push_swap.c.o: ../push_swap.c

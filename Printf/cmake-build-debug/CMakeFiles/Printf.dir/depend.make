@@ -41,9 +41,6 @@ CMakeFiles/Printf.dir/handler_f.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_f.c.o: ../handler_f.c
 CMakeFiles/Printf.dir/handler_f.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_o.c.o: ../ft_printf.h
-CMakeFiles/Printf.dir/handler_o.c.o: ../handler_o.c
-CMakeFiles/Printf.dir/handler_o.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/handler_p.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_p.c.o: ../handler_p.c
@@ -61,21 +58,21 @@ CMakeFiles/Printf.dir/handler_unicode.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../handler_unicode.c
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_x.c.o: /Users/cheller/Desktop/01.05version/Printf/ft_printf.h
-CMakeFiles/Printf.dir/handler_x.c.o: /Users/cheller/Desktop/01.05version/Printf/libft/libft.h
+CMakeFiles/Printf.dir/handler_x.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_x.c.o: ../handler_x.c
+CMakeFiles/Printf.dir/handler_x.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_x_big.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_x_big.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+CMakeFiles/Printf.dir/handler_x_big.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x_big.c.o: ../handler_x_big.c
-CMakeFiles/Printf.dir/handler_x_big.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/hex.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/hex.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+CMakeFiles/Printf.dir/hex.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
 CMakeFiles/Printf.dir/hex.c.o: ../hex.c
-CMakeFiles/Printf.dir/hex.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/hex_big_staff.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/hex_big_staff.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+CMakeFiles/Printf.dir/hex_big_staff.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
 CMakeFiles/Printf.dir/hex_big_staff.c.o: ../hex_big_staff.c
-CMakeFiles/Printf.dir/hex_big_staff.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/hex_staff.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/hex_staff.c.o: ../hex_staff.c

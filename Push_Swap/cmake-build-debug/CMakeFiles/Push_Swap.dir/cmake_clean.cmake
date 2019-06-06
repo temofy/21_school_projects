@@ -72,6 +72,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Push_Swap.dir/libft/ft_uitoa.c.o"
   "CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o"
   "CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o"
+  "CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o"
+  "CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o"
   "CMakeFiles/Push_Swap.dir/checker.c.o"
   "CMakeFiles/Push_Swap.dir/push_swap.c.o"
   "Push_Swap.pdb"

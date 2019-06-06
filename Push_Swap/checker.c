@@ -122,37 +122,86 @@ void	select_operation(char *operation, t_stack *a, t_stack *b)
 		rotate(a);
 		rotate(b);
 	}
+	if (ft_strcmp(operation, "rra") == 0)
+		reverse_rotate(a);
+	if (ft_strcmp(operation, "rrb") == 0)
+		reverse_rotate(b);
+	if (ft_strcmp(operation, "rrr") == 0)
+	{
+		reverse_rotate(a);
+		reverse_rotate(b);
+	}
 }
-int 	checker(int amount, char *argv[])
-{
-	t_stack		*a;
-	t_stack		*b;
 
+int		read_arguments(t_stack *a, int amount, char *argv[])
+{
 	int 		i;
 	int 		j;
 
 	i = 0;
-	a = stack_malloc(amount);
-	b = stack_malloc(amount);
-	while (i < amount)
+	while (amount)
 	{
-		if (ft_atopi(argv[i + 1]) == NULL)
+		if (ft_atopi(argv[amount]) == NULL)
 			return (-1);
-		a->data[i] = *ft_atopi(argv[i + 1]);
+		a->data[i] = *ft_atopi(argv[amount]);
 		a->size++;
 		j = -1;
 		while (++j < i)
 			if (a->data[j] == a->data[i])
 				return (-1);
+		amount--;
 		i++;
 	}
 	return (2);
+}
+
+int 	is_sorted_stack(t_stack *a, t_stack *b)
+{
+	int		i;
+
+	if (b->size)
+		return (0);
+	i = a->size - 1;
+	while(i > 0)
+	{
+		if (a->data[i] > a->data[i - 1])
+			return (0);
+		i--;
+	}
+	return (1);
+}
+
+int 	checker(int amount, char *argv[])
+{
+	t_stack		*a;
+	t_stack		*b;
+	int 		rtn;
+	char 		*operation;
+
+	a = stack_malloc(amount);
+	b = stack_malloc(amount);
+	if ((rtn = read_arguments(a, amount, &*argv)) == -1)
+		return (rtn);
+	while (!get_next_line(0, &operation))
+	{
+		if (ft_strcmp(operation, "\n"))
+			select_operation(operation, a, b);
+		else
+			return (1);
+		free(operation);
+	}
+	print_stack(a);
+	//swap(a);
+	//print_stack(a);
+	return (rtn);
 }
 
 int 	main(int argc, char *argv[])
 {
 	int 	rtn;
 
+	if (argc == 1)
+		return (0);
 	rtn = checker(argc - 1, &*argv);
 	if (rtn == -1)
 		write(2, "Error\n", 6);

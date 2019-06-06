@@ -17,7 +17,7 @@ char	*ft_sizedup(const char *s, size_t n)
 	unsigned int	i;
 	char			*res;
 
-	if ((res = (char*)malloc(sizeof(*res) * (n + 1))))
+	if ((res = ft_strnew(n)))
 	{
 		i = -1;
 		while (*s && ++i < n)

@@ -67,6 +67,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnequ.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnequ.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnstr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strposchr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strrchr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strrchr.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strrev.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strrev.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strsplit.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strsplit.c.o"
@@ -78,6 +79,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_toupper.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_toupper.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_uitoa.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_uitoa.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

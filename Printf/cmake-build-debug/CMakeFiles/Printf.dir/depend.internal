@@ -42,9 +42,6 @@ CMakeFiles/Printf.dir/handler_f.c.o
  /Users/cheller/Desktop/home_space/Printf/handler_f.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_o.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
- /Users/cheller/Desktop/home_space/Printf/handler_o.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_p.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_p.c
@@ -62,21 +59,21 @@ CMakeFiles/Printf.dir/handler_unicode.c.o
  /Users/cheller/Desktop/home_space/Printf/handler_unicode.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o
- /Users/cheller/Desktop/01.05version/Printf/ft_printf.h
- /Users/cheller/Desktop/01.05version/Printf/libft/libft.h
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_x.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x_big.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_x_big.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/hex.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/hex.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/hex_big_staff.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
+ /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/hex_big_staff.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/hex_staff.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/hex_staff.c

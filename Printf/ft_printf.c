@@ -176,3 +176,8 @@ int		ft_printf(const char *format, ...)
 	return (common_length);
 }
 
+int 	main()
+{
+	ft_printf("%x\n", -42);
+	printf("%x", -42);
+}

@@ -80,6 +80,8 @@ add_executable(Push_Swap
         libft/ft_ulitoa.c
         libft/libft.h
 		libft/ft_atopi.c
+		libft/get_next_line.c
+		libft/ft_strposchr.c
         checker.c
         push_swap.c
         push_swap.h)
