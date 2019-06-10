@@ -10,11 +10,11 @@ long 	*ft_atopi(const char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] == '\v'
+	/*while (str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] == '\v'
 		   || str[i] == '\f' || str[i] == ' ')
-		i++;
+		i++;*/
 	sign = (str[i] == '-') ? -1 : 1;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-'/* || str[i] == '+'*/)
 		i++;
 	while (str[i])
 	{

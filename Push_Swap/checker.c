@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	swap(t_stack *stack)
 {
@@ -33,20 +34,34 @@ void	push(t_stack *in, t_stack *out)
 	}
 }
 
-void	print_stack(t_stack *stack)
+void	print_stack(t_stack *a, t_stack *b)
 {
 	int i;
-	i = stack->size;
+	int size_a;
+	int size_b;
 
-	//printf("size %d\n", stack->size);
+	i = (a->size > b->size) ? a->size : b->size;
+	size_a = a->size;
+	size_b = b->size;
 	while (--i >= 0)
 	{
-		printf("%d\n", stack->data[i]);
-		/*write(1, stack->data[i], 1);
-		write(1, "\n", 1);*/
+
+		if (size_a == i + 1)
+		{
+			size_a--;
+			printf("%d\t", a->data[i]);
+		}
+		else
+			printf(" \t");
+		if (size_b == i + 1)
+		{
+			size_b--;
+			printf("%d\n", b->data[i]);
+		}
+		else
+			printf(" \n");
 	}
-	printf("_\na\n");
-	//write(1, "-\na\n", 4);
+	printf("_\t_\na\tb\n");
 }
 void	rotate(t_stack *stack)
 {
@@ -74,18 +89,16 @@ void	reverse_rotate(t_stack *stack)
 	int tmp;
 
 	i = stack->size - 1;
-	if (stack->size < 2)
+	if (stack->size < 1)
 		return ;
 	tmp = stack->data[i - 1];
-	while (i < stack->size - 2)
+	while (i > 0)
 	{
 		stack->data[i - 1] = stack->data[stack->size - 1];
 		stack->data[stack->size - 1] = tmp;
 		tmp = stack->data[i - 2];
 		i--;
 	}
-	stack->data[i - 1] = stack->data[stack->size - 1];
-	stack->data[stack->size - 1] = tmp;
 }
 
 t_stack	*stack_malloc(int amount)
@@ -93,44 +106,51 @@ t_stack	*stack_malloc(int amount)
 	t_stack	*stack;
 
 	stack = (t_stack*)ft_memalloc(sizeof(t_stack));
-	stack->data = ft_memalloc(amount);
+	stack->data = ft_memalloc(amount * sizeof(int));
 	stack->size = 0;
 	return (stack);
 }
 
-void	select_operation(char *operation, t_stack *a, t_stack *b)
+int		select_operation(char *operation, t_stack *a, t_stack *b)
 {
 	if (ft_strcmp(operation, "sa") == 0)
 		swap(a);
-	if (ft_strcmp(operation, "sb") == 0)
+	else if (ft_strcmp(operation, "sb") == 0)
 		swap(b);
-	if (ft_strcmp(operation, "ss") == 0)
+	else if (ft_strcmp(operation, "ss") == 0)
 	{
 		swap(a);
 		swap(b);
 	}
-	if (ft_strcmp(operation, "pa") == 0)
+	else if (ft_strcmp(operation, "pa") == 0)
 		push(a, b);
-	if (ft_strcmp(operation, "pb") == 0)
+	else if (ft_strcmp(operation, "pb") == 0)
 		push(b, a);
-	if (ft_strcmp(operation, "ra") == 0)
+	else if (ft_strcmp(operation, "ra") == 0)
 		rotate(a);
-	if (ft_strcmp(operation, "rb") == 0)
+	else if (ft_strcmp(operation, "rb") == 0)
 		rotate(b);
-	if (ft_strcmp(operation, "rr") == 0)
+	else if (ft_strcmp(operation, "rr") == 0)
 	{
 		rotate(a);
 		rotate(b);
 	}
-	if (ft_strcmp(operation, "rra") == 0)
+	else if (ft_strcmp(operation, "rra") == 0)
 		reverse_rotate(a);
-	if (ft_strcmp(operation, "rrb") == 0)
+	else if (ft_strcmp(operation, "rrb") == 0)
 		reverse_rotate(b);
-	if (ft_strcmp(operation, "rrr") == 0)
+	else if (ft_strcmp(operation, "rrr") == 0)
 	{
 		reverse_rotate(a);
 		reverse_rotate(b);
 	}
+	else
+	{
+		free(operation);
+		return (-1);
+	}
+	free(operation);
+	return (1);
 }
 
 int		read_arguments(t_stack *a, int amount, char *argv[])
@@ -160,15 +180,23 @@ int 	is_sorted_stack(t_stack *a, t_stack *b)
 	int		i;
 
 	if (b->size)
-		return (0);
+		return (1);
 	i = a->size - 1;
 	while(i > 0)
 	{
 		if (a->data[i] > a->data[i - 1])
-			return (0);
+			return (1);
 		i--;
 	}
-	return (1);
+	return (2);
+}
+
+void	free_stack(t_stack *stack)
+{
+	if (!stack)
+		return ;
+	free(stack->data);
+	free(stack);
 }
 
 int 	checker(int amount, char *argv[])
@@ -182,17 +210,24 @@ int 	checker(int amount, char *argv[])
 	b = stack_malloc(amount);
 	if ((rtn = read_arguments(a, amount, &*argv)) == -1)
 		return (rtn);
-	while (!get_next_line(0, &operation))
+	while (get_next_line(0, &operation))
 	{
-		if (ft_strcmp(operation, "\n"))
-			select_operation(operation, a, b);
+		if (ft_strcmp(operation, ""))
+		{
+			if ((select_operation(operation, a, b)) == -1)
+				return (-1);
+			//print_stack(a, b);
+		}
 		else
-			return (1);
-		free(operation);
+		{
+			free(operation);
+			break;
+		}
 	}
-	print_stack(a);
-	//swap(a);
-	//print_stack(a);
+	rtn = is_sorted_stack(a, b);
+	//print_stack(a, b);
+	free_stack(a);
+	free_stack(b);
 	return (rtn);
 }
 
