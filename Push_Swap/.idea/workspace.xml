@@ -153,12 +153,6 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checker.c" beforeDir="false" afterPath="$PROJECT_DIR$/checker.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/checker.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_atopi.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_atopi.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -176,8 +170,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/checker.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="241" column="5" lean-forward="true" selection-start-line="241" selection-start-column="5" selection-end-line="241" selection-end-column="5" />
+            <state relative-caret-position="587">
+              <caret line="244" column="17" lean-forward="true" selection-start-line="243" selection-start-column="28" selection-end-line="244" selection-end-column="17" />
               <folding>
                 <element signature="e#892#914#0" expanded="true" />
               </folding>
@@ -333,16 +327,15 @@
       <workItem from="1559738050776" duration="1784000" />
       <workItem from="1559744941575" duration="11907000" />
       <workItem from="1559813522134" duration="6491000" />
-      <workItem from="1560158662248" duration="9614000" />
+      <workItem from="1560158662248" duration="9831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30736000" />
+    <option name="totallyTimeSpent" value="30953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="716" y="48" width="1757" height="1263" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22390671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -565,8 +558,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/checker.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="241" column="5" lean-forward="true" selection-start-line="241" selection-start-column="5" selection-end-line="241" selection-end-column="5" />
+        <state relative-caret-position="587">
+          <caret line="244" column="17" lean-forward="true" selection-start-line="243" selection-start-column="28" selection-end-line="244" selection-end-column="17" />
           <folding>
             <element signature="e#892#914#0" expanded="true" />
           </folding>

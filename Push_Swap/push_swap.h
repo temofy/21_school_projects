@@ -18,9 +18,12 @@
 
 typedef struct	s_stack
 {
-	int 		*data;
+	int			*data;
 	size_t		size;
 }				t_stack;
 
-#endif
+t_stack			*stack_malloc(int amount);
+int				is_sorted_stack(t_stack *a, t_stack *b);
+void			free_stack(t_stack *stack);
 
+#endif
