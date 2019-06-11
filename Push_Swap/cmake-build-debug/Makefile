@@ -123,32 +123,32 @@ Push_Swap/fast:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/build
 .PHONY : Push_Swap/fast
 
-checker.o: checker.c.o
+instructions.o: instructions.c.o
 
-.PHONY : checker.o
+.PHONY : instructions.o
 
 # target to build an object file
-checker.c.o:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.o
-.PHONY : checker.c.o
+instructions.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instructions.c.o
+.PHONY : instructions.c.o
 
-checker.i: checker.c.i
+instructions.i: instructions.c.i
 
-.PHONY : checker.i
+.PHONY : instructions.i
 
 # target to preprocess a source file
-checker.c.i:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.i
-.PHONY : checker.c.i
+instructions.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instructions.c.i
+.PHONY : instructions.c.i
 
-checker.s: checker.c.s
+instructions.s: instructions.c.s
 
-.PHONY : checker.s
+.PHONY : instructions.s
 
 # target to generate assembly for a file
-checker.c.s:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.s
-.PHONY : checker.c.s
+instructions.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instructions.c.s
+.PHONY : instructions.c.s
 
 libft/ft_abs.o: libft/ft_abs.c.o
 
@@ -2202,6 +2202,33 @@ push_swap.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.s
 .PHONY : push_swap.c.s
 
+stack_manipulations.o: stack_manipulations.c.o
+
+.PHONY : stack_manipulations.o
+
+# target to build an object file
+stack_manipulations.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/stack_manipulations.c.o
+.PHONY : stack_manipulations.c.o
+
+stack_manipulations.i: stack_manipulations.c.i
+
+.PHONY : stack_manipulations.i
+
+# target to preprocess a source file
+stack_manipulations.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/stack_manipulations.c.i
+.PHONY : stack_manipulations.c.i
+
+stack_manipulations.s: stack_manipulations.c.s
+
+.PHONY : stack_manipulations.s
+
+# target to generate assembly for a file
+stack_manipulations.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/stack_manipulations.c.s
+.PHONY : stack_manipulations.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2211,9 +2238,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Push_Swap"
-	@echo "... checker.o"
-	@echo "... checker.i"
-	@echo "... checker.s"
+	@echo "... instructions.o"
+	@echo "... instructions.i"
+	@echo "... instructions.s"
 	@echo "... libft/ft_abs.o"
 	@echo "... libft/ft_abs.i"
 	@echo "... libft/ft_abs.s"
@@ -2442,6 +2469,9 @@ help:
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"
+	@echo "... stack_manipulations.o"
+	@echo "... stack_manipulations.i"
+	@echo "... stack_manipulations.s"
 .PHONY : help
 
 

@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/checker.c">
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/instructions.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_abs.c">
@@ -317,6 +317,9 @@
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.h">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/stack_manipulations.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/CMakeLists.txt">

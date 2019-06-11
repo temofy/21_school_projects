@@ -25,5 +25,13 @@ typedef struct	s_stack
 t_stack			*stack_malloc(int amount);
 int				is_sorted_stack(t_stack *a, t_stack *b);
 void			free_stack(t_stack *stack);
+void			reverse_rotate(t_stack *stack);
+void			rotate(t_stack *stack);
+void			push(t_stack *in, t_stack *out);
+void			swap(t_stack *stack);
+int				select_operation(char *operation, t_stack *a, t_stack *b);
+int				read_arguments(t_stack *a, int amount, char *argv[]);
+
+void	print_stack(t_stack *a, t_stack *b);
 
 #endif
