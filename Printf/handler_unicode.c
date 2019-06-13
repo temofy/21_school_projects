@@ -1,101 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handler_unicode.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/13 13:55:51 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/13 13:55:52 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-char	*encode_one_byte(t_unicode *unicode)
+char	*handler_first_byte(char *wchar, t_unicode *unicode, int byte)
 {
-	char	*wchar;
+	char	*bin;
+	char	*carry;
 
-	wchar = ft_strnew(1);
-	*wchar = unicode->chr;
-	return (wchar);
-}
-
-char	*encode_two_bytes(t_unicode *unicode)
-{
-	char	*wchar;
-	char 	*bin;
-	char 	*carry;
-
-	wchar = ft_strnew(2);
 	bin = present_int_as_bin(unicode->b[0]);
 	carry = ft_strsub(bin, 0, 2);
 	bin = ft_strncpy(bin, "10", 2);
-	wchar[1] = bin_as_dec(bin);
-	free(bin);
-	bin = present_int_as_bin(unicode->b[1]);
-	bin = ft_strncpy(bin + 6, carry, 2);
-	bin = bin - 6;
-	bin = ft_strncpy(bin, "110", 3);
-	wchar[0] = bin_as_dec(bin);
-	return (wchar);
-}
-
-char	*encode_three_bytes(t_unicode *unicode)
-{
-	char	*wchar;
-	char 	*bin;
-	char 	*carry;
-	char 	*carry1;
-
-	wchar = ft_strnew(3);
-	bin = present_int_as_bin(unicode->b[0]);
-	carry = ft_strsub(bin, 0, 2);
-	bin = ft_strncpy(bin, "10", 2);
-	wchar[2] = bin_as_dec(bin);
+	wchar[byte] = bin_as_dec(bin);
 	ft_strdel(&bin);
-	//
-	bin = present_int_as_bin(unicode->b[1]);
-	carry1 = ft_strsub(bin, 0, 4);
-	unicode->b[1] = unicode->b[1] << 2;
-	bin = present_int_as_bin(unicode->b[1]);
-	bin = ft_strncpy(bin + 6, carry, 2);
-	bin = bin - 6;
-	bin = ft_strncpy(bin, "10", 2);
-	wchar[1] = bin_as_dec(bin);
-	//
-	bin = present_int_as_bin(unicode->b[2]);
-	bin = ft_strncpy(bin + 4, carry1, 4);
-	bin = bin - 4;
-	bin = ft_strncpy(bin, "1110" , 4);
-	wchar[0] = bin_as_dec(bin);
-	free(bin);
-	return (wchar);
+	return (carry);
 }
 
-char	*encode_four_bytes(t_unicode *unicode)
+void	handler_sec_byte(char *wchar, t_unicode *uni, int byte, char *carry)
 {
-	char	*wchar;
-	char 	*bin;
-	char 	*carry;
-	char 	*carry1;
+	char	*bin;
 
-	wchar = ft_strnew(3);
-	bin = present_int_as_bin(unicode->b[0]);
-	carry = ft_strsub(bin, 0, 2);
-	bin = ft_strncpy(bin, "10", 2);
-	wchar[3] = bin_as_dec(bin);
-	ft_strdel(&bin);
-	//
-	bin = present_int_as_bin(unicode->b[1]);
-	carry1 = ft_strsub(bin, 0, 4);
-	unicode->b[1] = unicode->b[1] << 2;
-	bin = present_int_as_bin(unicode->b[1]);
+	bin = present_int_as_bin(uni->b[1]);
 	bin = ft_strncpy(bin + 6, carry, 2);
 	bin = bin - 6;
-	bin = ft_strncpy(bin, "10", 2);
-	wchar[2] = bin_as_dec(bin);
-	//
-	bin = present_int_as_bin(unicode->b[2]);
-	bin = ft_strncpy(bin + 4, carry1, 4);
+	if (byte == 0)
+		bin = ft_strncpy(bin, "110", 3);
+	else
+		bin = ft_strncpy(bin, "10", 2);
+	wchar[byte] = bin_as_dec(bin);
+	ft_strdel(&bin);
+	ft_strdel(&carry);
+}
+
+void	handler_third_byte(char *wchar, t_unicode *uni, int byte, char *carry)
+{
+	char	*bin;
+
+	bin = present_int_as_bin(uni->b[2]);
+	bin = ft_strncpy(bin + 4, carry, 4);
 	bin = bin - 4;
-	bin = ft_strncpy(bin, "1110" , 4);
-	wchar[1] = bin_as_dec(bin);
-	free(bin);
-	//
-	bin = present_int_as_bin(unicode->b[2]);
+	if (byte == 0)
+		bin = ft_strncpy(bin, "1110", 4);
+	else
+		bin = ft_strncpy(bin, "11110", 5);
+	wchar[byte] = bin_as_dec(bin);
+	ft_strdel(&bin);
+	ft_strdel(&carry);
+}
+
+void	handler_fourth_byte(char *wchar, t_unicode *uni, int byte)
+{
+	char	*bin;
+	char	*carry;
+
+	bin = present_int_as_bin(uni->b[2]);
 	carry = ft_strsub(bin, 3, 3);
 	bin = ft_strncpy(bin + 5, carry, 3);
 	bin = bin - 5;
-	bin = ft_strncpy(bin, "11110" , 5);
-	wchar[0] = bin_as_dec(bin);
+	bin = ft_strncpy(bin, "11110", 5);
+	wchar[byte] = bin_as_dec(bin);
+	ft_strdel(&bin);
+	ft_strdel(&carry);
+}
+
+char	*encode_bytes(t_unicode *unicode, int bytes)
+{
+	char	*wchar;
+	char	*bin;
+	char	*carry;
+	char	*carry1;
+
+	wchar = ft_strnew(bytes--);
+	carry = handler_first_byte(wchar, unicode, bytes);
+	if (bytes > 1)
+	{
+		bin = present_int_as_bin(unicode->b[1]);
+		carry1 = ft_strsub(bin, 0, 4);
+		ft_strdel(&bin);
+		unicode->b[1] = unicode->b[1] << 2;
+	}
+	else
+		unicode->b[1] = unicode->b[1] << 2;
+	handler_sec_byte(wchar, unicode, --bytes, carry);
+	if (bytes > 0)
+		handler_third_byte(wchar, unicode, --bytes, carry1);
+	if (bytes > 0)
+		handler_fourth_byte(wchar, unicode, --bytes);
 	return (wchar);
 }

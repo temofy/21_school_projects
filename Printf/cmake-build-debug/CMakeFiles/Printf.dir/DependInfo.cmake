@@ -101,6 +101,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/long_arithmetic.c.o"
   "/Users/cheller/Desktop/home_space/Printf/oct_staff.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/oct_staff.c.o"
   "/Users/cheller/Desktop/home_space/Printf/overflow.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/overflow.c.o"
+  "/Users/cheller/Desktop/home_space/Printf/remaining_handlers.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/remaining_handlers.c.o"
   "/Users/cheller/Desktop/home_space/Printf/represents.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/represents.c.o"
   "/Users/cheller/Desktop/home_space/Printf/rounding.c" "/Users/cheller/Desktop/home_space/Printf/cmake-build-debug/CMakeFiles/Printf.dir/rounding.c.o"
   )

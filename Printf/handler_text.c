@@ -63,13 +63,16 @@ char	*get_utf8_str(t_unicode *unicode)
 	char	*wchar;
 
 	if (unicode->chr <= 127)
-		wchar = encode_one_byte(unicode);
+	{
+		wchar = ft_strnew(1);
+		*wchar = unicode->chr;
+	}
 	else if (unicode->chr <= 2047)
-		wchar = encode_two_bytes(unicode);
+		wchar = encode_bytes(unicode, 2);
 	else if (unicode->chr <= 65535)
-		wchar = encode_three_bytes(unicode);
+		wchar = encode_bytes(unicode, 3);
 	else if (unicode->chr <= 1114111)
-		wchar = encode_four_bytes(unicode);
+		wchar = encode_bytes(unicode, 4);
 	return(wchar);
 }
 

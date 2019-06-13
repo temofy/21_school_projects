@@ -2742,6 +2742,33 @@ overflow.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/overflow.c.s
 .PHONY : overflow.c.s
 
+remaining_handlers.o: remaining_handlers.c.o
+
+.PHONY : remaining_handlers.o
+
+# target to build an object file
+remaining_handlers.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/remaining_handlers.c.o
+.PHONY : remaining_handlers.c.o
+
+remaining_handlers.i: remaining_handlers.c.i
+
+.PHONY : remaining_handlers.i
+
+# target to preprocess a source file
+remaining_handlers.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/remaining_handlers.c.i
+.PHONY : remaining_handlers.c.i
+
+remaining_handlers.s: remaining_handlers.c.s
+
+.PHONY : remaining_handlers.s
+
+# target to generate assembly for a file
+remaining_handlers.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/remaining_handlers.c.s
+.PHONY : remaining_handlers.c.s
+
 represents.o: represents.c.o
 
 .PHONY : represents.o
@@ -3096,6 +3123,9 @@ help:
 	@echo "... overflow.o"
 	@echo "... overflow.i"
 	@echo "... overflow.s"
+	@echo "... remaining_handlers.o"
+	@echo "... remaining_handlers.i"
+	@echo "... remaining_handlers.s"
 	@echo "... represents.o"
 	@echo "... represents.i"
 	@echo "... represents.s"

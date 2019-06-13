@@ -308,6 +308,10 @@ CMakeFiles/Printf.dir/overflow.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/overflow.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/overflow.c.o: ../overflow.c
 
+CMakeFiles/Printf.dir/remaining_handlers.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/remaining_handlers.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/remaining_handlers.c.o: ../remaining_handlers.c
+
 CMakeFiles/Printf.dir/represents.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/represents.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/represents.c.o: ../represents.c

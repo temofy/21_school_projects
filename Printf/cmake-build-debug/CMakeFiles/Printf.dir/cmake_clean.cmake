@@ -90,6 +90,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/hex_staff.c.o"
   "CMakeFiles/Printf.dir/long_arithmetic.c.o"
   "CMakeFiles/Printf.dir/oct_staff.c.o"
+  "CMakeFiles/Printf.dir/remaining_handlers.c.o"
   "CMakeFiles/Printf.dir/represents.c.o"
   "CMakeFiles/Printf.dir/additional_func.c.o"
   "CMakeFiles/Printf.dir/rounding.c.o"

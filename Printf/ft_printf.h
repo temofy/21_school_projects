@@ -102,6 +102,7 @@ char			*handler_s(va_list arg, t_formatting *e_sequence);
 char			*handler_c(va_list arg, t_formatting *e_sequence);
 char 			*handler_chr_unicode(va_list arg, t_formatting *e_seq);
 char 			*handler_str_unicode(va_list arg, t_formatting *e_seq);
+char 			*encode_bytes(t_unicode *unicode, int bytes);
 char			*handler_b(va_list arg, t_formatting *e_sequence);
 char			*bin_total(int n);
 char			*bin_total_l(long n);
@@ -160,9 +161,7 @@ char			*hex_big_else(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*handler_x_big(va_list arg, t_formatting *e_sequence);
 char 			*bin_as_hex(char *bin);
 
-char	*encode_one_byte(t_unicode *unicode);
-char	*encode_two_bytes(t_unicode *unicode);
-char	*encode_three_bytes(t_unicode *unicode);
-char	*encode_four_bytes(t_unicode *unicode);
+char	*handler_percent(t_formatting *e_seq);
+char	*undefined_behavior(va_list arg, t_formatting *e_seq);
 
 #endif

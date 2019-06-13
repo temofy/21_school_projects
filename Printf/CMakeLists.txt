@@ -100,4 +100,5 @@ add_executable(Printf
         hex_staff.c
         long_arithmetic.c
         oct_staff.c
+        remaining_handlers.c
         represents.c additional_func.c rounding.c overflow.c libft/ft_strnew_set.c bin_staff.c handler_unicode.c libft/ft_intlen.c)

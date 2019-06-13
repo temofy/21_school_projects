@@ -6,7 +6,7 @@
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:49:48 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/06/04 16:03:45 by cheller          ###   ########.fr       */
+/*   Updated: 2019/06/13 11:07:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
-
-int		handler_length(int length, int width, int precision)
-{
-	if (length > width && length > precision)
-		return (0);
-	else if (length < width && length >= precision)
-		return (width - length);
-	else if (length >= width && length < precision)
-		return (precision - length);
-	else if (length < width && length < precision)
-	{
-		if (width > precision)
-			return (width - length);
-		else
-			return (precision - length);
-	}
-	return (0);
-}
 
 t_formatting	*scanning_sequence(const char *format)
 {
@@ -51,75 +33,62 @@ t_formatting	*scanning_sequence(const char *format)
 	return (e_sequence);
 }
 
-char	*handler_percent(t_formatting *e_seq)
+char 	*find_spec_add(const char *format, va_list arg, t_formatting *e_seq, int i)
 {
-	char	*str;
-	int		str_len;
-
-	str_len = handler_length(1, e_seq->width, 0);
-	str = ft_strnew(str_len);
-	ft_memset(str, ' ', str_len);
-	e_seq->common_length += str_len + 1;
-	if (e_seq->flags->minus)
-		str = ft_strfjoin("%", str, 2);
-	else
-		{
-		if (e_seq->flags->zero)
-			str = ft_memset(str, '0', str_len);
-		str = ft_strfjoin(str, "%", 1);
-	}
-	return (str);
+	if (format[i] == 's')
+		return (handler_s(arg, e_seq));
+	else if (format[i] == 'S')
+		return (handler_str_unicode(arg, e_seq));
+	else if (format[i] == 'p')
+		return (handler_p(arg, e_seq));
+	else if (format[i] == 'u')
+		return (handler_u(arg, e_seq));
+	else if (format[i] == 'o')
+		return(handler_o(arg, e_seq));
+	else if (format[i] == 'x')
+		return(handler_x(arg, e_seq));
+	else if (format[i] == 'X')
+		return(handler_x_big(arg, e_seq));
+	else if (format[i] == 'Z')
+		return(undefined_behavior(arg, e_seq));
+	else if (format[i] == '%')
+		return (handler_percent(e_seq));
+	return (NULL);
 }
 
-char 	*undefined_behavior(va_list arg, t_formatting *e_seq)
-{
-	char	*string;
-	if (e_seq->specifier == 'Z')
-	{
-		string = ft_strnew(1);
-		*string = 'Z';
-	}
-	e_seq->common_length = ft_strlen(string);
-	return (string);
-}
-
-char	*find_specifier(const char *format, va_list arg, t_formatting *e_sequence)
+char	*find_specifier(const char *format, va_list arg, t_formatting *e_seq)
 {
 	int		i;
+	char 	*str;
 
 	i = 0;
 	while (format[i++])
 	{
 		if (format[i] == 'd' || format[i] == 'i' )
-			return (handler_d(arg, e_sequence));
+			return (handler_d(arg, e_seq));
 		else if (format[i]== 'f')
-			return (handler_f(arg, e_sequence));
+			return (handler_f(arg, e_seq));
         else if (format[i]== 'b')
-            return (handler_b(arg, e_sequence));
+            return (handler_b(arg, e_seq));
 		else if (format[i] == 'c')
-			return (handler_c(arg, e_sequence));
+			return (handler_c(arg, e_seq));
 		else if (format[i] == 'C')
-			return (handler_chr_unicode(arg, e_sequence));
-		else if (format[i] == 's')
-			return (handler_s(arg, e_sequence));
-		else if (format[i] == 'S')
-			return (handler_str_unicode(arg, e_sequence));
-		else if (format[i] == 'p')
-			return (handler_p(arg, e_sequence));
-		else if (format[i] == 'u')
-			return (handler_u(arg, e_sequence));
-		else if (format[i] == 'o')
-			return(handler_o(arg, e_sequence));
-		else if (format[i] == 'x')
-			return(handler_x(arg, e_sequence));
-		else if (format[i] == 'X')
-			return(handler_x_big(arg, e_sequence));
-		else if (format[i] == 'Z')
-			return(undefined_behavior(arg, e_sequence));
-		else if (format[i] == '%')
-			return (handler_percent(e_sequence));
+			return (handler_chr_unicode(arg, e_seq));
+		else
+		{
+			str = find_spec_add(format, arg, e_seq, i);
+			if (str != NULL)
+				return (str);
+		}
 	}
 	return (ft_strnew(0));
+}
+
+void	found_spec(char *format, char *str, va_list arg)
+{
+	char			*substr;
+	t_formatting	*e_seq;
+
 }
 
 int		ft_printf(const char *format, ...)
@@ -178,6 +147,15 @@ int		ft_printf(const char *format, ...)
 
 int 	main()
 {
-	ft_printf("%x\n", -42);
-	printf("%x", -42);
+	ft_printf("a%Sc%S\n", L"A", L"H");
+	ft_printf("a%Sc%S\n", L"我", L"猫");
+	ft_printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S\n",
+	L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
+	L"Ν ν", L"Ξ ξ", L"Ο ο", L"Π π", L"Ρ ρ", L"Σ σ", L"Τ τ", L"Υ υ", L"Φ φ", L"Χ χ", L"Ψ ψ", L"Ω ω", L"");
+	ft_printf("a%S", L"\x50\n");
+	ft_printf("a%S\n", L"\xF0\x90\x8D\x86");
+	printf("a%S\n", L"\xF0\x90\x8D\x86");
+	ft_printf("% h");
+	//ft_printf("%x\n", -42);
+	//printf("%x", -42);
 }
