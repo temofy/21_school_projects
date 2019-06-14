@@ -14,9 +14,9 @@
 
 char	*handler_sequence_s(char *str_arg, char **str, t_formatting *e_seq)
 {
-	int 	length_arg;
-	int 	length_str;
-	char 	*tmp;
+	int		length_arg;
+	int		length_str;
+	char	*tmp;
 
 	length_arg = ft_strlen(str_arg);
 	if (e_seq->precision != -1 && e_seq->precision < length_arg)
@@ -50,7 +50,7 @@ char	*handler_s(va_list arg, t_formatting *e_seq)
 	if (str_arg == NULL)
 		str_arg = ft_strdup("(null)");
 	else
- 	{
+	{
 		len_arg = ft_strlen(str_arg);
 		str_arg = ft_strcpy(ft_strnew(len_arg), str_arg);
 	}
@@ -73,20 +73,21 @@ char	*get_utf8_str(t_unicode *unicode)
 		wchar = encode_bytes(unicode, 3);
 	else if (unicode->chr <= 1114111)
 		wchar = encode_bytes(unicode, 4);
-	return(wchar);
+	return (wchar);
 }
 
-char 	*combine_str_unicode(unsigned *str_unicode, t_unicode **unicode)
+char	*combine_str_unicode(unsigned *str_unicode, t_unicode **unicode)
 {
-	int 		i;
-	int 		len;
-	char 		*str;
+	int		i;
+	int		len;
+	char	*str;
 
 	i = -1;
-	*unicode = (t_unicode *) malloc(sizeof(t_unicode));
+	*unicode = (t_unicode *)malloc(sizeof(t_unicode));
 	len = ft_intlen(str_unicode);
 	str = ft_strnew(0);
-	while (++i < len) {
+	while (++i < len)
+	{
 		(*unicode)->chr = str_unicode[i];
 		str = ft_strfjoin(str, get_utf8_str(*unicode), 0);
 	}
@@ -94,10 +95,10 @@ char 	*combine_str_unicode(unsigned *str_unicode, t_unicode **unicode)
 	return (str);
 }
 
-char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
+char	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
 {
-	t_unicode	*unicode;
-	char 		*str;
+	t_unicode		*unicode;
+	char			*str;
 
 	unicode = (t_unicode*)malloc(sizeof(t_unicode));
 	unicode->chr = va_arg(arg, unsigned int);
@@ -106,14 +107,12 @@ char 	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
 	return (str);
 }
 
-char 	*handler_str_unicode(va_list arg, t_formatting *e_seq)
+char	*handler_str_unicode(va_list arg, t_formatting *e_seq)
 {
 	unsigned	*str_unicode;
 	t_unicode	*unicode;
-
-	char 		*str;
-	char 		*spaces;
-
+	char		*str;
+	char		*spaces;
 
 	str_unicode = va_arg(arg, unsigned int*);
 	if (str_unicode == NULL)

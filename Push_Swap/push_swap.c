@@ -110,6 +110,110 @@ t_sorted_seq	first_cleansing(t_stack *a, t_stack *b, t_sorted_seq seq)
 {
 
 }
+
+int 	find_min_el(t_stack *stack)
+{
+	int min;
+	int i;
+	int index;
+
+	i = 0;
+	index = 0;
+	min = stack->data[0];
+	while (++i < stack->size)
+	{
+		if (min > stack->data[i])
+		{
+			index = i;
+			min = stack->data[i];
+		}
+	}
+	return (index);
+}
+
+int 	find_max_el(t_stack *stack)
+{
+	int max;
+	int i;
+	int index;
+
+	i = 0;
+	index = 0;
+	max = stack->data[0];
+	while (++i < stack->size)
+	{
+		if (max < stack->data[i])
+		{
+			index = i;
+			max = stack->data[i];
+		}
+	}
+	return (index);
+}
+
+void	pulling_needful_el(t_stack *stack, int index)
+{
+
+}
+
+void	put_min_or_max_el(t_stack *stack)
+{
+	int	min;
+	int max;
+	int i;
+	int remoteness;
+	int start;
+	int end;
+	int steps = 0;
+
+	end = 0;
+	start = 0;
+	i = stack->size - 1;
+	min = find_min_el(stack);
+	max = find_max_el(stack);
+	printf("min: %i\nmax: %i\n", min, max);
+	remoteness = 0;
+	//while (i > -1)
+	//{
+		if (i == min || i == max)
+			return ;
+		else
+		{
+			if (ft_iseven(stack->size))
+			{
+				if (min < stack->size / 2 || max < stack->size / 2)
+				{
+					steps += (min < max) ? min : max;
+					steps += 1;
+					printf("Шагов: %i\n", steps);
+				}
+				if (min > stack->size / 2 || max > stack->size / 2)
+				{
+					steps = stack->size - 1;
+					steps -= (min > max) ? min : max;
+					printf("Шагов: %i\n", steps);
+				}
+			}
+			/*while (remoteness != (stack->size) / 2)
+			{
+				remoteness++;
+				if (stack->data[remoteness - 1] == min || stack->data[remoteness - 1 ] == max)
+				{
+
+				}
+				if (stack->data[i - remoteness] == min || stack->data[i - remoteness] == max)
+				{
+
+				}
+			}*/
+		}
+	//}
+}
+
+void	sort_stack(t_stack *a, t_stack *b)
+{
+
+}
 void	initialize_start(t_stack *a, t_stack *b)
 {
 	t_sorted_seq	seq;
@@ -120,9 +224,10 @@ void	initialize_start(t_stack *a, t_stack *b)
 	i = a->size;
 	boundaries = analyze_boundaries(a);
 	printf("min: %d\nmax: %d\nmiddle: %d\n", boundaries.min, boundaries.max, boundaries.middle);
-	while(--i >= 2)
+	while(--i >= 3)
 	{
-		if (a->data[i] != boundaries.min && a->data[i] != boundaries.middle)
+		if (a->data[i] != boundaries.min && a->data[i] != boundaries.middle
+			&& a->data[i] != boundaries.max)
 		{
 			push(b, a);
 			write(1, "pb\n", 3);
@@ -134,6 +239,12 @@ void	initialize_start(t_stack *a, t_stack *b)
 			i++;
 		}
 	}
+	put_min_or_max_el(b);
+	/*if(a->data[1] == boundaries.middle)
+	{
+		swap(a);
+		write(1, "sa\n", 3);
+	}*/
 
 	//seq = analyze_sorted_seq(a);
 	//printf("min index: %d\nmin: %d\nmax index: %d\nmax: %d\namount: %d\n", seq.i_min, seq.min, seq.i_max, seq.max, seq.amount_ordered);
@@ -167,7 +278,7 @@ int 	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		instructions = ft_strsplit(argv[1], ' ');
-		rtn = push_swap(5, instructions - 1);
+		rtn = push_swap(9, instructions - 1);
 	}
 	else
 		rtn = push_swap(argc - 1, &*argv);

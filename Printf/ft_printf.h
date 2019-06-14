@@ -116,6 +116,8 @@ char			*present_int_as_bin(unsigned char number);
 unsigned long	bin_as_dec(char *bin);
 void			free_str_fp(t_str_fp **str_fp);
 void			free_fp(t_float **fp);
+void	free_e_sequence(t_formatting **e_seq);
+t_formatting	*scanning_sequence(const char *format);
 char			*get_nbr(t_float *fp, t_formatting *e_seq, char **str, char **sps);
 char			*handler_ambiguity(t_float *fp, char **s, t_formatting *e_seq, char **spaces);
 char			*addition_zeros(char *nbr, int length);
@@ -159,7 +161,7 @@ char			*hex_b_n_z(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*hex_big_while(t_formatting *e_sequence, int *len, char *res);
 char			*hex_big_else(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*handler_x_big(va_list arg, t_formatting *e_sequence);
-char 			*bin_as_hex(char *bin);
+char			*find_specifier(const char *format, va_list arg, t_formatting *e_seq);
 
 char	*handler_percent(t_formatting *e_seq);
 char	*undefined_behavior(va_list arg, t_formatting *e_seq);

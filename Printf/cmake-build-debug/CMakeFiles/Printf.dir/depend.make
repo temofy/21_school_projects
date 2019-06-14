@@ -46,6 +46,10 @@ CMakeFiles/Printf.dir/handler_p.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_p.c.o: ../handler_p.c
 CMakeFiles/Printf.dir/handler_p.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/handler_specifier.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_specifier.c.o: ../handler_specifier.c
+CMakeFiles/Printf.dir/handler_specifier.c.o: ../libft/libft.h
+
 CMakeFiles/Printf.dir/handler_text.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_text.c.o: ../handler_text.c
 CMakeFiles/Printf.dir/handler_text.c.o: ../libft/libft.h
@@ -299,6 +303,10 @@ CMakeFiles/Printf.dir/libft/ft_ulitoa.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/long_arithmetic.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/long_arithmetic.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/long_arithmetic.c.o: ../long_arithmetic.c
+
+CMakeFiles/Printf.dir/main.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/main.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/main.c.o: ../main.c
 
 CMakeFiles/Printf.dir/oct_staff.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/oct_staff.c.o: ../libft/libft.h

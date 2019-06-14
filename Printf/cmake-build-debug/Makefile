@@ -447,6 +447,33 @@ handler_p.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_p.c.s
 .PHONY : handler_p.c.s
 
+handler_specifier.o: handler_specifier.c.o
+
+.PHONY : handler_specifier.o
+
+# target to build an object file
+handler_specifier.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_specifier.c.o
+.PHONY : handler_specifier.c.o
+
+handler_specifier.i: handler_specifier.c.i
+
+.PHONY : handler_specifier.i
+
+# target to preprocess a source file
+handler_specifier.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_specifier.c.i
+.PHONY : handler_specifier.c.i
+
+handler_specifier.s: handler_specifier.c.s
+
+.PHONY : handler_specifier.s
+
+# target to generate assembly for a file
+handler_specifier.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/handler_specifier.c.s
+.PHONY : handler_specifier.c.s
+
 handler_text.o: handler_text.c.o
 
 .PHONY : handler_text.o
@@ -2688,6 +2715,33 @@ long_arithmetic.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/long_arithmetic.c.s
 .PHONY : long_arithmetic.c.s
 
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/main.c.s
+.PHONY : main.c.s
+
 oct_staff.o: oct_staff.c.o
 
 .PHONY : oct_staff.o
@@ -2868,6 +2922,9 @@ help:
 	@echo "... handler_p.o"
 	@echo "... handler_p.i"
 	@echo "... handler_p.s"
+	@echo "... handler_specifier.o"
+	@echo "... handler_specifier.i"
+	@echo "... handler_specifier.s"
 	@echo "... handler_text.o"
 	@echo "... handler_text.i"
 	@echo "... handler_text.s"
@@ -3117,6 +3174,9 @@ help:
 	@echo "... long_arithmetic.o"
 	@echo "... long_arithmetic.i"
 	@echo "... long_arithmetic.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... oct_staff.o"
 	@echo "... oct_staff.i"
 	@echo "... oct_staff.s"

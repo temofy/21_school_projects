@@ -101,4 +101,6 @@ add_executable(Printf
         long_arithmetic.c
         oct_staff.c
         remaining_handlers.c
+        main.c
+        handler_specifier.c
         represents.c additional_func.c rounding.c overflow.c libft/ft_strnew_set.c bin_staff.c handler_unicode.c libft/ft_intlen.c)

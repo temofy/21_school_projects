@@ -29,3 +29,12 @@ void	free_str_fp(t_str_fp **str_fp)
 	free(*str_fp);
 	*str_fp = NULL;
 }
+
+void	free_e_sequence(t_formatting **e_seq)
+{
+	if (*e_seq)
+	{
+		free((*e_seq)->flags);
+		free(*e_seq);
+	}
+}

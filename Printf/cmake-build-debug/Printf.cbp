@@ -125,6 +125,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/handler_p.c">
 			<Option target="Printf"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/handler_specifier.c">
+			<Option target="Printf"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/handler_text.c">
 			<Option target="Printf"/>
 		</Unit>
@@ -375,6 +378,9 @@
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/long_arithmetic.c">
+			<Option target="Printf"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Printf/main.c">
 			<Option target="Printf"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Printf/oct_staff.c">

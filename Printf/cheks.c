@@ -142,8 +142,8 @@ int			check_length_modifier(const char *format)
 			return (76);
 		if (format[i - 1] == 'j')
 			return (106);
-		/*if (format[i - 1] == 'z')
-			return (122);*/
+		if (format[i - 1] == 'z')
+			return (122);
 	}
 	return (-1);
 }

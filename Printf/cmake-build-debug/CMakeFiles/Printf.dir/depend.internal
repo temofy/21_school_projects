@@ -46,6 +46,10 @@ CMakeFiles/Printf.dir/handler_p.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_p.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/handler_specifier.c.o
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/home_space/Printf/handler_specifier.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_text.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_text.c
@@ -300,6 +304,10 @@ CMakeFiles/Printf.dir/long_arithmetic.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/long_arithmetic.c
+CMakeFiles/Printf.dir/main.c.o
+ /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Desktop/home_space/Printf/main.c
 CMakeFiles/Printf.dir/oct_staff.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h

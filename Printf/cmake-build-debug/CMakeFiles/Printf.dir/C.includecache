@@ -6,19 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Printf/ft_printf.c
+/Users/cheller/Desktop/home_space/Printf/cheks.c
 ft_printf.h
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
-stdio.h
--
-wchar.h
--
-stdlib.h
--
-math.h
--
-locale.h
--
 
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 stdarg.h
