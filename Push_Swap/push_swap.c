@@ -29,6 +29,12 @@ typedef struct	s_boundary_values
 	int 		middle;
 }				t_boundaries;
 
+typedef struct	s_the_nearests
+{
+	int			max[3];
+	int 		max_to_median[3];
+}				t_the_nearests;
+
 t_sorted_seq	analyze_sorted_seq(t_stack *a)
 {
 	t_sorted_seq	seq;
@@ -81,7 +87,7 @@ t_sorted_seq	analyze_sorted_seq(t_stack *a)
 	return (seq);
 }
 
-t_boundaries	analyze_boundaries(t_stack *stack)
+t_boundaries	 analyze_boundaries(t_stack *stack)
 {
 	t_boundaries	boundaries;
 	int 			i;
@@ -156,6 +162,27 @@ void	pulling_needful_el(t_stack *stack, int index)
 
 }
 
+t_the_nearests	analyze_the_nearest(t_stack *stack, int median)
+{
+	t_the_nearests	the_nearest;
+	int 			i;
+
+	the_nearest.max[1] = find_max_el(stack);
+	the_nearest.max[0] = stack->data[the_nearest.max[1]];
+
+	the_nearest.max_to_median[0] = find_min_el(stack);
+	i = -1;
+	while (++i < stack->size)
+	{
+		if (stack->data[i] > the_nearest.max_to_median[0] && stack->data[i] < median)
+		{
+			the_nearest.max_to_median[0] = stack->data[i];
+			the_nearest.max_to_median[1] = i;
+		}
+	}
+	return (the_nearest);
+}
+
 void	put_min_or_max_el(t_stack *stack)
 {
 	int	min;
@@ -185,12 +212,20 @@ void	put_min_or_max_el(t_stack *stack)
 				{
 					steps += (min < max) ? min : max;
 					steps += 1;
+					if (min < max)
+						printf("Это минимальное число\n");
+					else
+						printf("Это максимальное число\n");
 					printf("Шагов: %i\n", steps);
 				}
-				if (min > stack->size / 2 || max > stack->size / 2)
+				if (min >= stack->size / 2 || max >= stack->size / 2)
 				{
 					steps = stack->size - 1;
 					steps -= (min > max) ? min : max;
+					if (min > max)
+						printf("Это минимальное число\n");
+					else
+						printf("Это максимальное число\n");
 					printf("Шагов: %i\n", steps);
 				}
 			}
@@ -219,7 +254,7 @@ void	initialize_start(t_stack *a, t_stack *b)
 	t_sorted_seq	seq;
 	t_boundaries	boundaries;
 	int 			i;
-	int 			j;
+	t_the_nearests	the_nearests;
 
 	i = a->size;
 	boundaries = analyze_boundaries(a);
@@ -239,6 +274,8 @@ void	initialize_start(t_stack *a, t_stack *b)
 			i++;
 		}
 	}
+	the_nearests = analyze_the_nearest(b, boundaries.middle);
+	printf("max:%i\nmax_to_m: %i\n", the_nearests.max[0], the_nearests.max_to_median[0]);
 	put_min_or_max_el(b);
 	/*if(a->data[1] == boundaries.middle)
 	{
