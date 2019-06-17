@@ -154,7 +154,7 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/push_swap.c" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap.c" afterDir="false" />
     </list>
@@ -183,7 +183,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stack_manipulations.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="628">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
@@ -192,8 +192,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+            <state relative-caret-position="-134">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -210,20 +210,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checker.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
+            <state relative-caret-position="702">
               <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-              <folding>
-                <element signature="e#892#914#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/push_swap.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
               <folding>
                 <element signature="e#892#914#0" expanded="true" />
               </folding>
@@ -261,6 +249,18 @@
               <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
               <folding>
                 <element signature="e#933#953#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/push_swap.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="349" column="11" selection-start-line="349" selection-start-column="11" selection-end-line="349" selection-end-column="11" />
+              <folding>
+                <element signature="e#892#914#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -306,10 +306,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1018" />
-    <option name="y" value="23" />
+    <option name="x" value="650" />
+    <option name="y" value="49" />
     <option name="width" value="1737" />
-    <option name="height" value="1540" />
+    <option name="height" value="1387" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -317,6 +317,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,7 +334,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,7 +360,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Push_Swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;7 8 0 9 1 4 3 10 5&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Push_Swap" TARGET_NAME="Push_Swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Push_Swap" RUN_TARGET_NAME="Push_Swap">
+    <configuration name="Push_Swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;7 8 0 9 1 4 3 10 5 6&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Push_Swap" TARGET_NAME="Push_Swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Push_Swap" RUN_TARGET_NAME="Push_Swap">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -387,29 +387,32 @@
       <workItem from="1560510418798" duration="8782000" />
       <workItem from="1560759622211" duration="2812000" />
       <workItem from="1560766917551" duration="1100000" />
+      <workItem from="1560772278777" duration="287000" />
+      <workItem from="1560772786686" duration="516000" />
+      <workItem from="1560775385035" duration="4434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67480000" />
+    <option name="totallyTimeSpent" value="72717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1029" y="39" width="1737" height="1540" extended-state="0" />
+    <frame x="650" y="49" width="1737" height="1387" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3356932" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3480826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.490379" weight="0.33218232" />
-      <window_info active="true" anchor="bottom" id="Messages" order="3" sideWeight="0.47055393" visible="true" weight="0.32941988" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49620992" weight="0.39917126" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.490379" weight="0.37142858" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.47055393" weight="0.32895753" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49620992" visible="true" weight="0.3984556" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3296328" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32895753" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32941988" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.52944607" side_tool="true" weight="0.3296328" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -459,30 +462,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/push_swap.c</url>
-          <line>89</line>
-          <option name="timeStamp" value="18" />
+          <line>353</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/push_swap.c</url>
-          <line>307</line>
-          <option name="timeStamp" value="19" />
+          <line>387</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="a-&gt;data[j]" language="ObjectiveC" />
-        <watch expression="instructions[0]" language="ObjectiveC" />
-        <watch expression="instructions[1]" language="ObjectiveC" />
-        <watch expression="instructions[2]" language="ObjectiveC" />
-        <watch expression="a-&gt;data[amount]" language="ObjectiveC" />
         <watch expression="argv[0]" language="ObjectiveC" />
-        <watch expression="argv[1]" language="ObjectiveC" />
+        <watch expression="stack-&gt;data[i]" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>stack-&gt;data[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>a-&gt;data[amount]</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -525,11 +528,6 @@
       </expression>
       <expression>
         <expression-string>stack-&gt;data[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>stack-&gt;data[2]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -610,41 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strsplit.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stack_manipulations.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instructions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding>
-            <element signature="e#892#914#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,10 +642,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_strsplit.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stack_manipulations.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="e#892#914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/push_swap.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+        <state relative-caret-position="626">
+          <caret line="349" column="11" selection-start-line="349" selection-start-column="11" selection-end-line="349" selection-end-column="11" />
           <folding>
             <element signature="e#892#914#0" expanded="true" />
           </folding>
