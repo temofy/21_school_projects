@@ -2175,6 +2175,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+new_method.o: new_method.c.o
+
+.PHONY : new_method.o
+
+# target to build an object file
+new_method.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.o
+.PHONY : new_method.c.o
+
+new_method.i: new_method.c.i
+
+.PHONY : new_method.i
+
+# target to preprocess a source file
+new_method.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.i
+.PHONY : new_method.c.i
+
+new_method.s: new_method.c.s
+
+.PHONY : new_method.s
+
+# target to generate assembly for a file
+new_method.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.s
+.PHONY : new_method.c.s
+
 push_swap.o: push_swap.c.o
 
 .PHONY : push_swap.o
@@ -2466,6 +2493,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... new_method.o"
+	@echo "... new_method.i"
+	@echo "... new_method.s"
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"

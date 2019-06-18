@@ -313,6 +313,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h">
 			<Option target="Push_Swap"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/new_method.c">
+			<Option target="Push_Swap"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c">
 			<Option target="Push_Swap"/>
 		</Unit>

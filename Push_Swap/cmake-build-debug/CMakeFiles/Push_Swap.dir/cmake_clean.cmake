@@ -77,6 +77,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Push_Swap.dir/push_swap.c.o"
   "CMakeFiles/Push_Swap.dir/instructions.c.o"
   "CMakeFiles/Push_Swap.dir/stack_manipulations.c.o"
+  "CMakeFiles/Push_Swap.dir/new_method.c.o"
   "Push_Swap.pdb"
   "Push_Swap"
 )

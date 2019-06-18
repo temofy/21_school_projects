@@ -80,6 +80,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_uitoa.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_uitoa.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/new_method.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/stack_manipulations.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/stack_manipulations.c.o"
   )

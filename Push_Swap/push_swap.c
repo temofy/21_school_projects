@@ -112,11 +112,6 @@ t_boundaries	 analyze_boundaries(t_stack *stack)
 	return (boundaries);
 }
 
-t_sorted_seq	first_cleansing(t_stack *a, t_stack *b, t_sorted_seq seq)
-{
-
-}
-
 int 	find_min_el(t_stack *stack)
 {
 	int min;
@@ -305,17 +300,17 @@ void	pulling_out(t_stack *a, t_stack *b, int	index)
 	write(1, "pa\n", 3);
 }
 
-void	sort_stack(t_stack *a, t_stack *b, t_the_nearests the_nearests, t_boundaries boundaries)
+void	shift_up(t_stack *a, t_stack *b, t_the_nearests nearests, t_boundaries boundaries)
 {
 	char 	*shortest;
 
-	shortest = (the_nearests.max[2] < the_nearests.max_to_median[2]) ? "max" : "max_to_m";
+	shortest = (nearests.max[2] < nearests.max_to_median[2]) ? "max" : "max_to_m";
 	printf("Way %s\n", shortest);
 	if (a->data[a->size - 1] == boundaries.max)
 	{
 		if (ft_strcmp("max", shortest) == 0)
 		{
-			pulling_out(a, b, the_nearests.max[1]);
+			pulling_out(a, b, nearests.max[1]);
 		}
 		else
 		{
@@ -326,9 +321,9 @@ void	sort_stack(t_stack *a, t_stack *b, t_the_nearests the_nearests, t_boundarie
 				swap(a);
 				write(1, "sa\n", 3);
 			}
-			//if ((the_nearests.max_to_median[2] - the_nearests.max[2]) > 0) // исправить
+			//if ((nearests.max_to_median[2] - nearests.max[2]) > 0) // исправить
 			//{
-			pulling_out(a, b, the_nearests.max_to_median[1]);
+			pulling_out(a, b, nearests.max_to_median[1]);
 			// можно начать анализировать следующие позиции в b для совместного swap
 			swap(a);
 			write(1, "sa\n", 3);
@@ -350,13 +345,25 @@ void	sort_stack(t_stack *a, t_stack *b, t_the_nearests the_nearests, t_boundarie
 		}*/
 	}
 }
+/*void	sort_stack(t_stack *a, t_stack *b, t_boundaries boundaries)
+{
+	t_the_nearests nearests;
+
+	while (!(is_sorted_stack(a, b)))
+	{
+
+	}
+	nearests = analyze_the_nearest(b, boundaries.middle);
+	printf("max:%i\nMax steps: %i\nmax_to_m: %i\n", nearests.max[0], nearests.max[2], nearests.max_to_median[0]);
+	printf("Max_to_median steps: %i\n", nearests.max_to_median[2]);
+	shift_up(a, b, nearests, boundaries);
+}
 
 void	initialize_start(t_stack *a, t_stack *b)
 {
 	t_sorted_seq	seq;
 	t_boundaries	boundaries;
 	int 			i;
-	t_the_nearests	the_nearests;
 
 	i = a->size;
 	boundaries = analyze_boundaries(a);
@@ -376,16 +383,8 @@ void	initialize_start(t_stack *a, t_stack *b)
 			i++;
 		}
 	}
-	the_nearests = analyze_the_nearest(b, boundaries.middle);
-	printf("max:%i\nMax steps: %i\nmax_to_m: %i\n", the_nearests.max[0], the_nearests.max[2], the_nearests.max_to_median[0]);
-	printf("Max_to_median steps: %i\n", the_nearests.max_to_median[2]);
+	sort_stack(a, b, boundaries);*/
 
-	sort_stack(a, b, the_nearests, boundaries);
-
-	the_nearests = analyze_the_nearest(b, boundaries.middle);
-	printf("max:%i\nMax steps: %i\nmax_to_m: %i\n", the_nearests.max[0], the_nearests.max[2], the_nearests.max_to_median[0]);
-	printf("Max_to_median steps: %i\n", the_nearests.max_to_median[2]);
-	sort_stack(a, b, the_nearests, boundaries);
 	//put_min_or_max_el(b);
 	/*if(a->data[1] == boundaries.middle)
 	{
@@ -395,7 +394,7 @@ void	initialize_start(t_stack *a, t_stack *b)
 
 	//seq = analyze_sorted_seq(a);
 	//printf("min index: %d\nmin: %d\nmax index: %d\nmax: %d\namount: %d\n", seq.i_min, seq.min, seq.i_max, seq.max, seq.amount_ordered);
-}
+//}
 
 int 	push_swap(int amount, char *argv[])
 {
@@ -407,6 +406,7 @@ int 	push_swap(int amount, char *argv[])
 	b = stack_malloc(amount);
 	if ((rtn = read_arguments(a, amount, &*argv)) == -1)
 		return (rtn);
+	print_stack(a, b);
 	initialize_start(a, b);
 	rtn = is_sorted_stack(a, b);
 	print_stack(a, b);

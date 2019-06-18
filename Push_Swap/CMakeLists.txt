@@ -85,4 +85,5 @@ add_executable(Push_Swap
 		push_swap.c
 		instructions.c
 		stack_manipulations.c
+		new_method.c
         push_swap.h)

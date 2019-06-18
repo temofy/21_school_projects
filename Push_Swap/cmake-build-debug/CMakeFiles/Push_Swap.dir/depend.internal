@@ -226,6 +226,10 @@ CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o
 CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/get_next_line.c
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
+CMakeFiles/Push_Swap.dir/new_method.c.o
+ /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
+ /Users/cheller/Desktop/home_space/Push_Swap/new_method.c
+ /Users/cheller/Desktop/home_space/Push_Swap/push_swap.h
 CMakeFiles/Push_Swap.dir/push_swap.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
  /Users/cheller/Desktop/home_space/Push_Swap/push_swap.c
