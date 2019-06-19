@@ -7,6 +7,21 @@ typedef struct s_sorted_seq
 	int 	amount;
 }				t_seq;
 
+typedef struct	s_steps
+{
+	int		a_steps;
+	int 	a_index;
+	int 	b_steps;
+	int 	b_index;
+	int 	total;
+}				t_steps;
+
+typedef struct	s_first_location
+{
+	int 	min;
+	int		middle;
+	int 	max;
+}				t_first_loc;
 
 t_seq	*initialize_seq()
 {
@@ -55,7 +70,91 @@ t_seq	*find_sorted_seq(t_stack *stack)
 	return (start_end);
 }
 
-int 	steps_to_a(t_stack *a, int value)
+int		find_boundaries(t_first_loc *seq, int cur_val)
+{
+	if (cur_val > seq->max)
+		return (seq->max);
+	if (cur_val > seq->middle)
+		return (seq->middle);
+	if (cur_val > seq->min)
+		return (seq->min);
+	else
+		return (-2147483648);
+}
+
+void	steps_to_a(t_stack *a, int value, t_steps *steps, int index, t_first_loc *seq)
+{
+	int	i;
+
+	steps[index].a_steps = 0;
+	i = a->size;
+	if (a->data[a->size - 1] > value && value > find_boundaries(seq, a->data[i - 1]))
+	{
+		steps[index].a_steps = 0;
+		steps[index].a_index = a->size - 1;
+		return ;
+	}
+	while (--i >= 0)
+	{
+		if (i >= a->size / 2)
+		{
+			steps[index].a_steps++;
+		}
+		else
+		{
+			if (!ft_iseven(a->size) && i == (a->size / 2) - 1)
+				steps[index].a_steps--;
+			else if (ft_iseven(a->size) && i == (a->size / 2) - 1)
+				steps[index].a_steps++;
+			steps[index].a_steps--;
+		}
+		if(a->data[i] > value && value > find_boundaries(seq, a->data[i]))
+		{
+			steps[index].a_steps;
+			steps[index].a_index = i;
+			return ;
+		}
+	}
+	if (a->data[0] < value && value > find_boundaries(seq, a->data[0]))
+	{
+		steps[index].a_steps = 1;
+		steps[index].a_index = 0;
+		return ;
+	}
+}
+
+t_steps	 	*analyze_stacks(t_stack *a, t_stack *b, t_first_loc *seq)
+{
+	t_steps	*steps;
+	int i;
+	int instrs;
+
+	steps = (t_steps*)malloc(sizeof(t_steps) * b->size);
+	i = b->size;
+	instrs = -1;
+	while (--i >= 0)
+	{
+		if (i >= b->size / 2)
+		{
+			steps[i].b_steps = ++instrs;
+		}
+		else
+		{
+			if (!ft_iseven(b->size) && i == (b->size / 2) - 1)
+				steps[i].b_steps = instrs--;
+			else if (ft_iseven(b->size) && i == (b->size / 2) - 1)
+				instrs++;
+			steps[i].b_steps = instrs--;
+		}
+		steps_to_a(a, b->data[i], steps, i, seq);
+		steps[i].b_index = i;
+		steps[i].total = steps[i].a_steps + steps[i].b_steps;
+	}
+	return (steps);
+}
+
+/*int 	steps_to_a(t_stack *a, int value)
+/*int 	steps_to_a(t_stack *a, int value)
 {
 	int	i;
 	int steps;
@@ -112,53 +211,94 @@ int	 	*analyze_stacks(t_stack *a, t_stack *b)
 		steps[i] += steps_to_a(a, b->data[i]);
 	}
 	return (steps);
-}
+}*/
 
-void	pull_el(t_stack *a, t_stack *b, index)
+void	pull_el(t_stack *a, t_stack *b, int index, t_steps *steps)
 {
-	while (index < b->size - 1)
-	{
 
+	while (steps[index].b_index < b->size - 1)
+	{
+		if (steps[index].b_index >= b->size / 2)
+		{
+			rotate(b);
+			write(1, "rb\n", 3);
+			steps[index].b_index++;
+		}
+		else
+		{
+			reverse_rotate(b);
+			write(1, "rrb\n", 4);
+			steps[index].b_index--;
+			steps[index].b_index = (steps[index].b_index < 0) ? b->size - 1 : steps[index].b_index--;
+		}
+	}
+	while (steps[index].a_index < a->size - 1)
+	{
+		if (steps[index].a_index >= a->size / 2)
+		{
+			rotate(a);
+			write(1, "ra\n", 3);
+			steps[index].a_index++;
+		}
+		else
+		{
+			reverse_rotate(a);
+			write(1, "rra\n", 4);
+			steps[index].a_index--;
+			steps[index].a_index = (steps[index].a_index < 0) ? a->size - 1 : steps[index].a_index--;
+		}
 	}
 	push(a, b);
 	write(1, "pa\n", 3);
 }
 
-int 	analyze_steps(int *steps, int size)
+int 	analyze_steps(t_steps *steps, int size)
 {
 	int i;
 	int min;
 	int index;
 
 	i = 0;
-	min = steps[0];
+	min = steps[0].total;
 	index = 0;
 	while (++i < size)
 	{
-		if (min > steps[i])
+		if (min > steps[i].total)
 		{
-			min = steps[i];
+			min = steps[i].total;
 			index = i;
 		}
 	}
 	return (index);
 }
 
+
 void	sort_stack(t_stack *a, t_stack *b)
 {
 	char	*str_instructions;
-	int 	*steps;
-	int 	i = b->size; //
+	t_steps 	*steps;
 	int		index;
+	t_first_loc	seq;
+	seq.min = a->data[2];
+	seq.middle = a->data[1];
+	seq.max = a->data[0];
 
-	steps = analyze_stacks(a, b);
-	printf("b stack's steps:\n");
-	while (--i >= 0)
-		printf("%i\n", steps[i]);
-	printf("_\nb\n");
-	index = analyze_steps(steps, b->size);
-	printf("index: %i\n", index);
-	pull_el(a, b, index);
+	//int k = 7;
+	while (b->size )
+	{
+		int i = b->size; //
+		steps = analyze_stacks(a, b, &seq);
+		printf("b stack's steps:\n");
+		while (--i >= 0)
+			printf("%i + %i\n", steps[i].b_steps, steps[i].a_steps);
+		printf("_\nb\n");
+		index = analyze_steps(steps, b->size);
+		//printf("index: %i\n", index);
+		pull_el(a, b, index, steps);
+		print_stack(a, b);
+		seq.min = a->data[find_min_el(a)];
+		seq.max = a->data[find_max_el(a)];
+	}
 }
 
 void	throw_to_b(t_stack *a, t_stack *b)
@@ -203,6 +343,8 @@ void	first_sort(t_stack *stack)
 		swap(stack);
 	else if (stack->data[2] > stack->data[1] && stack->data[0] < stack->data[2])
 		rotate(stack);
+	if (stack->data[2] > stack->data[1])
+		swap(stack);
 }
 
 void	initialize_start(t_stack *a, t_stack *b)

@@ -31,6 +31,8 @@ void			push(t_stack *in, t_stack *out);
 void			swap(t_stack *stack);
 int				select_operation(char *operation, t_stack *a, t_stack *b);
 int				read_arguments(t_stack *a, int amount, char *argv[]);
+int 	find_max_el(t_stack *stack);
+int 	find_min_el(t_stack *stack);
 
 void	print_stack(t_stack *a, t_stack *b);
 

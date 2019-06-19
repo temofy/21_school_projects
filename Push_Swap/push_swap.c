@@ -409,7 +409,7 @@ int 	push_swap(int amount, char *argv[])
 	print_stack(a, b);
 	initialize_start(a, b);
 	rtn = is_sorted_stack(a, b);
-	print_stack(a, b);
+	//print_stack(a, b);
 	free_stack(a);
 	free_stack(b);
 	return (rtn);
