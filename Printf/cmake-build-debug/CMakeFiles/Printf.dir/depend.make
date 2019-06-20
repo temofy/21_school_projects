@@ -5,9 +5,9 @@ CMakeFiles/Printf.dir/additional_func.c.o: ../additional_func.c
 CMakeFiles/Printf.dir/additional_func.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/additional_func.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/bin_staff.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/bin_staff.c.o: ../bin_staff.c
-CMakeFiles/Printf.dir/bin_staff.c.o: ../ft_printf.h
-CMakeFiles/Printf.dir/bin_staff.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/bin_staff.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
 CMakeFiles/Printf.dir/cheks.c.o: ../cheks.c
 CMakeFiles/Printf.dir/cheks.c.o: ../ft_printf.h
@@ -25,13 +25,17 @@ CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/Printf.dir/ft_printf.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/ft_printf.c.o: ../libft/libft.h
 
+CMakeFiles/Printf.dir/ft_sizedup.c.o: .././libft/libft.h
+CMakeFiles/Printf.dir/ft_sizedup.c.o: ../ft_sizedup.c
+CMakeFiles/Printf.dir/ft_sizedup.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
+
 CMakeFiles/Printf.dir/getting.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/getting.c.o: ../getting.c
 CMakeFiles/Printf.dir/getting.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_b.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_b.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/handler_b.c.o: ../handler_b.c
-CMakeFiles/Printf.dir/handler_b.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/handler_b.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
 CMakeFiles/Printf.dir/handler_d.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_d.c.o: ../handler_d.c
@@ -42,9 +46,9 @@ CMakeFiles/Printf.dir/handler_f.c.o: ../handler_f.c
 CMakeFiles/Printf.dir/handler_f.c.o: ../libft/libft.h
 
 
-CMakeFiles/Printf.dir/handler_p.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_p.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/handler_p.c.o: ../handler_p.c
-CMakeFiles/Printf.dir/handler_p.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/handler_p.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
 CMakeFiles/Printf.dir/handler_specifier.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_specifier.c.o: ../handler_specifier.c
@@ -62,25 +66,25 @@ CMakeFiles/Printf.dir/handler_unicode.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../handler_unicode.c
 CMakeFiles/Printf.dir/handler_unicode.c.o: ../libft/libft.h
 
-CMakeFiles/Printf.dir/handler_x.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/handler_x.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o: ../handler_x.c
-CMakeFiles/Printf.dir/handler_x.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/handler_x.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
-CMakeFiles/Printf.dir/handler_x_big.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
-CMakeFiles/Printf.dir/handler_x_big.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+CMakeFiles/Printf.dir/handler_x_big.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/handler_x_big.c.o: ../handler_x_big.c
+CMakeFiles/Printf.dir/handler_x_big.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
-CMakeFiles/Printf.dir/hex.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
-CMakeFiles/Printf.dir/hex.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+CMakeFiles/Printf.dir/hex.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/hex.c.o: ../hex.c
+CMakeFiles/Printf.dir/hex.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
-CMakeFiles/Printf.dir/hex_big_staff.c.o: /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
-CMakeFiles/Printf.dir/hex_big_staff.c.o: /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+CMakeFiles/Printf.dir/hex_big_staff.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/hex_big_staff.c.o: ../hex_big_staff.c
+CMakeFiles/Printf.dir/hex_big_staff.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
-CMakeFiles/Printf.dir/hex_staff.c.o: ../ft_printf.h
+CMakeFiles/Printf.dir/hex_staff.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/hex_staff.c.o: ../hex_staff.c
-CMakeFiles/Printf.dir/hex_staff.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/hex_staff.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
 CMakeFiles/Printf.dir/libft/ft_abs.c.o: ../libft/ft_abs.c
 
@@ -212,6 +216,7 @@ CMakeFiles/Printf.dir/libft/ft_strdel.c.o: ../libft/ft_strdel.c
 CMakeFiles/Printf.dir/libft/ft_strdel.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
+CMakeFiles/Printf.dir/libft/ft_strdup.c.o: ../libft/libft.h
 
 CMakeFiles/Printf.dir/libft/ft_strequ.c.o: ../libft/ft_strequ.c
 CMakeFiles/Printf.dir/libft/ft_strequ.c.o: ../libft/libft.h
@@ -308,9 +313,13 @@ CMakeFiles/Printf.dir/main.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/main.c.o: ../libft/libft.h
 CMakeFiles/Printf.dir/main.c.o: ../main.c
 
-CMakeFiles/Printf.dir/oct_staff.c.o: ../ft_printf.h
-CMakeFiles/Printf.dir/oct_staff.c.o: ../libft/libft.h
+CMakeFiles/Printf.dir/oct_int.c.o: .././libft/libft.h
+CMakeFiles/Printf.dir/oct_int.c.o: ../oct_int.c
+CMakeFiles/Printf.dir/oct_int.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
+
+CMakeFiles/Printf.dir/oct_staff.c.o: .././libft/libft.h
 CMakeFiles/Printf.dir/oct_staff.c.o: ../oct_staff.c
+CMakeFiles/Printf.dir/oct_staff.c.o: /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 
 CMakeFiles/Printf.dir/overflow.c.o: ../ft_printf.h
 CMakeFiles/Printf.dir/overflow.c.o: ../libft/libft.h

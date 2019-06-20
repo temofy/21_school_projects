@@ -6,11 +6,11 @@
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 18:26:54 by cheller           #+#    #+#             */
-/*   Updated: 2019/05/29 18:07:31 by aaeron-g         ###   ########.fr       */
+/*   Updated: 2019/06/20 15:00:00 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
 
 char	*pointer(char **str, char *hex, t_formatting *e_seq)
 {
@@ -25,6 +25,13 @@ char	*pointer(char **str, char *hex, t_formatting *e_seq)
 	return (*str);
 }
 
+char	*in_if(char **str)
+{
+	*str = ft_strnew(2);
+	*str = ft_strcpy(*str, "0x");
+	return (*str);
+}
+
 char	*handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
 {
 	int		len_str;
@@ -34,6 +41,8 @@ char	*handler_sequence_p(char **str, char *hex, t_formatting *e_seq)
 	len_zeros = 0;
 	len_str = 0;
 	len_arg = ft_strlen(hex);
+	if ((e_seq->precision == 0 || e_seq->width == 0) && ft_strequ(hex, "0"))
+		return (in_if(str));
 	if (e_seq->precision > len_arg)
 		len_zeros = e_seq->precision - len_arg;
 	hex = ft_strfjoin(ft_strnew_set(48, len_zeros), hex, 0);
@@ -56,9 +65,10 @@ char	*handler_p(va_list arg, t_formatting *e_sequence)
 	char	*hex;
 	char	*str;
 
-	hex = hex_long_int((long int)va_arg(arg, void *));
-	str = handler_sequence_p(&str, hex, e_sequence);
-	//ft_strdel(&hex);
+	hex = hex_long_int(va_arg(arg, long int));
+	str = handler_sequence_p(&str,\
+	hex_long_int((long int)va_arg(arg, void *)), e_sequence);
+	ft_strdel(&hex);
 	e_sequence->common_length = ft_strlen(str);
 	return (str);
 }

@@ -104,6 +104,7 @@ char	*handler_chr_unicode(va_list arg, t_formatting *e_seq)
 	unicode->chr = va_arg(arg, unsigned int);
 	str = get_utf8_str(unicode);
 	e_seq->common_length = ft_strlen(str);
+	free(unicode);
 	return (str);
 }
 

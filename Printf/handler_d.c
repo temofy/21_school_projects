@@ -91,7 +91,10 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 	else if (e_seq->length_modifier == 106)
 		nbr_str = ft_litoa((intmax_t)va_arg(arg, intmax_t));
 	else if (e_seq->length_modifier == 122)
-		nbr_str = ft_ulitoa(va_arg(arg, size_t));
+	{
+		size_t	ebobo = va_arg(arg, size_t);
+		nbr_str = ft_litoa(ebobo);
+	}
 	else
 		nbr_str = ft_itoa(va_arg(arg, int));
 	if (*nbr_str == '-')

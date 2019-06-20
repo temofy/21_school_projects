@@ -34,3 +34,15 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 	nbr_str = handler_sequence_d(&nbr_str, e_sequence, str);
 	return (nbr_str);
 }
+
+char	*handler_U(va_list arg, t_formatting *e_sequence)
+{
+	char	*nbr_str;
+	char	*str;
+
+	nbr_str = ft_ulitoa(va_arg(arg, unsigned long));
+	e_sequence->flags->space = 0;
+	e_sequence->flags->plus = 0;
+	nbr_str = handler_sequence_d(&nbr_str, e_sequence, str);
+	return (nbr_str);
+}

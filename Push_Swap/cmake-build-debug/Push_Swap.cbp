@@ -88,6 +88,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_abs.c">
 			<Option target="Push_Swap"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_arraylen.c">
+			<Option target="Push_Swap"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_atoi.c">
 			<Option target="Push_Swap"/>
 		</Unit>

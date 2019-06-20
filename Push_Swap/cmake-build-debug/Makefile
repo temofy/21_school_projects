@@ -177,6 +177,33 @@ libft/ft_abs.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_abs.c.s
 .PHONY : libft/ft_abs.c.s
 
+libft/ft_arraylen.o: libft/ft_arraylen.c.o
+
+.PHONY : libft/ft_arraylen.o
+
+# target to build an object file
+libft/ft_arraylen.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.o
+.PHONY : libft/ft_arraylen.c.o
+
+libft/ft_arraylen.i: libft/ft_arraylen.c.i
+
+.PHONY : libft/ft_arraylen.i
+
+# target to preprocess a source file
+libft/ft_arraylen.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.i
+.PHONY : libft/ft_arraylen.c.i
+
+libft/ft_arraylen.s: libft/ft_arraylen.c.s
+
+.PHONY : libft/ft_arraylen.s
+
+# target to generate assembly for a file
+libft/ft_arraylen.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.s
+.PHONY : libft/ft_arraylen.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2271,6 +2298,9 @@ help:
 	@echo "... libft/ft_abs.o"
 	@echo "... libft/ft_abs.i"
 	@echo "... libft/ft_abs.s"
+	@echo "... libft/ft_arraylen.o"
+	@echo "... libft/ft_arraylen.i"
+	@echo "... libft/ft_arraylen.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

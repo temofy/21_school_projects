@@ -7,6 +7,9 @@ CMakeFiles/Push_Swap.dir/instructions.c.o: ../push_swap.h
 
 CMakeFiles/Push_Swap.dir/libft/ft_abs.c.o: ../libft/ft_abs.c
 
+CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.o: ../libft/ft_arraylen.c
+CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.o: ../libft/libft.h
+
 CMakeFiles/Push_Swap.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/Push_Swap.dir/libft/ft_atoi.c.o: ../libft/libft.h
 

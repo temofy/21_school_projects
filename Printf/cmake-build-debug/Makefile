@@ -285,6 +285,33 @@ ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
 
+ft_sizedup.o: ft_sizedup.c.o
+
+.PHONY : ft_sizedup.o
+
+# target to build an object file
+ft_sizedup.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_sizedup.c.o
+.PHONY : ft_sizedup.c.o
+
+ft_sizedup.i: ft_sizedup.c.i
+
+.PHONY : ft_sizedup.i
+
+# target to preprocess a source file
+ft_sizedup.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_sizedup.c.i
+.PHONY : ft_sizedup.c.i
+
+ft_sizedup.s: ft_sizedup.c.s
+
+.PHONY : ft_sizedup.s
+
+# target to generate assembly for a file
+ft_sizedup.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/ft_sizedup.c.s
+.PHONY : ft_sizedup.c.s
+
 getting.o: getting.c.o
 
 .PHONY : getting.o
@@ -2742,6 +2769,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/main.c.s
 .PHONY : main.c.s
 
+oct_int.o: oct_int.c.o
+
+.PHONY : oct_int.o
+
+# target to build an object file
+oct_int.c.o:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_int.c.o
+.PHONY : oct_int.c.o
+
+oct_int.i: oct_int.c.i
+
+.PHONY : oct_int.i
+
+# target to preprocess a source file
+oct_int.c.i:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_int.c.i
+.PHONY : oct_int.c.i
+
+oct_int.s: oct_int.c.s
+
+.PHONY : oct_int.s
+
+# target to generate assembly for a file
+oct_int.c.s:
+	$(MAKE) -f CMakeFiles/Printf.dir/build.make CMakeFiles/Printf.dir/oct_int.c.s
+.PHONY : oct_int.c.s
+
 oct_staff.o: oct_staff.c.o
 
 .PHONY : oct_staff.o
@@ -2904,6 +2958,9 @@ help:
 	@echo "... ft_printf.o"
 	@echo "... ft_printf.i"
 	@echo "... ft_printf.s"
+	@echo "... ft_sizedup.o"
+	@echo "... ft_sizedup.i"
+	@echo "... ft_sizedup.s"
 	@echo "... getting.o"
 	@echo "... getting.i"
 	@echo "... getting.s"
@@ -3177,6 +3234,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... oct_int.o"
+	@echo "... oct_int.i"
+	@echo "... oct_int.s"
 	@echo "... oct_staff.o"
 	@echo "... oct_staff.i"
 	@echo "... oct_staff.s"

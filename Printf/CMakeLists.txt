@@ -93,6 +93,11 @@ add_executable(Printf
         handler_p.c
         handler_text.c
         handler_u.c
+
+
+        ft_sizedup.c
+        oct_int.c
+
         handler_x.c
         handler_x_big.c
         hex.c

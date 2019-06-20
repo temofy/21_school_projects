@@ -425,7 +425,7 @@ int 	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		instructions = ft_strsplit(argv[1], ' ');
-		rtn = push_swap(10, instructions - 1);
+		rtn = push_swap(ft_arraylen(instructions), instructions - 1);
 	}
 	else
 		rtn = push_swap(argc - 1, &*argv);

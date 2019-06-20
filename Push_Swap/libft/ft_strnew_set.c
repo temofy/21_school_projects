@@ -24,4 +24,3 @@ char	*ft_strnew_set(char c, size_t size)
 		str[size] = c;
 	return (str);
 }
-

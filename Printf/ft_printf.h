@@ -87,6 +87,7 @@ char			*handler_sequence_d(char **str_arg, t_formatting *e_sequence, char *space
 char			*handler_d(va_list arg, t_formatting *e_sequence);
 
 char			*handler_u(va_list arg, t_formatting *e_sequence);
+char			*handler_U(va_list arg, t_formatting *e_sequence);
 char			*handler_f(va_list arg, t_formatting *e_sequence);
 char			*handler_s_f(char **s, t_formatting *e_seq, t_str_fp *s_fp, char **sps);
 void			round_frac(t_str_fp **str_fp, int precision);
@@ -136,16 +137,12 @@ t_long_value	expand_value(t_long_value nbr);
 char			*ft_sizedup(const char *s, size_t n);
 int				num_oct_len(long int n);
 char			*oct_int(long int n);
-char			*hexcimal(long long int *res, char *c_res, long long int tmp);
-char			*hex_int(long int n);
+char			*hexcimal(long long int *res, char *c_res, unsigned long long int tmp);
+char			*hex_int(unsigned long long int n);
 char			*hexcimal_big(long int *res, char *c_res, long long int tmp);
 char			*hex_int_big(long int n);
-char			*oct_total(int n);
+char			*oct_total(int n, t_formatting *e_sequence);
 char			*oct_total_l(long int n);
-char			*hex_total(int n);
-char			*hex_total_l(long long int n);
-char			*hex_big_total_l(long int n);
-char			*hex_big_total(long int n);
 char			*oct_zero(t_formatting *e_sequence, int *len, char *res);
 char			*oct_not_zero(t_formatting *e_sequence, int *len, char *res, char *oct);
 char			*oct_while(t_formatting *e_sequence, int *len, char *res);
@@ -155,12 +152,14 @@ char			*hex_zero(t_formatting *e_sequence, int *len, char *res);
 char			*hex_not_zero(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*hex_while(t_formatting *e_sequence, int *len, char *res);
 char			*hex_else(t_formatting *e_sequence, int *len, char *res, char *hex);
+char			*push_hex(va_list arg, t_formatting *e_sequence, char **hex);
 char			*handler_x(va_list arg, t_formatting *e_sequence);
 char			*hex_big_zero(t_formatting *e_sequence, int *len, char *res);
 char			*hex_b_n_z(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*hex_big_while(t_formatting *e_sequence, int *len, char *res);
 char			*hex_big_else(t_formatting *e_sequence, int *len, char *res, char *hex);
 char			*handler_x_big(va_list arg, t_formatting *e_sequence);
+
 char			*find_specifier(const char *format, va_list arg, t_formatting *e_seq);
 
 char	*handler_percent(t_formatting *e_seq);

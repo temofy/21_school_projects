@@ -1,8 +1,9 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 int 	main()
 {
-	ft_printf("a%Sc%S\n", L"A", L"H");
+	/*ft_printf("a%Sc%S\n", L"A", L"H");
 	ft_printf("a%Sc%S\n", L"我", L"猫");
 	ft_printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S\n",
 			  L"Α α", L"Β β", L"Γ γ", L"Δ δ", L"Ε ε", L"Ζ ζ", L"Η η", L"Θ θ", L"Ι ι", L"Κ κ", L"Λ λ", L"Μ μ",
@@ -12,6 +13,11 @@ int 	main()
 	printf("a%S\n", L"\xF0\x90\x8D\x86");
 	ft_printf("% h\n");
 	ft_printf("FLoat and integer: %20.15f\n%- 10.5i\n", 56.4131, 999);
+	ft_printf("%-10.5o\n", 2500);
+	printf("%-10.5o\n", 2500);*/
+	ft_printf("%C\n", 0);
+	printf("%C", 0);
+	//ft_printf("% hZ%");
 	//ft_printf("%x\n", -42);
 	//printf("%x", -42);
 }

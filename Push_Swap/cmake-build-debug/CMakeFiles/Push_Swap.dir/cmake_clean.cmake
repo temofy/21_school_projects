@@ -74,6 +74,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o"
   "CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o"
   "CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o"
+  "CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.o"
   "CMakeFiles/Push_Swap.dir/push_swap.c.o"
   "CMakeFiles/Push_Swap.dir/instructions.c.o"
   "CMakeFiles/Push_Swap.dir/stack_manipulations.c.o"

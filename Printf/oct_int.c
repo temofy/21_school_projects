@@ -1,69 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex.c                                              :+:      :+:    :+:   */
+/*   oct_int.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/15 17:50:21 by cheller           #+#    #+#             */
-/*   Updated: 2019/06/19 18:01:35 by aaeron-g         ###   ########.fr       */
+/*   Created: 2019/06/20 15:05:57 by aaeron-g          #+#    #+#             */
+/*   Updated: 2019/06/20 15:06:13 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Downloads/hopb_without_leaks/ft_printf.h"
 
-int		num_hex_len(unsigned long long int n)
+int		num_oct_len(long int n)
 {
 	int i;
 
 	i = 0;
 	while (n > 0)
 	{
-		n = n / 16;
+		n = n / 8;
 		i++;
 	}
 	return (i);
 }
 
-char	*hex(int *res, char *c_res, long int tmp)
-{
-	int i;
-
-	i = 0;
-	while (i < num_hex_len(tmp))
-	{
-		if (res[i] < 10)
-			c_res[i] = (char)(res[i] + 48);
-		else
-			c_res[i] = (char)(res[i] + 87);
-		i++;
-	}
-	return (c_res);
-}
-
-char	*hex_long_int(long int n)
+char	*oct_int(long int n)
 {
 	int			i;
-	int			*res;
+	long int	*res;
 	char		*c_res;
 	long int	tmp;
 
 	tmp = n;
-	i = num_hex_len(n);
-	if (n == 0 && (c_res = ft_strnew(1)))
+	i = num_oct_len(n);
+	if (n == 0 && (c_res = (ft_strnew(1))))
 	{
 		*c_res = '0';
 		return (c_res);
 	}
-	if (!(res = (int*)malloc(sizeof(long int) * i)) \
-		|| !(c_res = (char*)malloc(sizeof(char) * i)))
+	if (!(res = (long int*)malloc(sizeof(long int) * i))\
+		|| !(c_res = ft_strnew(i)))
 		return (NULL);
 	while (--i >= 0)
 	{
-		res[i] = n % 16;
-		n = n / 16;
+		res[i] = n % 8;
+		n = n / 8;
 	}
-	c_res = hex(res, c_res, tmp);
+	while (++i < num_oct_len(tmp))
+		c_res[i] = (char)(res[i] + 48);
 	free(res);
 	return (c_res);
 }

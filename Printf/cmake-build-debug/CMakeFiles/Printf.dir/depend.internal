@@ -6,9 +6,9 @@ CMakeFiles/Printf.dir/additional_func.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/bin_staff.c.o
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/bin_staff.c
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/cheks.c.o
  /Users/cheller/Desktop/home_space/Printf/cheks.c
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
@@ -25,14 +25,18 @@ CMakeFiles/Printf.dir/ft_printf.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.c
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+CMakeFiles/Printf.dir/ft_sizedup.c.o
+ .././libft/libft.h
+ /Users/cheller/Desktop/home_space/Printf/ft_sizedup.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/getting.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/getting.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_b.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_b.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/handler_d.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_d.c
@@ -43,9 +47,9 @@ CMakeFiles/Printf.dir/handler_f.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_o.c.o
 CMakeFiles/Printf.dir/handler_p.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_p.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/handler_specifier.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/handler_specifier.c
@@ -63,25 +67,25 @@ CMakeFiles/Printf.dir/handler_unicode.c.o
  /Users/cheller/Desktop/home_space/Printf/handler_unicode.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/handler_x.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_x.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/handler_x_big.c.o
- /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
- /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/handler_x_big.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/hex.c.o
- /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
- /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/hex.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/hex_big_staff.c.o
- /Users/cheller/Desktop/WorkingPrintf/ft_printf.h
- /Users/cheller/Desktop/WorkingPrintf/libft/libft.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/hex_big_staff.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/hex_staff.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/hex_staff.c
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/libft/ft_abs.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_abs.c
 CMakeFiles/Printf.dir/libft/ft_atoi.c.o
@@ -213,6 +217,7 @@ CMakeFiles/Printf.dir/libft/ft_strdel.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_strdup.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_strdup.c
+ /Users/cheller/Desktop/home_space/Printf/libft/libft.h
 CMakeFiles/Printf.dir/libft/ft_strequ.c.o
  /Users/cheller/Desktop/home_space/Printf/libft/ft_strequ.c
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
@@ -308,10 +313,14 @@ CMakeFiles/Printf.dir/main.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/main.c
+CMakeFiles/Printf.dir/oct_int.c.o
+ .././libft/libft.h
+ /Users/cheller/Desktop/home_space/Printf/oct_int.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/oct_staff.c.o
- /Users/cheller/Desktop/home_space/Printf/ft_printf.h
- /Users/cheller/Desktop/home_space/Printf/libft/libft.h
+ .././libft/libft.h
  /Users/cheller/Desktop/home_space/Printf/oct_staff.c
+ /Users/cheller/Downloads/hopb_without_leaks/ft_printf.h
 CMakeFiles/Printf.dir/overflow.c.o
  /Users/cheller/Desktop/home_space/Printf/ft_printf.h
  /Users/cheller/Desktop/home_space/Printf/libft/libft.h

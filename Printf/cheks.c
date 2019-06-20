@@ -122,7 +122,40 @@ int			check_width(const char *f)
 int			check_length_modifier(const char *format)
 {
 	int i;
+	int length_modifier;
 
+	length_modifier = -1;
+	i = find_index_end_spec(format) + 1;
+	while (--i)
+	{
+		if (format[i - 1] == 'h')
+		{
+			length_modifier = 104;
+			if (format[i - 2] == 'h')
+				length_modifier = 208;
+		}
+		if (format[i - 1] == 'l')
+		{
+			if (format[i - 2] == 'l')
+				return (216);
+			return (108);
+		}
+		if (format[i - 1] == 'L')
+			return (76);
+		if (format[i - 1] == 'j')
+			return (106);
+		if (format[i - 1] == 'z')
+			return (122);
+	}
+	return (length_modifier);
+}
+
+/*int			check_length_modifier(const char *format)
+{
+	int i;
+	int length_modifier;
+
+	length_modifier = -1;
 	i = find_index_end_spec(format) + 1;
 	while (--i)
 	{
@@ -145,5 +178,5 @@ int			check_length_modifier(const char *format)
 		if (format[i - 1] == 'z')
 			return (122);
 	}
-	return (-1);
-}
+	return (length_modifier);
+}*/

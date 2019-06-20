@@ -6,11 +6,11 @@
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:07:24 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/05/30 12:08:41 by aaeron-g         ###   ########.fr       */
+/*   Updated: 2019/06/20 14:42:29 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
 
 char	*hexcimal_big(long int *res, char *c_res, long long int tmp)
 {
@@ -38,54 +38,20 @@ char	*hex_int_big(long int n)
 
 	i = num_hex_len(n);
 	tmp = n;
-	if (n == 0 && (c_res = (char*)malloc(sizeof(char) * 1)))
+	if (n == 0 && (c_res = ft_strnew(1)))
 	{
 		*c_res = '0';
 		return (c_res);
 	}
 	if (!(res = (long int*)malloc(sizeof(long int) * i))\
-		|| !(c_res = (char*)malloc(sizeof(char) * i)))
+		|| !(c_res = ft_strnew(i)))
 		return (NULL);
-	while (--i >= 0 && n / 16 <= tmp)
+	while (--i >= 0)
 	{
 		res[i] = n % 16;
 		n = n / 16;
 	}
 	c_res = hexcimal_big(res, c_res, tmp);
-	c_f_res = ft_sizedup(c_res, num_hex_len(tmp));
-	ft_strdel(&c_res);
 	free(res);
-	return (c_f_res);
-}
-
-char	*hex_big_total_l(long int n)
-{
-	char	*hex;
-
-	if (n < 0)
-	{
-		hex = hex_int_big(4294967296 + (unsigned long int)n);
-		return ((hex + 1));
-	}
-	else
-	{
-		hex = hex_int_big((long)ft_abs(n));
-		return (hex);
-	}
-}
-
-char	*hex_big_total(long int n)
-{
-	char	*hex;
-
-	if (n < 0)
-	{
-		hex = hex_int_big(4294967296 + (unsigned int)n);
-		return ((hex + 1));
-	}
-	else
-	{
-		hex = hex_int_big((long)ft_abs(n));
-		return (hex);
-	}
+	return (c_res);
 }

@@ -20,8 +20,10 @@ char	*find_spec_add(const char *f, va_list arg, t_formatting *e_seq, int i)
 		return (handler_str_unicode(arg, e_seq));
 	else if (f[i] == 'p')
 		return (handler_p(arg, e_seq));
-	else if (f[i] == 'u' || f[i] == 'U')
+	else if (f[i] == 'u')
 		return (handler_u(arg, e_seq));
+	else if (f[i] == 'U')
+		return (handler_U(arg, e_seq));
 	else if (f[i] == 'o')
 		return (handler_o(arg, e_seq));
 	else if (f[i] == 'x')

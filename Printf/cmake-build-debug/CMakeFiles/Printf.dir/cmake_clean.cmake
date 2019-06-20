@@ -83,6 +83,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Printf.dir/handler_p.c.o"
   "CMakeFiles/Printf.dir/handler_text.c.o"
   "CMakeFiles/Printf.dir/handler_u.c.o"
+  "CMakeFiles/Printf.dir/ft_sizedup.c.o"
+  "CMakeFiles/Printf.dir/oct_int.c.o"
   "CMakeFiles/Printf.dir/handler_x.c.o"
   "CMakeFiles/Printf.dir/handler_x_big.c.o"
   "CMakeFiles/Printf.dir/hex.c.o"

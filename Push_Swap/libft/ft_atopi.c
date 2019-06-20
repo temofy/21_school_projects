@@ -1,20 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atopi.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/20 13:16:09 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/20 13:16:15 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-long 	*ft_atopi(const char *str)
+long	*ft_atopi(const char *str)
 {
 	long	result;
 	long	*p_result;
 	int		i;
 	int		sign;
 
-	sign = 1;
 	result = 0;
 	i = 0;
-	/*while (str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] == '\v'
-		   || str[i] == '\f' || str[i] == ' ')
-		i++;*/
 	sign = (str[i] == '-') ? -1 : 1;
-	if (str[i] == '-'/* || str[i] == '+'*/)
+	if (str[i] == '-')
 		i++;
 	while (str[i])
 	{

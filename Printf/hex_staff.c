@@ -6,13 +6,13 @@
 /*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:31:42 by aaeron-g          #+#    #+#             */
-/*   Updated: 2019/05/30 12:32:12 by aaeron-g         ###   ########.fr       */
+/*   Updated: 2019/06/20 15:02:42 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
 
-char	*hexcimal(long long int *res, char *c_res, long long int tmp)
+char	*hexcimal(long long int *res, char *c_res, unsigned long long int tmp)
 {
 	int	i;
 
@@ -28,13 +28,13 @@ char	*hexcimal(long long int *res, char *c_res, long long int tmp)
 	return (c_res);
 }
 
-char	*hex_int(long int n)
+char	*hex_int(unsigned long long int n)
 {
-	int				i;
-	long long int	*res;
-	char			*c_res;
-	long long int	tmp;
-	char			*c_f_res;
+	int						i;
+	long long int			*res;
+	char					*c_res;
+	unsigned long long int	tmp;
+	char					*c_f_res;
 
 	i = num_hex_len(n);
 	tmp = n;
@@ -44,51 +44,26 @@ char	*hex_int(long int n)
 		return (c_res);
 	}
 	if (!(res = (long long int*)malloc(sizeof(long long int) * i))
-		|| !(c_res = (char*)malloc(sizeof(char) * i)))
+		|| !(c_res = ft_strnew((size_t)i)))
 		return (NULL);
-	while (--i >= 0 && n / 16 <= tmp)
+	while (--i >= 0)
 	{
 		res[i] = n % 16;
 		n = n / 16;
 	}
 	c_res = hexcimal(res, c_res, tmp);
-	//free(res);
-	c_f_res = ft_sizedup(c_res, num_hex_len(tmp));
-	//free(c_res);
-	return (c_f_res);
+	free(res);
+	return (c_res);
 }
 
-char	*hex_total(int n)
+char	*push_hex(va_list arg, t_formatting *e_sequence, char **hex)
 {
-	char	*hex;
-
-	if (n < 0)
-	{
-		hex = hex_int(4294967296 + (unsigned int)n);
-		return ((hex + 1));
-	}
+	if (e_sequence->length_modifier == 216 ||\
+	e_sequence->length_modifier == 108)
+		*hex = hex_int(va_arg(arg, unsigned long long));
+	else if (e_sequence->length_modifier == 106)
+		*hex = hex_int(va_arg(arg, uintmax_t));
 	else
-	{
-		hex = hex_int((long)ft_abs(n));
-		return (hex);
-		free(hex);
-	}
-}
-
-char	*hex_total_l(long long int n)
-{
-	char	*hex;
-
-	if (n < 0)
-	{
-		hex = hex_int(4294967296 + (unsigned long long int)n);
-		return ((hex + 1));
-		free(hex);
-	}
-	else
-	{
-		hex = hex_int((long long)ft_abs(n));
-		return (hex);
-		free(hex);
-	}
+		*hex = hex_int(va_arg(arg, unsigned int));
+	return (*hex);
 }

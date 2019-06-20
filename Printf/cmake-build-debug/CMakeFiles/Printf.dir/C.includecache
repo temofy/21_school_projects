@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Printf/cheks.c
-ft_printf.h
-/Users/cheller/Desktop/home_space/Printf/ft_printf.h
-
 /Users/cheller/Desktop/home_space/Printf/ft_printf.h
 stdarg.h
 -
@@ -24,5 +20,11 @@ stdlib.h
 unistd.h
 -
 string.h
+-
+
+/Users/cheller/Desktop/home_space/Printf/main.c
+ft_printf.h
+/Users/cheller/Desktop/home_space/Printf/ft_printf.h
+stdio.h
 -
 
