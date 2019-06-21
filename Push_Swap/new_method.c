@@ -103,6 +103,25 @@ int 	count_steps_i(t_stack *a, int index)
 	return (steps);
 }
 
+int		find_place(t_stack *stack, int value)
+{
+	int	index;
+	int i;
+
+	index = stack->size - 1;
+	if (stack->data[index])
+	while (index > 0)
+	{
+		if (stack->data[index] < value && stack->data[index - 1] > value)
+		{
+
+		}
+		index--;
+	}
+	if ()
+	return (index);
+}
+
 void	steps_to_a(t_stack *a, int value, t_steps *steps, int index, t_first_loc *seq)
 {
 	int	i;
@@ -111,6 +130,7 @@ void	steps_to_a(t_stack *a, int value, t_steps *steps, int index, t_first_loc *s
 	i = a->size;
 	if (a->data[a->size - 1] > value && value > find_boundaries(seq, a->data[i - 1])) // проверить ситуацию
 	{
+		find_place(a, value);
 		steps[index].a_steps = 0;
 		steps[index].a_index = a->size - 1;
 		return ;
@@ -142,7 +162,7 @@ void	steps_to_a(t_stack *a, int value, t_steps *steps, int index, t_first_loc *s
 		int		min;
 
 		min = find_min_el(a);
-		steps[index].a_index = (min - 1 < 0) ? a->size - 1 : min - 1;
+		steps[index].a_index = (min - 1 < 0) ? a->size - 1 : min;
 		steps[index].a_steps = count_steps_i(a, steps[index].a_index);
 		//steps[index].a_index = 0;
 		return ;
