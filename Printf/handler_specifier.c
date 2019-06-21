@@ -23,7 +23,7 @@ char	*find_spec_add(const char *f, va_list arg, t_formatting *e_seq, int i)
 	else if (f[i] == 'u')
 		return (handler_u(arg, e_seq));
 	else if (f[i] == 'U')
-		return (handler_U(arg, e_seq));
+		return (handler_big_u(arg, e_seq));
 	else if (f[i] == 'o')
 		return (handler_o(arg, e_seq));
 	else if (f[i] == 'x')
@@ -47,7 +47,7 @@ char	*find_specifier(const char *format, va_list arg, t_formatting *e_seq)
 	{
 		if (format[i] == 'd' || format[i] == 'i')
 			return (handler_d(arg, e_seq));
-		else if (format[i] == 'f')
+		else if (format[i] == 'f' || format[i] == 'F')
 			return (handler_f(arg, e_seq));
 		else if (format[i] == 'b')
 			return (handler_b(arg, e_seq));

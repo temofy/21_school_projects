@@ -50,10 +50,7 @@ char	*handler_sequence_d(char **str, t_formatting *e_seq, char *spaces)
 	int		length_str;
 
 	if (e_seq->precision == 0 && **str == '0')
-	{
-		free(*str);
-		*str = ft_strnew(0);
-	}
+		*str = ft_strljoin(*str, ft_strnew(0), 0, 0);
 	if (e_seq->width == -1)
 		e_seq->width = 0;
 	e_seq->width -= e_seq->is_negative;
@@ -91,10 +88,7 @@ char	*handler_d(va_list arg, t_formatting *e_seq)
 	else if (e_seq->length_modifier == 106)
 		nbr_str = ft_litoa((intmax_t)va_arg(arg, intmax_t));
 	else if (e_seq->length_modifier == 122)
-	{
-		size_t	ebobo = va_arg(arg, size_t);
-		nbr_str = ft_litoa(ebobo);
-	}
+		nbr_str = ft_litoa(va_arg(arg, size_t));
 	else
 		nbr_str = ft_itoa(va_arg(arg, int));
 	if (*nbr_str == '-')

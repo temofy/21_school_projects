@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
+#include "ft_printf.h"
 
 char	*hexcimal(long long int *res, char *c_res, unsigned long long int tmp)
 {

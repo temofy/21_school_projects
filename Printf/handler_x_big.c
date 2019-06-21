@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
+#include "ft_printf.h"
 
 char	*hex_big_zero(t_formatting *e_sequence, int *len, char *res)
 {

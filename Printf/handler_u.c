@@ -35,7 +35,7 @@ char	*handler_u(va_list arg, t_formatting *e_sequence)
 	return (nbr_str);
 }
 
-char	*handler_U(va_list arg, t_formatting *e_sequence)
+char	*handler_big_u(va_list arg, t_formatting *e_sequence)
 {
 	char	*nbr_str;
 	char	*str;

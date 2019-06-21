@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	initialize_flags(t_flags **flags)
+void			initialize_flags(t_flags **flags)
 {
 	*flags = (t_flags*)malloc(sizeof(t_flags));
 	(*flags)->minus = 0;
@@ -22,7 +22,7 @@ void	initialize_flags(t_flags **flags)
 	(*flags)->hash = 0;
 }
 
-int		find_index_end_spec(const char *s)
+int				find_index_end_spec(const char *s)
 {
 	int	i;
 
@@ -48,13 +48,13 @@ int		find_index_end_spec(const char *s)
 			return (i - 1);
 		i++;
 	}
-	return (-1);
+	return (i - 1);
 }
 
 t_long_value	calculate_lv(t_long_value *result, int i, int len)
 {
 	t_long_value	decade_in_exp;
-	t_long_value   	tmp;
+	t_long_value	tmp;
 	t_long_value	tmp_next;
 	t_long_value	tmp_result;
 
@@ -70,7 +70,7 @@ t_long_value	calculate_lv(t_long_value *result, int i, int len)
 	return (*result);
 }
 
-int		read_width(const char *format, int i, int width)
+int				read_width(const char *format, int i, int width)
 {
 	while (format[i] >= '0' && format[i] <= '9')
 	{
@@ -81,7 +81,7 @@ int		read_width(const char *format, int i, int width)
 	return (width);
 }
 
-char	*addition_zeros(char *nbr, int length)
+char			*addition_zeros(char *nbr, int length)
 {
 	char	*zeros;
 

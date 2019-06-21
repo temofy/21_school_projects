@@ -16,7 +16,7 @@ SRC = cheks.c ft_printf.c handler_d.c handler_p.c handler_text.c hex.c handler_u
 		handler_o.c handler_x.c handler_x_big.c hex_big_staff.c\
 		hex_staff.c oct_staff.c handler_f.c long_arithmetic.c handler_b.c represents.c \
 		cleanup.c getting.c conversions.c overflow.c rounding.c additional_func.c bin_staff.c \
-		handler_unicode.c remaining_handlers.c handler_specifier.c oct_int.c ft_sizedup.c
+		handler_unicode.c remaining_handlers.c handler_specifier.c oct_int.c ft_sizedup.c handler_unicode_text.c
 
 LIBFT = libft
 

@@ -1,8 +1,12 @@
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
+#include <locale.h>
+
 
 int 	main()
 {
+	setlocale(LC_ALL, "");
 	/*ft_printf("a%Sc%S\n", L"A", L"H");
 	ft_printf("a%Sc%S\n", L"我", L"猫");
 	ft_printf("%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S%S\n",
@@ -15,8 +19,14 @@ int 	main()
 	ft_printf("FLoat and integer: %20.15f\n%- 10.5i\n", 56.4131, 999);
 	ft_printf("%-10.5o\n", 2500);
 	printf("%-10.5o\n", 2500);*/
-	ft_printf("%C\n", 0);
-	printf("%C", 0);
+
+	/*ft_printf("%o\n", LONG_MIN);
+	ft_printf("%lo\n", LONG_MIN);
+	printf("%lo\n", LONG_MIN);
+	printf("%O\n", LONG_MIN);*/
+
+	ft_printf("%05C\n", 0);
+	printf("%05C", 0);
 	//ft_printf("% hZ%");
 	//ft_printf("%x\n", -42);
 	//printf("%x", -42);

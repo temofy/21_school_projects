@@ -2,7 +2,6 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/libft/ft_strnew.c" description="str[size] = '\0';" line="23" />
-    <bookmark url="file://$PROJECT_DIR$/ft_printf.c" line="55" mnemonic="8" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -16,8 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73557f-f2ff-4dd9-a47d-3e549b906570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ft_sizedup.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oct_int.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler_unicode_text.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/a.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/author" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.c" beforeDir="false" />
@@ -161,45 +159,77 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cleanup.c" beforeDir="false" afterPath="$PROJECT_DIR$/Cleanup.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/additional_func.c" beforeDir="false" afterPath="$PROJECT_DIR$/additional_func.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/additional_func.o" beforeDir="false" afterPath="$PROJECT_DIR$/additional_func.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin_staff.c" beforeDir="false" afterPath="$PROJECT_DIR$/bin_staff.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cheks.c" beforeDir="false" afterPath="$PROJECT_DIR$/cheks.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cheks.o" beforeDir="false" afterPath="$PROJECT_DIR$/cheks.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.4/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/Cleanup.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/Cleanup.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/Getting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/Getting.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/additional_func.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/additional_func.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/bin_staff.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/bin_staff.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/cheks.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/conversions.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/ft_printf.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/ft_sizedup.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/ft_sizedup.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_b.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_b.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_d.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_d.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_f.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_f.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_o.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_o.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_p.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_p.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_specifier.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_specifier.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_text.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_text.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_u.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_u.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_unicode.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_unicode.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_x.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_x.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_x_big.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/handler_x_big.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex_big_staff.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex_big_staff.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex_staff.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/hex_staff.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strdup.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/libft/ft_strdup.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/long_arithmetic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/long_arithmetic.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/oct_int.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/oct_int.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/oct_staff.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/oct_staff.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/overflow.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/overflow.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/remaining_handlers.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/remaining_handlers.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/represents.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/represents.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/rounding.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/rounding.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Printf.dir/test.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Printf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Printf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Printf.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Printf.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Printf.dSYM/Contents/Resources/DWARF/Printf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Printf.dSYM/Contents/Resources/DWARF/Printf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Printf.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Printf.dSYM/Contents/Resources/DWARF/Printf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_sizedup.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_sizedup.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_b.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_b.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_d.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_d.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_d.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_d.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler_f.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_f.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_o.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_o.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler_o.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_o.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_p.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_p.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler_p.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_p.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_specifier.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_specifier.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_specifier.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_specifier.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_text.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_text.c" afterDir="false" />
@@ -207,48 +237,16 @@
       <change beforePath="$PROJECT_DIR$/handler_u.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_u.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_u.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_u.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_x.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_x.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler_x.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_x.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler_x_big.c" beforeDir="false" afterPath="$PROJECT_DIR$/handler_x_big.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler_x_big.o" beforeDir="false" afterPath="$PROJECT_DIR$/handler_x_big.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hex.c" beforeDir="false" afterPath="$PROJECT_DIR$/hex.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hex.o" beforeDir="false" afterPath="$PROJECT_DIR$/hex.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hex_big_staff.c" beforeDir="false" afterPath="$PROJECT_DIR$/hex_big_staff.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hex_big_staff.o" beforeDir="false" afterPath="$PROJECT_DIR$/hex_big_staff.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hex_staff.c" beforeDir="false" afterPath="$PROJECT_DIR$/hex_staff.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hex_staff.o" beforeDir="false" afterPath="$PROJECT_DIR$/hex_staff.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strdup.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strdup.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strdup.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strdup.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strnew_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strnew_set.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oct_int.c" beforeDir="false" afterPath="$PROJECT_DIR$/oct_int.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oct_staff.c" beforeDir="false" afterPath="$PROJECT_DIR$/oct_staff.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oct_staff.o" beforeDir="false" afterPath="$PROJECT_DIR$/oct_staff.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Push_Swap" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Push_Swap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Push_Swap.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/Push_Swap.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/ft_arraylen.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/ft_arraylen.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/ft_atopi.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/ft_atopi.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/ft_atopi.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/ft_atopi.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/ft_strnew_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/ft_strnew_set.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/libft.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/libft.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/libft.h.gch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/new_method.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/new_method.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/push_swap.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/push_swap.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -264,61 +262,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libft/ft_strljoin.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handler_d.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="446">
+              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.c">
+        <entry file="file://$PROJECT_DIR$/handler_p.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="566">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libft/ft_ulitoa.c">
+        <entry file="file://$PROJECT_DIR$/hex.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="283">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ft_printf.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
-              <folding>
-                <element signature="e#934#954#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ft_printf.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="628">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handler_text.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -326,17 +309,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handler_unicode.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="346">
               <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/handler_text.c">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handler_specifier.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="103" column="45" lean-forward="true" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+            <state relative-caret-position="660">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -345,14 +328,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>`</find>
       <find>ft_strf</find>
       <find>abs</find>
       <find>pow</find>
       <find>StrZeros</find>
       <find>str_fp</find>
       <find>length_arg</find>
-      <find>length_str</find>
       <find>COnv</find>
       <find>precsion</find>
       <find>strdup</find>
@@ -373,6 +354,10 @@
       <find>format</find>
       <find>start</find>
       <find>c_len</find>
+      <find>handler_U</find>
+      <find>float_point</find>
+      <find>handler_seq</find>
+      <find>length_str</find>
     </findStrings>
     <replaceStrings>
       <replace>str_fp</replace>
@@ -396,6 +381,8 @@
       <replace>f</replace>
       <replace>s</replace>
       <replace>len</replace>
+      <replace>fp</replace>
+      <replace>len_spaces</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -404,8 +391,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/libft/ft_strclr.c" />
-        <option value="$PROJECT_DIR$/CleanUp.c" />
         <option value="$PROJECT_DIR$/Getting.c" />
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/test.c" />
@@ -417,52 +402,54 @@
         <option value="$PROJECT_DIR$/author" />
         <option value="$PROJECT_DIR$/long_arithmetic.c" />
         <option value="$PROJECT_DIR$/libft/ft_strnew_set.c" />
-        <option value="$PROJECT_DIR$/hex.c" />
         <option value="$PROJECT_DIR$/rounding.c" />
         <option value="$PROJECT_DIR$/overflow.c" />
-        <option value="$PROJECT_DIR$/additional_func.c" />
         <option value="$PROJECT_DIR$/getting.c" />
-        <option value="$PROJECT_DIR$/handler_b.c" />
-        <option value="$PROJECT_DIR$/hex_big_staff.c" />
-        <option value="$PROJECT_DIR$/bin_staff.c" />
-        <option value="$PROJECT_DIR$/handler_p.c" />
-        <option value="$PROJECT_DIR$/handler_x_big.c" />
-        <option value="$PROJECT_DIR$/handler_f.c" />
         <option value="$PROJECT_DIR$/libft/ft_itoa_base.c" />
         <option value="$PROJECT_DIR$/libft/ft_strlen.c" />
         <option value="$PROJECT_DIR$/libft/libft.h" />
-        <option value="$PROJECT_DIR$/hex_staff.c" />
-        <option value="$PROJECT_DIR$/handler_x.c" />
         <option value="$PROJECT_DIR$/handler_unicode.c" />
-        <option value="$PROJECT_DIR$/cleanup.c" />
-        <option value="$PROJECT_DIR$/ft_printf.c" />
         <option value="$PROJECT_DIR$/represents.c" />
         <option value="$PROJECT_DIR$/remaining_handlers.c" />
         <option value="$PROJECT_DIR$/libft/ft_intlen.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/libft/ft_strfjoin.c" />
-        <option value="$PROJECT_DIR$/oct_staff.c" />
         <option value="$PROJECT_DIR$/libft/ft_strdup.c" />
         <option value="$PROJECT_DIR$/libft/ft_strljoin.c" />
-        <option value="$PROJECT_DIR$/handler_o.c" />
-        <option value="$PROJECT_DIR$/oct_int.c" />
-        <option value="$PROJECT_DIR$/handler_text.c" />
         <option value="$PROJECT_DIR$/libft/ft_ulitoa.c" />
-        <option value="$PROJECT_DIR$/ft_printf.h" />
-        <option value="$PROJECT_DIR$/handler_specifier.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/handler_u.c" />
         <option value="$PROJECT_DIR$/handler_d.c" />
-        <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/handler_f.c" />
+        <option value="$PROJECT_DIR$/cleanup.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/handler_b.c" />
+        <option value="$PROJECT_DIR$/handler_p.c" />
+        <option value="$PROJECT_DIR$/ft_sizedup.c" />
+        <option value="$PROJECT_DIR$/oct_int.c" />
+        <option value="$PROJECT_DIR$/handler_x.c" />
+        <option value="$PROJECT_DIR$/handler_x_big.c" />
+        <option value="$PROJECT_DIR$/hex.c" />
+        <option value="$PROJECT_DIR$/hex_big_staff.c" />
+        <option value="$PROJECT_DIR$/ft_printf.h" />
+        <option value="$PROJECT_DIR$/hex_staff.c" />
+        <option value="$PROJECT_DIR$/bin_staff.c" />
+        <option value="$PROJECT_DIR$/handler_specifier.c" />
+        <option value="$PROJECT_DIR$/handler_o.c" />
+        <option value="$PROJECT_DIR$/oct_staff.c" />
+        <option value="$PROJECT_DIR$/additional_func.c" />
         <option value="$PROJECT_DIR$/cheks.c" />
+        <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/handler_text.c" />
+        <option value="$PROJECT_DIR$/handler_unicode_text.c" />
+        <option value="$PROJECT_DIR$/ft_printf.c" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="158" />
+    <option name="x" value="29" />
     <option name="y" value="30" />
-    <option name="width" value="1516" />
+    <option name="width" value="2073" />
     <option name="height" value="1406" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -471,18 +458,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Printf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Printf" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="Printf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Printf" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Printf" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,13 +505,6 @@
         </RuleState>
       </list>
     </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Printf" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Printf" TARGET_NAME="Printf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Printf" RUN_TARGET_NAME="Printf">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -575,12 +560,14 @@
       <workItem from="1561033760069" duration="3142000" />
       <workItem from="1561037327882" duration="389000" />
       <workItem from="1561037871936" duration="1569000" />
-      <workItem from="1561042004278" duration="6253000" />
+      <workItem from="1561042004278" duration="6404000" />
+      <workItem from="1561105385764" duration="434000" />
+      <workItem from="1561108859091" duration="13165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244784000" />
+    <option name="totallyTimeSpent" value="258534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,25 +579,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="158" y="30" width="1516" height="1406" extended-state="0" />
+    <frame x="29" y="30" width="2073" height="1406" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38466758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28705072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32957292" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.656038" visible="true" weight="0.3523592" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.55194485" weight="0.36377475" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.5339213" weight="0.39878234" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49630722" weight="0.39878234" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48575306" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.118046135" weight="0.32724506" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4559023" weight="0.35159817" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.343962" side_tool="true" visible="true" weight="0.3523592" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.72919744" weight="0.32724506" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.45150173" visible="true" weight="0.35159817" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5484983" side_tool="true" visible="true" weight="0.35159817" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49938875" weight="0.32957292" />
-      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4979647" weight="0.32952815" />
+      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4972863" weight="0.32952815" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -653,20 +640,41 @@
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>17</line>
-          <option name="timeStamp" value="127" />
+          <url>file://$PROJECT_DIR$/handler_p.c</url>
+          <line>62</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/handler_d.c</url>
-          <line>77</line>
-          <option name="timeStamp" value="128" />
+          <url>file://$PROJECT_DIR$/handler_text.c</url>
+          <line>60</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/handler_unicode_text.c</url>
+          <line>51</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="f[i]" language="ObjectiveC" />
+        <watch expression="format[i]" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>format[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>f[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>res[-1]</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -704,16 +712,6 @@
       </expression>
       <expression>
         <expression-string>wchar[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>wchar[0]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>nbr[length]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -767,92 +765,12 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libft/ft_strcpy.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strlcat.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strclr.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strchr.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strncpy.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_itoa_base.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strlen.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="17" selection-start-line="14" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin_staff.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/len_o.c" />
-    <entry file="file://$PROJECT_DIR$/hex_big_staff.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strequ.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler_x_big.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hex.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cleanup.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_litoa.c">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include/stdint.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -880,38 +798,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rounding.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getting.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_abs.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -933,27 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler_o.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oct_staff.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strnew.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -984,55 +853,10 @@
     <entry file="file://$PROJECT_DIR$/overflow.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/additional_func.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler_x.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="94" column="15" selection-start-line="94" selection-start-column="15" selection-end-line="94" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oct_int.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hex_staff.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_itoa.c">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strsub.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ft_printf.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
-          <folding>
-            <element signature="e#934#954#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,76 +867,269 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handler_u.c">
+    <entry file="file://$PROJECT_DIR$/libft/ft_strnew_set.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/remaining_handlers.c">
+    <entry file="file://$PROJECT_DIR$/cleanup.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        <state relative-caret-position="600">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handler_d.c">
+    <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="300">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../old_file printf/handler_p.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-419">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_b.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getting.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_sizedup.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_x_big.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hex_big_staff.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_printf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="104" column="88" selection-start-line="104" selection-start-column="88" selection-end-line="104" selection-end-column="88" />
+          <folding>
+            <element signature="e#934#954#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin_staff.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_o.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+          <folding>
+            <element signature="e#892#914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_abs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oct_staff.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_strnew.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oct_int.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strljoin.c">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remaining_handlers.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_strsub.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_f.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="94" column="63" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_litoa.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hex_staff.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_x.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="709">
+          <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/additional_func.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_u.c">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
+    <entry file="file://$PROJECT_DIR$/../../old_file printf/hex.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="250">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cheks.c">
+    <entry file="file://$PROJECT_DIR$/hex.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        <state relative-caret-position="283">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_p.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_d.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handler_specifier.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ft_printf.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="660">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handler_unicode.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="346">
           <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handler_text.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="103" column="45" lean-forward="true" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+        <state relative-caret-position="551">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler_unicode_text.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cheks.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="95" selection-start-line="95" selection-end-line="118" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_printf.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>

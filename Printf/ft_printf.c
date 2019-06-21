@@ -50,10 +50,8 @@ void	reading_format(const char *f, char **str, size_t *len, va_list *arg)
 		if (f[i] == '%' && !found_spec++)
 		{
 			sub = ft_strsub(f, s, i - s);
-			if (s == 0)
-				*str = ft_strljoin(*str, sub, 0, i - s);
-			else
-				*str = ft_strljoin(*str, sub, *len - (i - s), i - s);
+			*str = (s == 0) ? ft_strljoin(*str, sub, 0, i - s) :
+					ft_strljoin(*str, sub, *len - (i - s), i - s);
 			concatenate_str(f + i, &*str, &*arg, &*len);
 		}
 		else if (found_spec)
@@ -61,6 +59,8 @@ void	reading_format(const char *f, char **str, size_t *len, va_list *arg)
 		else
 			(*len)++;
 	}
+	if (found_spec)
+		i--;
 	*str = ft_strljoin(*str, ft_strsub(f, s, i - s), *len - (i - s), (i - s));
 }
 

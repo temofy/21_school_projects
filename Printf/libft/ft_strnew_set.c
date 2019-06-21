@@ -6,7 +6,7 @@
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 12:33:04 by cheller           #+#    #+#             */
-/*   Updated: 2019/06/02 12:33:19 by cheller          ###   ########.fr       */
+/*   Updated: 2019/06/21 12:23:37 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ char	*ft_strnew_set(char c, size_t size)
 		str[size] = c;
 	return (str);
 }
-

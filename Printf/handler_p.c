@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../Downloads/hopb_without_leaks/ft_printf.h"
+#include "ft_printf.h"
 
 char	*pointer(char **str, char *hex, t_formatting *e_seq)
 {

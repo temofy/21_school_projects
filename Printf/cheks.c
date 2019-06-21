@@ -110,73 +110,40 @@ int			check_width(const char *f)
 			finded_d = 0;
 		if (((f[i - 1] < '0' || f[i - 1] > '9') || (i - 1) == -1) && finded_d)
 		{
-			width = read_width(f, i, width);
-			if (!width)
-				width = -1;
-			return (width);
+			if ((width = read_width(f, i, width)) > 0)
+				break ;
 		}
 	}
-	return (-1);
+	if (!width)
+		width = -1;
+	return (width);
 }
 
 int			check_length_modifier(const char *format)
 {
-	int i;
 	int length_modifier;
 
 	length_modifier = -1;
-	i = find_index_end_spec(format) + 1;
-	while (--i)
+	format += find_index_end_spec(format);
+	while (*(--format) != '%')
 	{
-		if (format[i - 1] == 'h')
+		if (*format == 'h')
 		{
-			length_modifier = 104;
-			if (format[i - 2] == 'h')
-				length_modifier = 208;
+			length_modifier += 104 + 1;
+			length_modifier -= (*(format - 1) == 'h') ? 1 : 0;
 		}
-		if (format[i - 1] == 'l')
+		if (*format == 'l')
 		{
-			if (format[i - 2] == 'l')
+			if (*format == 'l')
 				return (216);
 			return (108);
 		}
-		if (format[i - 1] == 'L')
+		if (*format == 'L')
 			return (76);
-		if (format[i - 1] == 'j')
+		if (*format == 'j')
 			return (106);
-		if (format[i - 1] == 'z')
+		if (*format == 'z')
 			return (122);
 	}
 	return (length_modifier);
 }
-
-/*int			check_length_modifier(const char *format)
-{
-	int i;
-	int length_modifier;
-
-	length_modifier = -1;
-	i = find_index_end_spec(format) + 1;
-	while (--i)
-	{
-		if (format[i - 1] == 'h')
-		{
-			if (format[i - 2] == 'h')
-				return (208);
-			return (104);
-		}
-		if (format[i - 1] == 'l')
-		{
-			if (format[i - 2] == 'l')
-				return (216);
-			return (108);
-		}
-		if (format[i - 1] == 'L')
-			return (76);
-		if (format[i - 1] == 'j')
-			return (106);
-		if (format[i - 1] == 'z')
-			return (122);
-	}
-	return (length_modifier);
-}*/

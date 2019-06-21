@@ -86,18 +86,18 @@ char	*handler_ambiguity(t_float *fp, char **s, t_formatting *e_s, char **sps)
 
 t_float	*fill_fp(long double ldbl)
 {
-	t_float	*float_point;
+	t_float	*fp;
 
-	if (!(float_point = (t_float*)malloc(sizeof(t_float))))
+	if (!(fp = (t_float*)malloc(sizeof(t_float))))
 		return (NULL);
-	float_point->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
-	float_point->binary->ld = ldbl;
-	float_point->binary_represent = represent_binary(float_point->binary->b, 10);
-	float_point->sign = *float_point->binary_represent;
-	float_point->exp = ft_strsub(float_point->binary_represent, 1, 15);
-	float_point->int_part = *(float_point->binary_represent + 16);
-	float_point->frac = ft_strsub(float_point->binary_represent, 17, 63);
-	return (float_point);
+	fp->binary = (t_ld_nbr*)malloc(sizeof(t_ld_nbr));
+	fp->binary->ld = ldbl;
+	fp->binary_represent = represent_binary(fp->binary->b, 10);
+	fp->sign = *fp->binary_represent;
+	fp->exp = ft_strsub(fp->binary_represent, 1, 15);
+	fp->int_part = *(fp->binary_represent + 16);
+	fp->frac = ft_strsub(fp->binary_represent, 17, 63);
+	return (fp);
 }
 
 char	*handler_f(va_list arg, t_formatting *e_seq)
