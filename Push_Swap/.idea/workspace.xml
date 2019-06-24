@@ -154,7 +154,13 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Push_Swap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new_method.c" beforeDir="false" afterPath="$PROJECT_DIR$/new_method.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/push_swap.c" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,8 +199,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/push_swap.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6405">
-              <caret line="427" column="28" selection-start-line="427" selection-start-column="28" selection-end-line="427" selection-end-column="28" />
+            <state relative-caret-position="791">
+              <caret line="340" column="14" lean-forward="true" selection-start-line="340" selection-start-column="14" selection-end-line="340" selection-end-column="14" />
               <folding>
                 <element signature="e#892#914#0" expanded="true" />
               </folding>
@@ -214,8 +220,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_method.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+            <state relative-caret-position="498">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libft/ft_iseven.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -254,11 +269,11 @@
         <option value="$PROJECT_DIR$/quick_sort.c" />
         <option value="$PROJECT_DIR$/push_swap.h" />
         <option value="$PROJECT_DIR$/libft/ft_arraylen.c" />
-        <option value="$PROJECT_DIR$/push_swap.c" />
         <option value="$PROJECT_DIR$/libft/libft.h" />
         <option value="$PROJECT_DIR$/libft/ft_strnew_set.c" />
         <option value="$PROJECT_DIR$/libft/ft_atopi.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/push_swap.c" />
         <option value="$PROJECT_DIR$/new_method.c" />
       </list>
     </option>
@@ -276,6 +291,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,7 +308,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,7 +334,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Push_Swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;4 3 1 2 5 8 0 10 20 -10&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Push_Swap" TARGET_NAME="Push_Swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Push_Swap" RUN_TARGET_NAME="Push_Swap">
+    <configuration name="Push_Swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="361 340 43 -462 824 173 976 -193 185 660 -378 879 -295 641 -471 708 677 -236 642 -320" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Push_Swap" TARGET_NAME="Push_Swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Push_Swap" RUN_TARGET_NAME="Push_Swap">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -352,25 +367,27 @@
       <workItem from="1560848104974" duration="23445000" />
       <workItem from="1560933710318" duration="14041000" />
       <workItem from="1561022178313" duration="9952000" />
-      <workItem from="1561125994064" duration="1887000" />
+      <workItem from="1561125994064" duration="5100000" />
+      <workItem from="1561368174309" duration="686000" />
+      <workItem from="1561369568493" duration="497000" />
+      <workItem from="1561371579909" duration="3387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122228000" />
+    <option name="totallyTimeSpent" value="130011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="650" y="49" width="1737" height="1387" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36460176" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37699115" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.490379" weight="0.37142858" />
       <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.47055393" weight="0.32895753" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49620992" visible="true" weight="0.3984556" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49620992" weight="0.3984556" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -430,28 +447,57 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/new_method.c</url>
-          <line>329</line>
+          <line>344</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/new_method.c</url>
-          <line>105</line>
-          <option name="timeStamp" value="39" />
+          <line>408</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/new_method.c</url>
+          <line>36</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="steps[4]" language="ObjectiveC" />
-        <watch expression="steps[3]" language="ObjectiveC" />
-        <watch expression="steps[2]" language="ObjectiveC" />
-        <watch expression="steps[1]" language="ObjectiveC" />
-        <watch expression="steps[0]" language="ObjectiveC" />
+        <watch expression="steps[index]" language="ObjectiveC" />
+        <watch expression="sorted_seq-&gt;end" />
+        <watch expression="stack-&gt;data[i]" language="ObjectiveC" />
+        <watch expression="stack-&gt;data[i - 1]" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>stack-&gt;data[i - 1]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stack-&gt;data[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>steps[index]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stack-&gt;data[index - 1]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>stack-&gt;data[index]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>steps[4]</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -474,31 +520,6 @@
       </expression>
       <expression>
         <expression-string>steps[2]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>steps[i]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>a-&gt;data[i]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>steps[index]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>steps[6]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>steps[i - 1]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -607,9 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_iseven.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
@@ -658,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/push_swap.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6405">
-          <caret line="427" column="28" selection-start-line="427" selection-start-column="28" selection-end-line="427" selection-end-column="28" />
-          <folding>
-            <element signature="e#892#914#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strsplit.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -675,10 +683,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_iseven.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/push_swap.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="791">
+          <caret line="340" column="14" lean-forward="true" selection-start-line="340" selection-start-column="14" selection-end-line="340" selection-end-column="14" />
+          <folding>
+            <element signature="e#892#914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/new_method.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+        <state relative-caret-position="498">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>

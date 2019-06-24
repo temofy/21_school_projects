@@ -406,10 +406,10 @@ int 	push_swap(int amount, char *argv[])
 	b = stack_malloc(amount);
 	if ((rtn = read_arguments(a, amount, &*argv)) == -1)
 		return (rtn);
-	print_stack(a, b);
+	//print_stack(a, b);
 	initialize_start(a, b);
 	rtn = is_sorted_stack(a, b);
-	//print_stack(a, b);
+	print_stack(a, b);
 	free_stack(a);
 	free_stack(b);
 	return (rtn);
