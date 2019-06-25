@@ -123,6 +123,114 @@ Push_Swap/fast:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/build
 .PHONY : Push_Swap/fast
 
+checker.o: checker.c.o
+
+.PHONY : checker.o
+
+# target to build an object file
+checker.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.o
+.PHONY : checker.c.o
+
+checker.i: checker.c.i
+
+.PHONY : checker.i
+
+# target to preprocess a source file
+checker.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.i
+.PHONY : checker.c.i
+
+checker.s: checker.c.s
+
+.PHONY : checker.s
+
+# target to generate assembly for a file
+checker.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.s
+.PHONY : checker.c.s
+
+finders.o: finders.c.o
+
+.PHONY : finders.o
+
+# target to build an object file
+finders.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/finders.c.o
+.PHONY : finders.c.o
+
+finders.i: finders.c.i
+
+.PHONY : finders.i
+
+# target to preprocess a source file
+finders.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/finders.c.i
+.PHONY : finders.c.i
+
+finders.s: finders.c.s
+
+.PHONY : finders.s
+
+# target to generate assembly for a file
+finders.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/finders.c.s
+.PHONY : finders.c.s
+
+handler_sequences.o: handler_sequences.c.o
+
+.PHONY : handler_sequences.o
+
+# target to build an object file
+handler_sequences.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_sequences.c.o
+.PHONY : handler_sequences.c.o
+
+handler_sequences.i: handler_sequences.c.i
+
+.PHONY : handler_sequences.i
+
+# target to preprocess a source file
+handler_sequences.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_sequences.c.i
+.PHONY : handler_sequences.c.i
+
+handler_sequences.s: handler_sequences.c.s
+
+.PHONY : handler_sequences.s
+
+# target to generate assembly for a file
+handler_sequences.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_sequences.c.s
+.PHONY : handler_sequences.c.s
+
+handler_steps.o: handler_steps.c.o
+
+.PHONY : handler_steps.o
+
+# target to build an object file
+handler_steps.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_steps.c.o
+.PHONY : handler_steps.c.o
+
+handler_steps.i: handler_steps.c.i
+
+.PHONY : handler_steps.i
+
+# target to preprocess a source file
+handler_steps.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_steps.c.i
+.PHONY : handler_steps.c.i
+
+handler_steps.s: handler_steps.c.s
+
+.PHONY : handler_steps.s
+
+# target to generate assembly for a file
+handler_steps.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_steps.c.s
+.PHONY : handler_steps.c.s
+
 instructions.o: instructions.c.o
 
 .PHONY : instructions.o
@@ -2229,33 +2337,6 @@ new_method.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.s
 .PHONY : new_method.c.s
 
-push_swap.o: push_swap.c.o
-
-.PHONY : push_swap.o
-
-# target to build an object file
-push_swap.c.o:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.o
-.PHONY : push_swap.c.o
-
-push_swap.i: push_swap.c.i
-
-.PHONY : push_swap.i
-
-# target to preprocess a source file
-push_swap.c.i:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.i
-.PHONY : push_swap.c.i
-
-push_swap.s: push_swap.c.s
-
-.PHONY : push_swap.s
-
-# target to generate assembly for a file
-push_swap.c.s:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.s
-.PHONY : push_swap.c.s
-
 stack_manipulations.o: stack_manipulations.c.o
 
 .PHONY : stack_manipulations.o
@@ -2292,6 +2373,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Push_Swap"
+	@echo "... checker.o"
+	@echo "... checker.i"
+	@echo "... checker.s"
+	@echo "... finders.o"
+	@echo "... finders.i"
+	@echo "... finders.s"
+	@echo "... handler_sequences.o"
+	@echo "... handler_sequences.i"
+	@echo "... handler_sequences.s"
+	@echo "... handler_steps.o"
+	@echo "... handler_steps.i"
+	@echo "... handler_steps.s"
 	@echo "... instructions.o"
 	@echo "... instructions.i"
 	@echo "... instructions.s"
@@ -2526,9 +2619,6 @@ help:
 	@echo "... new_method.o"
 	@echo "... new_method.i"
 	@echo "... new_method.s"
-	@echo "... push_swap.o"
-	@echo "... push_swap.i"
-	@echo "... push_swap.s"
 	@echo "... stack_manipulations.o"
 	@echo "... stack_manipulations.i"
 	@echo "... stack_manipulations.s"

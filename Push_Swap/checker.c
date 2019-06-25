@@ -11,14 +11,19 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int 	checker(int amount, char **argv)
+void	free_stacks(t_stack *a, t_stack *b)
+{
+	free_stack(a);
+	free_stack(b);
+}
+
+int		checker(int amount, char **argv)
 {
 	t_stack		*a;
 	t_stack		*b;
-	int 		rtn;
-	char 		*operation;
+	int			rtn;
+	char		*operation;
 
 	a = stack_malloc(amount);
 	b = stack_malloc(amount);
@@ -30,32 +35,29 @@ int 	checker(int amount, char **argv)
 		{
 			if ((select_operation(operation, a, b)) == -1)
 				return (-1);
-			//print_stack(a, b);
 		}
 		else
 		{
 			free(operation);
-			break;
+			break ;
 		}
 	}
 	rtn = is_sorted_stack(a, b);
-	print_stack(a, b);
-	free_stack(a);
-	free_stack(b);
+	free_stacks(a, b);
 	return (rtn);
 }
 
-int 	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
-	int 	rtn;
-	char 	**instructions;
+	int		rtn;
+	char	**instructions;
 
 	if (argc == 1)
 		return (0);
 	if (argc == 2)
 	{
 		instructions = ft_strsplit(argv[1], ' ');
-		rtn = checker(5, instructions - 1);
+		rtn = checker(ft_arraylen((void**)instructions), instructions - 1);
 	}
 	else
 		rtn = checker(argc - 1, &*argv);

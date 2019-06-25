@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_manipulations.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/25 21:07:11 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/25 21:07:13 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+#include <stdio.h>
 
 t_stack	*stack_malloc(int amount)
 {
@@ -36,8 +49,8 @@ void	free_stack(t_stack *stack)
 
 int		read_arguments(t_stack *a, int amount, char *argv[])
 {
-	int 		i;
-	int 		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (amount)
@@ -67,7 +80,6 @@ void	print_stack(t_stack *a, t_stack *b)
 	size_b = b->size;
 	while (--i >= 0)
 	{
-
 		if (size_a == i + 1)
 		{
 			size_a--;

@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/checker.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/finders.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/handler_sequences.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/handler_steps.c">
+			<Option target="Push_Swap"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/instructions.c">
 			<Option target="Push_Swap"/>
 		</Unit>
@@ -317,9 +329,6 @@
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/new_method.c">
-			<Option target="Push_Swap"/>
-		</Unit>
-		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.h">

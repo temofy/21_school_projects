@@ -83,8 +83,11 @@ add_executable(Push_Swap
 		libft/get_next_line.c
 		libft/ft_strposchr.c
 		libft/ft_arraylen.c
-		push_swap.c
+		checker.c
+		new_method.c
+		finders.c
+		handler_steps.c
+		handler_sequences.c
 		instructions.c
 		stack_manipulations.c
-		new_method.c
         push_swap.h)

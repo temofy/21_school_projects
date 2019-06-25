@@ -1,17 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   instructions.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/25 21:09:44 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/25 21:09:46 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	swap(t_stack *stack)
+int		swap(t_stack *stack)
 {
 	int tmp;
 
 	if (stack->size < 2)
-		return ;
+		return (0);
 	tmp = stack->data[stack->size - 1];
 	stack->data[stack->size - 1] = stack->data[stack->size - 2];
 	stack->data[stack->size - 2] = tmp;
+	return (1);
 }
 
-void	push(t_stack *in, t_stack *out)
+int		push(t_stack *in, t_stack *out)
 {
 	if (out->size != 0)
 	{
@@ -19,16 +32,17 @@ void	push(t_stack *in, t_stack *out)
 		in->data[in->size] = out->data[out->size];
 		in->size++;
 	}
+	return (1);
 }
 
-void	rotate(t_stack *stack)
+int		rotate(t_stack *stack)
 {
 	int i;
 	int tmp;
 
 	i = 0;
 	if (stack->size < 2)
-		return ;
+		return (0);
 	tmp = stack->data[i + 1];
 	while (i < stack->size - 2)
 	{
@@ -39,39 +53,42 @@ void	rotate(t_stack *stack)
 	}
 	stack->data[i + 1] = stack->data[0];
 	stack->data[0] = tmp;
+	return (1);
 }
 
-void	reverse_rotate(t_stack *stack)
+int		reverse_rotate(t_stack *stack)
 {
 	int i;
 	int tmp;
 
 	i = stack->size - 1;
 	if (stack->size < 1)
-		return ;
+		return (0);
 	tmp = stack->data[i - 1];
 	while (i > 0)
 	{
 		stack->data[i - 1] = stack->data[stack->size - 1];
 		stack->data[stack->size - 1] = tmp;
-		tmp = stack->data[i - 2];
+		if (i > 1)
+			tmp = stack->data[i - 2];
 		i--;
 	}
+	return (1);
 }
 
-int 	select_mul_operation(char *operation, t_stack *a, t_stack *b)
+int		select_mul_operation(char *operation, t_stack *a, t_stack *b, int rtn)
 {
 	if (ft_strcmp(operation, "rr") == 0)
 	{
 		rotate(a);
-		rotate(b);
+		rtn = rotate(b);
 	}
 	else if (ft_strcmp(operation, "rrr") == 0)
 	{
 		reverse_rotate(a);
-		reverse_rotate(b);
+		rtn = reverse_rotate(b);
 	}
-	else
+	else if (!rtn)
 	{
 		free(operation);
 		return (-1);
@@ -82,26 +99,29 @@ int 	select_mul_operation(char *operation, t_stack *a, t_stack *b)
 
 int		select_operation(char *operation, t_stack *a, t_stack *b)
 {
+	int rtn;
+
+	rtn = 0;
 	if (ft_strcmp(operation, "sa") == 0)
-		swap(a);
+		rtn = swap(a);
 	else if (ft_strcmp(operation, "sb") == 0)
-		swap(b);
+		rtn = swap(b);
 	else if (ft_strcmp(operation, "ss") == 0)
 	{
 		swap(a);
-		swap(b);
+		rtn = swap(b);
 	}
 	else if (ft_strcmp(operation, "pa") == 0)
-		push(a, b);
+		rtn = push(a, b);
 	else if (ft_strcmp(operation, "pb") == 0)
-		push(b, a);
+		rtn = push(b, a);
 	else if (ft_strcmp(operation, "ra") == 0)
-		rotate(a);
+		rtn = rotate(a);
 	else if (ft_strcmp(operation, "rb") == 0)
-		rotate(b);
+		rtn = rotate(b);
 	else if (ft_strcmp(operation, "rra") == 0)
-		reverse_rotate(a);
+		rtn = reverse_rotate(a);
 	else if (ft_strcmp(operation, "rrb") == 0)
-		reverse_rotate(b);
-	return (select_mul_operation(operation, a, b));
+		rtn = reverse_rotate(b);
+	return (select_mul_operation(operation, a, b, rtn));
 }
