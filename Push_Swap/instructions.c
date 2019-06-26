@@ -88,20 +88,20 @@ int		select_mul_operation(char *operation, t_stack *a, t_stack *b, int rtn)
 		reverse_rotate(a);
 		rtn = reverse_rotate(b);
 	}
-	else if (!rtn)
+	else if (rtn == -1)
 	{
 		free(operation);
 		return (-1);
 	}
 	free(operation);
-	return (1);
+	return (rtn);
 }
 
 int		select_operation(char *operation, t_stack *a, t_stack *b)
 {
 	int rtn;
 
-	rtn = 0;
+	rtn = -1;
 	if (ft_strcmp(operation, "sa") == 0)
 		rtn = swap(a);
 	else if (ft_strcmp(operation, "sb") == 0)

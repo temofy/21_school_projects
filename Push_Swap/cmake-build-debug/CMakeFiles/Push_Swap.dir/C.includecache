@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Push_Swap/checker.c
-push_swap.h
-/Users/cheller/Desktop/home_space/Push_Swap/push_swap.h
-
 /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
 stdlib.h
 -
@@ -17,6 +13,10 @@ unistd.h
 -
 string.h
 -
+
+/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c
+push_swap.h
+/Users/cheller/Desktop/home_space/Push_Swap/push_swap.h
 
 /Users/cheller/Desktop/home_space/Push_Swap/push_swap.h
 unistd.h

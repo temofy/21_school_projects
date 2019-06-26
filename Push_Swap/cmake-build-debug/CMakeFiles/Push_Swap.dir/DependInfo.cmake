@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/cheller/Desktop/home_space/Push_Swap/checker.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/checker.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/finders.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/finders.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/handler_sequences.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/handler_sequences.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/handler_steps.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/handler_steps.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/instructions.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/instructions.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_abs.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_abs.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_arraylen.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_arrdel.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_arrdel.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_atoi.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_atoi.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_atopi.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_bzero.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_bzero.c.o"
@@ -86,6 +86,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/new_method.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/new_method.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/push_swap.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/stack_manipulations.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/stack_manipulations.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

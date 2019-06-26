@@ -51,8 +51,11 @@ t_seq	*find_sorted_seq(t_stack *stack)
 	i = stack->size;
 	while (--i > 0)
 	{
-		if (stack->data[i] < stack->data[i - 1] && tmp->start == -1)
-			tmp->start = i;
+		if (stack->data[i] < stack->data[i - 1])
+		{
+			if (tmp->start == -1)
+				tmp->start = i;
+		}
 		else
 		{
 			tmp->end = i;

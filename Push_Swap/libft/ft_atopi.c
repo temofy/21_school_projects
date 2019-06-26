@@ -24,12 +24,17 @@ long	*ft_atopi(const char *str)
 	sign = (str[i] == '-') ? -1 : 1;
 	if (str[i] == '-')
 		i++;
+	if (str[i] < '0' || str[i] > '9')
+		return (NULL);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (NULL);
-		result = result * 10;
-		result += str[i] - '0';
+		if (result > PRE_MAX_INT ||	(result == PRE_MAX_INT && (str[i] - '0') > 7 && sign == 1))
+			return (NULL);
+		if (result > PRE_MAX_INT ||	(result == PRE_MAX_INT && (str[i] - '0') > 8 && sign == -1))
+			return (NULL);
+		result = (result * 10) + str[i] - '0';
 		i++;
 	}
 	result = result * sign;

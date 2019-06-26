@@ -123,33 +123,6 @@ Push_Swap/fast:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/build
 .PHONY : Push_Swap/fast
 
-checker.o: checker.c.o
-
-.PHONY : checker.o
-
-# target to build an object file
-checker.c.o:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.o
-.PHONY : checker.c.o
-
-checker.i: checker.c.i
-
-.PHONY : checker.i
-
-# target to preprocess a source file
-checker.c.i:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.i
-.PHONY : checker.c.i
-
-checker.s: checker.c.s
-
-.PHONY : checker.s
-
-# target to generate assembly for a file
-checker.c.s:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/checker.c.s
-.PHONY : checker.c.s
-
 finders.o: finders.c.o
 
 .PHONY : finders.o
@@ -311,6 +284,33 @@ libft/ft_arraylen.s: libft/ft_arraylen.c.s
 libft/ft_arraylen.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arraylen.c.s
 .PHONY : libft/ft_arraylen.c.s
+
+libft/ft_arrdel.o: libft/ft_arrdel.c.o
+
+.PHONY : libft/ft_arrdel.o
+
+# target to build an object file
+libft/ft_arrdel.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arrdel.c.o
+.PHONY : libft/ft_arrdel.c.o
+
+libft/ft_arrdel.i: libft/ft_arrdel.c.i
+
+.PHONY : libft/ft_arrdel.i
+
+# target to preprocess a source file
+libft/ft_arrdel.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arrdel.c.i
+.PHONY : libft/ft_arrdel.c.i
+
+libft/ft_arrdel.s: libft/ft_arrdel.c.s
+
+.PHONY : libft/ft_arrdel.s
+
+# target to generate assembly for a file
+libft/ft_arrdel.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_arrdel.c.s
+.PHONY : libft/ft_arrdel.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2337,6 +2337,33 @@ new_method.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.s
 .PHONY : new_method.c.s
 
+push_swap.o: push_swap.c.o
+
+.PHONY : push_swap.o
+
+# target to build an object file
+push_swap.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.o
+.PHONY : push_swap.c.o
+
+push_swap.i: push_swap.c.i
+
+.PHONY : push_swap.i
+
+# target to preprocess a source file
+push_swap.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.i
+.PHONY : push_swap.c.i
+
+push_swap.s: push_swap.c.s
+
+.PHONY : push_swap.s
+
+# target to generate assembly for a file
+push_swap.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.s
+.PHONY : push_swap.c.s
+
 stack_manipulations.o: stack_manipulations.c.o
 
 .PHONY : stack_manipulations.o
@@ -2373,9 +2400,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Push_Swap"
-	@echo "... checker.o"
-	@echo "... checker.i"
-	@echo "... checker.s"
 	@echo "... finders.o"
 	@echo "... finders.i"
 	@echo "... finders.s"
@@ -2394,6 +2418,9 @@ help:
 	@echo "... libft/ft_arraylen.o"
 	@echo "... libft/ft_arraylen.i"
 	@echo "... libft/ft_arraylen.s"
+	@echo "... libft/ft_arrdel.o"
+	@echo "... libft/ft_arrdel.i"
+	@echo "... libft/ft_arrdel.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2619,6 +2646,9 @@ help:
 	@echo "... new_method.o"
 	@echo "... new_method.i"
 	@echo "... new_method.s"
+	@echo "... push_swap.o"
+	@echo "... push_swap.i"
+	@echo "... push_swap.s"
 	@echo "... stack_manipulations.o"
 	@echo "... stack_manipulations.i"
 	@echo "... stack_manipulations.s"

@@ -38,6 +38,7 @@ int			free_lst(int fd, t_list_fd *first_lst)
 		prev_lst = next_lst;
 		next_lst = next_lst->next_lst;
 	}
+	free(first_lst);
 	return (0);
 }
 
@@ -89,7 +90,7 @@ int			write_lines(t_list_fd *cur_lst, char **line)
 	return (1);
 }
 
-int			get_next_line(const int fd, char **line)
+int			 get_next_line(const int fd, char **line)
 {
 	static t_list_fd	*fd_lists;
 	char				buff[BUFF_SIZE + 1];

@@ -27,6 +27,8 @@ int		is_sorted_stack(t_stack *a, t_stack *b)
 {
 	int		i;
 
+	if (!a->size)
+		return (0);
 	if (b->size)
 		return (1);
 	i = a->size - 1;
@@ -66,7 +68,7 @@ int		read_arguments(t_stack *a, int amount, char *argv[])
 		amount--;
 		i++;
 	}
-	return (2);
+	return (0);
 }
 
 void	print_stack(t_stack *a, t_stack *b)
