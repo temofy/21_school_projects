@@ -94,8 +94,9 @@ void		throw_except(t_stack *a, t_stack *b, t_seq *sorted_seq)
 		if (i == sorted_seq->start && i != sorted_seq->amount - 1)
 		{
 			k = sorted_seq->amount;
-			while (k-- > 0)
-				ft_rotate(a, 'a');
+			if (k > 4)
+				while (k-- > 0)
+					ft_rotate(a, 'a');
 			sorted_seq->start = sorted_seq->amount - 1;
 			sorted_seq->end = 0;
 			i++;

@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_atopi.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_atopi.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_bzero.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_bzero.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_find_last_lst.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_find_last_lst.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_intlen.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_isalnum.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_isalnum.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_isalpha.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_isalpha.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_isascii.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_isascii.c.o"
@@ -72,6 +73,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strncpy.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strncpy.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnequ.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnequ.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o"
+  "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew_set.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnstr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strposchr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strposchr.c.o"
   "/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strrchr.c" "/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir/libft/ft_strrchr.c.o"
@@ -95,6 +97,7 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../."
+  "../libft"
   )
 
 # Targets to which this target links.

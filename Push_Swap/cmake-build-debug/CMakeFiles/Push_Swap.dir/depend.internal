@@ -41,6 +41,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_bzero.c.o
 CMakeFiles/Push_Swap.dir/libft/ft_find_last_lst.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_find_last_lst.c
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
+CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.o
+ /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_intlen.c
+ /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/ft_isalnum.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_isalnum.c
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
@@ -205,6 +208,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_strnequ.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew.c
+ /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
+CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.o
+ /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew_set.c
  /Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o
  /Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnstr.c

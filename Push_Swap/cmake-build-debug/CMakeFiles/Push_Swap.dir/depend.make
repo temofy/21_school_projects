@@ -41,6 +41,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_bzero.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/ft_find_last_lst.c.o: ../libft/ft_find_last_lst.c
 CMakeFiles/Push_Swap.dir/libft/ft_find_last_lst.c.o: ../libft/libft.h
 
+CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.o: ../libft/ft_intlen.c
+CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.o: ../libft/libft.h
+
 CMakeFiles/Push_Swap.dir/libft/ft_isalnum.c.o: ../libft/ft_isalnum.c
 CMakeFiles/Push_Swap.dir/libft/ft_isalnum.c.o: ../libft/libft.h
 
@@ -205,6 +208,9 @@ CMakeFiles/Push_Swap.dir/libft/ft_strnequ.c.o: ../libft/libft.h
 
 CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
 CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.o: ../libft/libft.h
+
+CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.o: ../libft/ft_strnew_set.c
+CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.o: ../libft/libft.h
 
 CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
 CMakeFiles/Push_Swap.dir/libft/ft_strnstr.c.o: ../libft/libft.h

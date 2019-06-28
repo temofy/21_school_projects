@@ -97,7 +97,6 @@ int		push_swap(int amount, char *argv[])
 	return (rtn);
 }
 
-
 int		main(int argc, char *argv[])
 {
 	int		rtn;

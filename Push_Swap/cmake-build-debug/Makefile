@@ -447,6 +447,33 @@ libft/ft_find_last_lst.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_find_last_lst.c.s
 .PHONY : libft/ft_find_last_lst.c.s
 
+libft/ft_intlen.o: libft/ft_intlen.c.o
+
+.PHONY : libft/ft_intlen.o
+
+# target to build an object file
+libft/ft_intlen.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.o
+.PHONY : libft/ft_intlen.c.o
+
+libft/ft_intlen.i: libft/ft_intlen.c.i
+
+.PHONY : libft/ft_intlen.i
+
+# target to preprocess a source file
+libft/ft_intlen.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.i
+.PHONY : libft/ft_intlen.c.i
+
+libft/ft_intlen.s: libft/ft_intlen.c.s
+
+.PHONY : libft/ft_intlen.s
+
+# target to generate assembly for a file
+libft/ft_intlen.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_intlen.c.s
+.PHONY : libft/ft_intlen.c.s
+
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 .PHONY : libft/ft_isalnum.o
@@ -1959,6 +1986,33 @@ libft/ft_strnew.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strnew.c.s
 .PHONY : libft/ft_strnew.c.s
 
+libft/ft_strnew_set.o: libft/ft_strnew_set.c.o
+
+.PHONY : libft/ft_strnew_set.o
+
+# target to build an object file
+libft/ft_strnew_set.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.o
+.PHONY : libft/ft_strnew_set.c.o
+
+libft/ft_strnew_set.i: libft/ft_strnew_set.c.i
+
+.PHONY : libft/ft_strnew_set.i
+
+# target to preprocess a source file
+libft/ft_strnew_set.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.i
+.PHONY : libft/ft_strnew_set.c.i
+
+libft/ft_strnew_set.s: libft/ft_strnew_set.c.s
+
+.PHONY : libft/ft_strnew_set.s
+
+# target to generate assembly for a file
+libft/ft_strnew_set.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/ft_strnew_set.c.s
+.PHONY : libft/ft_strnew_set.c.s
+
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 .PHONY : libft/ft_strnstr.o
@@ -2463,6 +2517,9 @@ help:
 	@echo "... libft/ft_find_last_lst.o"
 	@echo "... libft/ft_find_last_lst.i"
 	@echo "... libft/ft_find_last_lst.s"
+	@echo "... libft/ft_intlen.o"
+	@echo "... libft/ft_intlen.i"
+	@echo "... libft/ft_intlen.s"
 	@echo "... libft/ft_isalnum.o"
 	@echo "... libft/ft_isalnum.i"
 	@echo "... libft/ft_isalnum.s"
@@ -2631,6 +2688,9 @@ help:
 	@echo "... libft/ft_strnew.o"
 	@echo "... libft/ft_strnew.i"
 	@echo "... libft/ft_strnew.s"
+	@echo "... libft/ft_strnew_set.o"
+	@echo "... libft/ft_strnew_set.i"
+	@echo "... libft/ft_strnew_set.s"
 	@echo "... libft/ft_strnstr.o"
 	@echo "... libft/ft_strnstr.i"
 	@echo "... libft/ft_strnstr.s"

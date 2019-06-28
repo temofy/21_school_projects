@@ -4,12 +4,17 @@ project(Push_Swap C)
 set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
+include_directories(libft)
 
 add_executable(Push_Swap
-		libft/ft_abs.c
+        libft/ft_abs.c
+        libft/ft_arraylen.c
+        libft/ft_arrdel.c
         libft/ft_atoi.c
+        libft/ft_atopi.c
         libft/ft_bzero.c
         libft/ft_find_last_lst.c
+        libft/ft_intlen.c
         libft/ft_isalnum.c
         libft/ft_isalpha.c
         libft/ft_isascii.c
@@ -66,7 +71,9 @@ add_executable(Push_Swap
         libft/ft_strncpy.c
         libft/ft_strnequ.c
         libft/ft_strnew.c
+        libft/ft_strnew_set.c
         libft/ft_strnstr.c
+        libft/ft_strposchr.c
         libft/ft_strrchr.c
         libft/ft_strrev.c
         libft/ft_strsplit.c
@@ -78,19 +85,14 @@ add_executable(Push_Swap
         libft/ft_toupper.c
         libft/ft_uitoa.c
         libft/ft_ulitoa.c
+        libft/get_next_line.c
         libft/libft.h
-		libft/ft_atopi.c
-		libft/get_next_line.c
-		libft/ft_strposchr.c
-		libft/ft_arraylen.c
-		libft/ft_arrdel.c
-		push_swap.c
-		sorting.c
-		finders.c
-		sorting.c
-		handler_steps.c
-		handler_sequences.c
-		instructions.c
-		stack_manipulations.c
-		instr_execution.c
-        push_swap.h)
+        finders.c
+        handler_sequences.c
+        handler_steps.c
+        instr_execution.c
+        instructions.c
+        push_swap.c
+        push_swap.h
+        sorting.c
+        stack_manipulations.c)

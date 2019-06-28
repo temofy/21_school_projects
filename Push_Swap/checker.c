@@ -12,10 +12,11 @@
 
 #include "push_swap.h"
 
-void	free_stacks(t_stack *a, t_stack *b)
+int		free_stacks(t_stack *a, t_stack *b)
 {
 	free_stack(a);
 	free_stack(b);
+	return (-1);
 }
 
 int		checker(int amount, char **argv)
@@ -27,14 +28,14 @@ int		checker(int amount, char **argv)
 
 	a = stack_malloc(amount);
 	b = stack_malloc(amount);
-	if ((rtn = read_arguments(a, amount, &*argv)) == -1)
-		return (rtn);
+	if ((read_arguments(a, amount, &*argv)) == -1)
+		return (free_stacks(a, b));
 	while (get_next_line(0, &operation))
 	{
 		if (ft_strcmp(operation, ""))
 		{
 			if ((select_operation(operation, a, b)) == -1)
-				return (-1);
+				return (free_stacks(a, b));
 		}
 		else
 		{

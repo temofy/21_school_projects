@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cheller/Desktop/home_space/Push_Swap/."/>
+					<Add directory="/Users/cheller/Desktop/home_space/Push_Swap/libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -67,6 +68,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/cheller/Desktop/home_space/Push_Swap/."/>
+					<Add directory="/Users/cheller/Desktop/home_space/Push_Swap/libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -116,6 +118,9 @@
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_find_last_lst.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_intlen.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_isalnum.c">
@@ -284,6 +289,9 @@
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew.c">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnew_set.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/ft_strnstr.c">

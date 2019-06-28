@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/cheller/Desktop/home_space/Push_Swap/. 
+C_INCLUDES = -I/Users/cheller/Desktop/home_space/Push_Swap/. -I/Users/cheller/Desktop/home_space/Push_Swap/libft 
 
