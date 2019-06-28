@@ -13,6 +13,10 @@ CMakeFiles/Push_Swap.dir/handler_steps.c.o: ../handler_steps.c
 CMakeFiles/Push_Swap.dir/handler_steps.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/handler_steps.c.o: ../push_swap.h
 
+CMakeFiles/Push_Swap.dir/instr_execution.c.o: ../instr_execution.c
+CMakeFiles/Push_Swap.dir/instr_execution.c.o: ../libft/libft.h
+CMakeFiles/Push_Swap.dir/instr_execution.c.o: ../push_swap.h
+
 CMakeFiles/Push_Swap.dir/instructions.c.o: ../instructions.c
 CMakeFiles/Push_Swap.dir/instructions.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/instructions.c.o: ../push_swap.h
@@ -244,13 +248,13 @@ CMakeFiles/Push_Swap.dir/libft/ft_ulitoa.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/Push_Swap.dir/libft/get_next_line.c.o: ../libft/libft.h
 
-CMakeFiles/Push_Swap.dir/new_method.c.o: ../libft/libft.h
-CMakeFiles/Push_Swap.dir/new_method.c.o: ../new_method.c
-CMakeFiles/Push_Swap.dir/new_method.c.o: ../push_swap.h
-
 CMakeFiles/Push_Swap.dir/push_swap.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/push_swap.c.o: ../push_swap.c
 CMakeFiles/Push_Swap.dir/push_swap.c.o: ../push_swap.h
+
+CMakeFiles/Push_Swap.dir/sorting.c.o: ../libft/libft.h
+CMakeFiles/Push_Swap.dir/sorting.c.o: ../push_swap.h
+CMakeFiles/Push_Swap.dir/sorting.c.o: ../sorting.c
 
 CMakeFiles/Push_Swap.dir/stack_manipulations.c.o: ../libft/libft.h
 CMakeFiles/Push_Swap.dir/stack_manipulations.c.o: ../push_swap.h

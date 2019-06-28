@@ -91,6 +91,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/handler_steps.c">
 			<Option target="Push_Swap"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/instr_execution.c">
+			<Option target="Push_Swap"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/instructions.c">
 			<Option target="Push_Swap"/>
 		</Unit>
@@ -328,13 +331,13 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/libft/libft.h">
 			<Option target="Push_Swap"/>
 		</Unit>
-		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/new_method.c">
-			<Option target="Push_Swap"/>
-		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/push_swap.h">
+			<Option target="Push_Swap"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/sorting.c">
 			<Option target="Push_Swap"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Push_Swap/stack_manipulations.c">

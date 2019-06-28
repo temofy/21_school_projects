@@ -14,10 +14,10 @@
 
 void	ft_arrdel(char ***arr)
 {
+	char	**tmp;
+
 	if (!arr)
 		return ;
-	char 	**tmp;
-
 	tmp = *arr;
 	if (arr && *arr)
 	{

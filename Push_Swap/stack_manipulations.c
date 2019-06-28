@@ -71,31 +71,31 @@ int		read_arguments(t_stack *a, int amount, char *argv[])
 	return (0);
 }
 
-void	print_stack(t_stack *a, t_stack *b)
+int		select_operation(char *operation, t_stack *a, t_stack *b)
 {
-	int i;
-	int size_a;
-	int size_b;
+	int rtn;
 
-	i = (a->size > b->size) ? a->size : b->size;
-	size_a = a->size;
-	size_b = b->size;
-	while (--i >= 0)
+	rtn = -1;
+	if (ft_strcmp(operation, "sa") == 0)
+		rtn = swap(a);
+	else if (ft_strcmp(operation, "sb") == 0)
+		rtn = swap(b);
+	else if (ft_strcmp(operation, "ss") == 0)
 	{
-		if (size_a == i + 1)
-		{
-			size_a--;
-			printf("%d\t", a->data[i]);
-		}
-		else
-			printf(" \t");
-		if (size_b == i + 1)
-		{
-			size_b--;
-			printf("%d\n", b->data[i]);
-		}
-		else
-			printf(" \n");
+		swap(a);
+		rtn = swap(b);
 	}
-	printf("_\t_\na\tb\n");
+	else if (ft_strcmp(operation, "pa") == 0)
+		rtn = push(a, b);
+	else if (ft_strcmp(operation, "pb") == 0)
+		rtn = push(b, a);
+	else if (ft_strcmp(operation, "ra") == 0)
+		rtn = rotate(a);
+	else if (ft_strcmp(operation, "rb") == 0)
+		rtn = rotate(b);
+	else if (ft_strcmp(operation, "rra") == 0)
+		rtn = reverse_rotate(a);
+	else if (ft_strcmp(operation, "rrb") == 0)
+		rtn = reverse_rotate(b);
+	return (select_mul_operation(operation, a, b, rtn));
 }

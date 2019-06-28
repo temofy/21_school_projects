@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   finders.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/28 14:46:43 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/28 14:46:44 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int 	find_min_el(t_stack *stack)
+int		find_min_el(t_stack *stack)
 {
 	int min;
 	int i;
@@ -20,7 +32,7 @@ int 	find_min_el(t_stack *stack)
 	return (index);
 }
 
-int 	find_max_el(t_stack *stack)
+int		find_max_el(t_stack *stack)
 {
 	int max;
 	int i;
@@ -69,7 +81,7 @@ t_seq	*find_sorted_seq(t_stack *stack)
 	return (start_end);
 }
 
-int		find_boundaries(t_first_loc *seq, int cur_val)
+int		find_bounds(t_first_loc *seq, int cur_val)
 {
 	if (cur_val > seq->max)
 		return (seq->max);

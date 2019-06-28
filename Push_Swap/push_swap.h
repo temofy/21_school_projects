@@ -19,7 +19,7 @@
 typedef struct	s_stack
 {
 	int			*data;
-	size_t		size;
+	int			size;
 }				t_stack;
 
 typedef struct	s_sorted_seq
@@ -48,6 +48,7 @@ typedef struct	s_first_location
 t_stack			*stack_malloc(int amount);
 int				is_sorted_stack(t_stack *a, t_stack *b);
 void			free_stack(t_stack *stack);
+void			rotate_n_order(t_stack *stack);
 int				reverse_rotate(t_stack *stack);
 int				rotate(t_stack *stack);
 int				push(t_stack *in, t_stack *out);
@@ -58,7 +59,7 @@ void			initialize_start(t_stack *a, t_stack *b);
 int				find_max_el(t_stack *stack);
 int				find_min_el(t_stack *stack);
 t_seq			*find_sorted_seq(t_stack *stack);
-int				find_boundaries(t_first_loc *seq, int cur_val);
+int				find_bounds(t_first_loc *seq, int cur_val);
 int				find_place(t_stack *stack, int value);
 void			print_stack(t_stack *a, t_stack *b);
 t_seq			*initialize_seq(void);
@@ -70,8 +71,13 @@ void			steps_to_a(t_stack *a, int val, t_steps *steps,\
 t_first_loc *seq);
 int				count_steps_i(t_stack *a, int index);
 void			pull_el(t_stack *a, t_stack *b, int index, t_steps *steps);
-void			rotate_n_order(t_stack *stack);
 void			throw_to_b(t_stack *a, t_stack *b);
 void			throw_except(t_stack *a, t_stack *b, t_seq *sorted_seq);
+void			ft_swap(t_stack *stack, char name_stack);
+void			ft_push(t_stack *in, t_stack *out, char name_in);
+void			ft_rotate(t_stack *stack, char name_stack);
+void			ft_reverse_rotate(t_stack *stack, char name_stack);
+int				select_mul_operation(char *operation, t_stack *a,
+t_stack *b, int rtn);
 
 #endif

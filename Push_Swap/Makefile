@@ -14,28 +14,29 @@ PUSH_SWAP_PROGRAM = push_swap
 
 CHECKER_PROGRAM = checker
 
-PS_SRC = instructions.c stack_manipulations.c push_swap.c new_method.c finders.c handler_steps.c handler_sequences.c
+PS_SRC = instructions.c stack_manipulations.c push_swap.c sorting.c finders.c handler_steps.c handler_sequences.c \
+            instr_execution.c
 
 CH_SRC = instructions.c stack_manipulations.c  checker.c
 
 LIBFT = libft
 
-PS_OBJ = instructions.o stack_manipulations.o push_swap.o new_method.o finders.o handler_steps.o handler_sequences.o
+PS_OBJ = $(PS_SRC:.c=.o)
 
-CH_OBJ = instructions.o stack_manipulations.o checker.o
+CH_OBJ = $(CH_SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
 all: $(CHECKER_PROGRAM) $(PUSH_SWAP_PROGRAM)
 
 $(CHECKER_PROGRAM):
-	gcc -c $(CH_SRC) -I.
-	make -C LIBFT re
-	gcc $(CH_OBJ) $(LIBFT)/libft.a -o $(CHECKER_PROGRAM)
+	@gcc -c $(FLAGS) $(CH_SRC) -I.
+	@make -C LIBFT re
+	@gcc $(CH_OBJ) $(LIBFT)/libft.a -o $(CHECKER_PROGRAM)
 
 $(PUSH_SWAP_PROGRAM):
-	gcc -c $(PS_SRC) -I.
-	gcc $(PS_OBJ) $(LIBFT)/libft.a -o $(PUSH_SWAP_PROGRAM)
+	@gcc -c $(FLAGS) $(PS_SRC) -I.
+	@gcc $(PS_OBJ) $(LIBFT)/libft.a -o $(PUSH_SWAP_PROGRAM)
 
 clean:
 	@rm -f $(PS_OBJ) $(CH_OBJ)

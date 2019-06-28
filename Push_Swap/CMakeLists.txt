@@ -85,10 +85,12 @@ add_executable(Push_Swap
 		libft/ft_arraylen.c
 		libft/ft_arrdel.c
 		push_swap.c
-		new_method.c
+		sorting.c
 		finders.c
+		sorting.c
 		handler_steps.c
 		handler_sequences.c
 		instructions.c
 		stack_manipulations.c
+		instr_execution.c
         push_swap.h)

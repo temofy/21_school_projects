@@ -33,14 +33,22 @@ int		count_steps_i(t_stack *a, int index)
 	return (steps);
 }
 
+void	count_max_val(t_stack *a, t_steps *steps)
+{
+	int min;
+
+	min = find_min_el(a);
+	steps[0].a_index = min;
+	steps[0].a_steps = count_steps_i(a, steps[0].a_index);
+}
+
 void	steps_to_a(t_stack *a, int val, t_steps *steps, t_first_loc *seq)
 {
 	int	i;
-	int min;
 
 	steps[0].a_steps = 0;
 	i = a->size;
-	if (a->data[a->size - 1] > val && val > find_boundaries(seq, a->data[i - 1]))
+	if (a->data[a->size - 1] > val && val > find_bounds(seq, a->data[i - 1]))
 	{
 		steps[0].a_index = find_place(a, val);
 		steps[0].a_steps = count_steps_i(a, steps[0].a_index);
@@ -49,17 +57,15 @@ void	steps_to_a(t_stack *a, int val, t_steps *steps, t_first_loc *seq)
 	while (--i >= 0)
 	{
 		steps[0].a_steps = count_steps_i(a, i);
-		if (a->data[i] > val && val > find_boundaries(seq, a->data[i]))
+		if (a->data[i] > val && val > find_bounds(seq, a->data[i]))
 		{
 			steps[0].a_index = i;
 			return ;
 		}
 	}
-	if (a->data[0] < val && val > find_boundaries(seq, a->data[0]))
+	if (a->data[0] < val && val > find_bounds(seq, a->data[0]))
 	{
-		min = find_min_el(a);
-		steps[0].a_index = min;
-		steps[0].a_steps = count_steps_i(a, steps[0].a_index);
+		count_max_val(a, steps);
 		return ;
 	}
 }

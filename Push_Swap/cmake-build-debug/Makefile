@@ -204,6 +204,33 @@ handler_steps.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/handler_steps.c.s
 .PHONY : handler_steps.c.s
 
+instr_execution.o: instr_execution.c.o
+
+.PHONY : instr_execution.o
+
+# target to build an object file
+instr_execution.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instr_execution.c.o
+.PHONY : instr_execution.c.o
+
+instr_execution.i: instr_execution.c.i
+
+.PHONY : instr_execution.i
+
+# target to preprocess a source file
+instr_execution.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instr_execution.c.i
+.PHONY : instr_execution.c.i
+
+instr_execution.s: instr_execution.c.s
+
+.PHONY : instr_execution.s
+
+# target to generate assembly for a file
+instr_execution.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/instr_execution.c.s
+.PHONY : instr_execution.c.s
+
 instructions.o: instructions.c.o
 
 .PHONY : instructions.o
@@ -2310,33 +2337,6 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
-new_method.o: new_method.c.o
-
-.PHONY : new_method.o
-
-# target to build an object file
-new_method.c.o:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.o
-.PHONY : new_method.c.o
-
-new_method.i: new_method.c.i
-
-.PHONY : new_method.i
-
-# target to preprocess a source file
-new_method.c.i:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.i
-.PHONY : new_method.c.i
-
-new_method.s: new_method.c.s
-
-.PHONY : new_method.s
-
-# target to generate assembly for a file
-new_method.c.s:
-	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/new_method.c.s
-.PHONY : new_method.c.s
-
 push_swap.o: push_swap.c.o
 
 .PHONY : push_swap.o
@@ -2363,6 +2363,33 @@ push_swap.s: push_swap.c.s
 push_swap.c.s:
 	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/push_swap.c.s
 .PHONY : push_swap.c.s
+
+sorting.o: sorting.c.o
+
+.PHONY : sorting.o
+
+# target to build an object file
+sorting.c.o:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/sorting.c.o
+.PHONY : sorting.c.o
+
+sorting.i: sorting.c.i
+
+.PHONY : sorting.i
+
+# target to preprocess a source file
+sorting.c.i:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/sorting.c.i
+.PHONY : sorting.c.i
+
+sorting.s: sorting.c.s
+
+.PHONY : sorting.s
+
+# target to generate assembly for a file
+sorting.c.s:
+	$(MAKE) -f CMakeFiles/Push_Swap.dir/build.make CMakeFiles/Push_Swap.dir/sorting.c.s
+.PHONY : sorting.c.s
 
 stack_manipulations.o: stack_manipulations.c.o
 
@@ -2409,6 +2436,9 @@ help:
 	@echo "... handler_steps.o"
 	@echo "... handler_steps.i"
 	@echo "... handler_steps.s"
+	@echo "... instr_execution.o"
+	@echo "... instr_execution.i"
+	@echo "... instr_execution.s"
 	@echo "... instructions.o"
 	@echo "... instructions.i"
 	@echo "... instructions.s"
@@ -2643,12 +2673,12 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
-	@echo "... new_method.o"
-	@echo "... new_method.i"
-	@echo "... new_method.s"
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"
+	@echo "... sorting.o"
+	@echo "... sorting.i"
+	@echo "... sorting.s"
 	@echo "... stack_manipulations.o"
 	@echo "... stack_manipulations.i"
 	@echo "... stack_manipulations.s"

@@ -12,31 +12,31 @@
 
 #include "libft.h"
 
-long	*ft_atopi(const char *str)
+long	*ft_atopi(const char *s)
 {
-	long	result;
+	long	res;
 	long	*p_result;
 	int		i;
 	int		sign;
 
-	result = 0;
+	res = 0;
 	i = 0;
-	sign = (str[i] == '-') ? -1 : 1;
-	if (str[i] == '-')
+	sign = (s[i] == '-') ? -1 : 1;
+	if (s[i] == '-')
 		i++;
-	if (str[i] < '0' || str[i] > '9')
+	if (s[i] < '0' || s[i] > '9')
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (NULL);
-		if (result > PRE_MAX_INT ||	(result == PRE_MAX_INT && (str[i] - '0') > 7 && sign == 1))
+		if (res > MAX_I || (res == MAX_I && (s[i] - '0') > 7 && sign == 1))
 			return (NULL);
-		if (result > PRE_MAX_INT ||	(result == PRE_MAX_INT && (str[i] - '0') > 8 && sign == -1))
+		if (res > MAX_I || (res == MAX_I && (s[i] - '0') > 8 && sign == -1))
 			return (NULL);
-		result = (result * 10) + str[i] - '0';
+		res = (res * 10) + s[i] - '0';
 		i++;
 	}
-	result = result * sign;
-	return (p_result = &result);
+	res = res * sign;
+	return (p_result = &res);
 }

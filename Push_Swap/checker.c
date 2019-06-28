@@ -18,37 +18,6 @@ void	free_stacks(t_stack *a, t_stack *b)
 	free_stack(b);
 }
 
-/*int		checker(int amount, char **argv)
-{
-	t_stack		*a;
-	t_stack		*b;
-	int			rtn;
-	char		*operation;
-
-	if (!amount)
-		return (0);
-	a = stack_malloc(amount);
-	b = stack_malloc(amount);
-	rtn = read_arguments(a, amount, &*argv);
-	while (rtn != -1 && get_next_line(0, &operation))
-	{
-		if (ft_strcmp(operation, ""))
-		{
-			if ((select_operation(operation, a, b)) == -1)
-				return (-1);
-		}
-		else
-		{
-			free(operation);
-			break ;
-		}
-	}
-	rtn = is_sorted_stack(a, b);
-	print_stack(a, b);
-	free_stacks(a, b);
-	return (rtn);
-}*/
-
 int		checker(int amount, char **argv)
 {
 	t_stack		*a;
@@ -70,7 +39,7 @@ int		checker(int amount, char **argv)
 		else
 		{
 			ft_strdel(&operation);
-			break;
+			break ;
 		}
 	}
 	rtn = is_sorted_stack(a, b);

@@ -18,7 +18,7 @@
 # include <string.h>
 
 # define BUFF_SIZE 10
-# define PRE_MAX_INT 214748364
+# define MAX_I 214748364
 
 typedef struct		s_list
 {
@@ -114,7 +114,7 @@ long				*ft_atopi(const char *str);
 int					ft_strposchr(char *s, int c);
 int					get_next_line(const int fd, char **line);
 int					ft_arraylen(void **array);
-void 				ft_arrdel(char ***arr);
+void				ft_arrdel(char ***arr);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
 #endif

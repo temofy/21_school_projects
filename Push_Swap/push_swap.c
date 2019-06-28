@@ -14,33 +14,22 @@
 
 void	first_sort(t_stack *a)
 {
+	int min;
+
+	min = find_min_el(a);
 	if (a->data[2] > a->data[1] && a->data[0] > a->data[2])
-	{
-		swap(a);
-		write(1, "sa\n", 3);
-	}
+		ft_swap(a, 'a');
 	else if (a->data[2] > a->data[1] && a->data[0] < a->data[2])
-	{
-		rotate(a);
-		write(1, "ra\n", 3);
-	}
+		ft_rotate(a, 'a');
 	if (a->data[2] > a->data[1])
+		ft_swap(a, 'a');
+	if (a->data[1] > a->data[0] && a->data[2] < a->data[1] && 2 == min)
 	{
-		swap(a);
-		write(1, "sa\n", 3);
-	}
-	if (a->data[1] > a->data[0] && a->data[2] < a->data[1])
-	{
-		reverse_rotate(a);
-		write(1, "rra\n", 4);
-		swap(a);
-		write(1, "sa\n", 3);
+		ft_reverse_rotate(a, 'a');
+		ft_swap(a, 'a');
 	}
 	else if (a->data[1] > a->data[0])
-	{
-		reverse_rotate(a);
-		write(1, "rra\n", 4);
-	}
+		ft_reverse_rotate(a, 'a');
 }
 
 void	sort_stack(t_stack *a, t_stack *b)
@@ -86,10 +75,7 @@ void	initialize_start(t_stack *a, t_stack *b)
 		free(sorted_seq);
 	}
 	if (a->size == 2 && is_sorted_stack(a, b) == 1)
-	{
-		swap(a);
-		write(1, "sa\n", 3);
-	}
+		ft_swap(a, 'a');
 }
 
 int		push_swap(int amount, char *argv[])
@@ -104,13 +90,13 @@ int		push_swap(int amount, char *argv[])
 	if (a->size > 0 && rtn != -1)
 	{
 		initialize_start(a, b);
-		//print_stack(a, b);
 		rtn = is_sorted_stack(a, b);
 	}
 	free_stack(a);
 	free_stack(b);
 	return (rtn);
 }
+
 
 int		main(int argc, char *argv[])
 {
