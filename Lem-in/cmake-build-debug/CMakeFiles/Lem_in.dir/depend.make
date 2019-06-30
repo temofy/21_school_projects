@@ -22,6 +22,9 @@ CMakeFiles/Lem_in.dir/libft/ft_atopi.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_bzero.c.o: ../libft/ft_bzero.c
 CMakeFiles/Lem_in.dir/libft/ft_bzero.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o: ../libft/ft_count_words.c
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o: ../libft/libft.h
+
 CMakeFiles/Lem_in.dir/libft/ft_find_last_lst.c.o: ../libft/ft_find_last_lst.c
 CMakeFiles/Lem_in.dir/libft/ft_find_last_lst.c.o: ../libft/libft.h
 
@@ -48,6 +51,8 @@ CMakeFiles/Lem_in.dir/libft/ft_isprint.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.o: ../libft/ft_isthere_chr.c
 CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.o: ../libft/libft.h
+
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o: ../libft/ft_isthere_str.c
 
 CMakeFiles/Lem_in.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
 CMakeFiles/Lem_in.dir/libft/ft_itoa.c.o: ../libft/libft.h

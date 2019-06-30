@@ -1084,9 +1084,35 @@ CMakeFiles/Lem_in.dir/libft/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/libft/get_next_line.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Lem-in/libft/get_next_line.c -o CMakeFiles/Lem_in.dir/libft/get_next_line.c.s
 
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o: CMakeFiles/Lem_in.dir/flags.make
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o: ../libft/ft_count_words.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o   -c /Users/cheller/Desktop/home_space/Lem-in/libft/ft_count_words.c
+
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lem_in.dir/libft/ft_count_words.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Lem-in/libft/ft_count_words.c > CMakeFiles/Lem_in.dir/libft/ft_count_words.c.i
+
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/libft/ft_count_words.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Lem-in/libft/ft_count_words.c -o CMakeFiles/Lem_in.dir/libft/ft_count_words.c.s
+
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o: CMakeFiles/Lem_in.dir/flags.make
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o: ../libft/ft_isthere_str.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o   -c /Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_str.c
+
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_str.c > CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.i
+
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_str.c -o CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.s
+
 CMakeFiles/Lem_in.dir/reading.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/reading.c.o: ../reading.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Lem_in.dir/reading.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/Lem_in.dir/reading.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/reading.c.o   -c /Users/cheller/Desktop/home_space/Lem-in/reading.c
 
 CMakeFiles/Lem_in.dir/reading.c.i: cmake_force
@@ -1099,7 +1125,7 @@ CMakeFiles/Lem_in.dir/reading.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/lem-in.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/lem-in.c.o: ../lem-in.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Lem_in.dir/lem-in.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/Lem_in.dir/lem-in.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/lem-in.c.o   -c /Users/cheller/Desktop/home_space/Lem-in/lem-in.c
 
 CMakeFiles/Lem_in.dir/lem-in.c.i: cmake_force
@@ -1191,6 +1217,8 @@ Lem_in_OBJECTS = \
 "CMakeFiles/Lem_in.dir/libft/ft_uitoa.c.o" \
 "CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o" \
 "CMakeFiles/Lem_in.dir/libft/get_next_line.c.o" \
+"CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o" \
+"CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o" \
 "CMakeFiles/Lem_in.dir/reading.c.o" \
 "CMakeFiles/Lem_in.dir/lem-in.c.o"
 
@@ -1276,11 +1304,13 @@ Lem_in: CMakeFiles/Lem_in.dir/libft/ft_toupper.c.o
 Lem_in: CMakeFiles/Lem_in.dir/libft/ft_uitoa.c.o
 Lem_in: CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o
 Lem_in: CMakeFiles/Lem_in.dir/libft/get_next_line.c.o
+Lem_in: CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o
+Lem_in: CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o
 Lem_in: CMakeFiles/Lem_in.dir/reading.c.o
 Lem_in: CMakeFiles/Lem_in.dir/lem-in.c.o
 Lem_in: CMakeFiles/Lem_in.dir/build.make
 Lem_in: CMakeFiles/Lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Linking C executable Lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Linking C executable Lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

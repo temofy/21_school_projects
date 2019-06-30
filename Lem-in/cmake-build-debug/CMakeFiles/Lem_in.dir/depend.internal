@@ -22,6 +22,9 @@ CMakeFiles/Lem_in.dir/libft/ft_atopi.c.o
 CMakeFiles/Lem_in.dir/libft/ft_bzero.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_bzero.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/libft/ft_count_words.c
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_find_last_lst.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_find_last_lst.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
@@ -49,6 +52,8 @@ CMakeFiles/Lem_in.dir/libft/ft_isprint.c.o
 CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_chr.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_str.c
 CMakeFiles/Lem_in.dir/libft/ft_itoa.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_itoa.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h

@@ -78,6 +78,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/libft/ft_uitoa.c.o"
   "CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o"
   "CMakeFiles/Lem_in.dir/libft/get_next_line.c.o"
+  "CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o"
+  "CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o"
   "CMakeFiles/Lem_in.dir/reading.c.o"
   "CMakeFiles/Lem_in.dir/lem-in.c.o"
   "Lem_in.pdb"

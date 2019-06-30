@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.c                                           :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/29 19:42:57 by cheller           #+#    #+#             */
-/*   Updated: 2019/06/29 19:43:18 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/30 11:57:47 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/30 11:57:49 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "libft.h"
 
-int 	main()
+int ft_count_words(char *str)
 {
-	if (reading_map() == -1)
-		write(2, "Error\n", 6);
-	return (0);
+	int words;
+	int flag;
+
+	words = 0;
+	flag = 0;
+	if (!str)
+		return (-1);
+	while (*str)
+	{
+		if (*str >= 33 && *str <= 126 && !flag)
+		{
+			flag = 1;
+			words++;
+		}
+		else if (*str < 33 || *str > 126 )
+			flag = 0;
+		str++;
+	}
+	return (words);
 }

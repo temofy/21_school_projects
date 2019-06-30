@@ -312,6 +312,33 @@ libft/ft_bzero.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
+libft/ft_count_words.o: libft/ft_count_words.c.o
+
+.PHONY : libft/ft_count_words.o
+
+# target to build an object file
+libft/ft_count_words.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_count_words.c.o
+.PHONY : libft/ft_count_words.c.o
+
+libft/ft_count_words.i: libft/ft_count_words.c.i
+
+.PHONY : libft/ft_count_words.i
+
+# target to preprocess a source file
+libft/ft_count_words.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_count_words.c.i
+.PHONY : libft/ft_count_words.c.i
+
+libft/ft_count_words.s: libft/ft_count_words.c.s
+
+.PHONY : libft/ft_count_words.s
+
+# target to generate assembly for a file
+libft/ft_count_words.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_count_words.c.s
+.PHONY : libft/ft_count_words.c.s
+
 libft/ft_find_last_lst.o: libft/ft_find_last_lst.c.o
 
 .PHONY : libft/ft_find_last_lst.o
@@ -554,6 +581,33 @@ libft/ft_isthere_chr.s: libft/ft_isthere_chr.c.s
 libft/ft_isthere_chr.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.s
 .PHONY : libft/ft_isthere_chr.c.s
+
+libft/ft_isthere_str.o: libft/ft_isthere_str.c.o
+
+.PHONY : libft/ft_isthere_str.o
+
+# target to build an object file
+libft/ft_isthere_str.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o
+.PHONY : libft/ft_isthere_str.c.o
+
+libft/ft_isthere_str.i: libft/ft_isthere_str.c.i
+
+.PHONY : libft/ft_isthere_str.i
+
+# target to preprocess a source file
+libft/ft_isthere_str.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.i
+.PHONY : libft/ft_isthere_str.c.i
+
+libft/ft_isthere_str.s: libft/ft_isthere_str.c.s
+
+.PHONY : libft/ft_isthere_str.s
+
+# target to generate assembly for a file
+libft/ft_isthere_str.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.s
+.PHONY : libft/ft_isthere_str.c.s
 
 libft/ft_itoa.o: libft/ft_itoa.c.o
 
@@ -2340,6 +2394,9 @@ help:
 	@echo "... libft/ft_bzero.o"
 	@echo "... libft/ft_bzero.i"
 	@echo "... libft/ft_bzero.s"
+	@echo "... libft/ft_count_words.o"
+	@echo "... libft/ft_count_words.i"
+	@echo "... libft/ft_count_words.s"
 	@echo "... libft/ft_find_last_lst.o"
 	@echo "... libft/ft_find_last_lst.i"
 	@echo "... libft/ft_find_last_lst.s"
@@ -2367,6 +2424,9 @@ help:
 	@echo "... libft/ft_isthere_chr.o"
 	@echo "... libft/ft_isthere_chr.i"
 	@echo "... libft/ft_isthere_chr.s"
+	@echo "... libft/ft_isthere_str.o"
+	@echo "... libft/ft_isthere_str.i"
+	@echo "... libft/ft_isthere_str.s"
 	@echo "... libft/ft_itoa.o"
 	@echo "... libft/ft_itoa.i"
 	@echo "... libft/ft_itoa.s"

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.c                                           :+:      :+:    :+:   */
+/*   ft_isthere_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/29 19:42:57 by cheller           #+#    #+#             */
-/*   Updated: 2019/06/29 19:43:18 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/30 13:27:55 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/30 13:27:57 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
-
-int 	main()
+int ft_isthere_str(char *str, char *substr)
 {
-	if (reading_map() == -1)
-		write(2, "Error\n", 6);
+	int		i;
+	int		j;
+
+	i = 0;
+	if (ft_strlen(substr) == 0)
+		return (0);
+	while (str[i])
+	{
+		j = 0;
+		while (substr[j] == str[i + j])
+		{
+			if (substr[j + 1] == '\0')
+				return (1);
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }

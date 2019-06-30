@@ -23,7 +23,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(LEM_IN)
 
 $(LEM_IN):
-	@gcc -c $(FLAGS) $(SRC) -I.
+	@gcc -c $(SRC) -I.
 	@make -C LIBFT re
 	@gcc $(OBJ) $(LIBFT)/libft.a -o $(LEM_IN)
 

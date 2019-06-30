@@ -115,6 +115,8 @@ int					ft_strposchr(char *s, int c);
 int					get_next_line(const int fd, char **line);
 int					ft_arraylen(void **array);
 void				ft_arrdel(char ***arr);
+int					ft_count_words(char *str);
+int 				ft_isthere_str(char *str, char *substr);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
 #endif

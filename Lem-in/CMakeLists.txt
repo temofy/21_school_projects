@@ -87,6 +87,8 @@ add_executable(Lem_in
         libft/ft_ulitoa.c
         libft/get_next_line.c
         libft/libft.h
+        libft/ft_count_words.c
+        libft/ft_isthere_str.c
         reading.c
         lem-in.c
         lem-in.h)

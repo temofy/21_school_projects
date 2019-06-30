@@ -108,6 +108,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_bzero.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_count_words.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_find_last_lst.c">
 			<Option target="Lem_in"/>
 		</Unit>
@@ -133,6 +136,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_chr.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_isthere_str.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_itoa.c">

@@ -33,12 +33,11 @@ typedef struct	s_map
 {
 	int 	ants;
 	t_room 	*rooms;
-	t_room	start;
-	t_room	end;
+	t_room	*start;
+	t_room	*end;
 	t_links	*links;
-	char 	*file;
 }				t_map;
 
-void	reading_map();
+int		reading_map();
 
 #endif
