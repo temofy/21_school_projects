@@ -53,6 +53,7 @@ CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.o: ../libft/ft_isthere_chr.c
 CMakeFiles/Lem_in.dir/libft/ft_isthere_chr.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o: ../libft/ft_isthere_str.c
+CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
 CMakeFiles/Lem_in.dir/libft/ft_itoa.c.o: ../libft/libft.h

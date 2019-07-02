@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int ft_isthere_str(char *str, char *substr)
 {
 	int		i;

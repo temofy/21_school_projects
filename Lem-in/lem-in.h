@@ -36,6 +36,7 @@ typedef struct	s_map
 	t_room	*start;
 	t_room	*end;
 	t_links	*links;
+	char 	*file;
 }				t_map;
 
 int		reading_map();
