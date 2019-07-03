@@ -1,3 +1,0 @@
-/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/cheller/Desktop/home_space/Push_Swap/cmake-build-debug/CMakeFiles/Push_Swap.dir
