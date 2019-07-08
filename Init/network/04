@@ -1,2 +1,1 @@
-netstat -nr
 route -n get default
