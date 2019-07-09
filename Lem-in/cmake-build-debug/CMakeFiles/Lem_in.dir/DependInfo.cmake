@@ -87,6 +87,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_uitoa.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_uitoa.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/get_next_line.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/readers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/readers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/reading.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/release.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/release.c.o"
   )

@@ -28,100 +28,20 @@ int 	reading_ants(char *string, int *ants)
 	return (1);
 }
 
-int 	reading_rooms(char *str, t_map *map)
-{
-	char		**room;
-	static int	i = 0;
-	long		*value;
-	int 		rtn;
 
-	rtn = (!str) ? -1 : 1;
-	room = ft_strsplit(str, ' ');
-	rtn = (rtn == 1 && room && room[0][0] == 'L') ? -1 : 1;
-	if (rtn == 1 && map->rooms)
-	{
-		map->rooms[i].name = ft_strdup(room[0]);
-		value = ft_atopi(room[1]); //учесть передачу адреса
-		if (value)
-			map->rooms[i].x = (int)*value;
-		else
-			rtn = -1;
-		value = ft_atopi(room[2]); // учесть передачу адреса
-		if (value)
-			map->rooms[i].y = (int)*value;
-		else
-			rtn = -1;
-		i++;
-	}
-	ft_arrdel(&room);
-	return (rtn);
-}
 
-/*int 	reading_rooms(char *str, t_map *map)
-{
-	char		**room;
-	static int	i = 0;
-	long		*value;
-
-	if (!str)
-		return (-1);
-	room = ft_strsplit(str, ' ');
-	if (room[0][0] != 'L' && map->rooms)
-	{
-		map->rooms[i].name = ft_strdup(room[0]);
-		value = ft_atopi(room[1]); //учесть передачу адреса
-		if (value)
-			map->rooms[i].x = (int)*value;
-		else
-			return (-1); // утечки
-		value = ft_atopi(room[2]); // учесть передачу адреса
-		if (value)
-			map->rooms[i].y = (int)*value;
-		else
-			return (-1); // утечки
-		i++;
-	}
-	ft_arrdel(&room);
-	return (1);
-}*/
-
-int 	reading_se(char *str, t_room **se) // добавить очищение и на L проверку
-{
-	char		**room;
-	long 		*value;
-	int 		rtn;
-
-	rtn = (!str || ft_count_words(str) != 3) ? -1 : 1;
-	room = (rtn == 1) ? ft_strsplit(str, ' ') : NULL;
-	*se = (rtn == 1) ? (t_room *) ft_memalloc(sizeof(t_room)) : NULL;
-	rtn = (*se == NULL) ? -1 : 1;
-	rtn = (rtn == 1 && room[0][0] == 'L') ? -1 : 1;
-	if (rtn == 1)
-	{
-		(*se)->name = ft_strdup(room[0]);
-		value = ft_atopi(room[1]);
-		if (value)
-			(*se)->x = (int) *value;
-		else
-			rtn = -1;
-		value = ft_atopi(room[2]);
-		if (value)
-			(*se)->y = (int) *value;
-		else
-			rtn = -1;
-	}
-	ft_arrdel(&room);
-	return (rtn);
-}
-
-int 	record_links(t_map *map, char **file, int *i, int links)
+int 	record_links(t_map *map, char **file, int *i)
 {
 	char 	**values;
+	static int k = 0;
 
+	if (k == map->nbrs_links)
+		return (-1);
 	values = ft_strsplit(file[*i], '-'); // оптимизировать без сплита
-	map->links->room1 = ft_strdup(values[0]);
-	map->links->room2 = ft_strdup(values[1]);
+	map->links[k].room1 = ft_strdup(values[0]);
+	map->links[k].room2 = ft_strdup(values[1]);
 	ft_arrdel(&values);
+	k++;
 	return (1);
 }
 
@@ -213,11 +133,105 @@ int 	non_repeatability_check(t_map *map)
 	}
 	return (1);
 }
+
+char	**ft_strmatrix(int m, int n)
+{
+	char	**matrix;
+	int 	i;
+
+	i = 0;
+	if (n < 1 && m < 1)
+		return (NULL);
+	matrix = (char**)malloc(sizeof(char*) * m + 1);
+	while (i < m)
+	{
+		matrix[i] = ft_strnew(n);
+		i++;
+	}
+	matrix[i] = NULL;
+	return (matrix);
+}
+
+void	print_matrix(char **matrix)
+{
+	int 	i;
+	int 	j;
+
+	i = 0;
+
+	while (matrix[i])
+	{
+		j = 0;
+		while (matrix[i][j])
+			printf("%c ", matrix[i][j++]);
+		printf("\n");
+		i++;
+	}
+}
+int		find_index_room(t_map *map, char *room)
+{
+	int 	i;
+
+	i = 0;
+	while (i < map->nbrs_rooms)
+	{
+		if (ft_strcmp(map->rooms[i].name, room) == 0)
+			return (i);
+		else if (ft_strcmp(map->start->name, room) == 0)
+			return (i);
+		else if (ft_strcmp(map->end->name, room) == 0)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int 	make_validate_ways(t_map *map)
+{
+	char	**adjacency_matrix;
+	int		i;
+	int 	j;
+	int 	room1;
+	int 	room2;
+
+	adjacency_matrix = ft_strmatrix(map->nbrs_rooms, map->nbrs_rooms);
+
+	i = 0;
+	while (i < map->nbrs_rooms)
+	{
+		j = 0;
+		while (j < map->nbrs_rooms)
+		{
+			adjacency_matrix[i][j] = '0';
+			j++;
+		}
+		i++;
+	}
+
+	i = 0;
+	while (i < map->nbrs_links)
+	{
+		if ((room1 = find_index_room(map, map->links[i].room1)) == -1)
+			return (-1);
+		if ((room2 = find_index_room(map, map->links[i].room2)) == -1)
+			return (-1);
+		adjacency_matrix[room1][room2] = '1';
+		adjacency_matrix[room2][room1] = '1';
+		i++;
+	}
+	print_matrix(adjacency_matrix);
+	return (1);
+}
+
 int 	check_map(t_map *map)
 {
+	int rtn;
+
+	rtn = 1;
 	if (non_repeatability_check(map) == -1)
 		return (-1);
-	return (1);
+	rtn = make_validate_ways(map);
+	return (rtn);
 }
 
 int 	handler_links(t_map *map, char **file, int *i)
@@ -228,14 +242,14 @@ int 	handler_links(t_map *map, char **file, int *i)
 		if (file[*i][0] == '#')
 		{
 			if (handler_hashes(map, file, i) == -1)
-				return (-1); // утечка file
+				return (-1);
 		}
 		else
 		{
 			if (!map->links)
 				map->links = (t_links *) ft_memalloc(sizeof(t_links) * map->nbrs_links);
-			if (record_links(map, file, i, map->nbrs_links) == -1)
-				return (-1); // утечки
+			if (record_links(map, file, i) == -1)
+				return (-1);
 		}
 		(*i)++;
 	}
@@ -315,7 +329,5 @@ int		reading_map()
 	}
 	if(validate_record(&map) == -1)
 		return (free_map(&map, -1));
-	//printf("%s", map.file);
-	//printf("size: %i\n", ft_arraylen((void**)map.rooms));
 	return (1);
 }

@@ -2364,6 +2364,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+readers.o: readers.c.o
+
+.PHONY : readers.o
+
+# target to build an object file
+readers.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/readers.c.o
+.PHONY : readers.c.o
+
+readers.i: readers.c.i
+
+.PHONY : readers.i
+
+# target to preprocess a source file
+readers.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/readers.c.i
+.PHONY : readers.c.i
+
+readers.s: readers.c.s
+
+.PHONY : readers.s
+
+# target to generate assembly for a file
+readers.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/readers.c.s
+.PHONY : readers.c.s
+
 reading.o: reading.c.o
 
 .PHONY : reading.o
@@ -2676,6 +2703,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... readers.o"
+	@echo "... readers.i"
+	@echo "... readers.s"
 	@echo "... reading.o"
 	@echo "... reading.i"
 	@echo "... reading.s"

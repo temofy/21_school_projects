@@ -12,7 +12,7 @@
 
 LEM_IN = lem-in
 
-SRC = lem-in.c reading.c counters.c release.c
+SRC = lem-in.c reading.c counters.c release.c readers.c
 
 LIBFT = libft
 

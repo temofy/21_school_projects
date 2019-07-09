@@ -93,4 +93,5 @@ add_executable(Lem_in
         lem-in.c
         counters.c
         release.c
+        readers.c
         lem-in.h)

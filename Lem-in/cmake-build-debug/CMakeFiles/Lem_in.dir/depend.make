@@ -248,6 +248,10 @@ CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/readers.c.o: ../lem-in.h
+CMakeFiles/Lem_in.dir/readers.c.o: ../libft/libft.h
+CMakeFiles/Lem_in.dir/readers.c.o: ../readers.c
+
 CMakeFiles/Lem_in.dir/reading.c.o: ../lem-in.h
 CMakeFiles/Lem_in.dir/reading.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/reading.c.o: ../reading.c

@@ -84,6 +84,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/lem-in.c.o"
   "CMakeFiles/Lem_in.dir/counters.c.o"
   "CMakeFiles/Lem_in.dir/release.c.o"
+  "CMakeFiles/Lem_in.dir/readers.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )

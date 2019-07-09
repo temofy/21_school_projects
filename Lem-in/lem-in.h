@@ -45,5 +45,7 @@ int		reading_map();
 int 	free_map(t_map *map, int status);
 int 	count_links(char **file, int i);
 int 	count_rooms(char **file, int i);
+int 	reading_rooms(char *str, t_map *map);
+int 	reading_se(char *str, t_room **se);
 
 #endif

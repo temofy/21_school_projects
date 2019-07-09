@@ -56,7 +56,7 @@ char		**ft_strsplit(char const *s, char c)
 	word = -1;
 	if (!s || !(strs = (char**)malloc(sizeof(char*) * (sum_words(s, c) + 1))))
 		return (NULL);
-	while (s[++i] && word < sum_words(s, c))
+	while (s[++i] && word < sum_words(s, c)) // убрать фукнцию из цикла
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
