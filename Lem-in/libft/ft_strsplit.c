@@ -40,7 +40,7 @@ static int	get_word_len(char const *s, char c)
 	int		i;
 
 	i = 0;
-	while (s[i] != c && s[i])
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
@@ -49,27 +49,27 @@ char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		j;
-	char	**strsplit;
+	char	**strs;
 	int		word;
 
 	i = -1;
 	word = -1;
-	if (!s || !(strsplit = (char**)malloc(sizeof(char*) * sum_words(s, c) + 1)))
+	if (!s || !(strs = (char**)malloc(sizeof(char*) * (sum_words(s, c) + 1))))
 		return (NULL);
 	while (s[++i] && word < sum_words(s, c))
 	{
-		if (s[i] != c && (s[i - 1] == c || i == 0))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
-			if (!(strsplit[++word] = ft_strnew(get_word_len(&s[i], c))))
+			if (!(strs[++word] = ft_strnew(get_word_len(&s[i], c))))
 			{
-				free(strsplit);
+				free(strs);
 				return (NULL);
 			}
 			j = 0;
 		}
 		if (s[i] != c)
-			strsplit[word][j++] = (char)s[i];
+			strs[word][j++] = (char)s[i];
 	}
-	strsplit[++word] = NULL;
-	return (strsplit);
+	strs[++word] = NULL;
+	return (strs);
 }

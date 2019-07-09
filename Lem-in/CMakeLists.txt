@@ -91,4 +91,6 @@ add_executable(Lem_in
         libft/ft_isthere_str.c
         reading.c
         lem-in.c
+        counters.c
+        release.c
         lem-in.h)

@@ -17,6 +17,8 @@ int		ft_isthere_chr(char *s, int c)
 	int	is_chr;
 	int	i;
 
+	if (!s)
+		return (-1);
 	i = -1;
 	is_chr = 0;
 	while (s[++i] != '\0')

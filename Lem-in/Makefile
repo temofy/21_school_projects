@@ -6,13 +6,13 @@
 #    By: cheller <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/29 19:38:22 by cheller           #+#    #+#              #
-#    Updated: 2019/06/29 20:01:52 by cheller          ###   ########.fr        #
+#    Updated: 2019/07/09 13:46:26 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LEM_IN = lem-in
 
-SRC = lem-in.c reading.c
+SRC = lem-in.c reading.c counters.c release.c
 
 LIBFT = libft
 

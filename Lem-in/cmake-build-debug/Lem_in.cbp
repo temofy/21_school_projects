@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/counters.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/lem-in.c">
 			<Option target="Lem_in"/>
 		</Unit>
@@ -337,6 +340,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/reading.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/release.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/CMakeLists.txt">

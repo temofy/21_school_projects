@@ -123,6 +123,33 @@ Lem_in/fast:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/build
 .PHONY : Lem_in/fast
 
+counters.o: counters.c.o
+
+.PHONY : counters.o
+
+# target to build an object file
+counters.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/counters.c.o
+.PHONY : counters.c.o
+
+counters.i: counters.c.i
+
+.PHONY : counters.i
+
+# target to preprocess a source file
+counters.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/counters.c.i
+.PHONY : counters.c.i
+
+counters.s: counters.c.s
+
+.PHONY : counters.s
+
+# target to generate assembly for a file
+counters.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/counters.c.s
+.PHONY : counters.c.s
+
 lem-in.o: lem-in.c.o
 
 .PHONY : lem-in.o
@@ -2364,6 +2391,33 @@ reading.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/reading.c.s
 .PHONY : reading.c.s
 
+release.o: release.c.o
+
+.PHONY : release.o
+
+# target to build an object file
+release.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/release.c.o
+.PHONY : release.c.o
+
+release.i: release.c.i
+
+.PHONY : release.i
+
+# target to preprocess a source file
+release.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/release.c.i
+.PHONY : release.c.i
+
+release.s: release.c.s
+
+.PHONY : release.s
+
+# target to generate assembly for a file
+release.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/release.c.s
+.PHONY : release.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2373,6 +2427,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lem_in"
+	@echo "... counters.o"
+	@echo "... counters.i"
+	@echo "... counters.s"
 	@echo "... lem-in.o"
 	@echo "... lem-in.i"
 	@echo "... lem-in.s"
@@ -2622,6 +2679,9 @@ help:
 	@echo "... reading.o"
 	@echo "... reading.i"
 	@echo "... reading.s"
+	@echo "... release.o"
+	@echo "... release.i"
+	@echo "... release.s"
 .PHONY : help
 
 

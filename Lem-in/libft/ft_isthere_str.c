@@ -17,6 +17,8 @@ int ft_isthere_str(char *str, char *substr)
 	int		i;
 	int		j;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	if (ft_strlen(substr) == 0)
 		return (0);

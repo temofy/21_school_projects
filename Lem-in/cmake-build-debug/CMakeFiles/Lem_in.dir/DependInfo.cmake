@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cheller/Desktop/home_space/Lem-in/counters.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/counters.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/lem-in.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/lem-in.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_abs.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_abs.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_arraylen.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_arraylen.c.o"
@@ -87,6 +88,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/get_next_line.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/reading.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/release.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/release.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

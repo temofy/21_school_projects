@@ -19,6 +19,8 @@ long	*ft_atopi(const char *s)
 	int		i;
 	int		sign;
 
+	if (!s)
+		return (NULL);
 	res = 0;
 	i = 0;
 	sign = (s[i] == '-') ? -1 : 1;

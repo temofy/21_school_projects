@@ -82,6 +82,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/libft/ft_isthere_str.c.o"
   "CMakeFiles/Lem_in.dir/reading.c.o"
   "CMakeFiles/Lem_in.dir/lem-in.c.o"
+  "CMakeFiles/Lem_in.dir/counters.c.o"
+  "CMakeFiles/Lem_in.dir/release.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )
