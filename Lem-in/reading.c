@@ -68,23 +68,34 @@ int 	record_ants(t_map *map, char* string)
 	}
 	return (1);
 }
+int 	skip_comments(char **file, int *i)
+{
+	int		offset;
+
+	offset = 1;
+	while (file[++*i])
+	{
+		if (ft_isthere_chr(file[*i], '#') == 0 && ft_count_words(file[*i]) == 3)
+			return (offset);
+		offset++;
+	}
+	return (offset);
+}
 
 int 	handler_hashes(t_map *map, char **file, int *i)
 {
 	if (ft_strcmp("##start", file[*i]) == 0 && !(map->start))
 	{
-		if (reading_se(file[*i + 1], &(map->start)) == -1)
+		if (reading_se(file[*i + skip_comments(file, i)], &(map->start)) == -1)
 			return (-1);
-		*i = *i + 1;
 		return (1);
 	}
 	else if (ft_strcmp("##start", file[*i]) == 0 && map->start)
 		return (-1);
 	else if (ft_strcmp("##end", file[*i]) == 0 && !(map->end))
 	{
-		if (reading_se(file[*i + 1], &(map->end)) == -1)
+		if (reading_se(file[*i + skip_comments(file, i)], &(map->end)) == -1)
 			return (-1);
-		*i = *i + 1;
 		return (1);
 	}
 	else if (ft_strcmp("##end", file[*i]) == 0 && map->end)
@@ -173,40 +184,32 @@ int		find_index_room(t_map *map, char *room)
 	int 	i;
 
 	i = 0;
-	while (i < map->nbrs_rooms)
+	if (ft_strcmp(map->start->name, room) == 0)
+		return (i);
+	i++;
+	while (i - 1 < map->nbrs_rooms)
 	{
-		if (ft_strcmp(map->rooms[i].name, room) == 0)
-			return (i);
-		else if (ft_strcmp(map->start->name, room) == 0)
-			return (i);
-		else if (ft_strcmp(map->end->name, room) == 0)
+		if (ft_strcmp(map->rooms[i - 1].name, room) == 0)
 			return (i);
 		i++;
 	}
+	if (ft_strcmp(map->end->name, room) == 0)
+		return (i);
 	return (-1);
 }
 
-int 	make_validate_ways(t_map *map)
+int 	make_validate_ways(t_map *map, char ***adjacency_matrix)
 {
-	char	**adjacency_matrix;
 	int		i;
 	int 	j;
 	int 	room1;
 	int 	room2;
 
-	adjacency_matrix = ft_strmatrix(map->nbrs_rooms, map->nbrs_rooms);
+	*adjacency_matrix = ft_strmatrix(map->nbrs_rooms + 2, map->nbrs_rooms + 2);
 
 	i = 0;
-	while (i < map->nbrs_rooms)
-	{
-		j = 0;
-		while (j < map->nbrs_rooms)
-		{
-			adjacency_matrix[i][j] = '0';
-			j++;
-		}
-		i++;
-	}
+	while (i < map->nbrs_rooms + 2)
+		ft_memset((*adjacency_matrix)[i++], 48, map->nbrs_rooms + 2);
 
 	i = 0;
 	while (i < map->nbrs_links)
@@ -215,22 +218,92 @@ int 	make_validate_ways(t_map *map)
 			return (-1);
 		if ((room2 = find_index_room(map, map->links[i].room2)) == -1)
 			return (-1);
-		adjacency_matrix[room1][room2] = '1';
-		adjacency_matrix[room2][room1] = '1';
+		if ((*adjacency_matrix)[room1][room2] == '1' || (*adjacency_matrix)[room2][room1] == '1')
+			return (-1);
+		(*adjacency_matrix)[room1][room2] = '1';
+		(*adjacency_matrix)[room2][room1] = '1';
 		i++;
 	}
-	print_matrix(adjacency_matrix);
+	print_matrix(*adjacency_matrix);
+	return (1);
+}
+
+int		check_coordinates(t_map *map)
+{
+	int i;
+	int j;
+	i = 0;
+	while (i < map->nbrs_rooms)
+	{
+		j = 0;
+		while (j < map->nbrs_rooms)
+		{
+			j = (j == i) ? j + 1 : j;
+			if (map->rooms[i].x == map->rooms[j].x &&
+				map->rooms[i].y == map->rooms[j].y)
+				return (-1);
+			j++;
+		}
+		if (map->rooms[i].x == map->start->x &&
+			map->rooms[i].y == map->start->y)
+			return (-1);
+		if (map->rooms[i].x == map->end->x &&
+			map->rooms[i].y == map->end->y)
+			return (-1);
+		i++;
+	}
+	return (1);
+}
+
+typedef struct		s_node
+{
+	int				i_room;
+	struct s_node	*next;
+}					t_node;
+
+typedef struct	s_queue
+{
+	t_node	*room;
+	t_node	*next_room;
+}				t_queue;
+
+t_node	*create_node(int index)
+{
+	t_node	*node;
+
+	node = (t_node*)malloc(sizeof(t_node));
+	node->i_room = index;
+	node->next = NULL;
+	return (node);
+}
+
+int 	bfs(t_map *map, char **ways)
+{
+	int 	i;
+	int 	*checked;
+	int 	level;
+	t_queue	*queue;
+
+	queue = (t_queue*)malloc(sizeof(t_queue));
+	checked = (int*)ft_memalloc(sizeof(int) * map->nbrs_rooms);
+	i = 0;
+	queue->room = create_node(i);
+	checked[i] = 1;
 	return (1);
 }
 
 int 	check_map(t_map *map)
 {
-	int rtn;
+	int		rtn;
+	char	**ways;
 
 	rtn = 1;
 	if (non_repeatability_check(map) == -1)
 		return (-1);
-	rtn = make_validate_ways(map);
+	if (check_coordinates(map) == -1)
+		return (-1);
+	rtn = make_validate_ways(map, &ways);
+	bfs(map, ways);
 	return (rtn);
 }
 
