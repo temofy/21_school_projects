@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/reading.c" line="474" mnemonic="4" />
-  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="Lem_in" targetName="Lem_in" />
@@ -157,13 +154,10 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lem_in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lem-in" beforeDir="false" afterPath="$PROJECT_DIR$/lem-in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.c" beforeDir="false" afterPath="$PROJECT_DIR$/reading.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reading.o" beforeDir="false" afterPath="$PROJECT_DIR$/reading.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -182,8 +176,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reading.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="375" column="14" lean-forward="true" selection-start-line="375" selection-start-column="14" selection-end-line="375" selection-end-column="14" />
+            <state relative-caret-position="561">
+              <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -243,15 +237,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/middle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -398,12 +383,12 @@
       <workItem from="1562754434454" duration="2573000" />
       <workItem from="1562757726879" duration="3499000" />
       <workItem from="1562765038490" duration="11281000" />
-      <workItem from="1562833916416" duration="9897000" />
+      <workItem from="1562833916416" duration="14701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94127000" />
+    <option name="totallyTimeSpent" value="98931000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,6 +401,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1022" y="23" width="1415" height="1387" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29861617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -423,7 +409,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47414422" weight="0.32972974" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4420976" weight="0.40386102" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4420976" visible="true" weight="0.40386102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49963585" weight="0.32972974" />
@@ -432,7 +418,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50473416" side_tool="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4989075" weight="0.32972974" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49817917" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.41806263" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.41806263" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,21 +436,6 @@
           <line>60</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/reading.c</url>
-          <line>400</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/reading.c</url>
-          <line>421</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/reading.c</url>
-          <line>391</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -472,13 +443,31 @@
         <watch expression="(queue-&gt;next_room)[0]" language="ObjectiveC" />
         <watch expression="(queue-&gt;next_room)[1]" language="ObjectiveC" />
         <watch expression="(queue-&gt;next_room)[2]" language="ObjectiveC" />
+        <watch expression="room[index]" language="ObjectiveC" />
         <watch expression="q-&gt;first_room[1]" language="ObjectiveC" />
         <watch expression="q-&gt;first_room[2]" language="ObjectiveC" />
+        <watch expression="&amp;(ngbr[4])" language="ObjectiveC" />
+        <watch expression="ngbr[4]" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>&amp;(ngbr[4])</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ngbr[4]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>room[index]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>q-&gt;first_room[2]</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -511,21 +500,6 @@
       </expression>
       <expression>
         <expression-string>queue-&gt;next_room[0]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>nbrs[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(&amp;nbrs)[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(&amp;nbrs)[2]</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -828,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/little">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strfjoin.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -842,10 +809,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/maps/little">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reading.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="375" column="14" lean-forward="true" selection-start-line="375" selection-start-column="14" selection-end-line="375" selection-end-column="14" />
+        <state relative-caret-position="561">
+          <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -366,8 +366,8 @@ void	record_shortest_way(char **ways, t_map *map, t_node *room, int index)
 	i = 0;
 	//while (i < map->nbrs_rooms + 2)
 	//{
-		ways[room[index].i_room][room[index].prev->i_room] = '2';
-		ways[room[index].prev->i_room][room[index].i_room] = '2';
+	ways[room[index].i_room][room[index].prev->i_room] = '2';
+	ways[room[index].prev->i_room][room[index].i_room] = '2';
 	//}
 }
 
@@ -403,18 +403,15 @@ int 	bfs(t_map *map, char **ways)
 	int 	i;
 	int 	*checked;
 	int 	level;
-
 	t_queue	*queue;
 	queue = (t_queue*)malloc(sizeof(t_queue));
 	checked = (int*)ft_memalloc(sizeof(int) * (map->nbrs_rooms + 2));
 	i = 0;
-
 	queue->first_room = create_node(i);
 	checked[i] = 1;
 	queue->next_room = find_neighbors(ways, i, queue->first_room);
 	while (queue)
 	{
-
 	}
 	return (1);
 }*/
@@ -490,10 +487,8 @@ int 	validate_record(t_map *map)
 	char 	**file;
 	int 	i;
 	int 	links;
-
 	file = ft_strsplit(map->file, '\n');
 	i = 0;
-
 	if (reading_ants(file[0], &(map->ants)) == -1)
 		return (-1); // удалить массив
 	while ((ft_count_words(file[++i]) == 3) || ft_isthere_chr(file[i], '#'))
