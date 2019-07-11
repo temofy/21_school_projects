@@ -259,11 +259,12 @@ typedef struct		s_node
 {
 	int				i_room;
 	struct s_node	*next;
+	struct s_node	*prev;
 }					t_node;
 
 typedef struct	s_queue
 {
-	t_node	*room;
+	t_node	*first_room;
 	t_node	*next_room;
 }				t_queue;
 
@@ -274,23 +275,149 @@ t_node	*create_node(int index)
 	node = (t_node*)malloc(sizeof(t_node));
 	node->i_room = index;
 	node->next = NULL;
+	node->prev = NULL;
 	return (node);
+}
+
+int 	count_neighbors(char **ways, int i_ver)
+{
+	int i;
+	int amount;
+
+	i = 0;
+	amount = 0;
+	while(ways[i])
+	{
+		if (ways[i][i_ver] == '1')
+			amount++;
+		i++;
+	}
+	return (amount);
+}
+
+int 	find_next_i(char **ways, int *cur_i, int i_ver)
+{
+	//int	i;
+
+	//i = cur_i;
+	(*cur_i)++;
+	while (ways[*cur_i])
+	{
+		if (ways[*cur_i][i_ver] == '1')
+			return (*cur_i);
+		(*cur_i)++;
+	}
+	return (-1);
+
+}
+
+void	queue_pop(t_queue *q)
+{
+	t_node *tmp;
+
+	tmp = q->first_room;
+	q->first_room = q->next_room;
+	q->next_room = NULL;
+	//free(tmp); удалить при нобходимости
+}
+
+t_node	*find_neighbors(char **ways, int i_ver, t_node *prev, char *checked)
+{
+	t_node	*nbrs;
+	int 	i;
+	int 	amount;
+	int 	next_i;
+
+	i = 0;
+	amount = count_neighbors(ways, i_ver);
+	nbrs = (t_node*)malloc(sizeof(t_node) * amount + 1);
+	next_i = 0;
+	while (i < amount)
+	{
+		nbrs[i].i_room = find_next_i(ways, &next_i, i_ver);
+		nbrs[i].next = NULL;
+		nbrs[i].prev = prev;
+		i++;
+	}
+	nbrs[i].i_room = -1;
+	nbrs[i].next = NULL;
+	nbrs[i].prev = NULL;
+	checked[i] = 1;
+	return (nbrs);
+}
+
+int 	check_end(t_map *map, t_queue *q)
+{
+	int	i;
+
+	i = 0;
+	while (q->first_room[i].i_room != -1)
+	{
+		if (q->first_room[i].i_room == map->nbrs_rooms + 1)
+			return(i);
+		i++;
+	}
+	return (-1);
+}
+void	record_shortest_way(char **ways, t_map *map, t_node *room, int index)
+{
+	int i;
+
+	i = 0;
+	//while (i < map->nbrs_rooms + 2)
+	//{
+		ways[room[index].i_room][room[index].prev->i_room] = '2';
+		ways[room[index].prev->i_room][room[index].i_room] = '2';
+	//}
 }
 
 int 	bfs(t_map *map, char **ways)
 {
 	int 	i;
-	int 	*checked;
+	char 	*checked;
 	int 	level;
+	int		finded_way;
 	t_queue	*queue;
 
 	queue = (t_queue*)malloc(sizeof(t_queue));
-	checked = (int*)ft_memalloc(sizeof(int) * map->nbrs_rooms);
+	checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
+	ft_memset(checked, 48, map->nbrs_rooms + 2);
 	i = 0;
-	queue->room = create_node(i);
-	checked[i] = 1;
+
+	queue->first_room = create_node(i);
+	queue->next_room = find_neighbors(ways, i, queue->first_room, checked);
+	queue_pop(queue);
+	while (queue)
+	{
+		if ((finded_way = check_end(map, queue)) != -1)
+		{
+			record_shortest_way(ways, map, queue->first_room, finded_way);
+			return (1);
+		}
+	}
 	return (1);
 }
+
+/*int 	bfs(t_map *map, char **ways)
+{
+	int 	i;
+	int 	*checked;
+	int 	level;
+
+	t_queue	*queue;
+	queue = (t_queue*)malloc(sizeof(t_queue));
+	checked = (int*)ft_memalloc(sizeof(int) * (map->nbrs_rooms + 2));
+	i = 0;
+
+	queue->first_room = create_node(i);
+	checked[i] = 1;
+	queue->next_room = find_neighbors(ways, i, queue->first_room);
+	while (queue)
+	{
+
+	}
+	return (1);
+}*/
 
 int 	check_map(t_map *map)
 {
@@ -304,6 +431,7 @@ int 	check_map(t_map *map)
 		return (-1);
 	rtn = make_validate_ways(map, &ways);
 	bfs(map, ways);
+	print_matrix(ways);
 	return (rtn);
 }
 
