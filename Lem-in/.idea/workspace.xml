@@ -154,11 +154,19 @@
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/middle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lem_in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lem-in" beforeDir="false" afterPath="$PROJECT_DIR$/lem-in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/middle" beforeDir="false" afterPath="$PROJECT_DIR$/maps/middle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/test" beforeDir="false" afterPath="$PROJECT_DIR$/maps/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.c" beforeDir="false" afterPath="$PROJECT_DIR$/reading.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading.o" beforeDir="false" afterPath="$PROJECT_DIR$/reading.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,20 +181,29 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reading.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+            <state relative-caret-position="316">
+              <caret line="468" selection-start-line="468" selection-end-line="468" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maps/middle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="20" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libft/ft_memset.c">
+        <entry file="file://$PROJECT_DIR$/maps/test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -250,6 +267,8 @@
       <find>strsplit</find>
       <find>str</find>
       <find>map-&gt;end</find>
+      <find>cur_i</find>
+      <find>i_ver</find>
     </findStrings>
     <replaceStrings>
       <replace>file</replace>
@@ -257,6 +276,8 @@
       <replace>str</replace>
       <replace>strs</replace>
       <replace>se</replace>
+      <replace>cur_row</replace>
+      <replace>col_ver</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -295,9 +316,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1022" />
+    <option name="x" value="761" />
     <option name="y" value="23" />
-    <option name="width" value="1415" />
+    <option name="width" value="1676" />
     <option name="height" value="1387" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -313,11 +334,6 @@
             <path>
               <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
-              <item name="libft" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
@@ -383,12 +399,15 @@
       <workItem from="1562754434454" duration="2573000" />
       <workItem from="1562757726879" duration="3499000" />
       <workItem from="1562765038490" duration="11281000" />
-      <workItem from="1562833916416" duration="14701000" />
+      <workItem from="1562833916416" duration="14729000" />
+      <workItem from="1562927227859" duration="5889000" />
+      <workItem from="1562945478445" duration="3542000" />
+      <workItem from="1562949185943" duration="5528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98931000" />
+    <option name="totallyTimeSpent" value="113918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,10 +419,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1022" y="23" width="1415" height="1387" extended-state="0" />
+    <frame x="761" y="23" width="1676" height="1387" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29861617" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2613219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -436,23 +455,49 @@
           <line>60</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/reading.c</url>
+          <line>478</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/reading.c</url>
+          <line>435</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="(queue-&gt;next_room)[0]" language="ObjectiveC" />
-        <watch expression="(queue-&gt;next_room)[1]" language="ObjectiveC" />
-        <watch expression="(queue-&gt;next_room)[2]" language="ObjectiveC" />
-        <watch expression="room[index]" language="ObjectiveC" />
-        <watch expression="q-&gt;first_room[1]" language="ObjectiveC" />
-        <watch expression="q-&gt;first_room[2]" language="ObjectiveC" />
         <watch expression="&amp;(ngbr[4])" language="ObjectiveC" />
-        <watch expression="ngbr[4]" language="ObjectiveC" />
+        <watch expression="nbrs[i]" language="ObjectiveC" />
+        <watch expression="queue-&gt;next_room[1]" language="ObjectiveC" />
+        <watch expression="ways[*cur_row][col_ver]" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>ways[*cur_row][col_ver]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>queue-&gt;next_room[1]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nbrs[i]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nbrs[]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>&amp;(ngbr[4])</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -483,43 +528,9 @@
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>(queue-&gt;next_room)[2]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(queue-&gt;next_room)[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(queue-&gt;next_room)[0]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>queue-&gt;next_room[0]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libft/ft_atopi.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error/end_above_ants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/error/no_rooms">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -764,27 +775,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error/space_in_name">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error/start_where_edges">
+    <entry file="file://$PROJECT_DIR$/middle" />
+    <entry file="file://$PROJECT_DIR$/libft/ft_memset.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_bzero.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="210">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -795,17 +790,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_memset.c">
+    <entry file="file://$PROJECT_DIR$/libft/ft_bzero.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_strfjoin.c">
+    <entry file="file://$PROJECT_DIR$/error/space_in_name">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error/start_where_edges">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -816,10 +814,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/maps/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_strfjoin.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reading.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+        <state relative-caret-position="316">
+          <caret line="468" selection-start-line="468" selection-end-line="468" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/middle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="20" selection-end-column="3" />
         </state>
       </provider>
     </entry>
