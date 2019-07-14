@@ -19,10 +19,9 @@
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/classic" beforeDir="false" afterPath="$PROJECT_DIR$/maps/classic" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/gen_map/dilema" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/dilema" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/gen_map/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/map1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/hexagon" beforeDir="false" afterPath="$PROJECT_DIR$/maps/hexagon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/gen_map/map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/map2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/gen_map/pizdec" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/pizdec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/middle" beforeDir="false" afterPath="$PROJECT_DIR$/maps/middle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/strange" beforeDir="false" afterPath="$PROJECT_DIR$/maps/strange" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.c" beforeDir="false" afterPath="$PROJECT_DIR$/reading.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.o" beforeDir="false" afterPath="$PROJECT_DIR$/reading.o" afterDir="false" />
     </list>
@@ -39,11 +38,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reading.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
+            <state relative-caret-position="-1900">
+              <caret line="283" column="19" selection-start-line="283" selection-start-column="10" selection-end-line="283" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -52,25 +51,25 @@
         <entry file="file://$PROJECT_DIR$/maps/classic">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/maps/middle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maps/test">
+        <entry file="file://$PROJECT_DIR$/maps/middle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="405">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maps/gen_map/dilema">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="87" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -207,6 +206,12 @@
               <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
               <item name="maps" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
+              <item name="maps" type="462c0819:PsiDirectoryNode" />
+              <item name="gen_map" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -273,12 +278,12 @@
       <workItem from="1562949185943" duration="5909000" />
       <workItem from="1563003908770" duration="620000" />
       <workItem from="1563004878254" duration="7044000" />
-      <workItem from="1563096272475" duration="5997000" />
+      <workItem from="1563096272475" duration="10551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128263000" />
+    <option name="totallyTimeSpent" value="132817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -291,7 +296,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="884" y="23" width="1676" height="1387" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26988983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -299,12 +303,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47414422" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4420976" visible="true" weight="0.40386102" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4420976" weight="0.40386102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49963585" weight="0.32972974" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49526584" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49526584" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50473416" side_tool="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4989075" weight="0.32972974" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49817917" weight="0.32972974" />
@@ -335,15 +339,28 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="&amp;(ngbr[4])" language="ObjectiveC" />
-        <watch expression="nbrs[i]" language="ObjectiveC" />
-        <watch expression="queue-&gt;next_room[1]" language="ObjectiveC" />
-        <watch expression="ways[*cur_row][col_ver]" language="ObjectiveC" />
+        <watch expression="map-&gt;rooms[q-&gt;room-&gt;i_room - 1].name" language="ObjectiveC" />
+        <watch expression="map-&gt;rooms[first_in_q-&gt;room-&gt;i_room - 1].name" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>map-&gt;rooms[first_in_q-&gt;room-&gt;i_room - 1].name</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>first_in_q-&gt;rooms[q-&gt;room-&gt;i_room - 1].name</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>map-&gt;rooms[q-&gt;room-&gt;i_room - 1].name</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>ways[*cur_row][col_ver]</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -379,31 +396,9 @@
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>q-&gt;first_room[2]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>q-&gt;first_room[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>checked[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/error/no_links">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/counters.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -687,24 +682,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reading.c">
+    <entry file="file://$PROJECT_DIR$/maps/middle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/gen_map/dilema">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="87" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/classic">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/middle">
+    <entry file="file://$PROJECT_DIR$/reading.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="-1900">
+          <caret line="283" column="19" selection-start-line="283" selection-start-column="10" selection-end-line="283" selection-end-column="19" />
         </state>
       </provider>
     </entry>

@@ -410,7 +410,7 @@ void	print_shortest_way(t_node *end, t_map *map)
 	printf("\n");
 }
 
-void	disable_way(char **ways)
+void	disable_crossing_ways(char **ways)
 {
 	int i;
 	int j;
@@ -472,8 +472,6 @@ int 	bfs(t_map *map, char **ways)
 				q->room = create_node(find_next_i(ways, &next_i, first_in_q->room->i_room, checked), first_in_q->room);
 				checked[q->room->i_room] = '1';
 			}
-			else
-				q->next_in_q = find_end_of_queue(q);
 			i++;
 		}
 		queue_pop(&first_in_q);
@@ -510,11 +508,11 @@ int 	check_map(t_map *map)
 	if (check_coordinates(map) == -1)
 		return (-1);
 	rtn = make_validate_ways(map, &ways);
-	while (bfs(map, ways) == 1)
-		print_matrix(ways);
-	printf("Путей не найдено больше!\n");
-	disable_way(ways);
-	print_matrix(ways);
+	while (bfs(map, ways) == 1) {}
+		//print_matrix(ways);
+	//printf("Путей не найдено больше!\n");
+	disable_crossing_ways(ways);
+	//print_matrix(ways);
 	/*bfs(map, ways);
 	print_matrix(ways);
 	bfs(map, ways);
