@@ -169,7 +169,10 @@ void	print_matrix(char **matrix)
 	int 	j;
 
 	i = 0;
-
+	j = 0;
+	while (matrix[i][j++])
+		printf("--");
+	printf("\n");
 	while (matrix[i])
 	{
 		j = 0;
@@ -178,6 +181,9 @@ void	print_matrix(char **matrix)
 		printf("\n");
 		i++;
 	}
+	while (j--)
+		printf("--");
+	printf("\n");
 }
 int		find_index_room(t_map *map, char *room)
 {
@@ -221,7 +227,7 @@ int 	make_validate_ways(t_map *map, char ***adjacency_matrix)
 		if ((*adjacency_matrix)[room1][room2] == '1' || (*adjacency_matrix)[room2][room1] == '1')
 			return (-1);
 		(*adjacency_matrix)[room1][room2] = '1';
-		//(*adjacency_matrix)[room2][room1] = '1';
+		(*adjacency_matrix)[room2][room1] = '1';
 		i++;
 	}
 	print_matrix(*adjacency_matrix);
@@ -280,28 +286,28 @@ t_node	*create_node(int index, t_node *prev)
 	return (node);
 }
 
-int 	count_neighbors(char **ways, int i_ver, char *checked)
+int 	count_neighbors(char **ways, int vertex_i, char *checked)
 {
-	int i;
+	int neighbour;
 	int amount;
 
-	i = 0;
+	neighbour = 0;
 	amount = 0;
-	while(ways[i])
+	while(ways[neighbour])
 	{
-		if (ways[i][i_ver] == '1' && checked[i] != '1')
+		if (ways[vertex_i][neighbour] == '1' && checked[neighbour] != '1')
 			amount++;
-		else if (ways[i][i_ver] == '1' && checked[i] == '1')
+		/*else if (ways[i][i_ver] == '1' && checked[i] == '1')
 		{
 			ways[i][i_ver] = '0';
 			ways[i_ver][i] = '0';
-		}
-		i++;
+		}*/
+		neighbour++;
 	}
 	return (amount);
 }
 
-int 	find_next_i(char **ways, int *cur_row, int col_ver, char *checked)
+/*int 	find_next_i(char **ways, int *cur_row, int col_ver, char *checked)
 {
 	//int	i;
 
@@ -315,8 +321,22 @@ int 	find_next_i(char **ways, int *cur_row, int col_ver, char *checked)
 	}
 	return (-1);
 
-}
+}*/
+int 	find_next_i(char **ways, int *neighbour, int vertex_i, char *checked)
+{
+	//int	i;
 
+	//i = cur_row;
+	(*neighbour)++;
+	while (ways[vertex_i][*neighbour])
+	{
+		if (ways[vertex_i][*neighbour] == '1' && checked[*neighbour] != '1')
+			return (*neighbour);
+		(*neighbour)++;
+	}
+	return (-1);
+
+}
 
 void	queue_pop(t_queue **q)
 {
@@ -341,7 +361,7 @@ void	record_shortest_way(char **ways, t_node *end)
 	}*/
 	while (end->prev_room)
 	{
-		ways[end->i_room][end->prev_room->i_room] = '2';
+		//ways[end->i_room][end->prev_room->i_room] = '2';
 		ways[end->prev_room->i_room][end->i_room] = '2';
 		end = end->prev_room;
 	}
@@ -390,8 +410,26 @@ void	print_shortest_way(t_node *end, t_map *map)
 	printf("\n");
 }
 
-void	disable_way(char **ways, char checked, int i_way)
+void	disable_way(char **ways)
 {
+	int i;
+	int j;
+
+	i = 0;
+	while (ways[i])
+	{
+		j = 0;
+		while (ways[i][j])
+		{
+			if (ways[i][j] == '2' && ways[j][i] == '2')
+			{
+				ways[i][j] = '0';
+				ways[j][i] = '0';
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 int 	bfs(t_map *map, char **ways)
@@ -402,18 +440,16 @@ int 	bfs(t_map *map, char **ways)
 	int 	amount;
 	char 	*checked;
 	int 	next_i;
-	int		level;
 
-	level = 0;
 	checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
 	ft_memset(checked, 48, map->nbrs_rooms + 2);
 	first_in_q = que_new(NULL);
 	first_in_q->room = create_node(0, NULL);
-	first_in_q->room->level = 0;
+	//first_in_q->room->level = 0;
 	q = first_in_q;
 	checked[q->room->i_room] = '1';
 
-	while (q)
+	while (first_in_q && q)
 	{
 		if (first_in_q->room->i_room == map->nbrs_rooms + 1)
 		{
@@ -422,6 +458,8 @@ int 	bfs(t_map *map, char **ways)
 			return (1);
 		}
 		amount = count_neighbors(ways, first_in_q->room->i_room, checked);
+		if (!amount && !first_in_q->next_in_q)
+			return (-1);
 		i = 0;
 
 		next_i = 0;
@@ -472,8 +510,17 @@ int 	check_map(t_map *map)
 	if (check_coordinates(map) == -1)
 		return (-1);
 	rtn = make_validate_ways(map, &ways);
+	while (bfs(map, ways) == 1)
+		print_matrix(ways);
+	printf("Путей не найдено больше!\n");
+	disable_way(ways);
+	print_matrix(ways);
+	/*bfs(map, ways);
+	print_matrix(ways);
 	bfs(map, ways);
 	print_matrix(ways);
+	bfs(map, ways);
+	print_matrix(ways);*/
 	return (rtn);
 }
 

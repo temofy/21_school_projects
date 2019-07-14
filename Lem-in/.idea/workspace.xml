@@ -12,165 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dd14764-cb28-410a-be04-81e705785870" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Fillit/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../Fillit/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/author" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/get_next_line.h.gch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/author" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_atoi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_atoi.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_bzero.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_bzero.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_find_last_lst.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_find_last_lst.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalnum.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalnum.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalpha.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isalpha.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isascii.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isascii.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isdigit.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isdigit.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isprint.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isprint.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isthere_chr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_isthere_chr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_itoa.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_itoa.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstadd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstadd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdel.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdelone.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstdelone.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstiter.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstiter.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstmap.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstmap.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_lstnew_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memalloc.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memalloc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memccpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memccpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memcpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memdel.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memmove.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memmove.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memset.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_memset.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putchar_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putendl_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putnbr_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_putstr_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcat.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strclr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strclr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strcpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdel.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdup.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strdup.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strequ.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strequ.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strftchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strftchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striter.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striter.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striteri.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_striteri.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strjoin.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strjoin.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlcat.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlcat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlen.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strlen.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmap.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmap.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmapi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strmapi.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncat.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strncpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnequ.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnequ.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnew.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnew.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnstr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strnstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strpchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strpchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strposchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strposchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strrchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strrchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsplit.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsplit.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strstr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsub.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strsub.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtrim.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_strtrim.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_tolower.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_tolower.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_toupper.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/ft_toupper.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GNLthroughArray/libft/libft.h.gch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lem_in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in.dSYM/Contents/Resources/DWARF/Lem_in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lem_in.dSYM/Contents/Resources/DWARF/Lem_in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/for_drawing" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lem-in" beforeDir="false" afterPath="$PROJECT_DIR$/lem-in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/Cocu_Xyu" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Cocu_Xyu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/little" beforeDir="false" afterPath="$PROJECT_DIR$/maps/little" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/test" beforeDir="false" afterPath="$PROJECT_DIR$/maps/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/classic" beforeDir="false" afterPath="$PROJECT_DIR$/maps/classic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/gen_map/dilema" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/dilema" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/gen_map/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/map1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/hexagon" beforeDir="false" afterPath="$PROJECT_DIR$/maps/hexagon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/middle" beforeDir="false" afterPath="$PROJECT_DIR$/maps/middle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/strange" beforeDir="false" afterPath="$PROJECT_DIR$/maps/strange" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.c" beforeDir="false" afterPath="$PROJECT_DIR$/reading.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.o" beforeDir="false" afterPath="$PROJECT_DIR$/reading.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Printf/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Push_Swap/libft/libft.a" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -188,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reading.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="223" column="10" selection-start-line="223" selection-start-column="10" selection-end-line="223" selection-end-column="10" />
+            <state relative-caret-position="607">
+              <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -197,13 +51,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maps/classic">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/maps/middle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -212,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maps/test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="435">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -341,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -358,6 +211,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,11 +273,12 @@
       <workItem from="1562949185943" duration="5909000" />
       <workItem from="1563003908770" duration="620000" />
       <workItem from="1563004878254" duration="7044000" />
+      <workItem from="1563096272475" duration="5997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121963000" />
+    <option name="totallyTimeSpent" value="128263000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,7 +293,7 @@
     <frame x="884" y="23" width="1676" height="1387" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26744187" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26988983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -473,7 +328,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/reading.c</url>
-          <line>396</line>
+          <line>434</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
@@ -787,6 +642,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/maps/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/little">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strfjoin.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -818,24 +687,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/little">
+    <entry file="file://$PROJECT_DIR$/reading.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="607">
+          <caret line="426" column="28" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/classic">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reading.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="223" column="10" selection-start-line="223" selection-start-column="10" selection-end-line="223" selection-end-column="10" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -843,13 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maps/test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
