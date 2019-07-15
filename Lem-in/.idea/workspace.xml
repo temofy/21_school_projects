@@ -13,15 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9dd14764-cb28-410a-be04-81e705785870" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lem_in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lem_in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lem-in" beforeDir="false" afterPath="$PROJECT_DIR$/lem-in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lem-in.h" beforeDir="false" afterPath="$PROJECT_DIR$/lem-in.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/classic" beforeDir="false" afterPath="$PROJECT_DIR$/maps/classic" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/gen_map/dilema" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/dilema" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/gen_map/map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/map2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/gen_map/pizdec" beforeDir="false" afterPath="$PROJECT_DIR$/maps/gen_map/pizdec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/middle" beforeDir="false" afterPath="$PROJECT_DIR$/maps/middle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.c" beforeDir="false" afterPath="$PROJECT_DIR$/reading.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading.o" beforeDir="false" afterPath="$PROJECT_DIR$/reading.o" afterDir="false" />
     </list>
@@ -41,8 +36,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reading.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1900">
-              <caret line="283" column="19" selection-start-line="283" selection-start-column="10" selection-end-line="283" selection-end-column="19" />
+            <state relative-caret-position="416">
+              <caret line="489" column="27" selection-start-line="489" selection-start-column="27" selection-end-line="489" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lem-in.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -70,15 +74,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-line="87" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maps/little">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -135,6 +130,7 @@
       <find>map-&gt;end</find>
       <find>cur_i</find>
       <find>i_ver</find>
+      <find>next_room</find>
     </findStrings>
     <replaceStrings>
       <replace>file</replace>
@@ -169,7 +165,6 @@
         <option value="$PROJECT_DIR$/libft/ft_strsplit.c" />
         <option value="$PROJECT_DIR$/readers.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/lem-in.h" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/Cocu_Xyu" />
         <option value="$PROJECT_DIR$/error/repetitions_coordinates" />
@@ -177,6 +172,7 @@
         <option value="$PROJECT_DIR$/error/repetitions_links" />
         <option value="$PROJECT_DIR$/error/many_comments" />
         <option value="$PROJECT_DIR$/maps/middle" />
+        <option value="$PROJECT_DIR$/lem-in.h" />
         <option value="$PROJECT_DIR$/reading.c" />
       </list>
     </option>
@@ -205,12 +201,6 @@
               <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
               <item name="maps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lem_in" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lem-in" type="462c0819:PsiDirectoryNode" />
-              <item name="maps" type="462c0819:PsiDirectoryNode" />
-              <item name="gen_map" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,12 +268,13 @@
       <workItem from="1562949185943" duration="5909000" />
       <workItem from="1563003908770" duration="620000" />
       <workItem from="1563004878254" duration="7044000" />
-      <workItem from="1563096272475" duration="10551000" />
+      <workItem from="1563096272475" duration="10673000" />
+      <workItem from="1563181811027" duration="3700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132817000" />
+    <option name="totallyTimeSpent" value="136639000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,8 +287,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="884" y="23" width="1676" height="1387" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26988983" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2729498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -308,7 +300,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49963585" weight="0.32972974" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49526584" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49526584" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50473416" side_tool="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4989075" weight="0.32972974" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49817917" weight="0.32972974" />
@@ -332,7 +324,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/reading.c</url>
-          <line>434</line>
+          <line>421</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
@@ -555,13 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lem-in.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maps/Cocu_Xyu">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -644,6 +629,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/maps/middle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/gen_map/dilema">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="87" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/maps/little">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -682,20 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/middle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maps/gen_map/dilema">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="87" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maps/classic">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -703,10 +688,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lem-in.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reading.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1900">
-          <caret line="283" column="19" selection-start-line="283" selection-start-column="10" selection-end-line="283" selection-end-column="19" />
+        <state relative-caret-position="416">
+          <caret line="489" column="27" selection-start-line="489" selection-start-column="27" selection-end-line="489" selection-end-column="27" />
         </state>
       </provider>
     </entry>

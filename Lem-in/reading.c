@@ -261,20 +261,6 @@ int		check_coordinates(t_map *map)
 	return (1);
 }
 
-typedef struct		s_node
-{
-	int				i_room;
-	int 			level;
-	struct s_node	*next_room;
-	struct s_node	*prev_room;
-}					t_node;
-
-typedef struct		s_queue
-{
-	t_node			*room;
-	struct s_queue	*next_in_q;
-}					t_queue;
-
 t_node	*create_node(int index, t_node *prev)
 {
 	t_node	*node;
@@ -307,21 +293,6 @@ int 	count_neighbors(char **ways, int vertex_i, char *checked)
 	return (amount);
 }
 
-/*int 	find_next_i(char **ways, int *cur_row, int col_ver, char *checked)
-{
-	//int	i;
-
-	//i = cur_row;
-	(*cur_row)++;
-	while (ways[*cur_row])
-	{
-		if (ways[*cur_row][col_ver] == '1' && checked[*cur_row] != '1')
-			return (*cur_row);
-		(*cur_row)++;
-	}
-	return (-1);
-
-}*/
 int 	find_next_i(char **ways, int *neighbour, int vertex_i, char *checked)
 {
 	//int	i;
@@ -432,6 +403,22 @@ void	disable_crossing_ways(char **ways)
 	}
 }
 
+void	launch_ants(t_map *map, char **ways, int amount_ants)
+{
+	int ants_at_start;
+	int ants_at_end;
+	int	i;
+
+	ants_at_start = map->ants;
+	ants_at_end = 0;
+
+	while (ants_at_end != amount_ants)
+	{
+
+	}
+	printf("L%i-%s");
+}
+
 int 	bfs(t_map *map, char **ways)
 {
 	t_queue	*q;
@@ -479,28 +466,28 @@ int 	bfs(t_map *map, char **ways)
 	return (1);
 }
 
-/*int 	bfs(t_map *map, char **ways)
+int 	count_non_intersecting_ways(char **ways)
 {
 	int 	i;
-	int 	*checked;
-	int 	level;
-	t_queue	*queue;
-	queue = (t_queue*)malloc(sizeof(t_queue));
-	checked = (int*)ft_memalloc(sizeof(int) * (map->nbrs_rooms + 2));
+	int 	amount_ways;
+
 	i = 0;
-	queue->first_room = create_node(i);
-	checked[i] = 1;
-	queue->next_room = find_neighbors(ways, i, queue->first_room);
-	while (queue)
+	amount_ways = 0;
+	while (ways[0][i])
 	{
+		if (ways[0][i] == '2')
+			amount_ways++;
+		i++;
 	}
-	return (1);
-}*/
+	return (amount_ways);
+}
 
 int 	check_map(t_map *map)
 {
 	int		rtn;
 	char	**ways;
+	int 	amount_ways;
+	int 	*created_paths;
 
 	rtn = 1;
 	if (non_repeatability_check(map) == -1)
@@ -512,7 +499,10 @@ int 	check_map(t_map *map)
 		//print_matrix(ways);
 	//printf("Путей не найдено больше!\n");
 	disable_crossing_ways(ways);
-	//print_matrix(ways);
+	amount_ways = count_non_intersecting_ways(ways);
+	print_matrix(ways);
+	printf("Количество непересекающихся путей: %i\n", amount_ways);
+
 	/*bfs(map, ways);
 	print_matrix(ways);
 	bfs(map, ways);
