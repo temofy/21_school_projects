@@ -405,18 +405,128 @@ void	disable_crossing_ways(char **ways)
 	}
 }
 
-void	launch_ants(t_map *map, char **ways, int amount_ants)
+int 	**count_path_steps(t_map *map, char **ways, int amount_ways)
+{
+	int path_nbr;
+	int **paths_steps;
+	int way;
+	int i;
+	int j;
+
+	path_nbr = 0;
+	way = 0;
+
+	if (!(paths_steps = (int**)malloc(sizeof(int*) * amount_ways)))
+		return (NULL);
+	while (path_nbr < amount_ways)
+	{
+		paths_steps[path_nbr] = (int*)malloc(sizeof(int) * 2);
+		paths_steps[path_nbr][0] = 1;
+		while (ways[0][way] != '2')
+			way++;
+		paths_steps[path_nbr][1] = way;
+		i = way;
+		while (i != map->nbrs_rooms + 1)
+		{
+			paths_steps[path_nbr][0]++;
+			j = 0;
+			while (ways[i][j] != '2') // учесть когда пересекаются
+				j++;
+			i = j;
+		}
+		path_nbr++;
+		way++;
+	}
+	return (paths_steps);
+}
+
+/*int 	*count_path_steps(t_map *map, char **ways, int amount_ways)
+{
+	int path_nbr;
+	int *paths_steps;
+	int way;
+	int i;
+	int j;
+
+	path_nbr = 0;
+	way = 0;
+	if (!(paths_steps = (int*)malloc(sizeof(int) * amount_ways)))
+		return (NULL);
+	while (path_nbr < amount_ways)
+	{
+		paths_steps[path_nbr] = 1;
+		while (ways[0][way] != '2')
+			way++;
+		i = way;
+		while (i != map->nbrs_rooms + 1)
+		{
+			paths_steps[path_nbr]++;
+			j = 0;
+			while (ways[i][j] != '2') // учесть когда пересекаются
+				j++;
+			i = j;
+		}
+		path_nbr++;
+
+	}
+	return (paths_steps);
+}*/
+
+void	rank_paths(int **paths, int amount_ways)
+{
+	int i;
+	int j;
+	int tmp;
+
+	i = 0;
+	while (i < amount_ways)
+	{
+		j = 0;
+		while (j < amount_ways - 1)
+		{
+			if (paths[j][0] > paths[j + 1][0])
+			{
+				tmp = paths[j][0];
+				paths[j][0] = paths[j + 1][0];
+				paths[j + 1][0] = tmp;
+				tmp = paths[j][1];
+				paths[j][1] = paths[j + 1][1];
+				paths[j + 1][1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	run_ant(t_map *map, char **ways, int ant)
+{
+}
+
+void	launch_ants(t_map *map, char **ways, int amount_ways)
 {
 	int ants_at_start;
 	int ants_at_end;
 	int	i;
+	int **paths;
+	int steps_acroos_sw;
+
+	steps_acroos_sw = map->ants + map->shortest_steps - 1;
+	paths = count_path_steps(map, ways, amount_ways);
 
 	ants_at_start = map->ants;
 	ants_at_end = 0;
+	rank_paths(paths, amount_ways);
 
-	while (ants_at_end != amount_ants)
+	i = -1;
+	while (++i < amount_ways)
+		printf("%i'steps: %i\n", i, paths[i][0]);
+	while (ants_at_end != map->ants)
 	{
-
+		if (1)
+			run_ant(map, ways, i);
+		if (1)
+			run_ant(map, ways, i);
 	}
 	//printf("L%i-%s");
 }
@@ -481,8 +591,8 @@ int 	bfs(t_map *map, char **ways, t_node *first_node, char *created_room)
 
 				/******/
 				int found_next_i = find_next_i(ways, &next_i, first_in_q->room->i_room, checked);
-				if (check_created_room(created_room, found_next_i) != 1 &&
-					check_created_room(created_room, first_in_q->room->i_room))
+				/*if (check_created_room(created_room, found_next_i) != 1 &&
+					check_created_room(created_room, first_in_q->room->i_room))*/
 					/*finding_room();
 				else*/
 					q->room = create_node(found_next_i, first_in_q->room);
@@ -803,6 +913,52 @@ void	print_directs(char **directions, t_map *map)
 	}
 }
 
+int 	count_way_step(t_map *map, char **ways, int start)
+{
+	int	steps;
+	int	j;
+
+	steps = 1;
+
+	while (start != map->nbrs_rooms + 1)
+	{
+		steps++;
+		j = 0;
+		while (ways[start][j] != '2') // учесть когда пересекаются
+			j++;
+		start = j;
+	}
+	return (steps);
+}
+int 	*make_shortest_way(t_map *map, char **ways)
+{
+	int *shortest_way;
+	int steps;
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	while (ways[0][i] != '2')
+		i++;
+	steps = count_way_step(map, ways, i);
+	map->shortest_steps = steps;
+	if (!(shortest_way = (int*)malloc(sizeof(int) * steps)))
+		return (NULL);
+	shortest_way[0] = 0;
+	shortest_way[1] = i;
+	k = 2;
+	while (i != map->nbrs_rooms + 1)
+	{
+		j = 0;
+		while (ways[i][j] != '2')
+			j++;
+		i = j;
+		shortest_way[k++] = i;
+	}
+	return (shortest_way);
+}
+
 int 	check_map(t_map *map)
 {
 	int		rtn;
@@ -825,12 +981,17 @@ int 	check_map(t_map *map)
 	// проверка на незаконченность
 	print_matrix(ways);
 	//first_room = create_nodes(map, ways);
+	if (bfs(map, ways, first_room, created_paths) == -1)
+		return (-1); // заменить
+	map->shortest_way = make_shortest_way(map, ways);
 	while (bfs(map, ways, first_room, created_paths) == 1)
 		print_matrix(ways);
 	printf("Путей не найдено больше!\n");
 	disable_crossing_ways(ways);
+	print_matrix(ways);
 	amount_ways = count_non_intersecting_ways(ways);
 	print_directs(ways, map);
+	launch_ants(map, ways, amount_ways);
 	//print_matrix(ways);
 	printf("Количество непересекающихся путей: %i\n", amount_ways);
 
