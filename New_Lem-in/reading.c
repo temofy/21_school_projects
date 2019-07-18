@@ -499,34 +499,156 @@ void	rank_paths(int **paths, int amount_ways)
 	}
 }
 
-void	run_ant(t_map *map, char **ways, int ant)
+int 	issue_sum_prev_steps(int **path, int cur_i)
 {
+	int sum;
+	int i;
+
+	i = cur_i - 1;
+	sum = 0;
+	while (i > -1)
+	{
+		sum += path[cur_i][0] - path[i][0];
+		i--;
+	}
+	return (sum);
 }
+
+t_paths *make_paths(int **paths_steps, int amount_ways, char **ways, t_map *map)
+{
+	t_paths	*paths;
+	int i;
+	int	x;
+	int	y;
+	int k;
+
+	i = -1;
+	paths = (t_paths*)malloc(sizeof(t_paths) * amount_ways);
+	while (++i < amount_ways)
+	{
+		k = -1;
+		paths[i].room = (int**)malloc(sizeof(int*) * paths_steps[i][0]);
+		while (++k < paths_steps[i][0])
+			paths[i].room[k] = (int*)malloc(sizeof(int) * 2);
+		paths[i].amount_steps = paths_steps[i][0];
+		paths[i].room[0][0] = paths_steps[i][1];
+		paths[i].room[0][1] = 0;
+		k = 1;
+		x = paths_steps[i][1];
+		while (x != map->nbrs_rooms + 1)
+		{
+			y = 0;
+			while (ways[x][y] != '2')
+				y++;
+			paths[i].room[k][0] = y;
+			paths[i].room[k++][1] = 0;
+			x = y;
+		}
+	}
+	return (paths);
+}
+
+/*int 	**make_paths(int **paths_steps, int amount_ways, char **ways, t_map *map)
+{
+	int	**paths;
+	int i;
+	int	x;
+	int	y;
+	int k;
+
+	i = -1;
+	paths = (int**)malloc(sizeof(int*) * amount_ways);
+	while (++i < amount_ways)
+	{
+		paths[i] = (int *) malloc(sizeof(int) * paths_steps[i][0] + 1);
+		paths[i][0] = paths_steps[i][0];
+		paths[i][1] = paths_steps[i][1];
+		k = 2;
+		x = paths_steps[i][1];
+		while (x != map->nbrs_rooms + 1)
+		{
+			y = 0;
+			while (ways[x][y] != '2')
+				y++;
+			paths[i][k] = y;
+			x = y;
+		}
+	}
+	return (paths);
+}*/
+
+int 	find_last_busy_room(t_paths *paths)
+{
+	int i = 0;
+
+	while (i < paths->amount_steps)
+	{
+		paths->room[i][1] > 0;
+		i++;
+	}
+	return (i);
+}
+
+void	run_ant(t_map *map, int *ants_at_end, int ant, t_paths *paths)
+{
+	int	i;
+	int tmp;
+
+	if (paths->room[0][1] == 0 && paths->amount_steps != 1)
+	{
+		printf("L%i-%s ", ant, map->rooms[paths->room[0][0] - 1].name);
+		paths->room[0][1] = ant;
+	}
+	//*ants_at_end = map->ants;
+	else
+	{
+		i = find_last_busy_room(paths);
+		if (i == paths->amount_steps - 2)
+		{
+			printf("L%i-%s ", paths->room[i--][1], map->end->name);
+			(*ants_at_end)++;
+		}
+		while (i > 0)
+		{
+			paths->room[i][1] = paths->room[i - 1][1];
+			printf("L%i-%s ", paths->room[i][1], map->rooms[paths->room[i][0] - 1].name);
+			i--;
+		} //учесть когда нет поступления мурьвев, но надо провдинуть до конца
+	}
+}
+
 
 void	launch_ants(t_map *map, char **ways, int amount_ways)
 {
 	int ants_at_start;
+	int ant_no;
 	int ants_at_end;
 	int	i;
-	int **paths;
+	int **paths_steps;
+	t_paths	*paths;
 	int steps_acroos_sw;
+	ant_no = 1;
 
 	steps_acroos_sw = map->ants + map->shortest_steps - 1;
-	paths = count_path_steps(map, ways, amount_ways);
+	paths_steps = count_path_steps(map, ways, amount_ways);
+	paths = make_paths(paths_steps, amount_ways, ways, map);
 
 	ants_at_start = map->ants;
 	ants_at_end = 0;
-	rank_paths(paths, amount_ways);
+	rank_paths(paths_steps, amount_ways);
 
 	i = -1;
 	while (++i < amount_ways)
-		printf("%i'steps: %i\n", i, paths[i][0]);
+		printf("%i'steps: %i\n", i, paths_steps[i][0]);
+	i = -1;
 	while (ants_at_end != map->ants)
 	{
-		if (1)
-			run_ant(map, ways, i);
-		if (1)
-			run_ant(map, ways, i);
+		while (++i < amount_ways)
+		{
+			if (ants_at_start > (issue_sum_prev_steps(paths_steps, i))) // можно попытаться оптимизировать
+				run_ant(map, &ants_at_end, ant_no++, &(paths[i]));
+		}
+		printf("\n");
 	}
 	//printf("L%i-%s");
 }
@@ -891,7 +1013,7 @@ void	print_directs(char **directions, t_map *map)
 		j = 0;
 		while (directions[i][j])
 		{
-			if (directions[i][j] == '2')
+			if (directions[i][j] == '1')
 			{
 				if (i == 0 && j != map->nbrs_rooms + 1)
 					printf("(%s)->(%s) ", map->start->name, map->rooms[j - 1].name);
@@ -976,12 +1098,12 @@ int 	check_map(t_map *map)
 		return (-1);
 	rtn = make_validate_ways(map, &ways);
 	directed_ways = set_the_direction(ways, map);
-	//print_matrix(directed_ways);
-	//print_directs(directed_ways, map);
+	print_matrix(directed_ways);
+	print_directs(directed_ways, map);
 	// проверка на незаконченность
-	print_matrix(ways);
+	//print_matrix(ways);
 	//first_room = create_nodes(map, ways);
-	if (bfs(map, ways, first_room, created_paths) == -1)
+	/*if (bfs(map, ways, first_room, created_paths) == -1)
 		return (-1); // заменить
 	map->shortest_way = make_shortest_way(map, ways);
 	while (bfs(map, ways, first_room, created_paths) == 1)
@@ -991,9 +1113,9 @@ int 	check_map(t_map *map)
 	print_matrix(ways);
 	amount_ways = count_non_intersecting_ways(ways);
 	print_directs(ways, map);
-	launch_ants(map, ways, amount_ways);
+	//launch_ants(map, ways, amount_ways);
 	//print_matrix(ways);
-	printf("Количество непересекающихся путей: %i\n", amount_ways);
+	printf("Количество непересекающихся путей: %i\n", amount_ways);*/
 
 	return (rtn);
 }
