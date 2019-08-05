@@ -666,25 +666,20 @@ t_node	*finding_room(char **ways, t_node *first, int needed_room)
 	return (NULL);
 }
 
-int 	bfs(t_map *map, char **ways, t_node *first_node, char *created_room)
+int 	bfs(t_map *map, char **ways, t_node2 *first_node, char *created_room)
 {
 	t_queue	*q;
 	t_queue *first_in_q;
-	int 	i;
-	int 	amount;
-	char 	*checked;
+	int		i;
+	int		amount;
+	char	*checked;
 	int 	next_i;
 
 	checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
 	ft_memset(checked, 48, map->nbrs_rooms + 2);
-	first_in_q = que_new(NULL);
-	if (!first_node)
-	{
-		first_in_q->room = create_node(0, NULL);
-		created_room = ft_strnew(map->nbrs_rooms + 2);
-		ft_memset(created_room, 48, map->nbrs_rooms +2);
-		created_room[0] = '1';
-	}
+
+	first_in_q->room = first_node;
+	first_in_q->next_in_q = NULL;
 	q = first_in_q;
 	checked[q->room->i_room] = '1';
 
@@ -692,42 +687,93 @@ int 	bfs(t_map *map, char **ways, t_node *first_node, char *created_room)
 	{
 		if (first_in_q->room->i_room == map->nbrs_rooms + 1)
 		{
-			print_shortest_way(first_in_q->room, map);
-			record_shortest_way(ways, first_in_q->room);
+			//print_shortest_way(first_in_q->room, map);
+			//record_shortest_way(ways, first_in_q->room);
 			return (1);
 		}
 		amount = count_neighbors(ways, first_in_q->room->i_room, checked, map);
-		//if (amount && first_in_q->room->next_room) заморожено
-
 		if (!amount && !first_in_q->next_in_q)
 			return (-1);
 		i = 0;
 
-		next_i = 0;
+		//next_i = 0;
 		while (i < amount)
 		{
 			if (!q->next_in_q)
 			{
 				q->next_in_q = que_new(first_in_q);
 				q = q->next_in_q;
+				//int found_next_i = find_next_i(ways, &next_i, first_in_q->room->i_room, checked);
+				q->room = first_in_q->room->next_room[i];
+				checked[q->room->i_room] = '1';
+		}
+		i++;
+	}
+	queue_pop(&first_in_q);
+}
+}
+/*int 	bfs(t_map *map, char **ways, t_node *first_node, char *created_room) // последняя конфигурция
+{
+t_queue	*q;
+t_queue *first_in_q;
+int 	i;
+int 	amount;
+char 	*checked;
+int 	next_i;
 
-				/******/
-				int found_next_i = find_next_i(ways, &next_i, first_in_q->room->i_room, checked);
-				/*if (check_created_room(created_room, found_next_i) != 1 &&
-					check_created_room(created_room, first_in_q->room->i_room))*/
+checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
+ft_memset(checked, 48, map->nbrs_rooms + 2);
+first_in_q = que_new(NULL);
+if (!first_node)
+{
+	first_in_q->room = create_node(0, NULL);
+	created_room = ft_strnew(map->nbrs_rooms + 2);
+	ft_memset(created_room, 48, map->nbrs_rooms +2);
+	created_room[0] = '1';
+}
+q = first_in_q;
+checked[q->room->i_room] = '1';
+
+while (first_in_q && q)
+{
+	if (first_in_q->room->i_room == map->nbrs_rooms + 1)
+	{
+		print_shortest_way(first_in_q->room, map);
+		record_shortest_way(ways, first_in_q->room);
+		return (1);
+	}
+	amount = count_neighbors(ways, first_in_q->room->i_room, checked, map);
+	//if (amount && first_in_q->room->next_room) заморожено
+
+	if (!amount && !first_in_q->next_in_q)
+		return (-1);
+	i = 0;
+
+	next_i = 0;
+	while (i < amount)
+	{
+		if (!q->next_in_q)
+		{
+			q->next_in_q = que_new(first_in_q);
+			q = q->next_in_q;
+
+
+			int found_next_i = find_next_i(ways, &next_i, first_in_q->room->i_room, checked);
+			/*if (check_created_room(created_room, found_next_i) != 1 &&
+				check_created_room(created_room, first_in_q->room->i_room))*/
 					/*finding_room();
 				else*/
-					q->room = create_node(found_next_i, first_in_q->room);
+					/*q->room = create_node(found_next_i, first_in_q->room);
 				checked[q->room->i_room] = '1';
 
-				/********/
+
 			}
 			i++;
 		}
 		queue_pop(&first_in_q);
 	}
 	return (1);
-}
+} */
 
 /*int 	bfs(t_map *map, char **ways, t_node *first_node)
 {
@@ -1102,17 +1148,17 @@ void	assign_next_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir)
 
 	j = 0;
 	assigments = 0;
-	if (cur_room->exits == 0)
-		cur_room->next_room = NULL;
-	while (assigments < cur_room->exits)
+	if (cur_room->exits != 0)
 	{
 		while (dir[cur_room->i_room][j])
 		{
-			if (dir[cur_room->i_room][j] == '1')
-				cur_room->next_room[assigments++] = &rooms[j];
+			if (dir[cur_room->i_room][j] == '1') {
+				cur_room->next_room[assigments] = &rooms[j];
+
+				assigments++;
+			}
 			j++;
 		}
-		assigments++;
 	}
 }
 
@@ -1123,29 +1169,29 @@ void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
 
 	i = 0;
 	assigments = 0;
-	if (cur_room->entrances == 0)
-		cur_room->prev_room = NULL;
-	while (assigments < cur_room->entrances)
+	if (cur_room->entrances != 0)
 	{
-		while (i < size)
-		{
-			if (dir[i][cur_room->i_room] == '1')
-				cur_room->prev_room[assigments++] = &rooms[i];
+		while (i < size) {
+			if (dir[i][cur_room->i_room] == '1') {
+				cur_room->prev_room[assigments] = &rooms[i];
+				assigments++;
+			}
 			i++;
 		}
 	}
 }
 
 
-t_node2	*create_nodes(t_map *map, char **ways, char **directions) // и сразу проверить на удаляемость
+t_node2	*create_nodes(t_map *map, char **directions) // и сразу проверить на удаляемость
 {
 	t_node2	*rooms;
 	int		i;
 
 	i = 0;
-	rooms = (t_node2*)malloc(sizeof(t_node2) * map->nbrs_rooms + 2);
+	rooms = (t_node2*)malloc(sizeof(t_node2) * (map->nbrs_rooms + 2));
 	while (i < map->nbrs_rooms + 2)
 	{
+
 		rooms[i].i_room = i;
 		rooms[i].exits = exitsamount_exits(directions, i);
 		rooms[i].next_room = (rooms[i].exits == 0) ? NULL : (t_node2**)malloc(sizeof(t_node2*) * rooms[i].exits);
@@ -1274,13 +1320,35 @@ int 	*make_shortest_way(t_map *map, char **ways)
 	return (shortest_way);
 }
 
+void	disable_nonsensical_directions(char **directions)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (directions[i])
+	{
+		j = 0;
+		while (directions[i][j])
+		{
+			if (directions[i][j] == '1' && directions[j][i] == '1')
+			{
+				directions[i][j] = '0';
+				directions[j][i] = '0';
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 int 	check_map(t_map *map)
 {
 	int		rtn;
 	char	**ways;
 	char	**directed_ways;
-	int 	amount_ways;
-	char 	*created_paths;
+	//int 	amount_ways;
+	//char 	*created_paths;
 	t_node2	*first_room;
 
 	first_room = NULL;
@@ -1296,13 +1364,17 @@ int 	check_map(t_map *map)
 	print_directs(directed_ways, map);
 	// проверка на незаконченность
 	//print_matrix(ways);
-	first_room = create_nodes(map, ways, directed_ways);
-	/*if (bfs(map, ways, first_room, created_paths) == -1)
-		return (-1); // заменить
-	map->shortest_way = make_shortest_way(map, ways);
+	disable_nonsensical_directions(directed_ways); //допилить, чтобы отрезало полностью
+	first_room = create_nodes(map, directed_ways);
+
+	//if (bfs(map, ways, first_room, created_paths) == -1)
+	//	return (-1); // заменить
+
+	/*map->shortest_way = make_shortest_way(map, ways);
 	while (bfs(map, ways, first_room, created_paths) == 1)
 		print_matrix(ways);
 	printf("Путей не найдено больше!\n");
+	disable_crossing_ways(ways);
 	disable_crossing_ways(ways);
 	print_matrix(ways);
 	amount_ways = count_non_intersecting_ways(ways);
@@ -1310,7 +1382,6 @@ int 	check_map(t_map *map)
 	//launch_ants(map, ways, amount_ways);
 	//print_matrix(ways);
 	printf("Количество непересекающихся путей: %i\n", amount_ways);*/
-
 	return (rtn);
 }
 
