@@ -687,11 +687,38 @@ int 	find_last_busy_room(t_paths *paths)
 
 	while (i < paths->amount_steps)
 	{
-		if (paths->room[i].ant_no == 0)
-			return (i);
+		if (paths->room[i].ant_no == 0) //исправить поиск с конца
+			return (i - 1);
 		i++;
 	}
-	return (0);
+	return (-1);
+}
+
+void	push_through_ants(t_map *map, int *ants_at_end, int ant, t_paths *paths)
+{
+	int i;
+
+	i = find_last_busy_room(paths);
+	if (i == paths->amount_steps - 2 && paths->room[i].ant_no != 0)
+	{
+		printf("L%i-%s ", (i < 0) ? ant : paths->room[i].ant_no, map->end->name);
+		(*ants_at_end)++;
+		i--;
+	}
+	while (i > -1)
+	{
+		paths->room[i + 1].ant_no = paths->room[i].ant_no;
+		if (paths->room[i].ant_no != 0)
+			printf("L%i-%s ", paths->room[i].ant_no, map->rooms[paths->room[i + 1].i_next - 1].name);
+		i--;
+	}
+	if (ant != 0 && paths->amount_steps != 1)
+	{
+		paths->room[0].ant_no = ant;
+		printf("L%i-%s ", ant, map->rooms[paths->room[0].i_next - 1].name);
+	}
+	else
+		paths->room[0].ant_no = ant;
 }
 
 void	run_ant(t_map *map, int *ants_at_end, int ant, t_paths *paths) //учесть когда в старте нет муравьев
@@ -706,23 +733,8 @@ void	run_ant(t_map *map, int *ants_at_end, int ant, t_paths *paths) //учест
 	}
 	//*ants_at_end = map->ants;
 	else
-	{
-		i = find_last_busy_room(paths);
-		if (i == paths->amount_steps - 1)
-		{
-			printf("L%i-%s ", (ant > 0) ? ant : paths->room[i--].ant_no, map->end->name);
-			(*ants_at_end)++;
-		}
-		while (i > 0)
-		{
-			paths->room[i + 1].ant_no = paths->room[i].ant_no;
-			printf("L%i-%s ", paths->room[i].ant_no, map->rooms[paths->room[i].i_next - 1].name);
-			i--;
-		}
-		if (ant != 0 && paths->amount_steps != 1)
-			printf("L%i-%s ", ant, map->rooms[paths->room[0].i_next - 1].name);
+		push_through_ants(map, ants_at_end, ant, paths);
 		//учесть когда нет поступления мурьвев, но надо провдинуть до конца
-	}
 }
 
 
@@ -763,10 +775,19 @@ void	launch_ants(t_map *map, char **ways, int amount_ways)
 			}
 			else if (!ants_at_start)
 			{
-				run_ant(map, &ants_at_end, 0, &(paths[i]));
+				push_through_ants(map, &ants_at_end, 0, &(paths[i]));
+				//run_ant(map, &ants_at_end, 0, &(paths[i]));
 			}
 		}
 		printf("\n");
+	}
+	while (ants_at_end != map->ants)
+	{
+		i = 0;
+		while (++i < map->ants)
+		{
+
+		}
 	}
 	//printf("L%i-%s");
 }
@@ -1662,38 +1683,27 @@ void	disable_nonsensical_directions(char **directions)
 	}
 }
 
-int 	check_map(t_map *map)
+int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
 {
 	int		rtn;
-	char	**ways;
+//	char	**ways;
 	char	**directed_ways;
-	int 	amount_ways;
-	t_node2	*first_room;
+
+	//t_node2	*first_room;
 
 	rtn = 1;
 	if (non_repeatability_check(map) == -1)
 		return (-1);
 	if (check_coordinates(map) == -1)
 		return (-1);
-	rtn = make_validate_ways(map, &ways);
-	directed_ways = set_the_direction(ways, map); // учесть то, что где-то наклдывается
+	rtn = make_validate_ways(map, ways);
+	directed_ways = set_the_direction(*ways, map); // учесть то, что где-то наклдывается
 	// проверка на незаконченность
 	//print_matrix(ways);
 	//print_matrix(directed_ways);
 	//print_directs(directed_ways, map);
-	first_room = create_nodes(map, directed_ways);
-	while (bfs(map, ways, first_room) == 1)
-	{
-		//print_matrix(ways);
-	}
-	disable_crossing_ways(ways);
-	print_matrix(ways);
-	print_directs(ways, map);
-	map->shortest_way = make_shortest_way(map, ways);
+	*first_room = create_nodes(map, directed_ways);
 
-	amount_ways = count_non_intersecting_ways(ways);
-	launch_ants(map, ways, amount_ways);
-	printf("Количество непересекающихся путей: %i\n", amount_ways);
 	return (rtn);
 }
 
@@ -1719,11 +1729,32 @@ int 	handler_links(t_map *map, char **file, int *i)
 	return (1);
 }
 
+int 	finding_non_intersecting_ways(t_map *map, char **ways, t_node2 *first_room)
+{
+	int 	amount_ways;
+	while (bfs(map, ways, first_room) == 1)
+	{
+		//print_matrix(ways);
+	}
+	disable_crossing_ways(ways);
+	print_matrix(ways);
+	print_directs(ways, map);
+	map->shortest_way = make_shortest_way(map, ways);
+
+	amount_ways = count_non_intersecting_ways(ways);
+	launch_ants(map, ways, amount_ways);
+	printf("Количество непересекающихся путей: %i\n", amount_ways);
+	return (1);
+}
 int 	validate_record(t_map *map)
 {
 	char 	**file;
 	int 	i;
 	int 	rtn;
+
+
+	char 	**ways;
+	t_node2	*first_room;
 
 	file = ft_strsplit(map->file, '\n');
 	i = 0;
@@ -1742,8 +1773,8 @@ int 	validate_record(t_map *map)
 	if (file[i] != NULL || !map->start || !map->end)
 		rtn = -1;
 	else
-		rtn = check_map(map);
-	//finding_non_intersecting_ways(map, ways)
+		rtn = check_map(map, &ways, &first_room);
+	finding_non_intersecting_ways(map, ways, first_room);
 	ft_arrdel(&file);
 	return (rtn);
 }
