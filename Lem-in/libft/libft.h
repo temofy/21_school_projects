@@ -17,8 +17,9 @@
 # include <unistd.h>
 # include <string.h>
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 1
 # define MAX_I 214748364
+# define FD_MAXSET 4864
 
 typedef struct		s_list
 {
@@ -119,4 +120,6 @@ int					ft_count_words(char *str);
 int 				ft_isthere_str(char *str, char *substr);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
+
+size_t				ft_strclen(const char *s, int c);
 #endif

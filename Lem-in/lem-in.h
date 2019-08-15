@@ -40,7 +40,7 @@ typedef struct	s_map
 	int 	nbrs_links;
 	int 	shortest_steps;
 	int 	*shortest_way;
-	char 	*file;
+	char 	**file;
 }				t_map;
 
 typedef struct		s_node

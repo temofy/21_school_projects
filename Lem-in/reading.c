@@ -954,7 +954,6 @@ void 	opposite_go(char **ways, t_map *map, t_queue **q, t_queue *first_in_q, cha
 		//printf("%i\n", i);
 		if (i != first_in_q->room->prev_for_bfs)
 		{
-			//printf("%i\n", 1);
 			if (!(*q)->next_in_q)
 			{
 				(*q)->next_in_q = que_new();
@@ -976,12 +975,34 @@ void 	opposite_go(char **ways, t_map *map, t_queue **q, t_queue *first_in_q, cha
 	}
 }
 
-int 	bfs(t_map *map, char **ways, t_node2 *first_node)
+int		amount_rooms_in_queue(t_queue *first)
+{
+	t_queue *q;
+	int i = 1;
+
+	q = first;
+	while (q->next_in_q)
+	{
+		q = q->next_in_q;
+		i++;
+	}
+	return (i);
+}
+
+void	empty()
+{
+	int i;
+
+	i = 0;
+	return ;
+}
+int 	bfs(t_map *map, char **ways, t_node2 *first_node, int kuku)
 {
 	t_queue	*q;
 	t_queue *first_in_q;
 	char	*checked;
 	int 	i = 0;
+	int		amount;
 
 	checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
 	checked = ft_memset(checked, 48, map->nbrs_rooms + 2);
@@ -990,26 +1011,33 @@ int 	bfs(t_map *map, char **ways, t_node2 *first_node)
 	first_in_q->next_in_q = NULL;
 	q = first_in_q;
 	checked[q->room->i_room] = '1';
-	while (first_in_q && q)
+	while (first_in_q && q && i < map->nbrs_rooms + 2)
 	{
 		//printf("%i\n", i);
 		if (first_in_q->room->i_room == map->nbrs_rooms + 1)
 		{
 			record_shortest_way(ways, first_in_q->room);
+			free(checked);
 			return (1);
 		}
 		if (check_vertex_entry(ways, first_in_q->room->i_room, map) == 0)
 		{
-			if (find_neighbor_rooms(ways, map, &q, first_in_q, checked, i) == -1)
-				return (-1);
+			find_neighbor_rooms(ways, map, &q, first_in_q, checked, i);
+			/*if (find_neighbor_rooms(ways, map, &q, first_in_q, checked, i) == -1)
+				return (1);*/
 		}
 		else
 		{
 			opposite_go(ways, map, &q, first_in_q, checked);
 			//printf("%i\n", i);
 			find_neighbor_rooms(ways, map, &q, q, checked, i);
+			/*if (find_neighbor_rooms(ways, map, &q, q, checked, i) == -1)
+				return (0);*/
 			//printf("%i\n", i++);
 		}
+		/*if ((amount = amount_rooms_in_queue(first_in_q)) == 3 && kuku == 16)
+			empty();*/
+		//printf("Количество комнат в очереди: %i\n", amount);
 		i++;
 		queue_pop(&first_in_q);
 	}
@@ -1522,6 +1550,19 @@ void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
 	}
 }
 
+void	free_rooms(t_map *map, t_node2 **rooms)
+{
+	int 	i;
+	int 	j;
+
+	i = 0;
+	while (i < map->nbrs_rooms + 2)
+	{
+		j = -1;
+		/*while (++j < )
+		free()*/
+	}
+}
 
 t_node2	*create_nodes(t_map *map, char **directions) // и сразу проверить на удаляемость
 {
@@ -1596,7 +1637,7 @@ void	print_directs(char **directions, t_map *map)
 		j = 0;
 		while (directions[i][j])
 		{
-			if (directions[i][j] == '1')
+			if (directions[i][j] == '2')
 			{
 				slash_N = 1;
 				if (i == 0 && j != map->nbrs_rooms + 1)
@@ -1705,7 +1746,7 @@ int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
 	// проверка на незаконченность
 	//print_matrix(ways);
 	//print_matrix(directed_ways);
-	print_directs(directed_ways, map);
+	//print_directs(directed_ways, map);
 	*first_room = create_nodes(map, directed_ways);
 	return (1);
 }
@@ -1736,10 +1777,9 @@ int 	finding_non_intersecting_ways(t_map *map, char **ways, t_node2 *first_room)
 {
 	int i = 2;
 	int 	amount_ways;
-	//printf("1\n");
-	while (bfs(map, ways, first_room) == 1 && i < 16)
+	while (bfs(map, ways, first_room, i) == 1)
 	{
-		printf("%i\n", i++);
+		//printf("%i\n", i++);
 		//print_directs(ways, map);
 	}
 	disable_crossing_ways(ways);
@@ -1748,81 +1788,53 @@ int 	finding_non_intersecting_ways(t_map *map, char **ways, t_node2 *first_room)
 	launch_ants(map, ways, amount_ways);
 	return (1);
 }
+
 int 	validate_record(t_map *map)
 {
-	char 	**file;
 	int 	i;
 	int 	rtn;
 
 	char 	**ways;
 	t_node2	*first_room;
 
-	file = ft_strsplit(map->file, '\n');
 	i = 0;
-	if (reading_ants(file[0], &(map->ants)) == -1)
+	if (reading_ants(map->file[0], &(map->ants)) == -1)
 		return (-1); // удалить массив
-	map->nbrs_rooms = count_rooms(file, i + 1);
-	while (file[++i] && ((ft_count_words(file[i]) == 3) || ft_isthere_chr(file[i], '#')))
+	map->nbrs_rooms = count_rooms(map->file, i + 1);
+	while (map->file[++i] && ((ft_count_words(map->file[i]) == 3) || ft_isthere_chr(map->file[i], '#')))
 	{
-		if (record_rooms(map, file, &i, map->nbrs_rooms) == -1)
+		if (record_rooms(map, map->file, &i, map->nbrs_rooms) == -1)
 		{
-			ft_arrdel(&file);
+			ft_arrdel(&map->file);
 			return (-1);
 		}
 	}
-	handler_links(map, file, &i);
-	if (file[i] != NULL || !map->start || !map->end)
+	handler_links(map, map->file, &i);
+	if (map->file[i] != NULL || !map->start || !map->end)
 		rtn = -1;
 	else
 		rtn = check_map(map, &ways, &first_room);
 	if (rtn == 1)
 		finding_non_intersecting_ways(map, ways, first_room);
-	ft_arrdel(&file);
+	ft_arrdel(&map->file);
+
 	return (rtn);
 }
 
-/*int 	validate_record(t_map *map)
-{
-	char 	**file;
-	int 	i;
-	int 	links;
-	file = ft_strsplit(map->file, '\n');
-	i = 0;
-	if (reading_ants(file[0], &(map->ants)) == -1)
-		return (-1); // удалить массив
-	while ((ft_count_words(file[++i]) == 3) || ft_isthere_chr(file[i], '#'))
-	{
-		if (record_rooms(map, file, &i) == -1)
-		{} // удалить массив
-	}
-	links = count_links(file, i);
-	while ((ft_count_words(file[i]) == 1) && ft_isthere_chr(file[i], '-'))
-	{
-		if (!map->links)
-			map->links = (t_links*)ft_memalloc(sizeof(t_links) * links);
-		if (record_links(map, file, &i, links) == -1)
-		{}
-		i++;
-	}
-	if (file[i] != NULL || !map->start || !map->end)
-		return (-1); // утечка
-	 ft_arrdel(&file);
-	return (1);
-}*/
-
 int		reading_map()
 {
-	char  	*string;
 	t_map	map;
+	int 	i;
 
+	i = 0;
 	initialize_map(&map);
-	map.file = ft_strnew(0);
-	while (get_next_line(0, &string))
+	map.file = (char**)malloc(sizeof(char*) * 15000);
+	while (get_next_line(0, &(map.file[i++])))
 	{
-		map.file = ft_strfjoin(map.file, string, 0);
-		map.file = ft_strfjoin(map.file, "\n", 1);
 	}
+	map.file[i - 1] = NULL;
 	if(validate_record(&map) == -1)
 		return (free_map(&map, -1));
+	free_map(&map, 1);
 	return (1);
 }

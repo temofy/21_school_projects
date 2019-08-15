@@ -16,7 +16,7 @@ int 	main()
 {
 	if (reading_map() == -1)
 		write(2, "Error\n", 6);
-	else
-		write(1, "OK\n", 3);
+/*	else
+		write(1, "OK\n", 3);*/
 	return (0);
 }
