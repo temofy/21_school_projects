@@ -1392,6 +1392,33 @@ libft/ft_strchr.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
+libft/ft_strclen.o: libft/ft_strclen.c.o
+
+.PHONY : libft/ft_strclen.o
+
+# target to build an object file
+libft/ft_strclen.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o
+.PHONY : libft/ft_strclen.c.o
+
+libft/ft_strclen.i: libft/ft_strclen.c.i
+
+.PHONY : libft/ft_strclen.i
+
+# target to preprocess a source file
+libft/ft_strclen.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.i
+.PHONY : libft/ft_strclen.c.i
+
+libft/ft_strclen.s: libft/ft_strclen.c.s
+
+.PHONY : libft/ft_strclen.s
+
+# target to generate assembly for a file
+libft/ft_strclen.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.s
+.PHONY : libft/ft_strclen.c.s
+
 libft/ft_strclr.o: libft/ft_strclr.c.o
 
 .PHONY : libft/ft_strclr.o
@@ -2595,6 +2622,9 @@ help:
 	@echo "... libft/ft_strchr.o"
 	@echo "... libft/ft_strchr.i"
 	@echo "... libft/ft_strchr.s"
+	@echo "... libft/ft_strclen.o"
+	@echo "... libft/ft_strclen.i"
+	@echo "... libft/ft_strclen.s"
 	@echo "... libft/ft_strclr.o"
 	@echo "... libft/ft_strclr.i"
 	@echo "... libft/ft_strclr.s"

@@ -51,6 +51,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_putstr_fd.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_putstr_fd.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcat.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcat.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strchr.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strchr.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strclen.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strclr.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strclr.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcmp.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcmp.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcpy.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcpy.c.o"

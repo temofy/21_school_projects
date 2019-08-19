@@ -142,6 +142,9 @@ CMakeFiles/Lem_in.dir/libft/ft_strcat.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
 CMakeFiles/Lem_in.dir/libft/ft_strchr.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o: ../libft/ft_strclen.c
+CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o: ../libft/libft.h
+
 CMakeFiles/Lem_in.dir/libft/ft_strclr.c.o: ../libft/ft_strclr.c
 CMakeFiles/Lem_in.dir/libft/ft_strclr.c.o: ../libft/libft.h
 

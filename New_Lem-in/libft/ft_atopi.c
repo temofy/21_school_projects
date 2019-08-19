@@ -12,33 +12,38 @@
 
 #include "libft.h"
 
-long	*ft_atopi(const char *s)
+int 	failed(int *flag)
+{
+	*flag = -1;
+	return (0);
+}
+
+long	ft_atoi_f(const char *s, int *flag)
 {
 	long	res;
-	long	*p_result;
 	int		i;
 	int		sign;
 
-	if (!s)
-		return (NULL);
 	res = 0;
+	if (!s)
+		return (failed(0));
 	i = 0;
 	sign = (s[i] == '-') ? -1 : 1;
 	if (s[i] == '-')
 		i++;
 	if (s[i] < '0' || s[i] > '9')
-		return (NULL);
+		return (failed(flag));
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
-			return (NULL);
+			return (failed(flag));
 		if (res > MAX_I || (res == MAX_I && (s[i] - '0') > 7 && sign == 1))
-			return (NULL);
+			return (failed(flag));
 		if (res > MAX_I || (res == MAX_I && (s[i] - '0') > 8 && sign == -1))
-			return (NULL);
+			return (failed(flag));
 		res = (res * 10) + s[i] - '0';
 		i++;
 	}
 	res = res * sign;
-	return (p_result = &res);
+	return (res);
 }

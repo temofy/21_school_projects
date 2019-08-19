@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
-project(Lem_in C)
+project(Lem_in)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 include_directories(libft)
@@ -13,6 +13,7 @@ add_executable(Lem_in
         libft/ft_atoi.c
         libft/ft_atopi.c
         libft/ft_bzero.c
+        libft/ft_count_words.c
         libft/ft_find_last_lst.c
         libft/ft_intlen.c
         libft/ft_isalnum.c
@@ -22,6 +23,7 @@ add_executable(Lem_in
         libft/ft_iseven.c
         libft/ft_isprint.c
         libft/ft_isthere_chr.c
+        libft/ft_isthere_str.c
         libft/ft_itoa.c
         libft/ft_itoa_base.c
         libft/ft_litoa.c
@@ -50,6 +52,7 @@ add_executable(Lem_in
         libft/ft_putstr_fd.c
         libft/ft_strcat.c
         libft/ft_strchr.c
+        libft/ft_strclen.c
         libft/ft_strclr.c
         libft/ft_strcmp.c
         libft/ft_strcpy.c
@@ -87,11 +90,10 @@ add_executable(Lem_in
         libft/ft_ulitoa.c
         libft/get_next_line.c
         libft/libft.h
-        libft/ft_count_words.c
-        libft/ft_isthere_str.c
-        reading.c
-        lem-in.c
+        libft/libftprintf.a
         counters.c
-        release.c
+        lem-in.c
+        lem-in.h
         readers.c
-        lem-in.h)
+        reading.c
+        release.c)

@@ -38,47 +38,61 @@ typedef struct	s_map
 	t_room	*end;
 	t_links	*links;
 	int 	nbrs_links;
-	char 	*file;
+	char 	**file;
 }				t_map;
 
-typedef struct		s_node
+typedef struct		s_node2
 {
 	int				i_room;
-	int 			level;
-	struct s_node	*next_room;
-	struct s_node	*prev_room;
-}					t_node;
+	int				entrances;
+	int 			exits;
+	struct s_node2	**next_room;
+	struct s_node2	**prev_room;
+	int 			prev_for_bfs;
+	int 			next_for_bfs;
+}					t_node2;
+
+typedef struct		s_path_steps
+{
+	int 			way_steps;
+	int 			way_begin;
+}					t_ps;
 
 typedef struct		s_queue
 {
-	t_node			*room;
+	t_node2			*room;
 	struct s_queue	*next_in_q;
 }					t_queue;
 
+typedef struct 		s_rooms
+{
+	int				i_next;
+	int 			ant_no;
+}					t_rooms;
+
 typedef struct		s_paths
 {
-	t_node			*room;
-	int 			steps;
-}					t_paths;
+	int 			amount_steps;
+	t_rooms			*room;
+}			t_paths;
 
 typedef struct		s_num_q
 {
 	int 			nbr;
+	int 			prev_nbr;
 	int 			layer_lvl;
 	struct s_num_q	*next_in_q;
 }					t_num_q;
 
-/*typedef struct		s_queue
-{
-	t_node			*room;
-	struct s_queue	*next_in_q;
-}				t_queue;*/
-
-int		reading_map();
+int		lem_in();
 int 	free_map(t_map *map, int status);
 int 	count_links(char **file, int i);
 int 	count_rooms(char **file, int i);
 int 	reading_rooms(char *str, t_map *map);
 int 	reading_se(char *str, t_room **se);
+int		ft_printf(const char *format, ...);
+void	free_paths(t_paths **paths, int amount);
+void	free_rooms(t_node2 **first_room, int amount_rooms);
+
 
 #endif
