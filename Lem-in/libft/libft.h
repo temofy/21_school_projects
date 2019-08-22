@@ -19,7 +19,6 @@
 
 # define BUFF_SIZE 1
 # define MAX_I 214748364
-# define FD_MAXSET 4864
 
 typedef struct		s_list
 {
@@ -111,7 +110,7 @@ int					ft_abs(int n);
 int					ft_iseven(long nbr);
 char				*ft_itoa_base(int value, int base);
 size_t				ft_intlen(const unsigned int *nbr);
-long				*ft_atopi(const char *str);
+long				ft_atoi_f(const char *s, int *flag);
 int					ft_strposchr(char *s, int c);
 int					get_next_line(const int fd, char **line);
 int					ft_arraylen(void **array);
@@ -121,5 +120,6 @@ int 				ft_isthere_str(char *str, char *substr);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
 
+char				**ft_strmatrix(int m, int n);
 size_t				ft_strclen(const char *s, int c);
 #endif

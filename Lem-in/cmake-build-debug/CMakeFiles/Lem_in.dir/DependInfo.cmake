@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cheller/Desktop/home_space/Lem-in/checkers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/checkers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/counters.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/counters.c.o"
-  "/Users/cheller/Desktop/home_space/Lem-in/lem-in.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/lem-in.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/finders.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/finders.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/lem_in.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/lem_in.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_abs.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_abs.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_arraylen.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_arraylen.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_arrdel.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_arrdel.c.o"
@@ -51,6 +53,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_putstr_fd.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_putstr_fd.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcat.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcat.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strchr.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strchr.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strclen.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strclr.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strclr.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcmp.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcmp.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcpy.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strcpy.c.o"
@@ -90,6 +93,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/readers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/readers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/reading.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/release.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/release.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/starter.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/starter.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

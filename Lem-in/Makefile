@@ -6,13 +6,13 @@
 #    By: cheller <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/29 19:38:22 by cheller           #+#    #+#              #
-#    Updated: 2019/07/09 13:46:26 by cheller          ###   ########.fr        #
+#    Updated: 2019/08/19 16:02:34 by cheller          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LEM_IN = lem-in
 
-SRC = lem-in.c reading.c counters.c release.c readers.c
+SRC = lem_in.c reading.c counters.c release.c readers.c starter.c finders.c checkers.c exits_entrances.c handlers.c
 
 LIBFT = libft
 
@@ -25,7 +25,7 @@ all: $(LEM_IN)
 $(LEM_IN):
 	@gcc -c $(SRC) -I.
 	@make -C LIBFT re
-	@gcc $(OBJ) $(LIBFT)/libft.a -o $(LEM_IN)
+	@gcc $(OBJ) $(LIBFT)/libft.a $(LIBFT)/libftprintf.a -o $(LEM_IN)
 
 clean:
 	@rm -f $(OBJ)

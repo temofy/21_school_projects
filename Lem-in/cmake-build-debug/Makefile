@@ -123,6 +123,33 @@ Lem_in/fast:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/build
 .PHONY : Lem_in/fast
 
+checkers.o: checkers.c.o
+
+.PHONY : checkers.o
+
+# target to build an object file
+checkers.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/checkers.c.o
+.PHONY : checkers.c.o
+
+checkers.i: checkers.c.i
+
+.PHONY : checkers.i
+
+# target to preprocess a source file
+checkers.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/checkers.c.i
+.PHONY : checkers.c.i
+
+checkers.s: checkers.c.s
+
+.PHONY : checkers.s
+
+# target to generate assembly for a file
+checkers.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/checkers.c.s
+.PHONY : checkers.c.s
+
 counters.o: counters.c.o
 
 .PHONY : counters.o
@@ -150,32 +177,59 @@ counters.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/counters.c.s
 .PHONY : counters.c.s
 
-lem-in.o: lem-in.c.o
+finders.o: finders.c.o
 
-.PHONY : lem-in.o
+.PHONY : finders.o
 
 # target to build an object file
-lem-in.c.o:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem-in.c.o
-.PHONY : lem-in.c.o
+finders.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/finders.c.o
+.PHONY : finders.c.o
 
-lem-in.i: lem-in.c.i
+finders.i: finders.c.i
 
-.PHONY : lem-in.i
+.PHONY : finders.i
 
 # target to preprocess a source file
-lem-in.c.i:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem-in.c.i
-.PHONY : lem-in.c.i
+finders.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/finders.c.i
+.PHONY : finders.c.i
 
-lem-in.s: lem-in.c.s
+finders.s: finders.c.s
 
-.PHONY : lem-in.s
+.PHONY : finders.s
 
 # target to generate assembly for a file
-lem-in.c.s:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem-in.c.s
-.PHONY : lem-in.c.s
+finders.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/finders.c.s
+.PHONY : finders.c.s
+
+lem_in.o: lem_in.c.o
+
+.PHONY : lem_in.o
+
+# target to build an object file
+lem_in.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem_in.c.o
+.PHONY : lem_in.c.o
+
+lem_in.i: lem_in.c.i
+
+.PHONY : lem_in.i
+
+# target to preprocess a source file
+lem_in.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem_in.c.i
+.PHONY : lem_in.c.i
+
+lem_in.s: lem_in.c.s
+
+.PHONY : lem_in.s
+
+# target to generate assembly for a file
+lem_in.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/lem_in.c.s
+.PHONY : lem_in.c.s
 
 libft/ft_abs.o: libft/ft_abs.c.o
 
@@ -1392,6 +1446,33 @@ libft/ft_strchr.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
+libft/ft_strclen.o: libft/ft_strclen.c.o
+
+.PHONY : libft/ft_strclen.o
+
+# target to build an object file
+libft/ft_strclen.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.o
+.PHONY : libft/ft_strclen.c.o
+
+libft/ft_strclen.i: libft/ft_strclen.c.i
+
+.PHONY : libft/ft_strclen.i
+
+# target to preprocess a source file
+libft/ft_strclen.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.i
+.PHONY : libft/ft_strclen.c.i
+
+libft/ft_strclen.s: libft/ft_strclen.c.s
+
+.PHONY : libft/ft_strclen.s
+
+# target to generate assembly for a file
+libft/ft_strclen.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strclen.c.s
+.PHONY : libft/ft_strclen.c.s
+
 libft/ft_strclr.o: libft/ft_strclr.c.o
 
 .PHONY : libft/ft_strclr.o
@@ -2445,6 +2526,33 @@ release.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/release.c.s
 .PHONY : release.c.s
 
+starter.o: starter.c.o
+
+.PHONY : starter.o
+
+# target to build an object file
+starter.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/starter.c.o
+.PHONY : starter.c.o
+
+starter.i: starter.c.i
+
+.PHONY : starter.i
+
+# target to preprocess a source file
+starter.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/starter.c.i
+.PHONY : starter.c.i
+
+starter.s: starter.c.s
+
+.PHONY : starter.s
+
+# target to generate assembly for a file
+starter.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/starter.c.s
+.PHONY : starter.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2454,12 +2562,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lem_in"
+	@echo "... checkers.o"
+	@echo "... checkers.i"
+	@echo "... checkers.s"
 	@echo "... counters.o"
 	@echo "... counters.i"
 	@echo "... counters.s"
-	@echo "... lem-in.o"
-	@echo "... lem-in.i"
-	@echo "... lem-in.s"
+	@echo "... finders.o"
+	@echo "... finders.i"
+	@echo "... finders.s"
+	@echo "... lem_in.o"
+	@echo "... lem_in.i"
+	@echo "... lem_in.s"
 	@echo "... libft/ft_abs.o"
 	@echo "... libft/ft_abs.i"
 	@echo "... libft/ft_abs.s"
@@ -2595,6 +2709,9 @@ help:
 	@echo "... libft/ft_strchr.o"
 	@echo "... libft/ft_strchr.i"
 	@echo "... libft/ft_strchr.s"
+	@echo "... libft/ft_strclen.o"
+	@echo "... libft/ft_strclen.i"
+	@echo "... libft/ft_strclen.s"
 	@echo "... libft/ft_strclr.o"
 	@echo "... libft/ft_strclr.i"
 	@echo "... libft/ft_strclr.s"
@@ -2712,6 +2829,9 @@ help:
 	@echo "... release.o"
 	@echo "... release.i"
 	@echo "... release.s"
+	@echo "... starter.o"
+	@echo "... starter.i"
+	@echo "... starter.s"
 .PHONY : help
 
 

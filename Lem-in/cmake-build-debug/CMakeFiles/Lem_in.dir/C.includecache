@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Lem-in/lem-in.h
+/Users/cheller/Desktop/home_space/Lem-in/checkers.c
+lem_in.h
+/Users/cheller/Desktop/home_space/Lem-in/lem_in.h
+
+/Users/cheller/Desktop/home_space/Lem-in/lem_in.h
 libft/libft.h
 /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 stdio.h
@@ -19,8 +23,4 @@ unistd.h
 -
 string.h
 -
-
-/Users/cheller/Desktop/home_space/Lem-in/reading.c
-lem-in.h
-/Users/cheller/Desktop/home_space/Lem-in/lem-in.h
 
