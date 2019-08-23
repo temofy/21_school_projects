@@ -77,48 +77,8 @@ void	initialize_map(t_map *map)
 	map->start = NULL;
 	map->end = NULL;
 	map->file = NULL;
-}
-
-int 	skip_comments(char **file, int *i)
-{
-	int		offset;
-
-	offset = 1;
-	while (file[++*i])
-	{
-		if (ft_isthere_chr(file[*i], '#') == 0 && ft_count_words(file[*i]) == 3)
-			return (offset);
-		offset++;
-	}
-	return (offset);
-}
-
-int 	make_validate_ways(t_map *map, char ***adjacency_matrix)
-{
-	int		i;
-	int 	room1;
-	int 	room2;
-
-	*adjacency_matrix = ft_strmatrix(map->nbrs_rooms + 2, map->nbrs_rooms + 2);
-
-	i = 0;
-	while (i < map->nbrs_rooms + 2)
-		ft_memset((*adjacency_matrix)[i++], 48, map->nbrs_rooms + 2);
-
-	i = 0;
-	while (i < map->nbrs_links)
-	{
-		if ((room1 = find_index_room(map, map->links[i].room1)) == -1)
-			return (-1);
-		if ((room2 = find_index_room(map, map->links[i].room2)) == -1)
-			return (-1);
-		if ((*adjacency_matrix)[room1][room2] == '1' || (*adjacency_matrix)[room2][room1] == '1')
-			return (-1);
-		(*adjacency_matrix)[room1][room2] = '1';
-		(*adjacency_matrix)[room2][room1] = '1';
-		i++;
-	}
-	return (1);
+	map->paths = NULL;
+	map->amount_ways = -1;
 }
 
 void	queue_pop(t_queue **q)
@@ -139,23 +99,6 @@ void	queue_pop(t_queue **q)
 	}
 }
 
-void	record_shortest_way(char **ways, t_node2 *end)
-{
-	while (end->prev_room)
-	{
-		if (end->prev_for_bfs == -1)
-		{
-			ways[end->next_room[end->next_for_bfs]->i_room][end->i_room] = '2';
-			end = end->next_room[end->next_for_bfs];
-		}
-		else
-		{
-			ways[end->prev_room[end->prev_for_bfs]->i_room][end->i_room] = '2';
-			end = end->prev_room[end->prev_for_bfs];
-		}
-	}
-}
-
 t_queue	*que_new()
 {
 	t_queue	*next_in_q;
@@ -164,134 +107,6 @@ t_queue	*que_new()
 	next_in_q->next_in_q = NULL;
 	next_in_q->room = NULL;
 	return (next_in_q);
-}
-
-void	disable_crossing_ways(char **ways)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (ways[i])
-	{
-		j = 0;
-		while (ways[i][j])
-		{
-			if (ways[i][j] == '2' && ways[j][i] == '2')
-			{
-				ways[i][j] = '0';
-				ways[j][i] = '0';
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-t_ps	*count_path_steps(t_map *map, char **ways, int amount_ways)
-{
-	int path_nbr;
-	t_ps	*ps;
-	int way;
-	int i;
-	int j;
-
-	path_nbr = 0;
-	way = 0;
-	if (!(ps = (t_ps*)malloc(sizeof(t_ps) * amount_ways)))
-		return (NULL);
-	while (path_nbr < amount_ways)
-	{
-		ps[path_nbr].way_steps = 1;
-		while (ways[0][way] != '2')
-			way++;
-		ps[path_nbr].way_begin = way;
-		i = way;
-		while (i != map->nbrs_rooms + 1)
-		{
-			ps[path_nbr].way_steps++;
-			j = 0;
-			while (ways[i][j] != '2')
-				j++;
-			i = j;
-		}
-		path_nbr++;
-		way++;
-	}
-	return (ps);
-}
-
-void	rank_paths(t_ps *paths, int amount_ways)
-{
-	int i;
-	int j;
-	int tmp;
-
-	i = 0;
-	while (i < amount_ways)
-	{
-		j = 0;
-		while (j < amount_ways - 1)
-		{
-			if (paths[j].way_steps > paths[j + 1].way_steps)
-			{
-				tmp = paths[j].way_steps;
-				paths[j].way_steps = paths[j + 1].way_steps;
-				paths[j + 1].way_steps = tmp;
-				tmp = paths[j].way_begin;
-				paths[j].way_begin = paths[j + 1].way_begin;
-				paths[j + 1].way_begin = tmp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-int 	issue_sum_prev_steps(t_ps *path, int cur_i)
-{
-	int sum;
-	int i;
-
-	i = cur_i - 1;
-	sum = 0;
-	while (i > -1)
-	{
-		sum += path[cur_i].way_steps - path[i].way_steps;
-		i--;
-	}
-	return (sum);
-}
-
-t_paths *make_paths(t_ps *paths_steps, int amount_ways, char **ways, t_map *map)
-{
-	t_paths	*paths;
-	int i;
-	int	x;
-	int	y;
-	int k;
-
-	i = -1;
-	paths = malloc(sizeof(t_paths) * amount_ways);
-	while (++i < amount_ways)
-	{
-		paths[i].room = malloc(sizeof(t_rooms) * paths_steps[i].way_steps);
-		paths[i].amount_steps = paths_steps[i].way_steps;
-		paths[i].room->i_next = paths_steps[i].way_begin;
-		paths[i].room->ant_no = 0;
-		k = 1;
-		x = paths_steps[i].way_begin;
-		while (x != map->nbrs_rooms + 1)
-		{
-			y = 0;
-			while (ways[x][y] != '2')
-				y++;
-			paths[i].room[k].i_next = y;
-			paths[i].room[k++].ant_no = 0;
-			x = y;
-		}
-	}
-	return (paths);
 }
 
 int		nbr_len(int n)
@@ -416,7 +231,7 @@ void 	opposite_go(t_queue **q, t_queue *first_in_q, char *checked)
 	}
 }
 
-int 	bfs(t_map *map, char **ways, t_node2 *first_node, int kuku)
+int 	bfs(t_map *map, char **ways, t_node2 *first_node)
 {
 	t_queue	*q;
 	t_queue *first_in_q;
@@ -536,21 +351,6 @@ char	**set_the_direction(char **ways, t_map *map)
 	return (directed_matrix);
 }
 
-int     exitsamount_entrances(char **directions, int room, int size)
-{
-	int i;
-	int entrances;
-
-	i = 0;
-	entrances = 0;
-	while (i < size)
-	{
-		if (directions[i++][room] == '1')
-			entrances++;
-	}
-	return (entrances);
-}
-
 t_node2	*create_nodes(t_map *map, char **directions)
 {
 	t_node2	*rooms;
@@ -572,18 +372,4 @@ t_node2	*create_nodes(t_map *map, char **directions)
 		i++;
 	}
 	return (rooms);
-}
-
-int 	finding_non_intersecting_ways(t_map *map, char **ways, t_node2 *first_room)
-{
-	int i = 2;
-	while (bfs(map, ways, first_room, i) == 1)
-	{
-	}
-	disable_crossing_ways(ways);
-	map->amount_ways = count_non_intersecting_ways(ways);
-	if (!(map->amount_ways))
-		return (-1);
-	launch_ants(map, ways);
-	return (1);
 }

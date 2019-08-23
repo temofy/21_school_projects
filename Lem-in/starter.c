@@ -34,7 +34,7 @@ void	push_through_ants(t_map *map, int *ants_at_end, int ant, t_paths *paths)
 	int i;
 
 	i = find_last_busy_room(paths);
-	if (i == paths->amount_steps - 2 && paths->room[i].ant_no != 0)
+	if (i == paths->amount_steps - 2 && (i == -1 || paths->room[i].ant_no != 0))
 	{
 		print_ant_turn((i < 0) ? ant : paths->room[i].ant_no, map->end->name);
 		(*ants_at_end)++;

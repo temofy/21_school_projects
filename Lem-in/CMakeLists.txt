@@ -91,6 +91,7 @@ add_executable(Lem_in
         libft/get_next_line.c
         libft/libft.h
         libft/libftprintf.a
+        libft/ft_strmatrix.c
         counters.c
         lem_in.c
         lem_in.h
@@ -100,4 +101,8 @@ add_executable(Lem_in
         finders.c
         checkers.c
         exits_entrances.c
+        handlers.c
+        prints.c
+        actions_with_ways.c
+        actions_with_paths.c
         release.c)

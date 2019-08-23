@@ -8,11 +8,14 @@ int 	count_links(char **file, int i)
 	while (file[i])
 	{
 		if (ft_count_words(file[i]) == 1 && ft_isthere_chr(file[i], '-'))
+		{
 			links++;
-		i++;
+			i++;
+			continue;
+		}
+		else
+			break;
 	}
-	/*if (file[i] != NULL)
-		return (-1);*/
 	return (links);
 }
 
@@ -24,10 +27,13 @@ int 	count_rooms(char **file, int i)
 	while (file[i])
 	{
 		if (ft_count_words(file[i]) == 3 && !ft_isthere_chr(file[i], '#'))
-			rooms++;
+		{
+			if ((ft_strcmp(file[i - 1], "##start") != 0) && (ft_strcmp(file[i - 1], "##end") != 0))
+				rooms++;
+		}
 		i++;
 	}
-	return (rooms - 2);
+	return (rooms);
 }
 
 int 	count_neighbors(char **ways, int vertex_i, char *checked, t_map *map)

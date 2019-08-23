@@ -86,13 +86,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/actions_with_paths.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/actions_with_ways.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/checkers.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/counters.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/exits_entrances.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/finders.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/handlers.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/lem_in.c">
@@ -287,6 +299,9 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strmapi.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strmatrix.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strncat.c">
 			<Option target="Lem_in"/>
 		</Unit>
@@ -351,6 +366,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/libftprintf.a">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/prints.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/readers.c">

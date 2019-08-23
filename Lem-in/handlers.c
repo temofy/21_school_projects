@@ -47,7 +47,7 @@ int 	handler_hashes(t_map *map, char **file, int *i)
 {
 	if (ft_strcmp("##start", file[*i]) == 0 && !(map->start))
 	{
-		if (reading_se(file[*i + skip_comments(file, i)], &(map->start)) == -1)
+		if (reading_se(file[++*i], &(map->start)) == -1)
 			return (-1);
 		return (1);
 	}
@@ -55,7 +55,7 @@ int 	handler_hashes(t_map *map, char **file, int *i)
 		return (-1);
 	else if (ft_strcmp("##end", file[*i]) == 0 && !(map->end))
 	{
-		if (reading_se(file[*i + skip_comments(file, i)], &(map->end)) == -1)
+		if (reading_se(file[++*i], &(map->end)) == -1)
 			return (-1);
 		return (1);
 	}
@@ -67,7 +67,7 @@ int 	handler_hashes(t_map *map, char **file, int *i)
 int 	handler_links(t_map *map, char **file, int *i)
 {
 	map->nbrs_links = count_links(file, *i);
-	if (!map->nbrs_rooms)
+	if (!map->nbrs_rooms && (!map->start || !map->end))
 		return (-1);
 	while (file[*i] && (((ft_count_words(file[*i]) == 1) && ft_isthere_chr(file[*i], '-')) || ft_isthere_chr(file[*i], '#')))
 	{

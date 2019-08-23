@@ -142,4 +142,11 @@ int 				handler_links(t_map *map, char **file, int *i);
 int					skip_comments(char **file, int *i);
 int 				record_links(t_map *map, char **file, int *i);
 char				*links_split(char *str, int room);
+void				record_shortest_way(char **ways, t_node2 *end);
+int					make_validate_ways(t_map *map, char ***adjacency_matrix);
+int					exitsamount_entrances(char **directions, int room, int size);
+int					bfs(t_map *map, char **ways, t_node2 *first_node);
+
+void	print_directs(char **directions, t_map *map);
+void	print_matrix(char **matrix);
 #endif

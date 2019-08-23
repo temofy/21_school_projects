@@ -12,6 +12,20 @@
 
 #include "lem_in.h"
 
+void	print_farms_compos(t_map *map)
+{
+	int i;
+	int len;
+
+	i = -1;
+	while (map->file[++i])
+	{
+		len = ft_strlen(map->file[i]);
+		write(1, map->file[i], len);
+		write(1, "\n", 1);
+	}
+	write(1, "\n", 1);
+}
 int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
 {
 	char	**directed_ways;
@@ -22,6 +36,7 @@ int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
 		return (-1);
 	if (make_validate_ways(map, ways) == -1)
 		return (-1);
+	print_farms_compos(map);
 	directed_ways = set_the_direction(*ways, map);
 	*first_room = create_nodes(map, directed_ways);
 	ft_arrdel(&directed_ways);

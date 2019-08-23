@@ -123,6 +123,60 @@ Lem_in/fast:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/build
 .PHONY : Lem_in/fast
 
+actions_with_paths.o: actions_with_paths.c.o
+
+.PHONY : actions_with_paths.o
+
+# target to build an object file
+actions_with_paths.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_paths.c.o
+.PHONY : actions_with_paths.c.o
+
+actions_with_paths.i: actions_with_paths.c.i
+
+.PHONY : actions_with_paths.i
+
+# target to preprocess a source file
+actions_with_paths.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_paths.c.i
+.PHONY : actions_with_paths.c.i
+
+actions_with_paths.s: actions_with_paths.c.s
+
+.PHONY : actions_with_paths.s
+
+# target to generate assembly for a file
+actions_with_paths.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_paths.c.s
+.PHONY : actions_with_paths.c.s
+
+actions_with_ways.o: actions_with_ways.c.o
+
+.PHONY : actions_with_ways.o
+
+# target to build an object file
+actions_with_ways.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_ways.c.o
+.PHONY : actions_with_ways.c.o
+
+actions_with_ways.i: actions_with_ways.c.i
+
+.PHONY : actions_with_ways.i
+
+# target to preprocess a source file
+actions_with_ways.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_ways.c.i
+.PHONY : actions_with_ways.c.i
+
+actions_with_ways.s: actions_with_ways.c.s
+
+.PHONY : actions_with_ways.s
+
+# target to generate assembly for a file
+actions_with_ways.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/actions_with_ways.c.s
+.PHONY : actions_with_ways.c.s
+
 checkers.o: checkers.c.o
 
 .PHONY : checkers.o
@@ -177,6 +231,33 @@ counters.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/counters.c.s
 .PHONY : counters.c.s
 
+exits_entrances.o: exits_entrances.c.o
+
+.PHONY : exits_entrances.o
+
+# target to build an object file
+exits_entrances.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/exits_entrances.c.o
+.PHONY : exits_entrances.c.o
+
+exits_entrances.i: exits_entrances.c.i
+
+.PHONY : exits_entrances.i
+
+# target to preprocess a source file
+exits_entrances.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/exits_entrances.c.i
+.PHONY : exits_entrances.c.i
+
+exits_entrances.s: exits_entrances.c.s
+
+.PHONY : exits_entrances.s
+
+# target to generate assembly for a file
+exits_entrances.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/exits_entrances.c.s
+.PHONY : exits_entrances.c.s
+
 finders.o: finders.c.o
 
 .PHONY : finders.o
@@ -203,6 +284,33 @@ finders.s: finders.c.s
 finders.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/finders.c.s
 .PHONY : finders.c.s
+
+handlers.o: handlers.c.o
+
+.PHONY : handlers.o
+
+# target to build an object file
+handlers.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/handlers.c.o
+.PHONY : handlers.c.o
+
+handlers.i: handlers.c.i
+
+.PHONY : handlers.i
+
+# target to preprocess a source file
+handlers.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/handlers.c.i
+.PHONY : handlers.c.i
+
+handlers.s: handlers.c.s
+
+.PHONY : handlers.s
+
+# target to generate assembly for a file
+handlers.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/handlers.c.s
+.PHONY : handlers.c.s
 
 lem_in.o: lem_in.c.o
 
@@ -1905,6 +2013,33 @@ libft/ft_strmapi.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
+libft/ft_strmatrix.o: libft/ft_strmatrix.c.o
+
+.PHONY : libft/ft_strmatrix.o
+
+# target to build an object file
+libft/ft_strmatrix.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strmatrix.c.o
+.PHONY : libft/ft_strmatrix.c.o
+
+libft/ft_strmatrix.i: libft/ft_strmatrix.c.i
+
+.PHONY : libft/ft_strmatrix.i
+
+# target to preprocess a source file
+libft/ft_strmatrix.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strmatrix.c.i
+.PHONY : libft/ft_strmatrix.c.i
+
+libft/ft_strmatrix.s: libft/ft_strmatrix.c.s
+
+.PHONY : libft/ft_strmatrix.s
+
+# target to generate assembly for a file
+libft/ft_strmatrix.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_strmatrix.c.s
+.PHONY : libft/ft_strmatrix.c.s
+
 libft/ft_strncat.o: libft/ft_strncat.c.o
 
 .PHONY : libft/ft_strncat.o
@@ -2445,6 +2580,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+prints.o: prints.c.o
+
+.PHONY : prints.o
+
+# target to build an object file
+prints.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/prints.c.o
+.PHONY : prints.c.o
+
+prints.i: prints.c.i
+
+.PHONY : prints.i
+
+# target to preprocess a source file
+prints.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/prints.c.i
+.PHONY : prints.c.i
+
+prints.s: prints.c.s
+
+.PHONY : prints.s
+
+# target to generate assembly for a file
+prints.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/prints.c.s
+.PHONY : prints.c.s
+
 readers.o: readers.c.o
 
 .PHONY : readers.o
@@ -2562,15 +2724,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lem_in"
+	@echo "... actions_with_paths.o"
+	@echo "... actions_with_paths.i"
+	@echo "... actions_with_paths.s"
+	@echo "... actions_with_ways.o"
+	@echo "... actions_with_ways.i"
+	@echo "... actions_with_ways.s"
 	@echo "... checkers.o"
 	@echo "... checkers.i"
 	@echo "... checkers.s"
 	@echo "... counters.o"
 	@echo "... counters.i"
 	@echo "... counters.s"
+	@echo "... exits_entrances.o"
+	@echo "... exits_entrances.i"
+	@echo "... exits_entrances.s"
 	@echo "... finders.o"
 	@echo "... finders.i"
 	@echo "... finders.s"
+	@echo "... handlers.o"
+	@echo "... handlers.i"
+	@echo "... handlers.s"
 	@echo "... lem_in.o"
 	@echo "... lem_in.i"
 	@echo "... lem_in.s"
@@ -2760,6 +2934,9 @@ help:
 	@echo "... libft/ft_strmapi.o"
 	@echo "... libft/ft_strmapi.i"
 	@echo "... libft/ft_strmapi.s"
+	@echo "... libft/ft_strmatrix.o"
+	@echo "... libft/ft_strmatrix.i"
+	@echo "... libft/ft_strmatrix.s"
 	@echo "... libft/ft_strncat.o"
 	@echo "... libft/ft_strncat.i"
 	@echo "... libft/ft_strncat.s"
@@ -2820,6 +2997,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... prints.o"
+	@echo "... prints.i"
+	@echo "... prints.s"
 	@echo "... readers.o"
 	@echo "... readers.i"
 	@echo "... readers.s"

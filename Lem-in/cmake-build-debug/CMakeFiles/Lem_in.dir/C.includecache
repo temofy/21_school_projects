@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheller/Desktop/home_space/Lem-in/checkers.c
+/Users/cheller/Desktop/home_space/Lem-in/actions_with_paths.c
 lem_in.h
 /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
 
@@ -23,4 +23,8 @@ unistd.h
 -
 string.h
 -
+
+/Users/cheller/Desktop/home_space/Lem-in/reading.c
+lem_in.h
+/Users/cheller/Desktop/home_space/Lem-in/lem_in.h
 

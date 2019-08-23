@@ -4,9 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cheller/Desktop/home_space/Lem-in/actions_with_paths.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/actions_with_paths.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/actions_with_ways.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/actions_with_ways.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/checkers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/checkers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/counters.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/counters.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/exits_entrances.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/exits_entrances.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/finders.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/finders.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/handlers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/handlers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/lem_in.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/lem_in.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_abs.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_abs.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_arraylen.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_arraylen.c.o"
@@ -70,6 +74,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strljoin.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strljoin.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strmap.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strmap.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strmapi.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strmapi.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strmatrix.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strmatrix.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strncat.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strncat.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strncmp.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strncmp.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strncpy.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_strncpy.c.o"
@@ -90,6 +95,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_uitoa.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_uitoa.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/ft_ulitoa.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/libft/get_next_line.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/get_next_line.c.o"
+  "/Users/cheller/Desktop/home_space/Lem-in/prints.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/prints.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/readers.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/readers.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/reading.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/reading.c.o"
   "/Users/cheller/Desktop/home_space/Lem-in/release.c" "/Users/cheller/Desktop/home_space/Lem-in/cmake-build-debug/CMakeFiles/Lem_in.dir/release.c.o"

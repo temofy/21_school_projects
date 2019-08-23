@@ -31,7 +31,7 @@ int	validate_record_run(t_map *map)
 			return (-1);
 	}
 	handler_links(map, map->file, &i);
-	if (map->file[i] != NULL || !map->start || !map->end || !map->nbrs_links)
+	if (!map->start || !map->end || !map->nbrs_links)
 		rtn = -1;
 	else
 		rtn = check_map(map, &ways, &first_room);
@@ -50,11 +50,17 @@ int	lem_in(void)
 	i = 0;
 	initialize_map(&map);
 	map.file = (char**)malloc(sizeof(char*) * 15000);
-	while (get_next_line(0, &(map.file[i++])))
+	while (get_next_line(0, &(map.file[i])))
 	{
+		if (ft_strlen(map.file[i]) == 0)
+		{
+			free(map.file[i]);
+			break;
+		}
+		i++;
 	}
-	map.file[i - 1] = NULL;
-	if (validate_record_run(&map) == -1)
+	map.file[i] = NULL;
+	if (validate_record_run(&map) == -1) // повторения координат и любое несоответсвтие
 		return (free_map(&map, -1));
 	free_map(&map, 1);
 	return (1);

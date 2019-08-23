@@ -66,3 +66,18 @@ void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
 		}
 	}
 }
+
+int     exitsamount_entrances(char **directions, int room, int size)
+{
+	int i;
+	int entrances;
+
+	i = 0;
+	entrances = 0;
+	while (i < size)
+	{
+		if (directions[i++][room] == '1')
+			entrances++;
+	}
+	return (entrances);
+}

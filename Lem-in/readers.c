@@ -64,7 +64,7 @@ int 	reading_se(char *str, t_room **se) // добавить очищение и 
 	room = (rtn == 1) ? ft_strsplit(str, ' ') : NULL;
 	*se = (rtn == 1) ? (t_room *) ft_memalloc(sizeof(t_room)) : NULL;
 	rtn = (*se == NULL) ? -1 : 1;
-	rtn = (rtn == 1 && room[0][0] == 'L') ? -1 : 1;
+	rtn = ((rtn == 1 && room[0][0] == 'L') || rtn == -1) ? -1 : 1;
 	if (rtn == 1)
 	{
 		(*se)->name = ft_strdup(room[0]);
