@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-void	print_shortest_way(t_node2 *end, t_map *map)
+void	print_shortest_way(t_node *end, t_map *map)
 {
 	if (end->i_room == map->nbrs_rooms + 1)
 	{

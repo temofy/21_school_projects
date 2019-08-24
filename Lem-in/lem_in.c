@@ -17,7 +17,7 @@ int	validate_record_run(t_map *map)
 	int		i;
 	int		rtn;
 	char	**ways;
-	t_node2	*first_room;
+	t_node	*first_room;
 
 	i = 0;
 	first_room = NULL;

@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-int     exitsamount_exits(char **directions, int room)
+int		exitsamount_exits(char **directions, int room)
 {
 	int j;
 	int exits;
@@ -27,7 +27,7 @@ int     exitsamount_exits(char **directions, int room)
 	return (exits);
 }
 
-void	assign_next_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir)
+void	assign_next_rooms(t_node *rooms, t_node *cur_room, char **dir)
 {
 	int	assigments;
 	int j;
@@ -38,9 +38,9 @@ void	assign_next_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir)
 	{
 		while (dir[cur_room->i_room][j])
 		{
-			if (dir[cur_room->i_room][j] == '1') {
+			if (dir[cur_room->i_room][j] == '1')
+			{
 				cur_room->next_room[assigments] = &rooms[j];
-
 				assigments++;
 			}
 			j++;
@@ -48,7 +48,7 @@ void	assign_next_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir)
 	}
 }
 
-void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
+void	assign_prev_rooms(t_node *rooms, t_node *cur_room, char **dir, int size)
 {
 	int	assigments;
 	int i;
@@ -57,8 +57,10 @@ void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
 	assigments = 0;
 	if (cur_room->entrances != 0)
 	{
-		while (i < size) {
-			if (dir[i][cur_room->i_room] == '1') {
+		while (i < size)
+		{
+			if (dir[i][cur_room->i_room] == '1')
+			{
 				cur_room->prev_room[assigments] = &rooms[i];
 				assigments++;
 			}
@@ -67,7 +69,7 @@ void	assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room, char **dir, int size)
 	}
 }
 
-int     exitsamount_entrances(char **directions, int room, int size)
+int		exitsamount_entrances(char **directions, int room, int size)
 {
 	int i;
 	int entrances;

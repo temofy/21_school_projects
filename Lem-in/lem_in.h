@@ -51,6 +51,7 @@ typedef struct		s_map
 	t_links	*links;
 	int		nbrs_links;
 	char	**file;
+	char 	**ways;
 	t_paths	*paths;
 	int		amount_ways;
 }					t_map;
@@ -64,7 +65,7 @@ typedef struct		s_node2
 	struct s_node2	**prev_room;
 	int				prev_for_bfs;
 	int				next_for_bfs;
-}					t_node2;
+}					t_node;
 
 typedef struct		s_path_steps
 {
@@ -74,7 +75,7 @@ typedef struct		s_path_steps
 
 typedef struct		s_queue
 {
-	t_node2			*room;
+	t_node			*room;
 	struct s_queue	*next_in_q;
 }					t_queue;
 
@@ -92,6 +93,12 @@ typedef struct		s_num_q
 	struct s_num_q	*next_in_q;
 }					t_num_q;
 
+typedef struct 		s_set_queues
+{
+	t_queue	*q;
+	t_queue *first_in_q;
+}					t_sq;
+
 int					lem_in();
 int					free_map(t_map *map, int status);
 int					count_links(char **file, int i);
@@ -99,7 +106,7 @@ int					count_rooms(char **file, int i);
 int					reading_rooms(char *str, t_map *map);
 int					reading_se(char *str, t_room **se);
 void				free_paths(t_paths **paths, int amount);
-void				free_rooms(t_node2 **first_room, int amount_rooms);
+void				free_rooms(t_node **first_room, int amount_rooms);
 void				launch_ants(t_map *map, char **ways);
 t_ps				*count_path_steps(t_map *map, char **ways, int amount_ways);
 void				rank_paths(t_ps *paths, int amount_ways);
@@ -116,36 +123,36 @@ int					find_index_room(t_map *map, char *room);
 int					find_next_without_check(char **ways, int *neighbour,
 					int vertex_i);
 int 				finding_non_intersecting_ways(t_map *map, char **ways,
-					t_node2 *first_room);
+					t_node *first_room);
 void				initialize_map(t_map *map);
 int					reading_ants(char *string, int *ants);
 int					record_rooms(t_map *map, char **file, int *i, int amount);
 int					handler_links(t_map *map, char **file, int *i);
-int					check_map(t_map *map, char ***ways, t_node2 **first_room);
+int					check_map(t_map *map, char ***ways, t_node **first_room);
 int					count_neighbors(char **ways, int vertex_i, char *checked,
 					t_map *map);
 int					count_non_intersecting_ways(char **ways);
-t_node2				*create_nodes(t_map *map, char **directions);
-int					check_map(t_map *map, char ***ways, t_node2 **first_room);
+t_node				*create_nodes(t_map *map, char **directions);
+int					check_map(t_map *map, char ***ways, t_node **first_room);
 int					check_coordinates(t_map *map);
 int					check_vertex_entry(char **ways, int vertex, t_map *map);
 char				**set_the_direction(char **ways, t_map *map);
 int 				make_validate_ways(t_map *map, char ***adjacency_matrix);
 int					non_repeatability_check(t_map *map);
 int					exitsamount_exits(char **directions, int room);
-void				assign_next_rooms(t_node2 *rooms, t_node2 *cur_room,
+void				assign_next_rooms(t_node *rooms, t_node *cur_room,
 					char **dir);
-void				assign_prev_rooms(t_node2 *rooms, t_node2 *cur_room,
+void				assign_prev_rooms(t_node *rooms, t_node *cur_room,
 					char **dir, int size);
 int					handler_hashes(t_map *map, char **file, int *i);
 int 				handler_links(t_map *map, char **file, int *i);
 int					skip_comments(char **file, int *i);
 int 				record_links(t_map *map, char **file, int *i);
 char				*links_split(char *str, int room);
-void				record_shortest_way(char **ways, t_node2 *end);
+void				record_shortest_way(char **ways, t_node *end);
 int					make_validate_ways(t_map *map, char ***adjacency_matrix);
 int					exitsamount_entrances(char **directions, int room, int size);
-int					bfs(t_map *map, char **ways, t_node2 *first_node);
+int					bfs(t_map *map, char **ways, t_node *first_node);
 
 void	print_directs(char **directions, t_map *map);
 void	print_matrix(char **matrix);

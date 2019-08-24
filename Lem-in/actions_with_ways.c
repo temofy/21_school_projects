@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void	record_shortest_way(char **ways, t_node2 *end)
+void	record_shortest_way(char **ways, t_node *end)
 {
 	while (end->prev_room)
 	{
@@ -29,11 +29,11 @@ void	record_shortest_way(char **ways, t_node2 *end)
 	}
 }
 
-int 	make_validate_ways(t_map *map, char ***adjacency_matrix)
+int		make_validate_ways(t_map *map, char ***adjacency_matrix)
 {
-	int		i;
-	int 	room1;
-	int 	room2;
+	int	i;
+	int	room1;
+	int	room2;
 
 	*adjacency_matrix = ft_strmatrix(map->nbrs_rooms + 2, map->nbrs_rooms + 2);
 	i = 0;
@@ -46,7 +46,8 @@ int 	make_validate_ways(t_map *map, char ***adjacency_matrix)
 			return (-1);
 		if ((room2 = find_index_room(map, map->links[i].room2)) == -1)
 			return (-1);
-		if ((*adjacency_matrix)[room1][room2] == '1' || (*adjacency_matrix)[room2][room1] == '1')
+		if ((*adjacency_matrix)[room1][room2] == '1' ||
+			(*adjacency_matrix)[room2][room1] == '1')
 			return (-1);
 		(*adjacency_matrix)[room1][room2] = '1';
 		(*adjacency_matrix)[room2][room1] = '1';
@@ -77,10 +78,9 @@ void	disable_crossing_ways(char **ways)
 	}
 }
 
-int 	finding_non_intersecting_ways(t_map *map, char **ways, t_node2 *first_room)
+int		finding_non_intersecting_ways(t_map *map, char **ways, t_node *first)
 {
-	int i = 2;
-	while (bfs(map, ways, first_room) == 1)
+	while (bfs(map, ways, first) == 1)
 	{
 	}
 	disable_crossing_ways(ways);

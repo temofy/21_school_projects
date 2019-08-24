@@ -54,7 +54,7 @@ void	free_paths(t_paths **paths, int amount)
 	}
 }
 
-void	free_rooms(t_node2 **first_room, int amount_rooms)
+void	free_rooms(t_node **first_room, int amount_rooms)
 {
 	int i;
 

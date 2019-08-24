@@ -47,6 +47,8 @@ char 	*links_split(char *str, int room)
 		{
 			room1 = ft_strnew(len);
 			room1 = ft_memcpy(room1, str, len);
+			if (room == 1)
+				return (room1);
 			seperator = 1;
 			len = 0;
 			continue;
@@ -55,16 +57,8 @@ char 	*links_split(char *str, int room)
 	}
 	room2 = ft_strnew(len);
 	room2 = ft_memcpy(room2, str + ft_strlen(room1) + 1, len);
-	if (room == 1)
-	{
-		free(room2);
-		return (room1);
-	}
-	else
-	{
-		free(room1);
-		return (room2);
-	}
+	free(room1);
+	return (room2);
 }
 
 void	initialize_map(t_map *map)
@@ -127,7 +121,7 @@ int		nbr_len(int n)
 	return (len);
 }
 
-t_node2	*find_among_neighbors(int found_next_i, t_node2 *cur_room)
+t_node	*find_among_neighbors(int found_next_i, t_node *cur_room)
 {
 	int	i;
 	int k;
@@ -178,13 +172,11 @@ int	find_neighbor_rooms(char **ways, t_map *map, t_queue **q, t_queue *first_in_
 
 	if (!first_in_q->room)
 		return (-1);
-	amount = count_neighbors(ways, first_in_q->room->i_room, checked, map);
-	if (!amount && !first_in_q->next_in_q)
+	if (!(amount = count_neighbors(ways, first_in_q->room->i_room, checked, map)) && !first_in_q->next_in_q)
 		return (-1);
-	i = 0;
-
+	i = -1;
 	next_i = 0;
-	while (i < amount)
+	while (++i < amount)
 	{
 		if (!(*q)->next_in_q)
 		{
@@ -197,7 +189,6 @@ int	find_neighbor_rooms(char **ways, t_map *map, t_queue **q, t_queue *first_in_
 			else
 				checked[(*q)->room->i_room] = '1';
 		}
-		i++;
 	}
 	return (1);
 }
@@ -231,19 +222,25 @@ void 	opposite_go(t_queue **q, t_queue *first_in_q, char *checked)
 	}
 }
 
-int 	bfs(t_map *map, char **ways, t_node2 *first_node)
+void	first_init_bfc(t_queue **first, t_queue **q, t_node *node)
+{
+	*first = que_new();
+	(*first)->room = node;
+	(*first)->next_in_q = NULL;
+	*q = *first;
+}
+
+int 	bfs(t_map *map, char **ways, t_node *first_node)
 {
 	t_queue	*q;
 	t_queue *first_in_q;
 	char	*checked;
-	int 	i = 0;
+	int 	i;
 
+	i = 0;
 	checked = (char*)ft_memalloc((map->nbrs_rooms + 3));
 	checked = ft_memset(checked, 48, map->nbrs_rooms + 2);
-	first_in_q = que_new();
-	first_in_q->room = first_node;
-	first_in_q->next_in_q = NULL;
-	q = first_in_q;
+	first_init_bfc(&first_in_q, &q, first_node);
 	checked[q->room->i_room] = '1';
 	while (first_in_q && q && i < map->nbrs_rooms + 2)
 	{
@@ -292,7 +289,77 @@ void	n_queue_pop(t_num_q **q)
 	free(tmp);
 }
 
+void	initilize_objects(char ***directed_matrix, t_num_q **first, t_map *map)
+{
+	int	i;
+
+	i = -1;
+	*directed_matrix = ft_strmatrix(map->nbrs_rooms + 2, map->nbrs_rooms + 2);
+	while ((*directed_matrix)[++i])
+		(*directed_matrix)[i] = ft_memset((*directed_matrix)[i], 48, map->nbrs_rooms + 2);
+
+	*first = n_que_new();
+	(*first)->nbr = 0;
+	(*first)->prev_nbr = -1;
+	(*first)->layer_lvl = 0;
+}
+void	appropriation_neighbors(t_map *map, char **ways, t_num_q **first, t_num_q **n_queue, char **directed_matrix, char *checked)
+{
+	int		amount;
+	int 	next_i;
+	int 	i;
+	int 	ngbr;
+
+	(*n_queue) = (*first);
+	amount = count_neighbors(ways, (*n_queue)->nbr, checked, map);
+	next_i = 0;
+	if ((!amount && (*n_queue)->nbr != map->nbrs_rooms + 1))
+	{
+		while (next_i != map->nbrs_rooms + 2)
+		{
+			ngbr = find_next_without_check(ways, &next_i, (*n_queue)->nbr);
+			if ((ngbr != (*n_queue)->prev_nbr && ngbr != -1))
+				directed_matrix[(*n_queue)->nbr][ngbr] = '1';
+		}
+		*n_queue = (*n_queue)->next_in_q;
+	}
+	i = 0;
+	while (i < amount)
+	{
+		find_end_of_n_queue(*n_queue)->next_in_q = n_que_new();
+		*n_queue = find_end_of_n_queue(*n_queue);
+		(*n_queue)->prev_nbr = (*first)->nbr;
+		(*n_queue)->nbr = find_next_i(ways, &next_i, (*first)->nbr, checked);
+		(*n_queue)->layer_lvl = (*first)->layer_lvl + 1;
+		directed_matrix[(*first)->nbr][(*n_queue)->nbr] = '1';
+		if ((*n_queue)->nbr != map->nbrs_rooms + 1)
+			checked[(*n_queue)->nbr] = '1';
+		i++;
+	}
+}
+
 char	**set_the_direction(char **ways, t_map *map)
+{
+	char	*checked;
+	char	**directed_matrix;
+	t_num_q	*first;
+	t_num_q	*n_queue;
+
+	checked = ft_strnew(map->nbrs_rooms + 2);
+	checked = ft_memset(checked, 48, map->nbrs_rooms + 2);
+	initilize_objects(&directed_matrix, &first, map);
+	checked[0] = '1';
+	n_queue = first;
+	while(n_queue && first)
+	{
+		appropriation_neighbors(map, ways, &first, &n_queue, directed_matrix, checked);
+		n_queue_pop(&first);
+	}
+	free(checked);
+	return (directed_matrix);
+}
+
+/*char	**set_the_direction(char **ways, t_map *map)
 {
 	char	*checked;
 	char	**directed_matrix;
@@ -304,16 +371,7 @@ char	**set_the_direction(char **ways, t_map *map)
 
 	checked = ft_strnew(map->nbrs_rooms + 2);
 	checked = ft_memset(checked, 48, map->nbrs_rooms + 2);
-
-	i = -1;
-	directed_matrix = ft_strmatrix(map->nbrs_rooms + 2, map->nbrs_rooms + 2);
-	while (directed_matrix[++i])
-		directed_matrix[i] = ft_memset(directed_matrix[i], 48, map->nbrs_rooms + 2);
-
-	first = n_que_new();
-	first->nbr = 0;
-	first->prev_nbr = -1;
-	first->layer_lvl = 0;
+	initilize_objects(&directed_matrix, &first, map);
 	checked[0] = '1';
 	n_queue = first;
 	while(n_queue && first)
@@ -321,7 +379,7 @@ char	**set_the_direction(char **ways, t_map *map)
 		n_queue = first;
 		amount = count_neighbors(ways, n_queue->nbr, checked, map);
 		next_i = 0;
-		if ((!amount && n_queue->nbr != map->nbrs_rooms + 1)) // учесть когда есть команты, но они созданы уже, и это не предыдущая
+		if ((!amount && n_queue->nbr != map->nbrs_rooms + 1))
 		{
 			while (next_i != map->nbrs_rooms + 2)
 			{
@@ -332,7 +390,6 @@ char	**set_the_direction(char **ways, t_map *map)
 				n_queue = n_queue->next_in_q;
 		}
 		i = 0;
-
 		while (i < amount)
 		{
 			find_end_of_n_queue(n_queue)->next_in_q = n_que_new();
@@ -349,25 +406,25 @@ char	**set_the_direction(char **ways, t_map *map)
 	}
 	free(checked);
 	return (directed_matrix);
-}
+}*/
 
-t_node2	*create_nodes(t_map *map, char **directions)
+t_node	*create_nodes(t_map *map, char **directions)
 {
-	t_node2	*rooms;
+	t_node	*rooms;
 	int		i;
 
 	i = 0;
-	rooms = (t_node2*)malloc(sizeof(t_node2) * (map->nbrs_rooms + 2));
+	rooms = (t_node*)malloc(sizeof(t_node) * (map->nbrs_rooms + 2));
 	while (i < map->nbrs_rooms + 2)
 	{
 		rooms[i].i_room = i;
 		rooms[i].prev_for_bfs = -1;
 		rooms[i].next_for_bfs = -1;
 		rooms[i].exits = exitsamount_exits(directions, i);
-		rooms[i].next_room = (rooms[i].exits == 0) ? NULL : (t_node2**)malloc(sizeof(t_node2*) * rooms[i].exits);
+		rooms[i].next_room = (rooms[i].exits == 0) ? NULL : (t_node**)malloc(sizeof(t_node*) * rooms[i].exits);
 		assign_next_rooms(rooms, &(rooms[i]), directions);
 		rooms[i].entrances = exitsamount_entrances(directions, i, map->nbrs_rooms + 2);
-		rooms[i].prev_room = (rooms[i].entrances == 0) ? NULL : (t_node2**)malloc(sizeof(t_node2*) * rooms[i].entrances);
+		rooms[i].prev_room = (rooms[i].entrances == 0) ? NULL : (t_node**)malloc(sizeof(t_node*) * rooms[i].entrances);
 		assign_prev_rooms(rooms, &(rooms[i]), directions, map->nbrs_rooms + 2);
 		i++;
 	}

@@ -1,23 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handlers.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/24 12:37:04 by cheller           #+#    #+#             */
+/*   Updated: 2019/08/24 12:37:07 by cheller          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-int 	record_links(t_map *map, char **file, int *i)
+int		record_links(t_map *map, char **file, int *i)
 {
-	char 	**values;
 	static int k = 0;
 
 	if (k == map->nbrs_links)
 		return (-1);
-	//values = ft_strsplit(file[*i], '-'); // оптимизировать без сплита
-	//map->links[k].room1 = ft_strdup(values[0]);
-	//map->links[k].room2 = ft_strdup(values[1]);
 	map->links[k].room1 = links_split(file[*i], 1);
 	map->links[k].room2 = links_split(file[*i], 2);
-	//ft_arrdel(&values);
 	k++;
 	return (1);
 }
 
-int 	record_rooms(t_map *map, char **file, int *i, int amount)
+int		record_rooms(t_map *map, char **file, int *i, int amount)
 {
 	int j;
 
@@ -32,18 +39,19 @@ int 	record_rooms(t_map *map, char **file, int *i, int amount)
 		{
 			map->rooms = ft_memalloc(sizeof(t_room) * amount);
 			j = -1;
-			while (++j < amount) {
+			while (++j < amount)
+			{
 				map->rooms[j].x = -1;
 				map->rooms[j].y = -1;
 			}
 		}
 		if (reading_rooms(file[*i], map) == -1)
-			return(-1);
+			return (-1);
 	}
 	return (1);
 }
 
-int 	handler_hashes(t_map *map, char **file, int *i)
+int		handler_hashes(t_map *map, char **file, int *i)
 {
 	if (ft_strcmp("##start", file[*i]) == 0 && !(map->start))
 	{
@@ -64,12 +72,13 @@ int 	handler_hashes(t_map *map, char **file, int *i)
 	return (1);
 }
 
-int 	handler_links(t_map *map, char **file, int *i)
+int		handler_links(t_map *map, char **file, int *i)
 {
 	map->nbrs_links = count_links(file, *i);
 	if (!map->nbrs_rooms && (!map->start || !map->end))
 		return (-1);
-	while (file[*i] && (((ft_count_words(file[*i]) == 1) && ft_isthere_chr(file[*i], '-')) || ft_isthere_chr(file[*i], '#')))
+	while (file[*i] && (((ft_count_words(file[*i]) == 1) &&
+		ft_isthere_chr(file[*i], '-')) || ft_isthere_chr(file[*i], '#')))
 	{
 		if (file[*i][0] == '#')
 		{
@@ -79,7 +88,8 @@ int 	handler_links(t_map *map, char **file, int *i)
 		else
 		{
 			if (!map->links)
-				map->links = (t_links *) ft_memalloc(sizeof(t_links) * map->nbrs_links);
+				map->links = (t_links*)
+						ft_memalloc(sizeof(t_links) * map->nbrs_links);
 			if (record_links(map, file, i) == -1)
 				return (-1);
 		}

@@ -26,7 +26,8 @@ void	print_farms_compos(t_map *map)
 	}
 	write(1, "\n", 1);
 }
-int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
+
+int		check_map(t_map *map, char ***ways, t_node **first_room)
 {
 	char	**directed_ways;
 
@@ -43,7 +44,7 @@ int 	check_map(t_map *map, char ***ways, t_node2 **first_room)
 	return (1);
 }
 
-int 	non_repeatability_check(t_map *map)
+int		non_repeatability_check(t_map *map)
 {
 	int i;
 	int j;
@@ -68,12 +69,12 @@ int 	non_repeatability_check(t_map *map)
 	return (1);
 }
 
-int 	check_vertex_entry(char **ways, int vertex, t_map *map)
+int		check_vertex_entry(char **ways, int vertex, t_map *map)
 {
 	int	i;
 
 	i = 0;
-	while(i < map->nbrs_rooms + 2)
+	while (i < map->nbrs_rooms + 2)
 	{
 		if (ways[i][vertex] == '2')
 			return (1);
@@ -82,33 +83,31 @@ int 	check_vertex_entry(char **ways, int vertex, t_map *map)
 	return (0);
 }
 
-int		check_coordinates(t_map *map)
+int		check_coordinates(t_map *m)
 {
 	int i;
 	int j;
 
-	i = 0;
-	while (i < map->nbrs_rooms)
+	i = -1;
+	while (++i < m->nbrs_rooms)
 	{
 		j = 0;
-		while (j < map->nbrs_rooms)
+		while (j < m->nbrs_rooms)
 		{
 			if (j == i)
 			{
 				j++;
 				continue;
 			}
-			if (map->rooms[i].x == map->rooms[j].x &&
-				map->rooms[i].y == map->rooms[j].y)
+			if (m->rooms[i].x == m->rooms[j].x &&
+				m->rooms[i].y == m->rooms[j].y)
 				return (-1);
 			j++;
 		}
-		if (map->rooms[i].x == map->start->x &&
-			map->rooms[i].y == map->start->y)
+		if (m->rooms[i].x == m->start->x && m->rooms[i].y == m->start->y)
 			return (-1);
-		if (map->rooms[i].x == map->end->x && map->rooms[i].y == map->end->y)
+		if (m->rooms[i].x == m->end->x && m->rooms[i].y == m->end->y)
 			return (-1);
-		i++;
 	}
 	return (1);
 }
