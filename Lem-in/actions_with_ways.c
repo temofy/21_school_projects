@@ -78,15 +78,16 @@ void	disable_crossing_ways(char **ways)
 	}
 }
 
-int		finding_non_intersecting_ways(t_map *map, char **ways, t_node *first)
+int		finding_non_intersecting_ways(t_map *map, t_node *first)
 {
-	while (bfs(map, ways, first) == 1)
+	while (bfs(map, first) == 1)
 	{
 	}
-	disable_crossing_ways(ways);
-	map->amount_ways = count_non_intersecting_ways(ways);
+	disable_crossing_ways(map->ways);
+	map->amount_ways = count_non_intersecting_ways(map->ways);
 	if (!(map->amount_ways))
 		return (-1);
-	launch_ants(map, ways);
+	print_farms_compos(map);
+	launch_ants(map);
 	return (1);
 }

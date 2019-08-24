@@ -120,6 +120,7 @@ int 				ft_isthere_str(char *str, char *substr);
 t_list_fd			*ft_lstnew_fd(int fd, char *tmp);
 t_list_fd			*ft_find_last_lst(t_list_fd *first_lst);
 
+int					ft_nbrlen(int n);
 char				**ft_strmatrix(int m, int n);
 size_t				ft_strclen(const char *s, int c);
 #endif

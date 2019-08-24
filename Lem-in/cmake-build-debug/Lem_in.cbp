@@ -89,7 +89,13 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/actions_with_paths.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/actions_with_queue.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/actions_with_ways.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/bfc.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/checkers.c">
@@ -105,6 +111,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/handlers.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/initializers.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/lem_in.c">
@@ -216,6 +225,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_memset.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_nbrlen.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_putchar.c">
@@ -368,13 +380,13 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/libftprintf.a">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/other.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/prints.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/readers.c">
-			<Option target="Lem_in"/>
-		</Unit>
-		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/reading.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/release.c">

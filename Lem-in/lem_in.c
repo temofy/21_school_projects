@@ -16,12 +16,10 @@ int	validate_record_run(t_map *map)
 {
 	int		i;
 	int		rtn;
-	char	**ways;
 	t_node	*first_room;
 
 	i = 0;
 	first_room = NULL;
-	ways = NULL;
 	if (reading_ants(map->file[0], &(map->ants)) == -1)
 		return (-1);
 	map->nbrs_rooms = count_rooms(map->file, i + 1);
@@ -34,11 +32,10 @@ int	validate_record_run(t_map *map)
 	if (!map->start || !map->end || !map->nbrs_links)
 		rtn = -1;
 	else
-		rtn = check_map(map, &ways, &first_room);
+		rtn = check_map(map, &first_room);
 	if (rtn == 1)
-		rtn = finding_non_intersecting_ways(map, ways, first_room);
+		rtn = finding_non_intersecting_ways(map, first_room);
 	free_rooms(&first_room, map->nbrs_rooms + 2);
-	ft_arrdel(&ways);
 	return (rtn);
 }
 

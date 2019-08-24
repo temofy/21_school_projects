@@ -5,9 +5,17 @@ CMakeFiles/Lem_in.dir/actions_with_paths.c.o: ../actions_with_paths.c
 CMakeFiles/Lem_in.dir/actions_with_paths.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/actions_with_paths.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/actions_with_queue.c.o: ../actions_with_queue.c
+CMakeFiles/Lem_in.dir/actions_with_queue.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/actions_with_queue.c.o: ../libft/libft.h
+
 CMakeFiles/Lem_in.dir/actions_with_ways.c.o: ../actions_with_ways.c
 CMakeFiles/Lem_in.dir/actions_with_ways.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/actions_with_ways.c.o: ../libft/libft.h
+
+CMakeFiles/Lem_in.dir/bfc.c.o: ../bfc.c
+CMakeFiles/Lem_in.dir/bfc.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/bfc.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/checkers.c.o: ../checkers.c
 CMakeFiles/Lem_in.dir/checkers.c.o: ../lem_in.h
@@ -28,6 +36,10 @@ CMakeFiles/Lem_in.dir/finders.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/handlers.c.o: ../handlers.c
 CMakeFiles/Lem_in.dir/handlers.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/handlers.c.o: ../libft/libft.h
+
+CMakeFiles/Lem_in.dir/initializers.c.o: ../initializers.c
+CMakeFiles/Lem_in.dir/initializers.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/initializers.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/lem_in.c.o: ../lem_in.c
 CMakeFiles/Lem_in.dir/lem_in.c.o: ../lem_in.h
@@ -136,6 +148,9 @@ CMakeFiles/Lem_in.dir/libft/ft_memmove.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_memset.c.o: ../libft/ft_memset.c
 CMakeFiles/Lem_in.dir/libft/ft_memset.c.o: ../libft/libft.h
+
+CMakeFiles/Lem_in.dir/libft/ft_nbrlen.c.o: ../libft/ft_nbrlen.c
+CMakeFiles/Lem_in.dir/libft/ft_nbrlen.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
 
@@ -278,6 +293,10 @@ CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/other.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/other.c.o: ../libft/libft.h
+CMakeFiles/Lem_in.dir/other.c.o: ../other.c
+
 CMakeFiles/Lem_in.dir/prints.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/prints.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/prints.c.o: ../prints.c
@@ -285,10 +304,6 @@ CMakeFiles/Lem_in.dir/prints.c.o: ../prints.c
 CMakeFiles/Lem_in.dir/readers.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/readers.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/readers.c.o: ../readers.c
-
-CMakeFiles/Lem_in.dir/reading.c.o: ../lem_in.h
-CMakeFiles/Lem_in.dir/reading.c.o: ../libft/libft.h
-CMakeFiles/Lem_in.dir/reading.c.o: ../reading.c
 
 CMakeFiles/Lem_in.dir/release.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/release.c.o: ../libft/libft.h

@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-t_ps	*count_path_steps(t_map *map, char **ways, int amount_ways)
+t_ps	*count_path_steps(t_map *map, int amount_ways)
 {
 	int path_nbr;
 	t_ps	*ps;
@@ -27,7 +27,7 @@ t_ps	*count_path_steps(t_map *map, char **ways, int amount_ways)
 	while (path_nbr < amount_ways)
 	{
 		ps[path_nbr].way_steps = 1;
-		while (ways[0][way] != '2')
+		while ((map->ways)[0][way] != '2')
 			way++;
 		ps[path_nbr].way_begin = way;
 		i = way;
@@ -35,7 +35,7 @@ t_ps	*count_path_steps(t_map *map, char **ways, int amount_ways)
 		{
 			ps[path_nbr].way_steps++;
 			j = 0;
-			while (ways[i][j] != '2')
+			while ((map->ways)[i][j] != '2')
 				j++;
 			i = j;
 		}

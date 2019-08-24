@@ -12,8 +12,10 @@
 
 LEM_IN = lem-in
 
-SRC = lem_in.c reading.c counters.c release.c readers.c starter.c finders.c checkers.c \
-        exits_entrances.c handlers.c actions_with_paths.c actions_with_ways.c
+SRC = lem_in.c other.c counters.c release.c readers.c starter.c finders.c checkers.c \
+        exits_entrances.c handlers.c actions_with_paths.c actions_with_ways.c \
+        initializers.c actions_with_queue.c bfc.c
+
 
 LIBFT = libft
 

@@ -37,6 +37,7 @@ int 	free_map(t_map *map, int status)
 	map->start = NULL;
 	map->end = NULL;
 	free_paths(&(map->paths), map->amount_ways);
+	ft_arrdel(&(map->ways));
 	return (status);
 }
 

@@ -15,11 +15,13 @@
 int		record_links(t_map *map, char **file, int *i)
 {
 	static int k = 0;
+	int 	seperator;
 
+	seperator = 0;
 	if (k == map->nbrs_links)
 		return (-1);
-	map->links[k].room1 = links_split(file[*i], 1);
-	map->links[k].room2 = links_split(file[*i], 2);
+	map->links[k].room1 = links_split(file[*i], 1, seperator);
+	map->links[k].room2 = links_split(file[*i], 2, seperator);
 	k++;
 	return (1);
 }

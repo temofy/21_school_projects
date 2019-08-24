@@ -5,8 +5,16 @@ CMakeFiles/Lem_in.dir/actions_with_paths.c.o
  /Users/cheller/Desktop/home_space/Lem-in/actions_with_paths.c
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/actions_with_queue.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/actions_with_queue.c
+ /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/actions_with_ways.c.o
  /Users/cheller/Desktop/home_space/Lem-in/actions_with_ways.c
+ /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/bfc.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/bfc.c
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/checkers.c.o
@@ -27,6 +35,10 @@ CMakeFiles/Lem_in.dir/finders.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/handlers.c.o
  /Users/cheller/Desktop/home_space/Lem-in/handlers.c
+ /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/initializers.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/initializers.c
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/lem_in.c.o
@@ -136,6 +148,9 @@ CMakeFiles/Lem_in.dir/libft/ft_memmove.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_memset.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_memset.c
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/libft/ft_nbrlen.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/libft/ft_nbrlen.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_putchar.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/ft_putchar.c
@@ -278,6 +293,10 @@ CMakeFiles/Lem_in.dir/libft/ft_ulitoa.c.o
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o
  /Users/cheller/Desktop/home_space/Lem-in/libft/get_next_line.c
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+CMakeFiles/Lem_in.dir/other.c.o
+ /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
+ /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
+ /Users/cheller/Desktop/home_space/Lem-in/other.c
 CMakeFiles/Lem_in.dir/prints.c.o
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
@@ -286,10 +305,6 @@ CMakeFiles/Lem_in.dir/readers.c.o
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
  /Users/cheller/Desktop/home_space/Lem-in/readers.c
-CMakeFiles/Lem_in.dir/reading.c.o
- /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
- /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h
- /Users/cheller/Desktop/home_space/Lem-in/reading.c
 CMakeFiles/Lem_in.dir/release.c.o
  /Users/cheller/Desktop/home_space/Lem-in/lem_in.h
  /Users/cheller/Desktop/home_space/Lem-in/libft/libft.h

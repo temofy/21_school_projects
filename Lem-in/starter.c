@@ -18,7 +18,7 @@ void	print_ant_turn(int ant, char *next_room)
 	int		str_len;
 	char	*str_nbr;
 
-	nbr_size = nbr_len(ant);
+	nbr_size = ft_nbrlen(ant);
 	str_len = ft_strlen(next_room);
 	str_nbr = ft_itoa(ant);
 	write(1, "L", 1);
@@ -74,7 +74,7 @@ void	starter_ants(t_map *map, t_ants *ants, int i, int *ant_no)
 	(*ants).ants_at_start--;
 }
 
-void	launch_ants(t_map *map, char **ways)
+void	launch_ants(t_map *map)
 {
 	t_ants	ants;
 	int		ant_no;
@@ -82,9 +82,9 @@ void	launch_ants(t_map *map, char **ways)
 	t_ps	*paths_steps;
 
 	ant_no = 1;
-	paths_steps = count_path_steps(map, ways, map->amount_ways);
+	paths_steps = count_path_steps(map, map->amount_ways);
 	rank_paths(paths_steps, map->amount_ways);
-	map->paths = make_paths(paths_steps, map->amount_ways, ways, map);
+	map->paths = make_paths(paths_steps, map->amount_ways, map->ways, map);
 	ants.ants_at_start = map->ants;
 	ants.ants_at_end = 0;
 	while (ants.ants_at_end != map->ants)
