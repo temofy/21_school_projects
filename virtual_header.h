@@ -23,7 +23,8 @@ typedef struct	s_flags
 {
 	int 		dump;
 	int 		vis;
-	int			order_idtfrs[MAX_PLAYERS];
+	int			*order_idtfrs;
+	int 		amount_players;
 	t_plr_nbr	*plr_nbr;
 }				t_flags;
 
@@ -31,5 +32,7 @@ t_player		*g_players;
 
 int		virual_machine(int amount_players, char **files_champoins);
 void	print_hex_data(int argc, char **argv);
+int		parsing_arguments(int argc, char **argv, t_flags *flags);
+int 	ft_is_strdigit(char *str);
 
 #endif
