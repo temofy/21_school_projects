@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclen.c                                       :+:      :+:    :+:   */
+/*   ft_str_isempty.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/25 13:17:09 by cheller           #+#    #+#             */
-/*   Updated: 2019/08/25 13:17:19 by cheller          ###   ########.fr       */
+/*   Created: 2019/08/25 12:30:02 by cheller           #+#    #+#             */
+/*   Updated: 2019/08/25 12:30:03 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strclen(const char *s, int c)
+int	ft_str_isempty(char *str)
 {
-	size_t	len;
-
-	len = 0;
-	while (s[len] != c && s[len])
-		len++;
-	return (len);
+	if (*str == '\0')
+		return (1);
+	return (0);
 }

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_count_words(char *str)
+int	ft_count_words(char *str)
 {
 	int words;
 	int flag;
@@ -28,7 +28,7 @@ int ft_count_words(char *str)
 			flag = 1;
 			words++;
 		}
-		else if (*str < 33 || *str > 126 )
+		else if (*str < 33 || *str > 126)
 			flag = 0;
 		str++;
 	}

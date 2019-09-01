@@ -134,7 +134,7 @@
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_atoi.c">
 			<Option target="Lem_in"/>
 		</Unit>
-		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_atopi.c">
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_atoi_f.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_bzero.c">
@@ -252,6 +252,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_putstr_fd.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_str_isempty.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/cheller/Desktop/home_space/Lem-in/libft/ft_strcat.c">

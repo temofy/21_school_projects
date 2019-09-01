@@ -17,42 +17,23 @@ t_node	*find_among_neighbors(int found_next_i, t_node *cur_room)
 	int	i;
 	int k;
 
-	i = 0;
-	while (i < cur_room->exits)
+	i = -1;
+	while (++i < cur_room->exits)
 	{
 		if (found_next_i == cur_room->next_room[i]->i_room)
 		{
 			k = 0;
 			while (k < cur_room->next_room[i]->entrances)
 			{
-				if (cur_room->next_room[i]->prev_room[k]->i_room == cur_room->i_room)
+				if (cur_room->next_room[i]->prev_room[k]->i_room
+					== cur_room->i_room)
 					cur_room->next_room[i]->prev_for_bfs = k;
 				k++;
 			}
 			return ((cur_room->next_room[i]));
 		}
-		i++;
 	}
-	i = 0;
-	while (i < cur_room->entrances)
-	{
-		if (found_next_i == cur_room->prev_room[i]->i_room)
-		{
-			k = 0;
-			while (k < cur_room->prev_room[i]->exits)
-			{
-				if (cur_room->prev_room[i]->next_room[k]->i_room == cur_room->i_room)
-				{
-					cur_room->prev_room[i]->next_for_bfs = k;
-					cur_room->prev_room[i]->prev_for_bfs = -1;
-				}
-				k++;
-			}
-			return ((cur_room->prev_room[i]));
-		}
-		i++;
-	}
-	return (NULL);
+	return (find_among_entrances(found_next_i, cur_room));
 }
 
 int		find_neighbor_rooms(t_map *m, t_queue **q, t_queue *f, char *checked)
@@ -133,9 +114,7 @@ int		bfs(t_map *map, t_node *first_node)
 		if (first_in_q->room->i_room == map->nbrs_rooms + 1)
 		{
 			record_shortest_way(map->ways, first_in_q->room);
-			while (first_in_q)
-				queue_pop(&first_in_q);
-			free(checked);
+			free_bfc(&first_in_q, checked);
 			return (1);
 		}
 		if (check_vertex_entry(first_in_q->room->i_room, map) == 0)
@@ -144,6 +123,6 @@ int		bfs(t_map *map, t_node *first_node)
 			reverse_walking(&q, first_in_q, checked, map);
 		queue_pop(&first_in_q);
 	}
-	free(checked);
+	free_bfc(&first_in_q, checked);
 	return (-1);
 }

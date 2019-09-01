@@ -14,7 +14,6 @@
 # define LEM_IN_H
 
 # include "libft/libft.h"
-# include <stdio.h>
 
 typedef struct		s_room
 {
@@ -51,7 +50,7 @@ typedef struct		s_map
 	t_links	*links;
 	int		nbrs_links;
 	char	**file;
-	char 	**ways;
+	char	**ways;
 	t_paths	*paths;
 	int		amount_ways;
 }					t_map;
@@ -93,7 +92,7 @@ typedef struct		s_num_q
 	struct s_num_q	*next_in_q;
 }					t_num_q;
 
-typedef struct 		s_set_queues
+typedef struct		s_set_queues
 {
 	t_num_q	**nq;
 	t_num_q **first;
@@ -132,8 +131,8 @@ t_node				*create_nodes(t_map *map, char **directions);
 int					check_map(t_map *map, t_node **first_room);
 int					check_coordinates(t_map *map);
 int					check_vertex_entry(int vertex, t_map *map);
-char 				**set_the_direction(t_map *map);
-int 				make_validate_ways(t_map *map, char ***adjacency_matrix);
+char				**set_the_direction(t_map *map);
+int					make_validate_ways(t_map *map, char ***adjacency_matrix);
 int					non_repeatability_check(t_map *map);
 int					exitsamount_exits(char **directions, int room);
 void				assign_next_rooms(t_node *rooms, t_node *cur_room,
@@ -141,21 +140,24 @@ void				assign_next_rooms(t_node *rooms, t_node *cur_room,
 void				assign_prev_rooms(t_node *rooms, t_node *cur_room,
 					char **dir, int size);
 int					handler_hashes(t_map *map, char **file, int *i);
-int 				handler_links(t_map *map, char **file, int *i);
-int 				record_links(t_map *map, char **file, int *i);
+int					handler_links(t_map *map, char **file, int *i);
+int					record_links(t_map *map, char **file, int *i);
 char				*links_split(char *str, int room, int seperator);
 void				record_shortest_way(char **ways, t_node *end);
 int					make_validate_ways(t_map *map, char ***adjacency_matrix);
-int					exitsamount_entrances(char **directions, int room, int size);
-void				initilize_objects(char ***directed_matrix, t_num_q **first, t_map *map);
-char				*first_init_bfc(t_queue **first, t_queue **q, t_node *node, t_map *map);
+int					exitsamount_entrances(char **directions, int room,
+					int size);
+void				initilize_objects(char ***directed_matrix,
+					t_num_q **first, t_map *map);
+char				*first_init_bfc(t_queue **first, t_queue **q,
+					t_node *node, t_map *map);
 int					bfs(t_map *map, t_node *first_node);
 t_num_q				*n_que_new();
 t_queue				*que_new();
 void				n_queue_pop(t_num_q **q);
 void				queue_pop(t_queue **q);
 void				print_farms_compos(t_map *map);
-
-void	print_directs(char **directions, t_map *map);
-void	print_matrix(char **matrix);
+t_node				*find_among_entrances(int found_next_i, t_node *cur_room);
+void				initialize_path(t_paths *paths, int i, t_ps *paths_steps);
+void				free_bfc(t_queue **q, char *checked);
 #endif

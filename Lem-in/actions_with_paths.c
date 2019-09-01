@@ -12,19 +12,28 @@
 
 #include "lem_in.h"
 
+int		counter_addition(t_map *map, int i)
+{
+	int	j;
+
+	j = 0;
+	while ((map->ways)[i][j] != '2')
+		j++;
+	return (j);
+}
+
 t_ps	*count_path_steps(t_map *map, int amount_ways)
 {
-	int path_nbr;
+	int		path_nbr;
 	t_ps	*ps;
-	int way;
-	int i;
-	int j;
+	int		way;
+	int		i;
 
-	path_nbr = 0;
+	path_nbr = -1;
 	way = 0;
 	if (!(ps = (t_ps*)malloc(sizeof(t_ps) * amount_ways)))
 		return (NULL);
-	while (path_nbr < amount_ways)
+	while (++path_nbr < amount_ways)
 	{
 		ps[path_nbr].way_steps = 1;
 		while ((map->ways)[0][way] != '2')
@@ -34,12 +43,8 @@ t_ps	*count_path_steps(t_map *map, int amount_ways)
 		while (i != map->nbrs_rooms + 1)
 		{
 			ps[path_nbr].way_steps++;
-			j = 0;
-			while ((map->ways)[i][j] != '2')
-				j++;
-			i = j;
+			i = counter_addition(map, i);
 		}
-		path_nbr++;
 		way++;
 	}
 	return (ps);
@@ -72,7 +77,7 @@ void	rank_paths(t_ps *paths, int amount_ways)
 	}
 }
 
-int 	issue_sum_prev_steps(t_ps *path, int cur_i)
+int		issue_sum_prev_steps(t_ps *path, int cur_i)
 {
 	int sum;
 	int i;
@@ -87,22 +92,20 @@ int 	issue_sum_prev_steps(t_ps *path, int cur_i)
 	return (sum);
 }
 
-t_paths *make_paths(t_ps *paths_steps, int amount_ways, char **ways, t_map *map)
+t_paths	*make_paths(t_ps *paths_steps, int amount_ways, char **ways, t_map *map)
 {
 	t_paths	*paths;
-	int i;
-	int	x;
-	int	y;
-	int k;
+	int		i;
+	int		x;
+	int		y;
+	int		k;
 
 	i = -1;
 	paths = malloc(sizeof(t_paths) * amount_ways);
 	while (++i < amount_ways)
 	{
 		paths[i].room = malloc(sizeof(t_rooms) * paths_steps[i].way_steps);
-		paths[i].amount_steps = paths_steps[i].way_steps;
-		paths[i].room->i_next = paths_steps[i].way_begin;
-		paths[i].room->ant_no = 0;
+		initialize_path(paths, i, paths_steps);
 		k = 1;
 		x = paths_steps[i].way_begin;
 		while (x != map->nbrs_rooms + 1)

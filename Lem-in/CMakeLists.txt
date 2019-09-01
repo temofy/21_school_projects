@@ -11,7 +11,7 @@ add_executable(Lem_in
         libft/ft_arraylen.c
         libft/ft_arrdel.c
         libft/ft_atoi.c
-        libft/ft_atopi.c
+        libft/ft_atoi_f.c
         libft/ft_bzero.c
         libft/ft_count_words.c
         libft/ft_find_last_lst.c
@@ -93,6 +93,7 @@ add_executable(Lem_in
         libft/libftprintf.a
         libft/ft_strmatrix.c
         libft/ft_nbrlen.c
+        libft/ft_str_isempty.c
         counters.c
         lem_in.c
         lem_in.h

@@ -14,8 +14,8 @@
 
 int		record_links(t_map *map, char **file, int *i)
 {
-	static int k = 0;
-	int 	seperator;
+	static int	k = 0;
+	int			seperator;
 
 	seperator = 0;
 	if (k == map->nbrs_links)
@@ -98,4 +98,31 @@ int		handler_links(t_map *map, char **file, int *i)
 		(*i)++;
 	}
 	return (1);
+}
+
+t_node	*find_among_entrances(int found_next_i, t_node *cur_room)
+{
+	int i;
+	int k;
+
+	i = -1;
+	while (++i < cur_room->entrances)
+	{
+		if (found_next_i == cur_room->prev_room[i]->i_room)
+		{
+			k = 0;
+			while (k < cur_room->prev_room[i]->exits)
+			{
+				if (cur_room->prev_room[i]->next_room[k]->i_room
+					== cur_room->i_room)
+				{
+					cur_room->prev_room[i]->next_for_bfs = k;
+					cur_room->prev_room[i]->prev_for_bfs = -1;
+				}
+				k++;
+			}
+			return ((cur_room->prev_room[i]));
+		}
+	}
+	return (NULL);
 }

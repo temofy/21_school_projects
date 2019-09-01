@@ -56,8 +56,8 @@ CMakeFiles/Lem_in.dir/libft/ft_arrdel.c.o: ../libft/libft.h
 CMakeFiles/Lem_in.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/Lem_in.dir/libft/ft_atoi.c.o: ../libft/libft.h
 
-CMakeFiles/Lem_in.dir/libft/ft_atopi.c.o: ../libft/ft_atopi.c
-CMakeFiles/Lem_in.dir/libft/ft_atopi.c.o: ../libft/libft.h
+CMakeFiles/Lem_in.dir/libft/ft_atoi_f.c.o: ../libft/ft_atoi_f.c
+CMakeFiles/Lem_in.dir/libft/ft_atoi_f.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_bzero.c.o: ../libft/ft_bzero.c
 CMakeFiles/Lem_in.dir/libft/ft_bzero.c.o: ../libft/libft.h
@@ -174,6 +174,9 @@ CMakeFiles/Lem_in.dir/libft/ft_putstr.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_putstr_fd.c.o: ../libft/ft_putstr_fd.c
 CMakeFiles/Lem_in.dir/libft/ft_putstr_fd.c.o: ../libft/libft.h
+
+CMakeFiles/Lem_in.dir/libft/ft_str_isempty.c.o: ../libft/ft_str_isempty.c
+CMakeFiles/Lem_in.dir/libft/ft_str_isempty.c.o: ../libft/libft.h
 
 CMakeFiles/Lem_in.dir/libft/ft_strcat.c.o: ../libft/ft_strcat.c
 CMakeFiles/Lem_in.dir/libft/ft_strcat.c.o: ../libft/libft.h

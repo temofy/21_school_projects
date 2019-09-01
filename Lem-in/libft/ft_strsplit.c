@@ -63,10 +63,7 @@ char		**ft_strsplit(char const *s, char c)
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			if (!(strs[++word] = ft_strnew(get_word_len(&s[i], c))))
-			{
-				free(strs);
 				return (NULL);
-			}
 			j = 0;
 		}
 		if (s[i] != c)

@@ -528,32 +528,32 @@ libft/ft_atoi.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atoi.c.s
 .PHONY : libft/ft_atoi.c.s
 
-libft/ft_atopi.o: libft/ft_atopi.c.o
+libft/ft_atoi_f.o: libft/ft_atoi_f.c.o
 
-.PHONY : libft/ft_atopi.o
+.PHONY : libft/ft_atoi_f.o
 
 # target to build an object file
-libft/ft_atopi.c.o:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atopi.c.o
-.PHONY : libft/ft_atopi.c.o
+libft/ft_atoi_f.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atoi_f.c.o
+.PHONY : libft/ft_atoi_f.c.o
 
-libft/ft_atopi.i: libft/ft_atopi.c.i
+libft/ft_atoi_f.i: libft/ft_atoi_f.c.i
 
-.PHONY : libft/ft_atopi.i
+.PHONY : libft/ft_atoi_f.i
 
 # target to preprocess a source file
-libft/ft_atopi.c.i:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atopi.c.i
-.PHONY : libft/ft_atopi.c.i
+libft/ft_atoi_f.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atoi_f.c.i
+.PHONY : libft/ft_atoi_f.c.i
 
-libft/ft_atopi.s: libft/ft_atopi.c.s
+libft/ft_atoi_f.s: libft/ft_atoi_f.c.s
 
-.PHONY : libft/ft_atopi.s
+.PHONY : libft/ft_atoi_f.s
 
 # target to generate assembly for a file
-libft/ft_atopi.c.s:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atopi.c.s
-.PHONY : libft/ft_atopi.c.s
+libft/ft_atoi_f.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_atoi_f.c.s
+.PHONY : libft/ft_atoi_f.c.s
 
 libft/ft_bzero.o: libft/ft_bzero.c.o
 
@@ -1607,6 +1607,33 @@ libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
 libft/ft_putstr_fd.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
+
+libft/ft_str_isempty.o: libft/ft_str_isempty.c.o
+
+.PHONY : libft/ft_str_isempty.o
+
+# target to build an object file
+libft/ft_str_isempty.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_str_isempty.c.o
+.PHONY : libft/ft_str_isempty.c.o
+
+libft/ft_str_isempty.i: libft/ft_str_isempty.c.i
+
+.PHONY : libft/ft_str_isempty.i
+
+# target to preprocess a source file
+libft/ft_str_isempty.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_str_isempty.c.i
+.PHONY : libft/ft_str_isempty.c.i
+
+libft/ft_str_isempty.s: libft/ft_str_isempty.c.s
+
+.PHONY : libft/ft_str_isempty.s
+
+# target to generate assembly for a file
+libft/ft_str_isempty.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/ft_str_isempty.c.s
+.PHONY : libft/ft_str_isempty.c.s
 
 libft/ft_strcat.o: libft/ft_strcat.c.o
 
@@ -2877,9 +2904,9 @@ help:
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
-	@echo "... libft/ft_atopi.o"
-	@echo "... libft/ft_atopi.i"
-	@echo "... libft/ft_atopi.s"
+	@echo "... libft/ft_atoi_f.o"
+	@echo "... libft/ft_atoi_f.i"
+	@echo "... libft/ft_atoi_f.s"
 	@echo "... libft/ft_bzero.o"
 	@echo "... libft/ft_bzero.i"
 	@echo "... libft/ft_bzero.s"
@@ -2997,6 +3024,9 @@ help:
 	@echo "... libft/ft_putstr_fd.o"
 	@echo "... libft/ft_putstr_fd.i"
 	@echo "... libft/ft_putstr_fd.s"
+	@echo "... libft/ft_str_isempty.o"
+	@echo "... libft/ft_str_isempty.i"
+	@echo "... libft/ft_str_isempty.s"
 	@echo "... libft/ft_strcat.o"
 	@echo "... libft/ft_strcat.i"
 	@echo "... libft/ft_strcat.s"

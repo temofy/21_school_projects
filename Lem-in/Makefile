@@ -28,7 +28,7 @@ all: $(LEM_IN)
 $(LEM_IN):
 	@gcc -c $(SRC) -I.
 	@make -C LIBFT re
-	@gcc $(OBJ) $(LIBFT)/libft.a $(LIBFT)/libftprintf.a -o $(LEM_IN)
+	@gcc $(OBJ) $(LIBFT)/libft.a -o $(LEM_IN)
 
 clean:
 	@rm -f $(OBJ)

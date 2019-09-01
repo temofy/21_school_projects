@@ -98,8 +98,8 @@ int		check_coordinates(t_map *m)
 				j++;
 				continue;
 			}
-			if (m->rooms[i].x == m->rooms[j].x &&
-				m->rooms[i].y == m->rooms[j].y)
+			if ((m->rooms[i].x == m->rooms[j].x &&
+				m->rooms[i].y == m->rooms[j].y))
 				return (-1);
 			j++;
 		}

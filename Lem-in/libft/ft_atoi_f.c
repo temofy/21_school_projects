@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int 	failed(int *flag)
+int		failed(int *flag)
 {
 	*flag = -1;
 	return (0);
@@ -44,6 +44,5 @@ long	ft_atoi_f(const char *s, int *flag)
 		res = (res * 10) + s[i] - '0';
 		i++;
 	}
-	res = res * sign;
-	return (res);
+	return (res * sign);
 }
