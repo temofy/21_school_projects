@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: aaeron-g <aaeron-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 10:54:24 by cheller           #+#    #+#             */
-/*   Updated: 2019/02/20 20:36:55 by cheller          ###   ########.fr       */
+/*   Created: 2018/12/31 14:54:45 by aaeron-g          #+#    #+#             */
+/*   Updated: 2018/12/31 14:58:05 by aaeron-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+int	ft_abs(int n)
 {
-	char	*str;
-
-	str = (char*)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	str[size] = '\0';
-	while (size--)
-		str[size] = '\0';
-	return (str);
+	if (n == -2147483648)
+		return (0);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
 }

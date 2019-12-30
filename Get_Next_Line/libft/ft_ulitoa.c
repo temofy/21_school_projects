@@ -1,31 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_ulitoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/25 13:02:51 by cheller           #+#    #+#             */
-/*   Updated: 2019/03/18 18:55:54 by cheller          ###   ########.fr       */
+/*   Created: 2019/04/12 14:26:56 by cheller           #+#    #+#             */
+/*   Updated: 2019/04/12 21:15:12 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+static int	nbr_len(unsigned long n)
 {
-	size_t		index;
-	size_t		src_len;
+	int		len;
 
-	src_len = ft_strlen(src);
-	index = 0;
-	while (index < len)
+	len = 0;
+	while (n > 0)
 	{
-		if (index <= src_len)
-			dest[index] = src[index];
-		else
-			dest[index] = '\0';
-		index++;
+		n = n / 10;
+		len++;
 	}
-	return (dest);
+	return (len);
+}
+
+char		*ft_ulitoa(unsigned long long int n)
+{
+	char	*str;
+	int		i;
+
+	i = nbr_len(n) - 1;
+	if (!(str = ft_strnew(nbr_len(n))))
+		return (NULL);
+	if (n == 0)
+	{
+		str[0] = 48;
+		return (str);
+	}
+	while (n > 0)
+	{
+		str[i--] = 48 + (n % 10);
+		n /= 10;
+	}
+	return (str);
 }

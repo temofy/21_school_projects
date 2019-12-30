@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/04/12 14:47:30 by cheller           #+#    #+#             */
+/*   Updated: 2019/04/16 15:44:12 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+static int	nbr_len(unsigned n)
 {
-	int		i;
 	int		len;
-	char	*str;
 
 	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	while (n > 0)
 	{
-		str[i] = src[i];
-		i++;
+		n = n / 10;
+		len++;
 	}
-	str[i] = '\0';
+	return (len);
+}
+
+char		*ft_uitoa(unsigned n)
+{
+	char	*str;
+	int		i;
+
+	i = nbr_len(n) - 1;
+	if (!(str = ft_strnew(nbr_len(n))))
+		return (NULL);
+	if (n == 0)
+	{
+		str[0] = 48;
+		return (str);
+	}
+	while (n > 0)
+	{
+		str[i--] = 48 + (n % 10);
+		n /= 10;
+	}
 	return (str);
 }

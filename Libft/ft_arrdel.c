@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_arrdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/26 14:31:09 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/26 14:31:15 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+void	ft_arrdel(char ***arr)
 {
-	int		i;
-	int		len;
-	char	*str;
+	char	**tmp;
 
-	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (!arr)
+		return ;
+	tmp = *arr;
+	if (arr && *arr)
 	{
-		str[i] = src[i];
-		i++;
+		while (**arr)
+		{
+			free(**arr);
+			(*arr)++;
+		}
+		free(tmp);
 	}
-	str[i] = '\0';
-	return (str);
+	*arr = NULL;
 }

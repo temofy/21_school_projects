@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isthere_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/30 13:27:55 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/30 13:27:57 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_isthere_str(char *str, char *substr)
 {
 	int		i;
-	int		len;
-	char	*str;
+	int		j;
 
-	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
+	if (!str)
+		return (-1);
 	i = 0;
-	while (i < len)
+	if (ft_strlen(substr) == 0)
+		return (0);
+	while (str[i])
 	{
-		str[i] = src[i];
+		j = 0;
+		while (substr[j] == str[i + j])
+		{
+			if (substr[j + 1] == '\0')
+				return (1);
+			j++;
+		}
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (0);
 }

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/08/24 16:04:28 by cheller           #+#    #+#             */
+/*   Updated: 2019/08/24 16:04:31 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_nbrlen(int n)
 {
-	int		i;
 	int		len;
-	char	*str;
 
 	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n < 0)
 	{
-		str[i] = src[i];
-		i++;
+		len++;
+		n *= -1;
 	}
-	str[i] = '\0';
-	return (str);
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }

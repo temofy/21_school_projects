@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cheller <cheller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/04/29 16:19:03 by cheller           #+#    #+#             */
+/*   Updated: 2019/04/29 16:34:20 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strrev(char *str)
 {
+	char	tmp;
 	int		i;
-	int		len;
-	char	*str;
+	int		j;
 
-	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	j = ft_strlen(str) - 1;
+	while (i < j)
 	{
-		str[i] = src[i];
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		j--;
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }

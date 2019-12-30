@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/06/30 11:57:47 by cheller           #+#    #+#             */
+/*   Updated: 2019/06/30 11:57:49 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_count_words(char *str)
 {
-	int		i;
-	int		len;
-	char	*str;
+	int words;
+	int flag;
 
-	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	words = 0;
+	flag = 0;
+	if (!str)
+		return (-1);
+	while (*str)
 	{
-		str[i] = src[i];
-		i++;
+		if (*str >= 33 && *str <= 126 && !flag)
+		{
+			flag = 1;
+			words++;
+		}
+		else if (*str < 33 || *str > 126)
+			flag = 0;
+		str++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (words);
 }

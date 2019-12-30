@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmatrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cheller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:15:19 by cheller           #+#    #+#             */
-/*   Updated: 2018/12/14 13:41:30 by cheller          ###   ########.fr       */
+/*   Created: 2019/08/25 12:41:02 by cheller           #+#    #+#             */
+/*   Updated: 2019/08/25 12:41:16 by cheller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	**ft_strmatrix(int m, int n)
 {
+	char	**matrix;
 	int		i;
-	int		len;
-	char	*str;
 
-	len = 0;
-	if (!src)
-		return (NULL);
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	if (n < 1 && m < 1)
+		return (NULL);
+	matrix = malloc(sizeof(char**) * (m + 1));
+	while (i < m)
 	{
-		str[i] = src[i];
+		matrix[i] = ft_strnew(n);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	matrix[i] = NULL;
+	return (matrix);
 }
